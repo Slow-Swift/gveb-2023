@@ -13,7 +13,9 @@ JUNCTION_FILE = '../data/junctions.csv'
 SEGMENT_FILE = '../data/streetsegments_new.csv'
 CRIME_FILE = '../data/vanc_crime_2022.csv'
 TRANSIT_FILE = '../data/transitstops.csv'
+RAPID_TRANSIT_FILE = '../data/rapid-transit-stations.csv'
 COMMERCIAL_FILE = '../data/storefronts-inventory_new.csv'
+
 
 ZONE_NUMBER = 10
 ZONE_LETTER = 'U'
@@ -315,6 +317,42 @@ def load_stores(loader: GraphLoader, junction_data):
     print("Loaded Stores")
     return stores_data, stores
 
+def load_rapid_transit(loader: GraphLoader, junction_data):
+    rtransit_data = loader.load_file(
+        RAPID_TRANSIT_FILE,
+        {
+            'id': RowFunction(lambda row, i: i + 1),
+            'name': (str, 'STATION'),
+            'area': (str, 'Geo Local Area'),
+            'latitude': (lambda v: float(v.split(', ')[0]), 'geo_point_2d'),
+            'longitude': (lambda v: float(v.split(', ')[1]), 'geo_point_2d'),
+        },
+        delimiter=';'
+    )
+    
+    loader.match_closest(
+        rtransit_data, junction_data,
+        ['latitude', 'longitude'],
+        {
+            'closest': ('junction_id', 'id'),
+            'distance': 'junction_dst'
+        }
+    )
+    
+    rtransit = loader.define_category(
+        "RapidTransit",
+        rtransit_data,
+        [
+            'id',
+            'name',
+            'area',
+            'latitude',
+            'longitude'
+        ]
+    )
+    
+    return rtransit_data, rtransit
+
 def load_data(session):
     loader = GraphLoader(session)
     
@@ -323,7 +361,8 @@ def load_data(session):
     # segment_data, segments = load_segments(loader)
     # transit_data, transit = load_transit(loader, segment_data)
     # crime_data, crimes = load_crimes(loader, junction_data)
-    stores_data, stores = load_stores(loader, junction_data)
+    # stores_data, stores = load_stores(loader, junction_data)
+    rtransit_data, rtransit = load_rapid_transit(loader, junction_data)
     
     # continues_to = loader.define_relation(
     #     "CONTINUES_TO",
@@ -348,12 +387,20 @@ def load_data(session):
     #     props = ['crime_id', 'junction_id', ('distance', 'junction_dst')]
     # )
     
-    nearest_store_jn = loader.define_relation(
-        'NEAREST_JN',
-        stores,
+    # nearest_store_jn = loader.define_relation(
+    #     'NEAREST_JN',
+    #     stores,
+    #     junctions,
+    #     ('id', 'junction_id', 'id'),
+    #     props = [('store_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
+    # )
+    
+    nearest_station_jn = loader.define_relation(
+        'NEAREST_STATION_JN',
+        rtransit,
         junctions,
         ('id', 'junction_id', 'id'),
-        props = [('store_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
+        props = [('station_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
     )
     
     # loader.clear_all()
@@ -371,13 +418,17 @@ def load_data(session):
     # loader.write_category(crimes)
     # print("Wrote Crimes")
     
-    loader.write_category(stores)
-    print("Wrote Stores")
+    #loader.write_category(stores)
+    #print("Wrote Stores")
+    
+    loader.write_category(rtransit)
+    print("Wrote Rapit Transit")
     
     # loader.write_relation(continues_to)
     # loader.write_relation(present_in)
     # loader.write_relation(nearest_crime_jn)
-    loader.write_relation(nearest_store_jn)
+    # loader.write_relation(nearest_store_jn)
+    loader.write_relation(nearest_station_jn)
     
     # session.run(
     #     '''
