@@ -6,6 +6,9 @@ from loader import GraphLoader
 from loader import convert_if_not_null
 from loader import RowFunction
 
+from category import Category
+from relationship import Relationship
+
 # Change this to point to the directory of your database information
 DATABASE_INFO_FILEPATH = r"../../dbinfo.txt"
 
@@ -97,7 +100,7 @@ def load_junctions(loader: GraphLoader):
         }
     )
     
-    junctions = loader.define_category(
+    junctions = Category(
         "Junction",
         junctionData,
         [
@@ -157,7 +160,7 @@ def load_segments(loader: GraphLoader):
         }
     )
     
-    segments = loader.define_category(
+    segments = Category(
         "Segment",
         segmentData,
         [
@@ -208,7 +211,7 @@ def load_transit(loader: GraphLoader, segment_data):
     
     match_lat_lng(loader, transit_data, segment_data, 'street_id', 'street_dst')
     
-    transit = loader.define_category(
+    transit = Category(
         "Transit",
         transit_data,
         [
@@ -243,7 +246,7 @@ def load_crimes(loader: GraphLoader, junction_data):
     
     match_junctions(loader, crime_data, junction_data)
     
-    crimes = loader.define_category(
+    crimes = Category(
         'Crime',
         crime_data,
         [
@@ -279,7 +282,7 @@ def load_stores(loader: GraphLoader, junction_data):
     
     match_junctions(loader, stores_data, junction_data)
     
-    stores = loader.define_category(
+    stores = Category(
         "Store",
         stores_data,
         [
@@ -312,7 +315,7 @@ def load_rapid_transit(loader: GraphLoader, junction_data):
     
     match_junctions(loader, rtransit_data, junction_data)
     
-    rtransit = loader.define_category(
+    rtransit = Category(
         "RapidTransit",
         rtransit_data,
         [
@@ -342,7 +345,7 @@ def load_schools(loader: GraphLoader, junction_data):
     
     match_junctions(loader, schools_data, junction_data)
     
-    schools = loader.define_category(
+    schools = Category(
         "School",
         schools_data,
         [
@@ -362,53 +365,63 @@ def load_data(session):
     
     print("Loading Data")
     junction_data, junctions = load_junctions(loader)
-    # segment_data, segments = load_segments(loader)
-    # transit_data, transit = load_transit(loader, segment_data)
-    # crime_data, crimes = load_crimes(loader, junction_data)
-    # stores_data, stores = load_stores(loader, junction_data)
-    # rtransit_data, rtransit = load_rapid_transit(loader, junction_data)
+    segment_data, segments = load_segments(loader)
+    transit_data, transit = load_transit(loader, segment_data)
+    crime_data, crimes = load_crimes(loader, junction_data)
+    stores_data, stores = load_stores(loader, junction_data)
+    rtransit_data, rtransit = load_rapid_transit(loader, junction_data)
     schools_data, schools = load_schools(loader, junction_data)
     
-    # continues_to = loader.define_relation(
-    #     "CONTINUES_TO",
-    #     segments,
-    #     junctions,
-    #     ("id", "neighbors", "id") 
-    # )
+    categories = [
+        # junctions,
+        # segments,
+        # transit,
+        # crimes,
+        # stores,
+        # rtransit,
+        schools
+    ]
     
-    # present_in = loader.define_relation(
-    #     'PRESENT_IN',
-    #     transit,
-    #     segments,
-    #     ('stop_id', 'street_id', 'id'),
-    #     props = ['stop_id', 'street_id', ('distance', 'street_dst')]
-    # )
+    continues_to = Relationship(
+        "CONTINUES_TO",
+        segments,
+        junctions,
+        ("id", "neighbors", "id") 
+    )
     
-    # nearest_crime_jn = loader.define_relation(
-    #     'NEAREST_CRIME_JN',
-    #     crimes,
-    #     junctions,
-    #     ('crime_id', 'junction_id', 'id'),
-    #     props = ['crime_id', 'junction_id', ('distance', 'junction_dst')]
-    # )
+    present_in = Relationship(
+        'PRESENT_IN',
+        transit,
+        segments,
+        ('stop_id', 'street_id', 'id'),
+        props = ['stop_id', 'street_id', ('distance', 'street_dst')]
+    )
     
-    # nearest_store_jn = loader.define_relation(
-    #     'NEAREST_JN',
-    #     stores,
-    #     junctions,
-    #     ('id', 'junction_id', 'id'),
-    #     props = [('store_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
-    # )
+    nearest_crime_jn = Relationship(
+        'NEAREST_CRIME_JN',
+        crimes,
+        junctions,
+        ('crime_id', 'junction_id', 'id'),
+        props = ['crime_id', 'junction_id', ('distance', 'junction_dst')]
+    )
     
-    # nearest_station_jn = loader.define_relation(
-    #     'NEAREST_STATION_JN',
-    #     rtransit,
-    #     junctions,
-    #     ('id', 'junction_id', 'id'),
-    #     props = [('station_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
-    # )
+    nearest_store_jn = Relationship(
+        'NEAREST_JN',
+        stores,
+        junctions,
+        ('id', 'junction_id', 'id'),
+        props = [('store_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
+    )
     
-    nearest_school_jn = loader.define_relation(
+    nearest_station_jn = Relationship(
+        'NEAREST_STATION_JN',
+        rtransit,
+        junctions,
+        ('id', 'junction_id', 'id'),
+        props = [('station_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
+    )
+    
+    nearest_school_jn = Relationship(
         'NEAREST_SCHOOL_JN',
         schools,
         junctions,
@@ -416,52 +429,44 @@ def load_data(session):
         props = [('school_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
     )
     
+    relationships = [
+        #  continues_to,
+        #  present_in,
+        #  nearest_crime_jn,
+        #  nearest_store_jn,
+        #  nearest_station_jn,
+         nearest_school_jn
+    ]
+    
+    print("Writing Data")
     # loader.clear_all()
     
-    # print("Writing Data")
-    # loader.write_category(junctions)
-    # print("Wrote Junctions")
+    for category in categories:
+        loader.write_category(category)
+        print(f"Wrote {category.name}")
     
-    # loader.write_category(segments)
-    # print("Wrote Segments")
+    for relation in relationships:
+        loader.write_relation(relation)
     
-    # loader.write_category(transit)    
-    # print("Wrote Transit")
+    # join_junctions(session)
     
-    # loader.write_category(crimes)
-    # print("Wrote Crimes")
-    
-    #loader.write_category(stores)
-    #print("Wrote Stores")
-    
-    # loader.write_category(rtransit)
-    # print("Wrote Rapit Transit")
-    
-    loader.write_category(schools)
-    print("Wrote schools")
-    
-    
-    # loader.write_relation(continues_to)
-    # loader.write_relation(present_in)
-    # loader.write_relation(nearest_crime_jn)
-    # loader.write_relation(nearest_store_jn)
-    # loader.write_relation(nearest_station_jn)
-    loader.write_relation(nearest_school_jn)
-    
-    # session.run(
-    #     '''
-    #     MATCH (s:Segment)
-    #     CALL {
-    #         WITH s
-    #         MATCH (j1:Junction)<-[:CONTINUES_TO]-(s)-[:CONTINUES_TO]->(j2:Junction)
-    #         WITH j1, j2, s LIMIT 1
-    #         CREATE (j1)-[c:CONNECTS_TO]->(j2)
-    #         SET c = properties(s)
-    #     } IN TRANSACTIONS
-    #     '''
-    # )
+    print("Done")
     
 ## Helper functions ##
+
+def join_junctions(session):
+    session.run(
+        '''
+        MATCH (s:Segment)
+        CALL {
+            WITH s
+            MATCH (j1:Junction)<-[:CONTINUES_TO]-(s)-[:CONTINUES_TO]->(j2:Junction)
+            WITH j1, j2, s LIMIT 1
+            CREATE (j1)-[c:CONNECTS_TO]->(j2)
+            SET c = properties(s)
+        } IN TRANSACTIONS
+        '''
+    )
 
 def create_regular_str(old_str):
     if not old_str.isnumeric(): return old_str

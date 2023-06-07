@@ -7,10 +7,11 @@ from typing import Any
 from typing import TypeAlias
 from collections.abc import Sequence
 
+from category import Category
+from relationship import Relationship
+
 # Type Declarations
 DataHandle: TypeAlias = int
-CategoryHandle: TypeAlias = int
-RelationshipHandle: TypeAlias = int
 Row: TypeAlias = dict[str, Any]
 ConversionFunction: TypeAlias = Callable[[Any], Any]
 
@@ -183,59 +184,16 @@ class GraphLoader:
             if i % 100 == 0:
                 print(f"\r    Matched {i} nodes. {(i / len(data_1)):.0%} {' ' * 10}", end='')
         print()
-        
-    def define_category(self, category_name: str, data_handle: DataHandle, value_matcher: list[str | tuple[str, str]]) -> CategoryHandle:
-        """ Define a category of nodes
-
-        Args:
-            category_name (str): The name of the category to use in Neo4j
-            data_handle (DataHandle): The data used for the node
-            value_matcher (list[str | tuple[str, str]]): The fieldnames to use as the properties for the nodes
-
-        Returns:
-            CategoryHandle: A handle for the category
-        """
-        handle = len(self._categories)
-        self._categories.append({
-                "name": category_name,
-                "data_handle": data_handle,
-                "value_matcher": value_matcher.copy()
-        })
-        return handle
     
-    def define_relation(self, relation_name: str, category_1: CategoryHandle, category_2: CategoryHandle, links: tuple[str, str, str], props: None | list[str | tuple[str, str]]=None) -> RelationshipHandle:
-        """ Define a relationship between nodes
-
-        Args:
-            relation_name (str): The name of the relationship to use in Neo4j
-            category_1 (CategoryHandle): The category that the relationship comes from
-            category_2 (CategoryHandle): The category that the relationship goes to
-            links (tuple[str, str, str]): The link between categorys. (primary key for category_1, link to category_2, primary key for category_2)
-            props (list[str | tuple[str, str]], optional): The fieldnames to use for the relationship properties. Defaults to list[str  |  tuple[str, str]].
-
-        Returns:
-            RelationshipHandle: A handle to the relationship
-        """
-        handle = len(self._relations)
-        self._relations.append({
-            "name": relation_name,
-            "category_1": category_1,
-            "category_2": category_2,
-            "links": links,
-            "props": props if props else []
-        })
-        return handle
-    
-    def write_category(self, category_handle: CategoryHandle):
+    def write_category(self, category: Category):
         """ Write a category to Neo4j
 
         Args:
             category_handle (CategoryHandle): The category to write
         """
         
-        category = self._categories[category_handle]
-        data = self._loaded_data[category["data_handle"]]
-        value_matcher = category["value_matcher"]
+        data = self._loaded_data[category.data_handle]
+        value_matcher = category.value_matcher
         
         # Get a list of the properties for the nodes
         properties = self._match_properties(data, value_matcher)
@@ -245,7 +203,7 @@ class GraphLoader:
         f"UNWIND $properties AS props "
         f'CALL {{'
         f'    WITH props '
-        f'    CREATE (n: {category["name"]}) '
+        f'    CREATE (n: {category.name}) '
         f'    SET n = properties(props) '
         f'}} IN TRANSACTIONS'
         )
@@ -256,24 +214,21 @@ class GraphLoader:
             properties = properties
         )
 
-    def write_relation(self, relation_handle: RelationshipHandle, batch_size=1000):
+    def write_relation(self, relationship: Relationship, batch_size=1000):
         """ Write a relationship to Neo4j
 
         Args:
             relation_handle (RelationshipHandle): The relationship to write
             batch_size (int, optional): A number of nodes to write the connection for at once. Defaults to 1000.
         """
-        relation = self._relations[relation_handle]
-        category1 = self._categories[relation["category_1"]]
-        category2 = self._categories[relation["category_2"]]
-        data = self._loaded_data[category1["data_handle"]]
-        links = relation["links"]
-        props = relation["props"]
+        category1 = relationship.category_1
+        category2 = relationship.category_2
+        data = self._loaded_data[category1.data_handle]
         
         # There is no point running the query if there is no data to write
         if len(data) == 0: return
         
-        data_1_key, data_match, data_2_key = links
+        data_1_key, data_match, data_2_key = relationship.links
 
         # Create the links between categories
         link_values = [ 
@@ -283,7 +238,7 @@ class GraphLoader:
                 
                 # Relationship properties
                 { 
-                 (prop[0] if type(prop) == tuple else prop): (row[prop[1]] if type(prop) == tuple else row[prop]) for prop in props 
+                 (prop[0] if type(prop) == tuple else prop): (row[prop[1]] if type(prop) == tuple else row[prop]) for prop in relationship.props 
                 }
              ]
              for row in data
@@ -300,10 +255,10 @@ class GraphLoader:
         f'UNWIND $data AS row '
         f'CALL {{ '
         f'    WITH row '
-        f'    MATCH (n1: {category1["name"]}) {where_1} '
+        f'    MATCH (n1: {category1.name}) {where_1} '
         f'    WITH row, n1 '
-        f'    MATCH (n2: {category2["name"]}) {where_2} '
-        f'    CREATE (n1)-[r:{relation["name"]}]->(n2) '
+        f'    MATCH (n2: {category2.name}) {where_2} '
+        f'    CREATE (n1)-[r:{relationship.name}]->(n2) '
         f'    SET r = properties(row[2]) '
         f'}} IN TRANSACTIONS'
         )
@@ -317,7 +272,7 @@ class GraphLoader:
             )
             
             # Update the progress information
-            print(f"\rWriting {relation['name']} {((batch + len(sub_link_values)) / len(link_values)):.0%}" + (" " * 10), end='')
+            print(f"\rWriting {relationship.name} {((batch + len(sub_link_values)) / len(link_values)):.0%}" + (" " * 10), end='')
         print()
         
     def clear_all(self):
