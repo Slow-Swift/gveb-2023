@@ -3,7 +3,7 @@ from neo4j import Session
 from category import Category
 from relationship import Relationship
 
-class GraphLoader:
+class GraphWriter:
 
     def __init__(self, session: Session):
         self._session = session

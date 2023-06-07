@@ -2,7 +2,7 @@ import utm
 
 from neo4j import GraphDatabase
 
-from loader import GraphLoader
+from graph_writer import GraphWriter
 
 from conversion_functions import convert_if_not_null
 from conversion_functions import create_regular_str
@@ -404,7 +404,7 @@ def create_relationships(junctions, segments, transit, crimes, stores, rtransit,
     return relationships
 
 def load_data(session):
-    loader = GraphLoader(session)
+    loader = GraphWriter(session)
     
     print("Loading Data")
     junction_data, junctions = load_junctions()
