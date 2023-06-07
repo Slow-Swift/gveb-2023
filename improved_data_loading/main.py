@@ -7,7 +7,7 @@ from loader import convert_if_not_null
 from loader import RowFunction
 
 # Change this to point to the directory of your database information
-DATABASE_INFO_FILEPATH = r"E:\Environmental Backcloth\dbinfo.txt"
+DATABASE_INFO_FILEPATH = r"../../dbinfo.txt"
 
 JUNCTION_FILE = '../data/junctions.csv'
 SEGMENT_FILE = '../data/streetsegments_new.csv'
@@ -15,6 +15,7 @@ CRIME_FILE = '../data/vanc_crime_2022.csv'
 TRANSIT_FILE = '../data/transitstops.csv'
 RAPID_TRANSIT_FILE = '../data/rapid-transit-stations.csv'
 COMMERCIAL_FILE = '../data/storefronts-inventory_new.csv'
+SCHOOL_FILE = '../data/schools.csv'
 
 
 ZONE_NUMBER = 10
@@ -205,14 +206,7 @@ def load_transit(loader: GraphLoader, segment_data):
         }
     )
     
-    loader.match_closest(
-        transit_data, segment_data, 
-        ['longitude', 'latitude'],
-        {
-            'closest': ('street_id', 'id'),
-            'distance': 'street_dst'
-        }
-    )
+    match_lat_lng(loader, transit_data, segment_data, 'street_id', 'street_dst')
     
     transit = loader.define_category(
         "Transit",
@@ -247,14 +241,7 @@ def load_crimes(loader: GraphLoader, junction_data):
         }
     )
     
-    loader.match_closest(
-        crime_data, junction_data, 
-        ['latitude', 'longitude'],
-        {
-            'closest': ('junction_id', 'id'),
-            'distance': 'junction_dst'
-        }
-    ),
+    match_junctions(loader, crime_data, junction_data)
     
     crimes = loader.define_category(
         'Crime',
@@ -290,14 +277,7 @@ def load_stores(loader: GraphLoader, junction_data):
         }
     )
     
-    loader.match_closest(
-        stores_data, junction_data,
-        ['latitude', 'longitude'],
-        {
-            'closest': ('junction_id', 'id'),
-            'distance': 'junction_dst'
-        }
-    )
+    match_junctions(loader, stores_data, junction_data)
     
     stores = loader.define_category(
         "Store",
@@ -330,14 +310,7 @@ def load_rapid_transit(loader: GraphLoader, junction_data):
         delimiter=';'
     )
     
-    loader.match_closest(
-        rtransit_data, junction_data,
-        ['latitude', 'longitude'],
-        {
-            'closest': ('junction_id', 'id'),
-            'distance': 'junction_dst'
-        }
-    )
+    match_junctions(loader, rtransit_data, junction_data)
     
     rtransit = loader.define_category(
         "RapidTransit",
@@ -353,6 +326,37 @@ def load_rapid_transit(loader: GraphLoader, junction_data):
     
     return rtransit_data, rtransit
 
+def load_schools(loader: GraphLoader, junction_data):
+    schools_data = loader.load_file(
+        SCHOOL_FILE,
+        {
+            'id': RowFunction(lambda row, i: i + 1),
+            'address': (str, 'ADDRESS'),
+            'category': (str, 'SCHOOL_CATEGORY'),
+            'name': (str, 'SCHOOL_NAME'),
+            'latitude': (lambda v: float(v.split(', ')[0]), 'geo_point_2d'),
+            'longitude': (lambda v: float(v.split(', ')[1]), 'geo_point_2d'),
+        },
+        delimiter=';'
+    )
+    
+    match_junctions(loader, schools_data, junction_data)
+    
+    schools = loader.define_category(
+        "School",
+        schools_data,
+        [
+            'id',
+            'address',
+            'category',
+            'name',
+            'latitude',
+            'longitude'
+        ]
+    )
+    
+    return schools_data, schools
+
 def load_data(session):
     loader = GraphLoader(session)
     
@@ -362,7 +366,8 @@ def load_data(session):
     # transit_data, transit = load_transit(loader, segment_data)
     # crime_data, crimes = load_crimes(loader, junction_data)
     # stores_data, stores = load_stores(loader, junction_data)
-    rtransit_data, rtransit = load_rapid_transit(loader, junction_data)
+    # rtransit_data, rtransit = load_rapid_transit(loader, junction_data)
+    schools_data, schools = load_schools(loader, junction_data)
     
     # continues_to = loader.define_relation(
     #     "CONTINUES_TO",
@@ -395,12 +400,20 @@ def load_data(session):
     #     props = [('store_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
     # )
     
-    nearest_station_jn = loader.define_relation(
-        'NEAREST_STATION_JN',
-        rtransit,
+    # nearest_station_jn = loader.define_relation(
+    #     'NEAREST_STATION_JN',
+    #     rtransit,
+    #     junctions,
+    #     ('id', 'junction_id', 'id'),
+    #     props = [('station_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
+    # )
+    
+    nearest_school_jn = loader.define_relation(
+        'NEAREST_SCHOOL_JN',
+        schools,
         junctions,
         ('id', 'junction_id', 'id'),
-        props = [('station_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
+        props = [('school_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
     )
     
     # loader.clear_all()
@@ -421,14 +434,19 @@ def load_data(session):
     #loader.write_category(stores)
     #print("Wrote Stores")
     
-    loader.write_category(rtransit)
-    print("Wrote Rapit Transit")
+    # loader.write_category(rtransit)
+    # print("Wrote Rapit Transit")
+    
+    loader.write_category(schools)
+    print("Wrote schools")
+    
     
     # loader.write_relation(continues_to)
     # loader.write_relation(present_in)
     # loader.write_relation(nearest_crime_jn)
     # loader.write_relation(nearest_store_jn)
-    loader.write_relation(nearest_station_jn)
+    # loader.write_relation(nearest_station_jn)
+    loader.write_relation(nearest_school_jn)
     
     # session.run(
     #     '''
@@ -448,6 +466,19 @@ def load_data(session):
 def create_regular_str(old_str):
     if not old_str.isnumeric(): return old_str
     return old_str if int(old_str)>9 else "0"+old_str
+
+def match_lat_lng(loader, data_1, data_2, id_name, dst_name):
+    loader.match_closest(
+        data_1, data_2,
+        ['latitude', 'longitude'],
+        {
+            'closest': (id_name, 'id'),
+            'distance': dst_name
+        }
+    )
+    
+def match_junctions(loader, data, junctions):
+    match_lat_lng(loader, data, junctions, 'junction_id', 'junction_dst')
     
 # Start the program
 if __name__ == "__main__":
