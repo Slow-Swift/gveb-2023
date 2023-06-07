@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import warnings
+
 import csv
 
 from typing import Callable
@@ -15,6 +17,9 @@ class Dataset:
     def __init__(self, rows: list[Row], primary_key='id'):
         self._rows = rows
         self.primary_key = primary_key
+        
+        if len(self._rows) > 0 and not self.primary_key in self._rows[0]:
+            warnings.warn("WARNING: Primary key not in dataset")
         
     def __len__(self):
         return len(self._rows)
