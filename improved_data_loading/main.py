@@ -364,28 +364,7 @@ def load_schools(junction_data):
     
     return schools_data, schools
 
-def load_data(session):
-    loader = GraphLoader(session)
-    
-    print("Loading Data")
-    junction_data, junctions = load_junctions()
-    segment_data, segments = load_segments()
-    transit_data, transit = load_transit(segment_data)
-    crime_data, crimes = load_crimes(junction_data)
-    stores_data, stores = load_stores(junction_data)
-    rtransit_data, rtransit = load_rapid_transit(junction_data)
-    schools_data, schools = load_schools(junction_data)
-    
-    categories = [
-        # junctions,
-        # segments,
-        # transit,
-        # crimes,
-        # stores,
-        # rtransit,
-        schools
-    ]
-    
+def create_relationships(junctions, segments, transit, crimes, stores, rtransit, schools):
     continues_to = Relationship('CONTINUES_TO', segments, junctions, 'neighbors')
     
     present_in = Relationship(
@@ -421,6 +400,34 @@ def load_data(session):
         #  nearest_station_jn,
          nearest_school_jn
     ]
+    
+    return relationships
+
+def load_data(session):
+    loader = GraphLoader(session)
+    
+    print("Loading Data")
+    junction_data, junctions = load_junctions()
+    segment_data, segments = load_segments()
+    transit_data, transit = load_transit(segment_data)
+    crime_data, crimes = load_crimes(junction_data)
+    stores_data, stores = load_stores(junction_data)
+    rtransit_data, rtransit = load_rapid_transit(junction_data)
+    schools_data, schools = load_schools(junction_data)
+    
+    categories = [
+        # junctions,
+        # segments,
+        # transit,
+        # crimes,
+        # stores,
+        # rtransit,
+        schools
+    ]
+    
+    relationships = create_relationships(
+        junctions, segments, transit, crimes, stores, rtransit, schools
+    )
     
     print("Writing Data")
     # loader.clear_all()
