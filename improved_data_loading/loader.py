@@ -1,31 +1,7 @@
-import csv
-
 from neo4j import Session
-
-from typing import Callable
-from typing import Any
-from typing import TypeAlias
-from collections.abc import Sequence
 
 from category import Category
 from relationship import Relationship
-
-# Type Declarations
-DataHandle: TypeAlias = int
-Row: TypeAlias = dict[str, Any]
-ConversionFunction: TypeAlias = Callable[[Any], Any]
-
-class RowFunction:
-    def __init__(self, f: Callable[[Row, int], Any]):
-        self.f = f
-
-ConversionMap: TypeAlias = dict[str, ConversionFunction | RowFunction | tuple[ConversionFunction, str]]
-
-def is_not_null(val):
-    return (val or str.isspace(val) or val == 0)
-
-def convert_if_not_null(val, convert=float, on_null: Any=0):
-    return convert(val) if is_not_null(val) else on_null
 
 class GraphLoader:
 
@@ -67,7 +43,6 @@ class GraphLoader:
         """
         category1 = relationship.category_1
         category2 = relationship.category_2
-        data = category1.data
 
         # Create the links between categories
         links = relationship.get_links();

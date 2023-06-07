@@ -2,20 +2,13 @@ from __future__ import annotations
 
 import csv
 
-
 from typing import Callable
 from typing import Any
-from typing import TypeAlias
 from collections.abc import Sequence
 
-Row: TypeAlias = dict[str, Any]
-ConversionFunction: TypeAlias = Callable[[Any], Any]
-
-class RowFunction:
-    def __init__(self, f: Callable[[Row, int], Any]):
-        self.f = f
-
-ConversionMap: TypeAlias = dict[str, ConversionFunction | RowFunction | tuple[ConversionFunction, str]]
+from conversion_functions import Row
+from conversion_functions import RowFunction
+from conversion_functions import ConversionMap
 
 class Dataset:
     
@@ -203,7 +196,7 @@ class Dataset:
                 result[key] = (lambda func, fn: 
                     lambda row, index: func(row[fn]))(func, fieldname)
             # The conversion is RowFunction(function)
-            elif type(conversions[key])  == RowFunction:
+            elif type(conversions[key]) == RowFunction:
                 # Have to use instantly called lambda expression wrapper to avoid late binding
                 result[key] = (lambda rowf: rowf.f)(conversions[key])                       # type: ignore
             # The conversion is function

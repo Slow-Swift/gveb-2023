@@ -3,7 +3,11 @@ import utm
 from neo4j import GraphDatabase
 
 from loader import GraphLoader
-from loader import convert_if_not_null
+
+from conversion_functions import convert_if_not_null
+from conversion_functions import create_regular_str
+from conversion_functions import generate_id
+from conversion_functions import split_latitude, split_longitude
 
 from category import Category
 from relationship import Relationship
@@ -233,7 +237,7 @@ def load_crimes(junction_data):
     crime_data = Dataset.load_file(
         CRIME_FILE,
         {
-            'crime_id': RowFunction(lambda row, i: i + 1),
+            'crime_id': generate_id,
             'type_of_crime': (str, 'TYPE'),
             'date_of_crime': RowFunction(lambda row, i: f"{row['YEAR']}-{create_regular_str(row['MONTH'])}-{create_regular_str(row['DAY'])}"),
             'time_of_crime': RowFunction(lambda row, i: f"{create_regular_str(row['HOUR'])}:{create_regular_str(row['MINUTE'])}"),
@@ -275,8 +279,8 @@ def load_stores(junction_data):
             'street_name': (str, 'Street name - Parcel'),
             'name': (str, 'Business name'),
             'category': (str, 'Retail category'),
-            'latitude': (lambda v: float(v.split(', ')[0]), 'geo_point_2d'),
-            'longitude': (lambda v: float(v.split(', ')[1]), 'geo_point_2d'),
+            'latitude': (split_latitude, 'geo_point_2d'),
+            'longitude': (split_longitude, 'geo_point_2d'),
         }
     )
     
@@ -304,11 +308,11 @@ def load_rapid_transit(junction_data):
     rtransit_data = Dataset.load_file(
         RAPID_TRANSIT_FILE,
         {
-            'id': RowFunction(lambda row, i: i + 1),
+            'id': generate_id,
             'name': (str, 'STATION'),
             'area': (str, 'Geo Local Area'),
-            'latitude': (lambda v: float(v.split(', ')[0]), 'geo_point_2d'),
-            'longitude': (lambda v: float(v.split(', ')[1]), 'geo_point_2d'),
+            'latitude': (split_latitude, 'geo_point_2d'),
+            'longitude': (split_longitude, 'geo_point_2d'),
         },
         delimiter=';'
     )
@@ -333,12 +337,12 @@ def load_schools(junction_data):
     schools_data = Dataset.load_file(
         SCHOOL_FILE,
         {
-            'id': RowFunction(lambda row, i: i + 1),
+            'id': generate_id,
             'address': (str, 'ADDRESS'),
             'category': (str, 'SCHOOL_CATEGORY'),
             'name': (str, 'SCHOOL_NAME'),
-            'latitude': (lambda v: float(v.split(', ')[0]), 'geo_point_2d'),
-            'longitude': (lambda v: float(v.split(', ')[1]), 'geo_point_2d'),
+            'latitude': (split_latitude, 'geo_point_2d'),
+            'longitude': (split_longitude, 'geo_point_2d'),
         },
         delimiter=';'
     )
@@ -447,10 +451,6 @@ def join_junctions(session):
         } IN TRANSACTIONS
         '''
     )
-
-def create_regular_str(old_str):
-    if not old_str.isnumeric(): return old_str
-    return old_str if int(old_str)>9 else "0"+old_str
     
 def match_junctions(data, junctions):
     data.match_lat_lng(junctions, 'junction_id', 'junction_dst')
