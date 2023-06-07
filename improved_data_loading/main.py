@@ -4,10 +4,11 @@ from neo4j import GraphDatabase
 
 from loader import GraphLoader
 from loader import convert_if_not_null
-from loader import RowFunction
 
 from category import Category
 from relationship import Relationship
+from dataset import Dataset
+from dataset import RowFunction
 
 # Change this to point to the directory of your database information
 DATABASE_INFO_FILEPATH = r"../../dbinfo.txt"
@@ -19,7 +20,6 @@ TRANSIT_FILE = '../data/transitstops.csv'
 RAPID_TRANSIT_FILE = '../data/rapid-transit-stations.csv'
 COMMERCIAL_FILE = '../data/storefronts-inventory_new.csv'
 SCHOOL_FILE = '../data/schools.csv'
-
 
 ZONE_NUMBER = 10
 ZONE_LETTER = 'U'
@@ -85,10 +85,10 @@ def create_driver():
 
 ## Data Loading ##
 
-def load_junctions(loader: GraphLoader):
+def load_junctions():
     print("Loading Junctions")
     
-    junctionData = loader.load_file(
+    junctionData = Dataset.load_file(
         JUNCTION_FILE, 
         {
             'id': (int, "JunctionID"),
@@ -116,9 +116,9 @@ def load_junctions(loader: GraphLoader):
     print("Loaded Junctions")
     return junctionData, junctions
 
-def load_segments(loader: GraphLoader):
+def load_segments():
     print("Loading Segments")
-    segmentData = loader.load_file(
+    segmentData = Dataset.load_file(
         SEGMENT_FILE, 
         {
             'id': (int, "StreetID"),
@@ -194,10 +194,10 @@ def load_segments(loader: GraphLoader):
     
     return segmentData, segments
 
-def load_transit(loader: GraphLoader, segment_data):
+def load_transit(segment_data):
     print("Loading Transit")
     
-    transit_data = loader.load_file(
+    transit_data = Dataset.load_file(
         TRANSIT_FILE, 
         {
             'stop_id': int,
@@ -209,7 +209,7 @@ def load_transit(loader: GraphLoader, segment_data):
         }
     )
     
-    match_lat_lng(loader, transit_data, segment_data, 'street_id', 'street_dst')
+    transit_data.match_lat_lng(segment_data, 'street_id', 'street_dst')
     
     transit = Category(
         "Transit",
@@ -227,10 +227,10 @@ def load_transit(loader: GraphLoader, segment_data):
     print("Loaded Transit")
     return transit_data, transit
 
-def load_crimes(loader: GraphLoader, junction_data):
+def load_crimes(junction_data):
     print("Loading Crimes")
     
-    crime_data = loader.load_file(
+    crime_data = Dataset.load_file(
         CRIME_FILE,
         {
             'crime_id': RowFunction(lambda row, i: i + 1),
@@ -244,7 +244,7 @@ def load_crimes(loader: GraphLoader, junction_data):
         }
     )
     
-    match_junctions(loader, crime_data, junction_data)
+    match_junctions(crime_data, junction_data)
     
     crimes = Category(
         'Crime',
@@ -264,9 +264,9 @@ def load_crimes(loader: GraphLoader, junction_data):
     print("Loaded Crimes")
     return crime_data, crimes
 
-def load_stores(loader: GraphLoader, junction_data):
+def load_stores(junction_data):
     print("Loading Stores")
-    stores_data = loader.load_file(
+    stores_data = Dataset.load_file(
         COMMERCIAL_FILE,
         {
             'id': (int, 'ID'),
@@ -280,7 +280,7 @@ def load_stores(loader: GraphLoader, junction_data):
         }
     )
     
-    match_junctions(loader, stores_data, junction_data)
+    match_junctions(stores_data, junction_data)
     
     stores = Category(
         "Store",
@@ -300,8 +300,8 @@ def load_stores(loader: GraphLoader, junction_data):
     print("Loaded Stores")
     return stores_data, stores
 
-def load_rapid_transit(loader: GraphLoader, junction_data):
-    rtransit_data = loader.load_file(
+def load_rapid_transit(junction_data):
+    rtransit_data = Dataset.load_file(
         RAPID_TRANSIT_FILE,
         {
             'id': RowFunction(lambda row, i: i + 1),
@@ -313,7 +313,7 @@ def load_rapid_transit(loader: GraphLoader, junction_data):
         delimiter=';'
     )
     
-    match_junctions(loader, rtransit_data, junction_data)
+    match_junctions(rtransit_data, junction_data)
     
     rtransit = Category(
         "RapidTransit",
@@ -329,8 +329,8 @@ def load_rapid_transit(loader: GraphLoader, junction_data):
     
     return rtransit_data, rtransit
 
-def load_schools(loader: GraphLoader, junction_data):
-    schools_data = loader.load_file(
+def load_schools(junction_data):
+    schools_data = Dataset.load_file(
         SCHOOL_FILE,
         {
             'id': RowFunction(lambda row, i: i + 1),
@@ -343,7 +343,7 @@ def load_schools(loader: GraphLoader, junction_data):
         delimiter=';'
     )
     
-    match_junctions(loader, schools_data, junction_data)
+    match_junctions(schools_data, junction_data)
     
     schools = Category(
         "School",
@@ -364,13 +364,13 @@ def load_data(session):
     loader = GraphLoader(session)
     
     print("Loading Data")
-    junction_data, junctions = load_junctions(loader)
-    segment_data, segments = load_segments(loader)
-    transit_data, transit = load_transit(loader, segment_data)
-    crime_data, crimes = load_crimes(loader, junction_data)
-    stores_data, stores = load_stores(loader, junction_data)
-    rtransit_data, rtransit = load_rapid_transit(loader, junction_data)
-    schools_data, schools = load_schools(loader, junction_data)
+    junction_data, junctions = load_junctions()
+    segment_data, segments = load_segments()
+    transit_data, transit = load_transit(segment_data)
+    crime_data, crimes = load_crimes(junction_data)
+    stores_data, stores = load_stores(junction_data)
+    rtransit_data, rtransit = load_rapid_transit(junction_data)
+    schools_data, schools = load_schools(junction_data)
     
     categories = [
         # junctions,
@@ -382,50 +382,30 @@ def load_data(session):
         schools
     ]
     
-    continues_to = Relationship(
-        "CONTINUES_TO",
-        segments,
-        junctions,
-        ("id", "neighbors", "id") 
-    )
+    continues_to = Relationship('CONTINUES_TO', segments, junctions, 'neighbors')
     
     present_in = Relationship(
-        'PRESENT_IN',
-        transit,
-        segments,
-        ('stop_id', 'street_id', 'id'),
+        'PRESENT_IN', transit, segments, 'street_id',
         props = ['stop_id', 'street_id', ('distance', 'street_dst')]
     )
     
     nearest_crime_jn = Relationship(
-        'NEAREST_CRIME_JN',
-        crimes,
-        junctions,
-        ('crime_id', 'junction_id', 'id'),
+        'NEAREST_CRIME_JN', crimes, junctions, 'junction_id',
         props = ['crime_id', 'junction_id', ('distance', 'junction_dst')]
     )
     
     nearest_store_jn = Relationship(
-        'NEAREST_JN',
-        stores,
-        junctions,
-        ('id', 'junction_id', 'id'),
+        'NEAREST_JN', stores, junctions, 'junction_id',
         props = [('store_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
     )
     
     nearest_station_jn = Relationship(
-        'NEAREST_STATION_JN',
-        rtransit,
-        junctions,
-        ('id', 'junction_id', 'id'),
+        'NEAREST_STATION_JN', rtransit, junctions, 'junction_id',
         props = [('station_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
     )
     
     nearest_school_jn = Relationship(
-        'NEAREST_SCHOOL_JN',
-        schools,
-        junctions,
-        ('id', 'junction_id', 'id'),
+        'NEAREST_SCHOOL_JN', schools, junctions, 'junction_id',
         props = [('school_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
     )
     
@@ -471,19 +451,9 @@ def join_junctions(session):
 def create_regular_str(old_str):
     if not old_str.isnumeric(): return old_str
     return old_str if int(old_str)>9 else "0"+old_str
-
-def match_lat_lng(loader, data_1, data_2, id_name, dst_name):
-    loader.match_closest(
-        data_1, data_2,
-        ['latitude', 'longitude'],
-        {
-            'closest': (id_name, 'id'),
-            'distance': dst_name
-        }
-    )
     
-def match_junctions(loader, data, junctions):
-    match_lat_lng(loader, data, junctions, 'junction_id', 'junction_dst')
+def match_junctions(data, junctions):
+    data.match_lat_lng(junctions, 'junction_id', 'junction_dst')
     
 # Start the program
 if __name__ == "__main__":
