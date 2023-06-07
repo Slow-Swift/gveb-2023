@@ -1,18 +1,17 @@
 import utm
-
 from neo4j import GraphDatabase
+from time import perf_counter
 
+from dataset import Dataset
+from category import Category
+from relationship import Relationship
 from graph_writer import GraphWriter
 
+from conversion_functions import RowFunction
 from conversion_functions import convert_if_not_null
 from conversion_functions import create_regular_str
 from conversion_functions import generate_id
 from conversion_functions import split_latitude, split_longitude
-
-from category import Category
-from relationship import Relationship
-from dataset import Dataset
-from dataset import RowFunction
 
 # Change this to point to the directory of your database information
 DATABASE_INFO_FILEPATH = r"../../dbinfo.txt"
@@ -37,8 +36,13 @@ def main():
     with driver.session() as session:
         if not session: return
         
+        start_time = perf_counter()
         load_data(session)
+        end_time = perf_counter()
+        
     driver.close()
+    elapsed_time = end_time - start_time
+    print(f"Completed in {(elapsed_time / 60):.0f}:{(elapsed_time % 60):.0f} minutes")
 
 ## Database Setup ##
 
@@ -210,7 +214,8 @@ def load_transit(segment_data):
             'zone_id': str,
             'longitude': (float, 'stop_lat'),
             'latitude': (float, 'stop_lat')
-        }
+        },
+        primary_key='stop_id'
     )
     
     transit_data.match_lat_lng(segment_data, 'street_id', 'street_dst')
@@ -237,7 +242,7 @@ def load_crimes(junction_data):
     crime_data = Dataset.load_file(
         CRIME_FILE,
         {
-            'crime_id': generate_id,
+            'id': generate_id,
             'type_of_crime': (str, 'TYPE'),
             'date_of_crime': RowFunction(lambda row, i: f"{row['YEAR']}-{create_regular_str(row['MONTH'])}-{create_regular_str(row['DAY'])}"),
             'time_of_crime': RowFunction(lambda row, i: f"{create_regular_str(row['HOUR'])}:{create_regular_str(row['MINUTE'])}"),
@@ -245,7 +250,7 @@ def load_crimes(junction_data):
             'recency': (str, 'RECENCY'),
             'latitude': RowFunction(lambda row, i: utm.to_latlon(float(row["X"]), float(row["Y"]), ZONE_NUMBER, ZONE_LETTER)[0]),
             'longitude': RowFunction(lambda row, i: utm.to_latlon(float(row["X"]), float(row["Y"]), ZONE_NUMBER, ZONE_LETTER)[1]),
-        }
+        },
     )
     
     match_junctions(crime_data, junction_data)
@@ -254,7 +259,7 @@ def load_crimes(junction_data):
         'Crime',
         crime_data,
         [
-            'crime_id',
+            'id',
             'type_of_crime',
             'date_of_crime',
             'time_of_crime',
@@ -305,6 +310,7 @@ def load_stores(junction_data):
     return stores_data, stores
 
 def load_rapid_transit(junction_data):
+    print("Loading Rapid Transit")
     rtransit_data = Dataset.load_file(
         RAPID_TRANSIT_FILE,
         {
@@ -330,10 +336,13 @@ def load_rapid_transit(junction_data):
             'longitude'
         ]
     )
+    print("Loaded Rapid Transit")
     
     return rtransit_data, rtransit
 
 def load_schools(junction_data):
+    print("Loading Schools")
+    
     schools_data = Dataset.load_file(
         SCHOOL_FILE,
         {
@@ -362,6 +371,8 @@ def load_schools(junction_data):
         ]
     )
     
+    print("Loaded Schools")
+    
     return schools_data, schools
 
 def create_relationships(junctions, segments, transit, crimes, stores, rtransit, schools):
@@ -374,7 +385,7 @@ def create_relationships(junctions, segments, transit, crimes, stores, rtransit,
     
     nearest_crime_jn = Relationship(
         'NEAREST_CRIME_JN', crimes, junctions, 'junction_id',
-        props = ['crime_id', 'junction_id', ('distance', 'junction_dst')]
+        props = [('crime_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
     )
     
     nearest_store_jn = Relationship(
@@ -393,18 +404,17 @@ def create_relationships(junctions, segments, transit, crimes, stores, rtransit,
     )
     
     relationships = [
-        #  continues_to,
-        #  present_in,
-        #  nearest_crime_jn,
-        #  nearest_store_jn,
-        #  nearest_station_jn,
-         nearest_school_jn
+        continues_to,
+        present_in,
+        nearest_crime_jn,
+        nearest_store_jn,
+        nearest_station_jn,
+        nearest_school_jn
     ]
     
     return relationships
 
 def load_data(session):
-    loader = GraphWriter(session)
     
     print("Loading Data")
     junction_data, junctions = load_junctions()
@@ -416,12 +426,12 @@ def load_data(session):
     schools_data, schools = load_schools(junction_data)
     
     categories = [
-        # junctions,
-        # segments,
-        # transit,
-        # crimes,
-        # stores,
-        # rtransit,
+        junctions,
+        segments,
+        transit,
+        crimes,
+        stores,
+        rtransit,
         schools
     ]
     
@@ -430,16 +440,17 @@ def load_data(session):
     )
     
     print("Writing Data")
-    # loader.clear_all()
+    writer = GraphWriter(session)
+    writer.clear_all()
     
     for category in categories:
-        loader.write_category(category)
+        writer.write_category(category)
         print(f"Wrote {category.name}")
     
     for relation in relationships:
-        loader.write_relation(relation)
+        writer.write_relation(relation)
     
-    # join_junctions(session)
+    join_junctions(session)
     
     print("Done")
     
