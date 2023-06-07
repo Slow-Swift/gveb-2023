@@ -1,5 +1,5 @@
 ``` js
-api = getApi()
+api = getApi("0.0.227")
 ```
 
 ``` js
@@ -46,13 +46,13 @@ function get_neighbor_and_length(graph, junction) {
 
 ``` js
 Grove.AsyncButton({
-  label: "Process agent", 
-  onClick: processAgent
+  label: "Run Agent", 
+  onClick: pathWalker
 })
 ```
 
 ``` js
-async function processAgent () {
+async function randomWalker () {
   data.running = true
   if (data.agent) {
   	data.agent.removeFrom(data.map);
@@ -89,6 +89,74 @@ async function processAgent () {
       
       data.j1.setLatLng([junction_1.properties.latitude, junction_1.properties.longitude]);
       data.j2.setLatLng([junction_2.properties.latitude, junction_2.properties.longitude]);
+    }
+    
+    agent_pos = lerp_nodes(junction_1, junction_2, time * meters_per_second / length);
+    agent.setLatLng(agent_pos);
+    await api.sleep(20);
+  }
+}
+```
+
+``` js
+async function pathWalker () {
+  data.running = true
+  if (data.agent) {
+  	data.agent.removeFrom(data.map);
+    data.j1.removeFrom(data.map);
+    data.j2.removeFrom(data.map);
+  }
+  
+  let graph = api.getLayoutGraph();
+  
+  let junctions = graph.getVisibleNodes().filter(api.nodesByCategory("Junction"));
+  if (junctions.length == 0) return;
+  
+  let start_junction = junctions[Math.floor(Math.random() * junctions.length)];
+  let end_junction = junctions[Math.floor(Math.random() * junctions.length)];
+  
+  data.j1 = L.circleMarker([start_junction.properties.latitude, start_junction.properties.longitude]).addTo(data.map);
+  data.j2 = L.circleMarker([end_junction.properties.latitude, end_junction.properties.longitude]).addTo(data.map);
+  
+  console.log("Running dijkstra")
+  let paths = api.dijkstra(graph, {sourceId: start_junction.id, targetId: end_junction.id, weightProperty: "length_meters"});
+  console.log("Dijkstra finished")
+  if (paths.length == 0 || paths[0].length < 2) return;
+  
+  let path = paths[0];
+  let path_index = 0;
+  
+  let junction_1 = graph.getNode(path[path_index].nodeId);
+  let junction_2 = graph.getNode(path[path_index + 1].nodeId);
+  let length = graph.getEdge(path[path_index].edgeId).properties.length_metres;
+  
+  let begin_time = performance.now() / 1000;
+  let time = begin_time;
+  let meters_per_second = 30;
+  
+  let agent_pos = lerp_nodes(junction_1, junction_2, 0);
+  let agent = L.marker(agent_pos).addTo(data.map);
+  data.agent = agent;
+ 
+  
+  
+  while (data.running) {
+    time = performance.now() / 1000 - begin_time;
+    
+    if (time * meters_per_second / length >= 1) {
+      begin_time += length / meters_per_second;
+      time = performance.now() / 1000 - begin_time;
+      path_index += 1;
+      if (path_index >= path.length - 1) {
+        data.running = false;
+        break;
+      }
+      junction_1 = junction_2;
+      junction_2 = graph.getNode(path[path_index + 1].nodeId);
+      length = graph.getEdge(path[path_index].edgeId).properties.length_metres;
+      
+      //data.j1.setLatLng([junction_1.properties.latitude, junction_1.properties.longitude]);
+      //data.j2.setLatLng([junction_2.properties.latitude, junction_2.properties.longitude]);
     }
     
     agent_pos = lerp_nodes(junction_1, junction_2, time * meters_per_second / length);
