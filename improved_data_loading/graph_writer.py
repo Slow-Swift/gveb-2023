@@ -78,6 +78,25 @@ class GraphWriter:
             print(f"\rWriting {relationship.name} {((batch + len(sub_link_values)) / len(links)):.0%}" + (" " * 10), end='')
         print(f"\rWriting {relationship.name} 100%" + (" " * 10))
         
+        
+    def clear_category(self, category: Category):
+        """ Delete all nodes in a category from the Neo4j database
+        
+        Any relationships connected to the nodes are also deleted
+
+        Args:
+            category (Category): The category to clear
+        """
+        self._session.run(
+            (
+                f'Match(n: {category.name})'
+                 'CALL {'
+                 '   WITH n'
+                 '   DETACH DELETE n'
+                 '} IN TRANSACTIONS'
+            ) # type: ignore
+        )
+        
     def clear_all(self):
         """ Delete all nodes and relationships from the Neo4j database
         """

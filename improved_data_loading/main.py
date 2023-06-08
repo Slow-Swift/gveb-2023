@@ -212,8 +212,8 @@ def load_transit(segment_data):
             'stop_code': int,
             'stop_name': str,
             'zone_id': str,
-            'longitude': (float, 'stop_lat'),
-            'latitude': (float, 'stop_lat')
+            'latitude': (float, 'stop_lat'),
+            'longitude': (float, 'stop_lon'),
         },
         primary_key='stop_id'
     )
@@ -416,6 +416,9 @@ def create_relationships(junctions, segments, transit, crimes, stores, rtransit,
 
 def load_data(session):
     
+    # This makes it easer to only load some of the data without having to modify too much code
+    junctions = segments = transit = crimes = stores = rtransit = schools = None
+    
     print("Loading Data")
     junction_data, junctions = load_junctions()
     segment_data, segments = load_segments()
@@ -444,6 +447,7 @@ def load_data(session):
     writer.clear_all()
     
     for category in categories:
+        writer.clear_category(category)
         writer.write_category(category)
         print(f"Wrote {category.name}")
     
