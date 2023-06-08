@@ -3,6 +3,7 @@ from __future__ import annotations
 import warnings
 
 import csv
+from math import cos, sin, atan2, sqrt, pi
 
 from typing import Callable
 from typing import Any
@@ -41,7 +42,7 @@ class Dataset:
         for row in self:
             func(row)
             
-    def match_closest(self, other_data: Dataset, match_keys: list[str | tuple[str, str]], on_match: Callable[[Row, Row, float], None]):
+    def match_closest(self, other_data: Dataset, distance_func: Callable[[Row, Row], float], on_match: Callable[[Row, Row, float], None]):
         """ Pair all the nodes in one data set to the closest node in another dataset
         
         WARNING: Creates a cross product between the two data sets. May run slowly for large datasets.
@@ -52,9 +53,9 @@ class Dataset:
             other_data (Dataset): The set of nodes used for finding the closest node
             match_keys (list[str | tuple(str, str)]): The fieldnames to use for distance. eg: ["latitude", "longitude"] or [("latitude", "LATITUDE"), ("longitude", "LONGITUDE")]
             result_fieldnames (dict[str, tuple | str]): The fieldnames to store the results in. Possible results include the closest node and the distance. eg: {"closest": ("near_node", "id"), "distance": "node_dist"}
+            p_norm (float, optional): The p_norm function to use for calculating distance. Defaults to 2 (euclidean distance).
         """
         
-        # TODO: Add multiple distance functions
         # TODO: Add a distance limiter
         
         # Match for each node in this dataset
@@ -64,15 +65,7 @@ class Dataset:
             
             # Find the closest node in data set 2
             for row_2 in other_data:
-                # Calculate the distance between [row_1] and [row_2]
-                # Manhattan distance
-                distance = 0
-                for key in match_keys:
-                    if type(key) == tuple:
-                        diff = row_1[key[0]] - row_2[key[1]]
-                    else:
-                        diff = row_1[key] - row_2[key]              # type: ignore  # Ignoring type because it should be str
-                    distance += abs(diff)
+                distance = distance_func(row_1, row_2)
                     
                 # Update the closest node
                 if distance < b_dist:
@@ -88,16 +81,52 @@ class Dataset:
                 print(f"\r    Matched {i} nodes. {(i / len(self)):.0%} {' ' * 10}", end='')
         print(f"\r    Matched {len(self)} nodes. 100% {' ' * 10}")
         
+    def match_closest_p_norm(
+        self, other_data: Dataset, match_keys: list[str | tuple[str, str]], on_match: Callable[[Row, Row, float], None], p_norm:float=2
+    ):
+        def distance(row_1: Row, row_2: Row) -> float:
+            distance = 0
+            for key in match_keys:
+                if type(key) == tuple:
+                    delta = row_1[key[0]] - row_2[key[1]]
+                else:
+                    delta = row_1[key] - row_2[key]              # type: ignore  # Ignoring type because it should be str
+                distance += pow(abs(delta), p_norm)
+            return pow(distance, 1/p_norm)
+        
+        self.match_closest(other_data, distance, on_match)
+        
     def match_lat_lng(self, other_data: Dataset, match_field: str, dst_field:str):
         def on_match(row_1, row_2, dst):
             row_1[match_field] = row_2[other_data.primary_key]
             row_1[dst_field] = dst
+            
         
-        self.match_closest(
-            other_data,
-            ['latitude', 'longitude'],
-            on_match=on_match
-        )
+        def distance(row_1: Row, row_2: Row):
+            degrees_to_radians = pi / 180
+            radius = 6371   # Radius of the earth in km
+            
+            lat1 = row_1['latitude']
+            lon1 = row_1['longitude']
+            lat2 = row_2['latitude']
+            lon2 = row_2['longitude']
+            
+            delta_lat = lat1 - lat2
+            delta_lon = lon1 - lon2
+            
+            delta_lat_rad = delta_lat * degrees_to_radians
+            delta_lon_rad = delta_lon * degrees_to_radians
+            
+            a = (
+                sin(delta_lat_rad / 2) ** 2 + 
+                cos(lat1 * degrees_to_radians) * cos(lat2 * degrees_to_radians) *
+                sin(delta_lon_rad / 2) ** 2
+            )
+            
+            c = 2 * atan2(sqrt(a), sqrt(1-a))
+            return radius * c * 1000
+        
+        self.match_closest(other_data, distance, on_match)
     
     @staticmethod
     def cross_data(data_1: Dataset, data_2: Dataset, func: Callable[[Row, Row], None]):

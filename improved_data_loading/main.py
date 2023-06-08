@@ -60,7 +60,7 @@ def load_db_info(filepath):
     """
     
     uri, user, password = None, None, None
-    with open(filepath) as dbinfo:
+    with open(filepath, 'r') as dbinfo:
         for line in dbinfo:
             line = line.strip()
             
@@ -389,7 +389,7 @@ def create_relationships(junctions, segments, transit, crimes, stores, rtransit,
     )
     
     nearest_store_jn = Relationship(
-        'NEAREST_JN', stores, junctions, 'junction_id',
+        'NEAREST_STORE_JN', stores, junctions, 'junction_id',
         props = [('store_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
     )
     
@@ -446,17 +446,23 @@ def load_data(session):
     writer = GraphWriter(session)
     writer.clear_all()
     
+    print()
+    print("-- Writing Categories --")
     for category in categories:
         writer.clear_category(category)
         writer.write_category(category)
         print(f"Wrote {category.name}")
     
+    print()
+    print("-- Writing Relationships --")
     for relation in relationships:
         writer.write_relation(relation)
     
+    print()
+    print("-- Running Finalizing Queries --")
     join_junctions(session)
     
-    print("Done")
+    print("Writing Data Completed")
     
 ## Helper functions ##
 
