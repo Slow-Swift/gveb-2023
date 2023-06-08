@@ -218,7 +218,7 @@ def load_transit(segment_data):
         primary_key='stop_id'
     )
     
-    transit_data.match_lat_lng(segment_data, 'street_id', 'street_dst')
+    transit_data.match_lat_lng_approx(segment_data, 'street_id', 'street_dst')
     
     transit = Category(
         "Transit",
@@ -480,8 +480,8 @@ def join_junctions(session):
         '''
     )
     
-def match_junctions(data, junctions):
-    data.match_lat_lng(junctions, 'junction_id', 'junction_dst')
+def match_junctions(data: Dataset, junctions):
+    data.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst')
     
 # Start the program
 if __name__ == "__main__":

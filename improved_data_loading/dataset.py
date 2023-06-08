@@ -51,9 +51,8 @@ class Dataset:
 
         Args:
             other_data (Dataset): The set of nodes used for finding the closest node
-            match_keys (list[str | tuple(str, str)]): The fieldnames to use for distance. eg: ["latitude", "longitude"] or [("latitude", "LATITUDE"), ("longitude", "LONGITUDE")]
-            result_fieldnames (dict[str, tuple | str]): The fieldnames to store the results in. Possible results include the closest node and the distance. eg: {"closest": ("near_node", "id"), "distance": "node_dist"}
-            p_norm (float, optional): The p_norm function to use for calculating distance. Defaults to 2 (euclidean distance).
+            distance_func (Callable[[Row, Row], float]): The function to use for calculating distance between two rows
+            on_match (Callable[[Row, Row, float], None]): The function to run when a row is matched with its closest row
         """
         
         # TODO: Add a distance limiter
@@ -84,6 +83,18 @@ class Dataset:
     def match_closest_p_norm(
         self, other_data: Dataset, match_keys: list[str | tuple[str, str]], on_match: Callable[[Row, Row, float], None], p_norm:float=2
     ):
+        """ Pair all the nodes in one data set to the closest node in another dataset
+        
+        WARNING: Creates a cross product between the two data sets. May run slowly for large datasets.
+        
+        Distance is the manhattan distance
+
+        Args:
+            other_data (Dataset): The set of nodes used for finding the closest node
+            match_keys (list[str | tuple(str, str)]): The fieldnames to use for distance. eg: ["latitude", "longitude"] or [("latitude", "LATITUDE"), ("longitude", "LONGITUDE")]
+            on_match (Callable[[Row, Row, float], None]): The function to run when a row is matched with its closest row
+            p_norm (float, optional): The p_norm function to use for calculating distance. Defaults to 2 (Euclidean distance)
+        """
         def distance(row_1: Row, row_2: Row) -> float:
             distance = 0
             for key in match_keys:
@@ -97,11 +108,21 @@ class Dataset:
         self.match_closest(other_data, distance, on_match)
         
     def match_lat_lng(self, other_data: Dataset, match_field: str, dst_field:str):
+        """ Pair all the rows in this dataset with the closest row in [other_data] based on latitude and longitude.
+        
+        The haversine formula is used to calculate distance in meters from latitude and longitude
+
+        Args:
+            other_data (Dataset): The data to match to
+            match_field (str): The name of the field in which to store the primary key of the other row of the match
+            dst_field (str): The name of the field in which to store the distance of the match
+        """
         def on_match(row_1, row_2, dst):
             row_1[match_field] = row_2[other_data.primary_key]
             row_1[dst_field] = dst
             
-        
+        # Implementation of the haversine formula found at 
+        # https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula#:~:text=from%20math%20import%20cos%2C%20asin,of%20completeness%3A%20Haversine%20on%20Wikipedia.
         def distance(row_1: Row, row_2: Row):
             degrees_to_radians = pi / 180
             radius = 6371   # Radius of the earth in km
@@ -121,6 +142,54 @@ class Dataset:
                 sin(delta_lat_rad / 2) ** 2 + 
                 cos(lat1 * degrees_to_radians) * cos(lat2 * degrees_to_radians) *
                 sin(delta_lon_rad / 2) ** 2
+            )
+            a = min(a, 1) # Clamp a to 1 incase of floating point errors or approximations
+            
+            
+            c = 2 * atan2(sqrt(a), sqrt(1-a))
+            return radius * c * 1000
+        
+        self.match_closest(other_data, distance, on_match)
+    
+    def match_lat_lng_approx(self, other_data: Dataset, match_field: str, dst_field:str):
+        """ Pair all the rows in this dataset with the aprroximated closes row in [other_data] based on latitude and longitude.
+        
+        The haversine formula is used to calculate distance in meters from latitude and longitude
+        The approximation should be close for points that are near to each other. 
+        sin(x) is approximated with x 
+
+        Args:
+            other_data (Dataset): The data to match to
+            match_field (str): The name of the field in which to store the primary key of the other row of the match
+            dst_field (str): The name of the field in which to store the distance of the match
+        """
+        
+        def on_match(row_1, row_2, dst):
+            row_1[match_field] = row_2[other_data.primary_key]
+            row_1[dst_field] = dst
+            
+        # Implementation of the haversine formula found at 
+        # https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula#:~:text=from%20math%20import%20cos%2C%20asin,of%20completeness%3A%20Haversine%20on%20Wikipedia.
+        def distance(row_1: Row, row_2: Row):
+            degrees_to_radians = pi / 180
+            radius = 6371   # Radius of the earth in km
+            
+            lat1 = row_1['latitude']
+            lon1 = row_1['longitude']
+            lat2 = row_2['latitude']
+            lon2 = row_2['longitude']
+            
+            delta_lat = lat1 - lat2
+            delta_lon = lon1 - lon2
+            
+            delta_lat_rad = delta_lat * degrees_to_radians
+            delta_lon_rad = delta_lon * degrees_to_radians
+            
+            # delta_lat_rad and delta_lon_rad should be quite small so sin(delta_lat_rad) can be approximated with delta_lat_rad
+            a = (
+                delta_lat_rad * delta_lat_rad +
+                cos(lat1 * degrees_to_radians) * cos(lat2 * degrees_to_radians) *
+                delta_lon_rad * delta_lon_rad
             )
             
             c = 2 * atan2(sqrt(a), sqrt(1-a))
