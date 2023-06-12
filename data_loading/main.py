@@ -17,11 +17,11 @@ from conversion_functions import split_latitude, split_longitude
 DATABASE_INFO_FILEPATH = r"../../dbinfo.txt"
 
 JUNCTION_FILE = '../data/junctions.csv'
-SEGMENT_FILE = '../data/streetsegments_new.csv'
+SEGMENT_FILE = '../data/streetsegments.csv'
 CRIME_FILE = '../data/vanc_crime_2022.csv'
 TRANSIT_FILE = '../data/transitstops.csv'
 RAPID_TRANSIT_FILE = '../data/rapid-transit-stations.csv'
-COMMERCIAL_FILE = '../data/storefronts-inventory_new.csv'
+COMMERCIAL_FILE = '../data/storefronts-inventory.csv'
 SCHOOL_FILE = '../data/schools.csv'
 
 ZONE_NUMBER = 10
