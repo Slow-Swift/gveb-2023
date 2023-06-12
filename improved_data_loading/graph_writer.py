@@ -97,6 +97,25 @@ class GraphWriter:
             ) # type: ignore
         )
         
+    def write_relationship_count(self, category: Category, relation: Relationship, property_name: str):
+        """ Add a property to nodes in [category] which contains the number of [relation]s that node has
+
+        Args:
+            category (Category): The category to create the property for
+            relation (Relationship): The relationship to count
+            property_name (str): The name of the property to create
+        """
+        
+        self._session.run((
+            f'MATCH (n:{category.name})',
+             'CALL {'
+             '  WITH n'
+            f'  MATCH (n)-[r:{relation.name}]-()'
+             '  RETURN count(r) as r_count'
+             '}'
+            f'SET j.{property_name} = r_count'
+        )) # type: ignore
+        
     def clear_all(self):
         """ Delete all nodes and relationships from the Neo4j database
         """

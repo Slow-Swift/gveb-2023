@@ -412,7 +412,7 @@ def create_relationships(junctions, segments, transit, crimes, stores, rtransit,
         nearest_school_jn
     ]
     
-    return relationships
+    return relationships, nearest_store_jn
 
 def load_data(session):
     
@@ -438,7 +438,7 @@ def load_data(session):
         schools
     ]
     
-    relationships = create_relationships(
+    relationships, nearest_store_jn = create_relationships(
         junctions, segments, transit, crimes, stores, rtransit, schools
     )
     
@@ -460,6 +460,7 @@ def load_data(session):
     
     print()
     print("-- Running Finalizing Queries --")
+    writer.write_relationship_count(junctions, nearest_store_jn, "store_count")
     join_junctions(session)
     
     print("Writing Data Completed")
