@@ -7,6 +7,18 @@ data = Object()
 ```
 
 ``` js
+categories = {yield {
+  	Junction: "orange",
+    Segment: "grey",
+    Crime: "red",
+    Transit: "blue",
+    RapidTransit: "blue",
+    Store: "green",
+    School: "purple"
+}}
+```
+
+``` js
 md`# Graph Management`
 ```
 
@@ -19,23 +31,23 @@ Grove.Div({
           children: [
           	Grove.Div({
               className: "col text-center",
-              children: [clearGraphBtn]	
+              children: [select]	
             }),
             Grove.Div({
               className: "col text-center",
-              children: [loadGraphBtn]	
+              children: [loadSelectedCategoryBtn]	
             }),
             Grove.Div({
               className: "col text-center",
-              children: [loadRoadBtn]	
+              children: [removeCategoryBtn]	
             }),
             Grove.Div({
               className: "col text-center",
-              children: []	
+              children: [selectCategoryBtn]	
             }),
             Grove.Div({
               className: "col text-center",
-              children: []	
+              children: [unselectCategoryBtn]	
             })
           ]
         })
@@ -52,19 +64,19 @@ Grove.Div({
           children: [
           	Grove.Div({
               className: "col text-center",
-              children: [loadJunctionsBtn]	
+              children: [loadAllBtn]	
             }),
             Grove.Div({
               className: "col text-center",
-              children: [loadSegmentsBtn]	
+              children: [removeAllBtn]	
             }),
             Grove.Div({
               className: "col text-center",
-              children: [loadCrimesBtn]	
+              children: [selectAllBtn]	
             }),
             Grove.Div({
               className: "col text-center",
-              children: [loadTransitBtn]	
+              children: [unselectAllBtn]	
             }),
             Grove.Div({
               className: "col text-center",
@@ -85,89 +97,23 @@ Grove.Div({
           children: [
           	Grove.Div({
               className: "col text-center",
-              children: [selectJunctionsBtn]	
-            }),
-            Grove.Div({
-              className: "col text-center",
-              children: [selectSegmentsBtn]	
-            }),
-            Grove.Div({
-              className: "col text-center",
-              children: [selectCrimesBtn]	
-            }),
-            Grove.Div({
-              className: "col text-center",
-              children: [selectTransitBtn]	
-            }),
-            Grove.Div({
-              className: "col text-center",
-              children: [clearSelectionBtn]	
-            })
-          ]
-        })
-    ]
-})
-```
-
-``` js
-Grove.Div({
-  	className: "container",
-	children: [
-    	Grove.Div({
-          className: "row",
-          children: [
-          	Grove.Div({
-              className: "col text-center",
-              children: [expandCrimeBtn]	
-            }),
-            Grove.Div({
-              className: "col text-center",
-              children: [expandTransitBtn]	
-            }),
-            Grove.Div({
-              className: "col text-center",
-              children: [expandNetworkBtn]	
-            }),
-            Grove.Div({
-              className: "col text-center",
-              children: []	
-            }),
-            Grove.Div({
-              className: "col text-center",
-              children: []	
-            })
-          ]
-        })
-    ]
-})
-```
-
-``` js
-Grove.Div({
-  	className: "container",
-	children: [
-    	Grove.Div({
-          className: "row",
-          children: [
-          	Grove.Div({
-              className: "col text-center",
               children: [toggleMapBtn]	
             }),
             Grove.Div({
               className: "col text-center",
-              children: [loadSelectedRegionBtn]	
-            }),
-            Grove.Div({
-              className: "col text-center", 
-              children: [removeSelectedRegionBtn]	
-            }),
-            Grove.Div({
-              className: "col text-center", 
               children: [clearRegionBtn]	
             }),
             Grove.Div({
               className: "col text-center", 
               children: [toggleShowSelectedBtn]	
+            }),
+            Grove.Div({
+              className: "col text-center", 
+              children: []	
+            }),
+            Grove.Div({
+              className: "col text-center", 
+              children: [clearGraphBtn]	
             })
           ]
         })
@@ -264,14 +210,6 @@ Grove.Div({
     
     if (!data.showSelected) return;
     
-    let colors = {
-      default: "black",
-      Junction: "orange",
-      Segment: "grey",
-      Crime: "red",
-      Transit: "blue"
-    }
-    
     let graph = api.getLayoutGraph();
     let selectedNodes = graph.getVisibleNodes().filter(filterBySelection());
     
@@ -281,9 +219,9 @@ Grove.Div({
       let lng = node.properties.longitude;
       
       // Determine the color for the marker
-      let color = colors.default;
-      if (node.category in colors)
-        color = colors[node.category]
+      let color =  "black"
+      if (node.category in categories)
+        color = categories[node.category]
       
       // Create the marker
       data.selectedNodesLayer.addLayer(L.circleMarker([lat, lng], {color: color, fillOpacity: 0.8, radius: 5}));
@@ -316,32 +254,6 @@ clearGraphBtn = Grove.Button({
 ```
 
 ``` js
-// Loads all nodes from Neo4j when clicked
-loadGraphBtn = Grove.Button({
-  label: "Load Entire Graph",
-  className: "btn-warning btn-lg customBtn",
-  onClick: () => {
-    api.neo4j(
-      `MATCH (n) RETURN *`
-    )
-  }
-})
-```
-
-``` js
-// Loads the entire road network from Neo4j when clicked
-loadRoadBtn = Grove.Button({
-  label: "Load Entire Road Network",
-  className: "btn-warning btn-lg customBtn",
-  onClick: () => {
-    api.neo4j(
-      `MATCH (s:Segment)-[c:CONTINUES_TO]->(j:Junction) RETURN *`
-    )
-  }
-})
-```
-
-``` js
 // Shows and hides the map display when clicked
 toggleMapBtn = Grove.Button({
   label: "Toggle Map",
@@ -354,9 +266,18 @@ toggleMapBtn = Grove.Button({
 ```
 
 ``` js
-// Removes all nodes in the selected region when clicked
-removeSelectedRegionBtn = Grove.Button({
-  label: "Remove Selected Region",
+// Load all nodes in the selected region
+loadAllBtn = Grove.AsyncButton({
+  label: "Load All",
+  className: "btn-warning btn-lg customBtn",
+  onClick: () => loadNodes(`(n)`, "n") 
+})
+```
+
+``` js
+// Removes all nodes in the selected region when clicked 
+removeAllBtn = Grove.Button({
+  label: "Remove All",
   className: "btn-primary btn-lg customBtn",
   onClick: () => {
     // Remove nodes in the region
@@ -371,47 +292,55 @@ removeSelectedRegionBtn = Grove.Button({
 ```
 
 ``` js
-// Load the road network in the selected region
-loadSelectedRegionBtn = Grove.AsyncButton({
-  label: "Load Selected Region",
+loadSelectedCategoryBtn = Grove.Button({
+  label: "Load Category",
   className: "btn-primary btn-lg customBtn",
-  onClick: () => loadNodes("(s:Segment)-[c:CONTINUES_TO]->(j:Junction)", "j")
+  onClick: () => loadNodes(`(n:${data.select.value})`, "n") 
 })
 ```
 
 ``` js
-// Load junctions in the selected region
-loadJunctionsBtn = Grove.Button({
-  label: "Load Junctions",
+removeCategoryBtn = Grove.Button({
+  label: "Remove Category",
   className: "btn-primary btn-lg customBtn",
-  onClick: () => loadNodes("(j:Junction)", "j") 
+  onClick: () => {
+    api.getLayoutGraph().applyTransform((graph) => {
+      // Select nodes that are in the region and have the category, [category]
+      graph.removeNodes(
+        graph.getVisibleNodes()
+        .filter(api.nodesByCategory(data.select.value))
+        .filter(filterByRegion())
+        .map((node) => node.id)
+      );
+    });
+    data.updateSelectedDisplay(); 
+  }
 })
 ```
 
 ``` js
-// Load segments in the selected region
-loadSegmentsBtn = Grove.Button({
-  label: "Load Segments",
+selectCategoryBtn = Grove.Button({
+  label: "Select Category",
   className: "btn-primary btn-lg customBtn",
-  onClick: () => loadNodes("(s:Segment)", "s") 
+  onClick: () => selectCategory(data.select.value)
 })
 ```
 
 ``` js
-// Load crime nodes in the selected region
-loadCrimesBtn = Grove.Button({
-  label: "Load Crimes",
+unselectCategoryBtn = Grove.Button ({
+  label: 'Deselect Category',
   className: "btn-primary btn-lg customBtn",
-  onClick: () => loadNodes("(c:Crime)", "c") 
-})
-```
-
-``` js
-// Load transit nodes in the selected region
-loadTransitBtn = Grove.Button({
-  label: "Load Transit",
-  className: "btn-primary btn-lg customBtn",
-  onClick: () => loadNodes("(t:Transit)", "t") 
+  onClick: () => {
+    api.getLayoutGraph().applyTransform((graph) => {
+      // Select nodes that are in the region and have the category, [category]
+      let nodesToSelect = graph.getVisibleNodes()
+                               .filter(api.nodesByCategory(data.select.value))
+                               .filter(filterByRegion());
+      // Mark the nodes as selected
+      nodesToSelect.forEach((node) => node.setStyle("selected", false));
+    });
+   	data.updateSelectedDisplay();
+  }
 })
 ```
 
@@ -421,98 +350,6 @@ clearRegionBtn = Grove.Button({
   label: "Clear Region Selection",
   className: "btn-primary btn-lg customBtn",
   onClick: () => data.clearSelection()
-})
-```
-
-``` js
-// Expand the graph to crime nodes
-// If there are selected junction nodes then they are expanded
-// If there are no selected junction nodes then the entire graph is expanded
-expandCrimeBtn = Grove.Button({
-  label: "Expand To Crime Nodes",
-  className: "btn-primary btn-lg customBtn",
-  onClick: () => {
-    let graph = api.getLayoutGraph();
-    
-    // Get the selected junction nodes
-  	let nodes = graph.getVisibleNodes().filter(api.nodesByCategory("Junction")).filter(filterBySelection());
-    
-    // If there are no selected nodes then use all the nodes
-    if (nodes.length == 0) nodes = graph.getVisibleNodes().filter(api.nodesByCategory("Junction"));
-    let ids = nodes.map((node) => (node.properties.id));
-    
-    let query = `
-    	MATCH (c:Crime)-[n:NEAREST_CRIME_JN]->(j:Junction)
-        WHERE j.id IN [${ids}]
-        RETURN *
-    `
-    
-    api.neo4j(query);
-  }
-})
-```
-
-``` js
-// Expand the network to include transit nodes
-// If there are selected segment nodes then those are expanded
-// otherwise all segment nodes are expanded
-expandTransitBtn = Grove.Button({
-  label: "Expand To Transit Nodes",
-  className: "btn-primary btn-lg customBtn",
-  onClick: () => {
-    let graph = api.getLayoutGraph();
-    
-    // Get selected segment nodes
-  	let nodes = graph.getVisibleNodes().filter(api.nodesByCategory("Segment")).filter(filterBySelection());
-    
-    // If there are no selected segment nodes then use all segment nodes
-    if (nodes.length == 0) nodes = graph.getVisibleNodes().filter(api.nodesByCategory("Segment"));
-    
-    let ids = nodes.map((node) => (node.properties.id));
-    let query = `
-    	MATCH (t:Transit)-[n:PRESENT_IN]->(s:Segment)
-        WHERE s.id IN [${ids}]
-        RETURN *
-    `
-    
-    api.neo4j(query);
-  }
-})
-```
-
-``` js
-// Expand the road network
-//   If there are selected junction or segment nodes then those are expanded
-//   otherwise the whole road network is expanded
-expandNetworkBtn = Grove.Button({
-  label: "Expand Network",
-  className: "btn-primary btn-lg customBtn",
-  onClick: () => {
-  	let graph = api.getLayoutGraph();
-    
-    // Get the segments and junctions and the selected segments and junctions
-    let segments = graph.getVisibleNodes().filter(api.nodesByCategory("Segment"));
-    let junctions = graph.getVisibleNodes().filter(api.nodesByCategory("Junction"));
-    let selectedSegments = segments.filter(filterBySelection());
-    let selectedJunctions = junctions.filter(filterBySelection());
-    
-    // Determine which nodes to use based on whether there are any selected nodes
-    let useAll = selectedSegments.length == 0 && selectedJunctions.length == 0;
-    let workingSegments = useAll ? segments : selectedSegments;
-    let workingJunctions = useAll ? junctions : selectedJunctions;
-    
-    let segmentIds = workingSegments.map((segment) => (segment.properties.id));
-    let junctionIds = workingJunctions.map((junction) => (junction.properties.id));
-    
-    let query = `
-    	MATCH (s:Segment)-[c:CONTINUES_TO]->(j:Junction)
-        WHERE (s.id IN [${segmentIds}]) OR 
-        	  (j.id IN [${junctionIds}])
-        RETURN *
-    `
-    
-    api.neo4j(query);
-  }
 })
 ```
 
@@ -534,49 +371,28 @@ deleteSelectionBtn = Grove.Button({
 ```
 
 ``` js
-// Select junctions in the region
-selectJunctionsBtn = Grove.Button({
-  label: "Select Junctions",
+// Select all nodes in the region
+selectAllBtn = Grove.Button({
+  label: "Select All",
   className: "btn-primary btn-lg customBtn",
-  onClick: () => selectCategory("Junction")
-})
-```
-
-``` js
-// Select any segment nodes in the region
-selectSegmentsBtn = Grove.Button({
-  label: "Select Segments",
-  className: "btn-primary btn-lg customBtn",
-  onClick: () => selectCategory("Segment")
-})
-```
-
-``` js
-// Select any crime nodes in the region
-selectCrimesBtn = Grove.Button({
-  label: "Select Crimes",
-  className: "btn-primary btn-lg customBtn",
-  onClick: () => selectCategory("Crime")
-})
-```
-
-``` js
-// Select any transit nodes in the region
-selectTransitBtn = Grove.Button({
-  label: "Select Transit",
-  className: "btn-primary btn-lg customBtn",
-  onClick: () => selectCategory("Transit")
+  onClick: () => {
+    api.getLayoutGraph().applyTransform((graph) => {
+      let selectedNodes = graph.getVisibleNodes().filter(filterByRegion());
+      selectedNodes.forEach((node) => node.setStyle("selected", true));
+    });
+   	data.updateSelectedDisplay();
+  }
 })
 ```
 
 ``` js
 // Unselect selected nodes
-clearSelectionBtn = Grove.Button({
-  label: "Unselect All",
+unselectAllBtn = Grove.Button({
+  label: "Deselect All",
   className: "btn-primary btn-lg customBtn",
   onClick: () => {
     api.getLayoutGraph().applyTransform((graph) => {
-      let selectedNodes = graph.getVisibleNodes().filter(filterBySelection());
+      let selectedNodes = graph.getVisibleNodes().filter(filterBySelection()).filter(filterByRegion());
       selectedNodes.forEach((node) => node.setStyle("selected", false));
     });
    	data.updateSelectedDisplay();
@@ -670,6 +486,7 @@ isRegionSelected = () => data.positions.lat1 != data.positions.lat2 || data.posi
 // match (string): The clause to use for matching nodes in the Cypher query. eg: '(j:Junction)'
 // longitude_limiter (string): The name of the node that will be used to limit to the region. eg: For the above, 'j'
 function loadNodes(match, longitude_limiter) {
+  console.log(match);
   let where = isRegionSelected() ? `WHERE ${generateLocationWhere(longitude_limiter)}` : ''
     
   let query = `
@@ -677,7 +494,7 @@ function loadNodes(match, longitude_limiter) {
       ${where}
       RETURN * 
     `;
-
+  console.log(query);
   api.neo4j(query);
 }
 ```
@@ -716,12 +533,36 @@ function filterBySelection() { return (n => n.getStyle('selected')) }
 ```
 
 ``` js
+select = {
+  let select = yield htl.html`<select class="btn btn-secondary dropdown-toggle customBtn"></select>`;
+  
+  let categories = [
+  	"Junction",
+    "Segment",
+    "Crime",
+    "Transit",
+    "RapidTransit",
+    "Store",
+    "School"
+  ]
+  
+  let category = ""
+  for (category of categories) {
+    select.appendChild((htl.html`<option value=${category}>${category}</option>`));
+  }
+  
+  data.select = select
+}
+```
+
+``` js
 // A handy button for development that makes the Grove and GraphXR APIs availiable in the inspector
 Grove.Button({
   label: "Make APIs Visible",
   onClick: () => {
     window.Grove = Grove;
     window.api = api;
+    window.htl = htl;
   }
 })
 ```
