@@ -19,13 +19,13 @@ from data_wrangler.conversion_functions import split_latitude, split_longitude
 # Change this to point to the directory of your database information
 DATABASE_INFO_FILEPATH = r"../../dbinfo.txt"
 
-JUNCTION_FILE = '../data/junctions.csv'
-SEGMENT_FILE = '../data/streetsegments.csv'
-CRIME_FILE = '../data/vanc_crime_2022.csv'
-TRANSIT_FILE = '../data/transitstops.csv'
-RAPID_TRANSIT_FILE = '../data/rapid-transit-stations.csv'
-COMMERCIAL_FILE = '../data/storefronts-inventory.csv'
-SCHOOL_FILE = '../data/schools.csv'
+JUNCTION_FILE = '../original_data/junctions.csv'
+SEGMENT_FILE = '../original_data/streetsegments.csv'
+CRIME_FILE = '../original_data/vanc_crime_2022.csv'
+TRANSIT_FILE = '../original_data/transitstops.csv'
+RAPID_TRANSIT_FILE = '../original_data/rapid-transit-stations.csv'
+COMMERCIAL_FILE = '../original_data/storefronts-inventory.csv'
+SCHOOL_FILE = '../original_data/schools.csv'
 
 ZONE_NUMBER = 10
 ZONE_LETTER = 'U'
