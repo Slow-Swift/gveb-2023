@@ -17,17 +17,19 @@ from .conversion_functions import ConversionFunction
 class Dataset:
     
     def __init__(self, rows: list[Row], primary_key='id'):
-        self._rows = rows
         self.primary_key = primary_key
         
-        if len(self._rows) > 0 and not self.primary_key in self._rows[0]:
-            warnings.warn("WARNING: Primary key not in dataset")
+        if len(rows) > 0 and not self.primary_key in rows[0]:
+            raise Exception(f"Primary key: {primary_key}, is not a valid key in the dataset")
+        
+        self._rows = { row[primary_key]: row for row in rows }
+        
         
     def __len__(self):
         return len(self._rows)
     
     def __iter__(self):
-        return iter(self._rows)
+        return iter(self._rows.values())
     
     def __getitem__(self, index):
         return self._rows[index]

@@ -2,10 +2,11 @@ from typing import Any
 
 from .category import Category
 from .dataset import Row
+from .relationship_property_matchers import RelationPropertyMatcher
 
 class Relationship:
     
-    def __init__(self, name: str, category_1: Category, category_2: Category, neighbor_name: str, props: None | list[str | tuple[str, str]]=None):
+    def __init__(self, name: str, category_1: Category, category_2: Category, neighbor_name: str, prop_matcher: None | RelationPropertyMatcher = None, remove_duplicates=False):
         """ Define a relationship between nodes
 
         Args:
@@ -13,37 +14,38 @@ class Relationship:
             category_1 (CategoryHandle): The category that the relationship comes from
             category_2 (CategoryHandle): The category that the relationship goes to
             neighbor_name (str): The fieldname that links the primary keys of the categories
-            props (list[str | tuple[str, str]], optional): The fieldnames to use for the relationship properties. Defaults to None, i.e. No properties.
+            prop_matcher (RelationPropertyMatcher, optional): The function that gives the relationship properties given two rows. Defaults to None, i.e. No properties.
         """
         
         self.name = name
         self.category_1 = category_1
         self.category_2 = category_2
         self.neighbor_name = neighbor_name
-        self.props = props if props else []
-        
-    def has_muliple_links(self) -> bool:
-        if len(self.category_1.data) == 0: return False
-        return type(self.category_1.data[0][self.neighbor_name])
+        self.prop_matcher = prop_matcher if prop_matcher else (lambda r1, r2: dict())
+        self.remove_duplicates = remove_duplicates
         
     def get_links(self) -> list[tuple[Any, Any, Row]]:
-        # TODO: Come up with a better system that allows properties to be pulled from both categories
+        from_data = self.category_1.data
+        to_data = self.category_2.data
         
-        data = self.category_1.data
+        processed = set()
         
-        links = [ 
-             [
-                row[self.category_1.data.primary_key],   # From id
-                row[self.neighbor_name],                 # To id(s)
+        links = []
+        for row in from_data:
+            neighbors = row[self.neighbor_name]
+            if type(neighbors) != list:
+                neighbors = [neighbors]
                 
-                # Relationship properties
-                { 
-                    (prop[0] if type(prop) == tuple else prop):                 # type: ignore
-                        (row[prop[1]] if type(prop) == tuple else row[prop])    # type: ignore
-                        for prop in self.props                                  
-                }                                                               
-             ]
-             for row in data
-        ]
+            for neighbor in neighbors:
+                primary_key = row[self.category_1.data.primary_key]
+                
+                if self.remove_duplicates and (((primary_key, neighbor) in processed) or ((neighbor, primary_key) in processed)): continue
+                
+                processed.add((primary_key, neighbor))
+                links.append([
+                    row[self.category_1.data.primary_key],
+                    neighbor,
+                    self.prop_matcher(row, to_data[neighbor])
+                ])
         
-        return links                # type: ignore                                                                        
+        return links                                                                     
