@@ -9,7 +9,7 @@ JUNCTION_FILE = '../processed_data/junctions.csv'
 SEGMENT_FILE = '../processed_data/segments.csv'
 
 junctionData = Dataset.load_file(JUNCTION_FILE)
-junctionData.convert('id', int)
+junctionData.convert_property('id', int)
 
 segmentData = Dataset.load_file(
     SEGMENT_FILE, 

@@ -39,9 +39,14 @@ class Dataset:
             row[new_name] = row[original_name]
             del row[original_name]
             
-    def convert(self, field_name: str, conversion: ConversionFunction):
+    def convert_property(self, field_name: str, conversion: ConversionFunction):
         for row in self:
             row[field_name] = conversion(row[field_name])
+            
+    def convert_properties(self, conversions: dict[str, ConversionFunction]):
+        for row in self:
+            for field_name in conversions:
+                row[field_name] = conversions[field_name](row[field_name])
     
     def for_each(self, func: Callable[[Row], None]):
         """ Run a function on every row in the data
