@@ -12,6 +12,7 @@ from collections.abc import Sequence
 from .conversion_functions import Row
 from .conversion_functions import RowFunction
 from .conversion_functions import ConversionMap
+from .conversion_functions import ConversionFunction
 
 class Dataset:
     
@@ -30,6 +31,15 @@ class Dataset:
     
     def __getitem__(self, index):
         return self._rows[index]
+    
+    def rename(self, original_name: str, new_name: str):
+        for row in self:
+            row[new_name] = row[original_name]
+            del row[original_name]
+            
+    def convert(self, field_name: str, conversion: ConversionFunction):
+        for row in self:
+            row[field_name] = conversion(row[field_name])
     
     def for_each(self, func: Callable[[Row], None]):
         """ Run a function on every row in the data
@@ -107,7 +117,7 @@ class Dataset:
         
         self.match_closest(other_data, distance, on_match)
         
-    def match_lat_lng(self, other_data: Dataset, match_field: str, dst_field:str):
+    def match_lat_lng(self, other_data: Dataset, match_field: str, dst_field:str, count_field: str = ''):
         """ Pair all the rows in this dataset with the closest row in [other_data] based on latitude and longitude.
         
         The haversine formula is used to calculate distance in meters from latitude and longitude
@@ -117,9 +127,17 @@ class Dataset:
             match_field (str): The name of the field in which to store the primary key of the other row of the match
             dst_field (str): The name of the field in which to store the distance of the match
         """
+        
+        if count_field:
+            for row in other_data:
+                row[count_field] = row.get(count_field, 0)
+        
         def on_match(row_1, row_2, dst):
             row_1[match_field] = row_2[other_data.primary_key]
             row_1[dst_field] = dst
+            
+            if count_field:
+                row_2[count_field] = row_2[count_field] + 1
             
         # Implementation of the haversine formula found at 
         # https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula#:~:text=from%20math%20import%20cos%2C%20asin,of%20completeness%3A%20Haversine%20on%20Wikipedia.
@@ -151,7 +169,7 @@ class Dataset:
         
         self.match_closest(other_data, distance, on_match)
     
-    def match_lat_lng_approx(self, other_data: Dataset, match_field: str, dst_field:str):
+    def match_lat_lng_approx(self, other_data: Dataset, match_field: str, dst_field:str, count_field: str = ''):
         """ Pair all the rows in this dataset with the aprroximated closes row in [other_data] based on latitude and longitude.
         
         The haversine formula is used to calculate distance in meters from latitude and longitude
@@ -164,9 +182,16 @@ class Dataset:
             dst_field (str): The name of the field in which to store the distance of the match
         """
         
+        if count_field:
+            for row in other_data:
+                row[count_field] = row.get(count_field, 0)
+        
         def on_match(row_1, row_2, dst):
             row_1[match_field] = row_2[other_data.primary_key]
             row_1[dst_field] = dst
+            
+            if count_field:
+                row_2[count_field] = row_2[count_field] + 1
             
         # Implementation of the haversine formula found at 
         # https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula#:~:text=from%20math%20import%20cos%2C%20asin,of%20completeness%3A%20Haversine%20on%20Wikipedia.
@@ -213,7 +238,7 @@ class Dataset:
         if fieldnames == None:
             fieldnames = [key for key in self._rows[0]]
         
-        with open(filename, 'w', newline='') as out_file:
+        with open(filename, 'w', newline='', encoding='utf-8-sig') as out_file:
             writer = csv.DictWriter(out_file, fieldnames=fieldnames, quoting=csv.QUOTE_MINIMAL)
             
             if write_header:
@@ -240,7 +265,7 @@ class Dataset:
                 func(row_1, row_2)
     
     @staticmethod
-    def load_file(filename: str, conversion_map: ConversionMap, primary_key='id', delimiter: str =',', fieldnames: Sequence[str] | None=None, has_header=True):
+    def load_file(filename: str, conversion_map: ConversionMap | None = None, primary_key='id', delimiter: str =',', fieldnames: Sequence[str] | None=None, has_header=True):
         """Load data from a csv file
         
         [conversion_map] is used to manipulate the read data in order to turn it into more useful formats and types. A ConversionMap is a dictionary
@@ -263,7 +288,7 @@ class Dataset:
 
         Args:
             filename (str): The name of the file to load. Should be a csv file.
-            conversion_map (ConversionMap): A mapping between fieldnames in the output data and a function on the input data.
+            conversion_map (ConversionMap, optional): A mapping between fieldnames in the output data and a function on the input data. If not provided then all values are loaded as strings.
             delimiter (str, optional): The delimiter used by the csv file. Defaults to ','.
             fieldnames (Sequence[str] | None): The names to use for the fields. Defaults to None.
             has_header (boolean): Whether or not there is a header row in the file. Must be true if fieldnames is None.
@@ -280,9 +305,6 @@ class Dataset:
         with open(filename, 'r', encoding='utf-8-sig') as input_file:
             data = []
             
-            # Make all conversions using IndexedConversionMap
-            conversions = Dataset._fix_conversion(conversion_map)
-            
             # Read each row of the file
             rows = csv.DictReader(input_file, quoting=csv.QUOTE_MINIMAL, delimiter=delimiter, fieldnames=fieldnames)
             
@@ -290,14 +312,20 @@ class Dataset:
             if(fieldnames != None and has_header):
                 next(rows)
             
-            # Read each row
-            for i, row in enumerate(rows):
-                # Apply the conversion to the row to get a result
-                result = { 
-                    key: conversions[key](row, i) for key in conversions
-                }
+            if conversion_map != None:
+                # Make all conversions using IndexedConversionMap
+                conversions = Dataset._fix_conversion(conversion_map)
                 
-                data.append(result)
+                # Read each row
+                for i, row in enumerate(rows):
+                    # Apply the conversion to the row to get a result
+                    result = { 
+                        key: conversions[key](row, i) for key in conversions
+                    }
+                    
+                    data.append(result)
+            else:
+                data = list(rows)
                 
             return Dataset(data, primary_key)
         

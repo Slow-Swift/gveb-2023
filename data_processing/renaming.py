@@ -1,3 +1,5 @@
+## Takes the original data and does some basic preprosessing and renames some fields
+
 import sys
 sys.path.append('../') # This should probably be changed to a more sofisticated system at some point. i.e. install the package
 
