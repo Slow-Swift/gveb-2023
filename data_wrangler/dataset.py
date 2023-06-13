@@ -196,6 +196,30 @@ class Dataset:
             return radius * c * 1000
         
         self.match_closest(other_data, distance, on_match)
+        
+    def write_to_file(self, filename: str, delimiter: str = ',', fieldnames=None, write_header = True):
+        """ Write the dataset to a csv file
+
+        Args:
+            filename (str): The name of the csv file
+            delimiter (str, optional): The delimiter to use for separating values. Defaults to ','.
+            fieldnames (list[str], optional): The fieldnames to write. If not provided then writes all values.
+            write_header (bool, optional): Whether or not the header should be written. Defaults to True.
+        """
+        if len(self) == 0:
+            print("No data to write!")
+            return
+        
+        if fieldnames == None:
+            fieldnames = [key for key in self._rows[0]]
+        
+        with open(filename, 'w', newline='') as out_file:
+            writer = csv.DictWriter(out_file, fieldnames=fieldnames, quoting=csv.QUOTE_MINIMAL)
+            
+            if write_header:
+                writer.writeheader()
+                
+            writer.writerows(self._rows)
     
     @staticmethod
     def cross_data(data_1: Dataset, data_2: Dataset, func: Callable[[Row, Row], None]):
