@@ -9,9 +9,9 @@ from typing import Callable
 from typing import Any
 from collections.abc import Sequence
 
-from conversion_functions import Row
-from conversion_functions import RowFunction
-from conversion_functions import ConversionMap
+from .conversion_functions import Row
+from .conversion_functions import RowFunction
+from .conversion_functions import ConversionMap
 
 class Dataset:
     

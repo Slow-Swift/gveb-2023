@@ -1,7 +1,7 @@
 from neo4j import Session
 
-from category import Category
-from relationship import Relationship
+from .category import Category
+from .relationship import Relationship
 
 class GraphWriter:
 

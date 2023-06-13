@@ -1,7 +1,7 @@
 from typing import Any
 
-from category import Category
-from dataset import Row
+from .category import Category
+from .dataset import Row
 
 class Relationship:
     

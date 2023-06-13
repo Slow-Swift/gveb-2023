@@ -1,17 +1,20 @@
+import sys
+sys.path.append('../') # This should probably be changed to a more sofisticated system at some point. i.e. install the package
+
 import utm
 from neo4j import GraphDatabase
 from time import perf_counter
 
-from dataset import Dataset
-from category import Category
-from relationship import Relationship
-from graph_writer import GraphWriter
+from data_wrangler import Dataset
+from data_wrangler import Category
+from data_wrangler import Relationship
+from data_wrangler import GraphWriter
 
-from conversion_functions import RowFunction
-from conversion_functions import convert_if_not_null
-from conversion_functions import create_regular_str
-from conversion_functions import generate_id
-from conversion_functions import split_latitude, split_longitude
+from data_wrangler.conversion_functions import RowFunction
+from data_wrangler.conversion_functions import convert_if_not_null
+from data_wrangler.conversion_functions import create_regular_str
+from data_wrangler.conversion_functions import generate_id
+from data_wrangler.conversion_functions import split_latitude, split_longitude
 
 # Change this to point to the directory of your database information
 DATABASE_INFO_FILEPATH = r"../../dbinfo.txt"
