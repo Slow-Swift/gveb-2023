@@ -1,28 +1,31 @@
+import sys
+sys.path.append('../') # This should probably be changed to a more sofisticated system at some point. i.e. install the package
+
 import utm
 from neo4j import GraphDatabase
 from time import perf_counter
 
-from dataset import Dataset
-from category import Category
-from relationship import Relationship
-from graph_writer import GraphWriter
+from data_wrangler import Dataset
+from data_wrangler import Category
+from data_wrangler import Relationship
+from data_wrangler import GraphWriter
 
-from conversion_functions import RowFunction
-from conversion_functions import convert_if_not_null
-from conversion_functions import create_regular_str
-from conversion_functions import generate_id
-from conversion_functions import split_latitude, split_longitude
+from ast import literal_eval
+
+from data_wrangler.conversion_functions import convert_if_not_null
+from data_wrangler.relationship_property_matchers import first_set_prop_match
+from data_wrangler.relationship_property_matchers import match_props
 
 # Change this to point to the directory of your database information
 DATABASE_INFO_FILEPATH = r"../../dbinfo.txt"
 
-JUNCTION_FILE = '../data/junctions.csv'
-SEGMENT_FILE = '../data/streetsegments.csv'
-CRIME_FILE = '../data/vanc_crime_2022.csv'
-TRANSIT_FILE = '../data/transitstops.csv'
-RAPID_TRANSIT_FILE = '../data/rapid-transit-stations.csv'
-COMMERCIAL_FILE = '../data/storefronts-inventory.csv'
-SCHOOL_FILE = '../data/schools.csv'
+JUNCTION_FILE = '../processed_data/reach_junctions.csv'
+SEGMENT_FILE = '../processed_data/segments.csv'
+CRIME_FILE = '../processed_data/crime.csv'
+TRANSIT_FILE = '../processed_data/transit.csv'
+RAPID_TRANSIT_FILE = '../processed_data/rapid_transit.csv'
+COMMERCIAL_FILE = '../processed_data/stores.csv'
+SCHOOL_FILE = '../processed_data/schools.csv'
 
 ZONE_NUMBER = 10
 ZONE_LETTER = 'U'
@@ -99,12 +102,24 @@ def load_junctions():
     junctionData = Dataset.load_file(
         JUNCTION_FILE, 
         {
-            'id': (int, "JunctionID"),
-            'type': (str, "JunctionType"),
-            'street_count': (int, "StreetIntersectCount"),
-            'vulnerability_score': (float, "Vulnerability"),
+            'id': int,
+            'type': str,
+            'vulnerability_score': float,
             'longitude': float,
-            'latitude': float
+            'latitude': float,
+            'street_count': int,
+            'crime_count': int,
+            'transit_count': int,
+            'stores_count': int,
+            'schools_count': int,
+            'rtransit_count': int,
+            'neighbor_ids': (lambda v: [n[0] for n in literal_eval(v if v else '[]')], 'neighbors'),
+            'street_ids': (lambda v: [n[2] for n in literal_eval(v if v else '[]')], 'neighbors'),
+            'crime_reach': float,
+            'store_reach': float,
+            'transit_reach': float,
+            'rtransit_reach': float,
+            'schools_reach': float,
         }
     )
     
@@ -118,6 +133,16 @@ def load_junctions():
             'longitude',
             'latitude',
             'vulnerability_score',
+            'crime_count',
+            'transit_count',
+            'stores_count',
+            'schools_count',
+            'rtransit_count',
+            'crime_reach',
+            'store_reach',
+            'transit_reach',
+            'rtransit_count',
+            'schools_reach',
         ]
     )
     
@@ -129,10 +154,10 @@ def load_segments():
     segmentData = Dataset.load_file(
         SEGMENT_FILE, 
         {
-            'id': (int, "StreetID"),
+            'id': int,
             'hblock': str,
-            'type': (str, "streetType"),
-            'property_count': (convert_if_not_null, "PropertyCount"),
+            'type': str,
+            'property_count': convert_if_not_null,
             'PseudoJunctionCount': int,
             'pseudoJunctionID1': int,
             'pseudoJunctionID2': int,
@@ -140,69 +165,36 @@ def load_segments():
             'adjustJunctionID2': int,
             'adjustStreetID1': lambda v: convert_if_not_null(v, on_null=None),
             'adjustStreetID2': lambda v: convert_if_not_null(v, on_null=None),
-            'current_land_val_avg': (convert_if_not_null, "Avg_CURRENT_LAND_VALUE"),
-            'current_land_val_sd': (convert_if_not_null, "SD_CURRENT_LAND_VALUE"),
-            'current_improvement_avg': (convert_if_not_null, "Avg_CURRENT_IMPROVEMENT_VALUE"),
-            'current_improvement_sd': (convert_if_not_null, "SD_CURRENT_IMPROVEMENT_VALUE"),
+            'current_land_val_avg': convert_if_not_null,
+            'current_land_val_sd': convert_if_not_null,
+            'current_improvement_avg': convert_if_not_null,
+            'current_improvement_sd': convert_if_not_null,
             'Avg_ASSESSMENT_YEAR': convert_if_not_null,
-            'prev_land_val_avg': (convert_if_not_null, "Avg_PREVIOUS_LAND_VALUE"),
-            'prev_land_val_sd': (convert_if_not_null, "SD_PREVIOUS_LAND_VALUE"),
-            'prev_improv_val_avg': (convert_if_not_null, "Avg_PREVIOUS_IMPROVEMENT_VALUE"),
-            'prev_improv_val_sd': (convert_if_not_null, "SD_PREVIOUS_IMPROVEMENT_VALUE"),
-            'year_built_avg': (convert_if_not_null, "Avg_YEAR_BUILT"),
-            'year_built_sd': (convert_if_not_null, "SD_YEAR_BUILT"),
-            'big_improvement_yr_avg': (convert_if_not_null, "Avg_BIG_IMPROVEMENT_YEAR"),
-            'big_improvement_yr_sd': (convert_if_not_null, "SD_BIG_IMPROVEMENT_YEAR"),
-            'traffic_24_avg': (lambda v: convert_if_not_null(v, on_null=None), "Avg_ALL24"),
-            'traffic_8_9_avg': (lambda v: convert_if_not_null(v, on_null=None), "Avg_ALL8_9"),
-            'traffic_10_16_avg': (lambda v: convert_if_not_null(v, on_null=None), "Avg_ALL10_16"),
-            'traffic_17_18_avg': (lambda v: convert_if_not_null(v, on_null=None), "Avg_ALL17_18"),
-            'length_metres': (float, "Shape_Length"),
+            'prev_land_val_avg': convert_if_not_null,
+            'prev_land_val_sd': convert_if_not_null,
+            'prev_improv_val_avg': convert_if_not_null,
+            'prev_improv_val_sd': convert_if_not_null,
+            'year_built_avg': convert_if_not_null,
+            'year_built_sd': convert_if_not_null,
+            'big_improvement_yr_avg': convert_if_not_null,
+            'big_improvement_yr_sd': convert_if_not_null,
+            'traffic_24_avg': lambda v: convert_if_not_null(v, on_null=None),
+            'traffic_8_9_avg': lambda v: convert_if_not_null(v, on_null=None),
+            'traffic_10_16_avg': lambda v: convert_if_not_null(v, on_null=None),
+            'traffic_17_18_avg': lambda v: convert_if_not_null(v, on_null=None),
+            'length_metres': float,
             'latitude': float,
             'longitude': float,
-            'land_uses': (lambda v: list(str.split(v, ', ')), "Landuse"),
-            'neighbors': RowFunction(lambda row, i: [
-                int(row[key]) for key in ["pseudoJunctionID1", "pseudoJunctionID2", "adjustJunctionID1", "adjustJunctionID2"]
-                if row[key] and int(row[key])
-            ])
+            'land_uses': literal_eval,
+            'neighbors': literal_eval
         }
-    )
-    
-    segments = Category(
-        "Segment",
-        segmentData,
-        [
-            'id',
-            'hblock',
-            'type',
-            'property_count',
-            'current_land_val_avg',
-            'current_land_val_sd',
-            'current_improvement_avg',
-            'current_improvement_sd',
-            'prev_land_val_avg',
-            'prev_land_val_sd',
-            'prev_improv_val_avg',
-            'prev_improv_val_sd',
-            'year_built_avg',
-            'year_built_sd',
-            'big_improvement_yr_avg',
-            'traffic_24_avg',
-            'traffic_8_9_avg',
-            'traffic_10_16_avg',
-            'traffic_17_18_avg',
-            'length_metres',
-            'latitude',
-            'longitude',
-            'land_uses'
-        ]
     )
     
     print("Loaded Segments")
     
-    return segmentData, segments
+    return segmentData
 
-def load_transit(segment_data):
+def load_transit():
     print("Loading Transit")
     
     transit_data = Dataset.load_file(
@@ -212,13 +204,13 @@ def load_transit(segment_data):
             'stop_code': int,
             'stop_name': str,
             'zone_id': str,
-            'latitude': (float, 'stop_lat'),
-            'longitude': (float, 'stop_lon'),
+            'latitude': float,
+            'longitude': float,
+            'junction_id': int,
+            'junction_dst': float
         },
         primary_key='stop_id'
     )
-    
-    transit_data.match_lat_lng_approx(segment_data, 'street_id', 'street_dst')
     
     transit = Category(
         "Transit",
@@ -236,24 +228,24 @@ def load_transit(segment_data):
     print("Loaded Transit")
     return transit_data, transit
 
-def load_crimes(junction_data):
+def load_crimes():
     print("Loading Crimes")
     
     crime_data = Dataset.load_file(
         CRIME_FILE,
         {
-            'id': generate_id,
-            'type_of_crime': (str, 'TYPE'),
-            'date_of_crime': RowFunction(lambda row, i: f"{row['YEAR']}-{create_regular_str(row['MONTH'])}-{create_regular_str(row['DAY'])}"),
-            'time_of_crime': RowFunction(lambda row, i: f"{create_regular_str(row['HOUR'])}:{create_regular_str(row['MINUTE'])}"),
-            'hundred_block': (str, 'HUNDRED_BLOCK'),
-            'recency': (str, 'RECENCY'),
-            'latitude': RowFunction(lambda row, i: utm.to_latlon(float(row["X"]), float(row["Y"]), ZONE_NUMBER, ZONE_LETTER)[0]),
-            'longitude': RowFunction(lambda row, i: utm.to_latlon(float(row["X"]), float(row["Y"]), ZONE_NUMBER, ZONE_LETTER)[1]),
+            'id': int,
+            'type_of_crime': str,
+            'date_of_crime': str,
+            'time_of_crime': str,
+            'hundred_block': str,
+            'recency': str,
+            'latitude': float,
+            'longitude': float,
+            'junction_id': int,
+            'junction_dst': float
         },
     )
-    
-    match_junctions(crime_data, junction_data)
     
     crimes = Category(
         'Crime',
@@ -273,23 +265,23 @@ def load_crimes(junction_data):
     print("Loaded Crimes")
     return crime_data, crimes
 
-def load_stores(junction_data):
+def load_stores():
     print("Loading Stores")
     stores_data = Dataset.load_file(
         COMMERCIAL_FILE,
         {
-            'id': (int, 'ID'),
-            'unit': (str, 'Unit'),
-            'civic_number': (int, 'Civic number - Parcel'),
-            'street_name': (str, 'Street name - Parcel'),
-            'name': (str, 'Business name'),
-            'category': (str, 'Retail category'),
-            'latitude': (split_latitude, 'geo_point_2d'),
-            'longitude': (split_longitude, 'geo_point_2d'),
+            'id': int,
+            'unit': str,
+            'civic_number': str,
+            'street_name': str,
+            'name': str,
+            'category': str,
+            'latitude': float,
+            'longitude': float,
+            'junction_id': int,
+            'junction_dst': float
         }
     )
-    
-    match_junctions(stores_data, junction_data)
     
     stores = Category(
         "Store",
@@ -309,21 +301,20 @@ def load_stores(junction_data):
     print("Loaded Stores")
     return stores_data, stores
 
-def load_rapid_transit(junction_data):
+def load_rapid_transit():
     print("Loading Rapid Transit")
     rtransit_data = Dataset.load_file(
         RAPID_TRANSIT_FILE,
         {
-            'id': generate_id,
-            'name': (str, 'STATION'),
-            'area': (str, 'Geo Local Area'),
-            'latitude': (split_latitude, 'geo_point_2d'),
-            'longitude': (split_longitude, 'geo_point_2d'),
-        },
-        delimiter=';'
+            'id': int,
+            'name': str,
+            'area': str,
+            'latitude': float,
+            'longitude': float,
+            'junction_id': int,
+            'junction_dst': float
+        }
     )
-    
-    match_junctions(rtransit_data, junction_data)
     
     rtransit = Category(
         "RapidTransit",
@@ -340,23 +331,22 @@ def load_rapid_transit(junction_data):
     
     return rtransit_data, rtransit
 
-def load_schools(junction_data):
+def load_schools():
     print("Loading Schools")
     
     schools_data = Dataset.load_file(
         SCHOOL_FILE,
         {
-            'id': generate_id,
-            'address': (str, 'ADDRESS'),
-            'category': (str, 'SCHOOL_CATEGORY'),
-            'name': (str, 'SCHOOL_NAME'),
-            'latitude': (split_latitude, 'geo_point_2d'),
-            'longitude': (split_longitude, 'geo_point_2d'),
-        },
-        delimiter=';'
+            'id': int,
+            'address': str,
+            'category': str,
+            'name': str,
+            'latitude': float,
+            'longitude': float,
+            'junction_id': int,
+            'junction_dst': float
+        }
     )
-    
-    match_junctions(schools_data, junction_data)
     
     schools = Category(
         "School",
@@ -376,61 +366,96 @@ def load_schools(junction_data):
     return schools_data, schools
 
 def create_relationships(junctions, segments, transit, crimes, stores, rtransit, schools):
-    continues_to = Relationship('CONTINUES_TO', segments, junctions, 'neighbors')
+    def junction_prop_matcher(j1, j2):
+        segment_id = j1['street_ids'][j1['neighbor_ids'].index(j2['id'])]
+        segment = segments[segment_id]
+        return match_props(
+            segment,
+            [
+                'id',
+                'hblock',
+                'type',
+                'property_count',
+                'current_land_val_avg',
+                'current_land_val_sd',
+                'current_improvement_avg',
+                'current_improvement_sd',
+                'prev_land_val_avg',
+                'prev_land_val_sd',
+                'prev_improv_val_avg',
+                'prev_improv_val_sd',
+                'year_built_avg',
+                'year_built_sd',
+                'big_improvement_yr_avg',
+                'traffic_24_avg',
+                'traffic_8_9_avg',
+                'traffic_10_16_avg',
+                'traffic_17_18_avg',
+                'length_metres',
+                'latitude',
+                'longitude',
+                'land_uses'
+            ]
+        )
+        
+    connects_to = Relationship(
+        'CONNECTS_TO', junctions, junctions, 'neighbor_ids',
+        prop_matcher=junction_prop_matcher,
+        remove_duplicates=True
+    )
     
-    present_in = Relationship(
-        'PRESENT_IN', transit, segments, 'street_id',
-        props = ['stop_id', 'street_id', ('distance', 'street_dst')]
+    nearest_transit_jn = Relationship(
+        'NEAREST_TRANSIT_JN', transit, junctions, 'junction_id',
+        prop_matcher=first_set_prop_match(['stop_id', 'junction_id', ('distance', 'junction_dst')])
     )
     
     nearest_crime_jn = Relationship(
         'NEAREST_CRIME_JN', crimes, junctions, 'junction_id',
-        props = [('crime_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
+        prop_matcher=first_set_prop_match([('crime_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
     )
     
     nearest_store_jn = Relationship(
         'NEAREST_STORE_JN', stores, junctions, 'junction_id',
-        props = [('store_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
+        prop_matcher=first_set_prop_match([('store_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
     )
     
     nearest_station_jn = Relationship(
         'NEAREST_STATION_JN', rtransit, junctions, 'junction_id',
-        props = [('station_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
+        prop_matcher=first_set_prop_match([('station_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
     )
     
     nearest_school_jn = Relationship(
         'NEAREST_SCHOOL_JN', schools, junctions, 'junction_id',
-        props = [('school_id', 'id'), 'junction_id', ('distance', 'junction_dst')]
+        prop_matcher=first_set_prop_match([('school_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
     )
     
     relationships = [
-        continues_to,
-        present_in,
+        connects_to,
+        nearest_transit_jn,
         nearest_crime_jn,
         nearest_store_jn,
         nearest_station_jn,
         nearest_school_jn
     ]
     
-    return relationships, nearest_store_jn
+    return relationships
 
 def load_data(session):
     
     # This makes it easer to only load some of the data without having to modify too much code
-    junctions = segments = transit = crimes = stores = rtransit = schools = None
+    junctions = transit = crimes = stores = rtransit = schools = None
     
     print("Loading Data")
     junction_data, junctions = load_junctions()
-    segment_data, segments = load_segments()
-    transit_data, transit = load_transit(segment_data)
-    crime_data, crimes = load_crimes(junction_data)
-    stores_data, stores = load_stores(junction_data)
-    rtransit_data, rtransit = load_rapid_transit(junction_data)
-    schools_data, schools = load_schools(junction_data)
+    segment_data = load_segments()
+    transit_data, transit = load_transit()
+    crime_data, crimes = load_crimes()
+    stores_data, stores = load_stores()
+    rtransit_data, rtransit = load_rapid_transit()
+    schools_data, schools = load_schools()
     
     categories = [
         junctions,
-        segments,
         transit,
         crimes,
         stores,
@@ -438,8 +463,8 @@ def load_data(session):
         schools
     ]
     
-    relationships, nearest_store_jn = create_relationships(
-        junctions, segments, transit, crimes, stores, rtransit, schools
+    relationships = create_relationships(
+        junctions, segment_data, transit, crimes, stores, rtransit, schools
     )
     
     print("Writing Data")
@@ -459,30 +484,7 @@ def load_data(session):
         writer.write_relation(relation)
     
     print()
-    print("-- Running Finalizing Queries --")
-    writer.write_relationship_count(junctions, nearest_store_jn, "store_count")
-    join_junctions(session)
-    
     print("Writing Data Completed")
-    
-## Helper functions ##
-
-def join_junctions(session):
-    session.run(
-        '''
-        MATCH (s:Segment)
-        CALL {
-            WITH s
-            MATCH (j1:Junction)<-[:CONTINUES_TO]-(s)-[:CONTINUES_TO]->(j2:Junction)
-            WITH j1, j2, s LIMIT 1
-            CREATE (j1)-[c:CONNECTS_TO]->(j2)
-            SET c = properties(s)
-        } IN TRANSACTIONS
-        '''
-    )
-    
-def match_junctions(data: Dataset, junctions):
-    data.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst')
     
 # Start the program
 if __name__ == "__main__":

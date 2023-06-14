@@ -1,7 +1,7 @@
 from neo4j import Session
 
-from category import Category
-from relationship import Relationship
+from .category import Category
+from .relationship import Relationship
 
 class GraphWriter:
 
@@ -48,9 +48,8 @@ class GraphWriter:
         links = relationship.get_links();
 
         # Create the where clauses for the query
-        compare = "IN" if relationship.has_muliple_links() == list else "="
         where_1 = f"WHERE n1.{category1.data.primary_key} = row[0]"
-        where_2 = f"WHERE n2.{category2.data.primary_key} {compare} row[1]"
+        where_2 = f"WHERE n2.{category2.data.primary_key} = row[1]"
 
         # Create the query
         # Should be a literal string, not an f-string but this was the only way I could find to set the category

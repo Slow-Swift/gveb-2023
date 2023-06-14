@@ -1,6 +1,6 @@
 from typing import Any
 
-from dataset import Dataset
+from .dataset import Dataset
 
 class Category:
     
