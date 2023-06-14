@@ -43,10 +43,23 @@ class Dataset:
         for row in self:
             row[field_name] = conversion(row[field_name])
             
+        if field_name == self.primary_key:
+            new_rows = {}
+            for key in self._rows:
+                new_rows[conversion(key)] = self._rows[key]
+            self._rows = new_rows
+                
+            
     def convert_properties(self, conversions: dict[str, ConversionFunction]):
         for row in self:
             for field_name in conversions:
                 row[field_name] = conversions[field_name](row[field_name])
+                
+        if self.primary_key in conversions:
+            new_rows = {}
+            for key in self._rows:
+                new_rows[conversions[self.primary_key](key)] = self._rows[key]
+            self._rows = new_rows
     
     def for_each(self, func: Callable[[Row], None]):
         """ Run a function on every row in the data
@@ -243,7 +256,7 @@ class Dataset:
             return
         
         if fieldnames == None:
-            fieldnames = [key for key in self._rows[0]]
+            fieldnames = [key for key in next(iter(self._rows.values()))]
         
         with open(filename, 'w', newline='', encoding='utf-8-sig') as out_file:
             writer = csv.DictWriter(out_file, fieldnames=fieldnames, quoting=csv.QUOTE_MINIMAL)
@@ -251,7 +264,7 @@ class Dataset:
             if write_header:
                 writer.writeheader()
                 
-            writer.writerows(self._rows)
+            writer.writerows(self._rows.values())
     
     @staticmethod
     def cross_data(data_1: Dataset, data_2: Dataset, func: Callable[[Row, Row], None]):
