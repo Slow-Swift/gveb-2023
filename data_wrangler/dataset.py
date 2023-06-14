@@ -242,6 +242,26 @@ class Dataset:
         
         self.match_closest(other_data, distance, on_match)
         
+    def get_fieldnames(self):
+        if len(self) == 0: return []
+        return [key for key in next(iter(self._rows.values()))]
+    
+    def merge(self, other: Dataset):
+        empty = len(self) == 0 or len(other) == 0
+        if not empty:
+            if self.primary_key != other.primary_key: return
+            if self.get_fieldnames() != other.get_fieldnames(): return
+            
+        self._rows.update(other._rows)
+        
+    def filter(self, filter: Callable[[Row], bool]):
+        toDelete = []
+        for row in self:
+            if not filter(row):
+                toDelete.append(row)
+        for row in toDelete:
+            del self._rows[row['id']]
+        
     def write_to_file(self, filename: str, delimiter: str = ',', fieldnames=None, write_header = True):
         """ Write the dataset to a csv file
 
@@ -256,7 +276,7 @@ class Dataset:
             return
         
         if fieldnames == None:
-            fieldnames = [key for key in next(iter(self._rows.values()))]
+            fieldnames = self.get_fieldnames()
         
         with open(filename, 'w', newline='', encoding='utf-8-sig') as out_file:
             writer = csv.DictWriter(out_file, fieldnames=fieldnames, quoting=csv.QUOTE_MINIMAL)
