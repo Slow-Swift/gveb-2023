@@ -1,4 +1,4 @@
-﻿id,type,street_count,vulnerability_score,longitude,latitude,transit_count,crime_count,stores_count,rtransit_count,schools_count,neighbors,crime_range,store_range,transit_range,rtransit_range,schools_range
+﻿id,type,street_count,vulnerability_score,longitude,latitude,transit_count,crime_count,stores_count,rtransit_count,schools_count,neighbors,crime_reach,store_reach,transit_reach,rtransit_reach,schools_reach
 1,Junction,2,0.0,-123.2247581,49.27476,10,0,0,0,0,"[(24, 774.7263166, 7756), (5, 347.1479463, 7851)]",1.4808062111402396,1.341650382017823,10.40355100855535,0.0017651289934954228,0.03159074162516181
 2,Dead end,1,0.0,-123.2238652,49.27737087,0,0,0,0,0,[],0.0,0.0,0.0,0.0,0.0
 3,Dead end,1,0.0,-123.2224918,49.27093693,17,0,0,0,0,[],0.0,0.0,17.0,0.0,0.0

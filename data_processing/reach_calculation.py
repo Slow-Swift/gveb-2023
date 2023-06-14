@@ -19,7 +19,7 @@ junctions.convert_properties({
     'neighbors': lambda v : literal_eval(v) if v else []
 })
 
-def calculate_range(junction, properties, dst_scale, limit):
+def calculate_reach(junction, properties, dst_scale, limit):
     """ Calculate a modified version of Borgatti's reach formula
     
     The range formula is:  sumweight * 1 / (dst_scale * dst + 1) ^ 2
@@ -37,7 +37,7 @@ def calculate_range(junction, properties, dst_scale, limit):
     Returns:
         float: The calculated reach.
     """
-    ranges = { key: 0 for key in properties}
+    reaches = { key: 0 for key in properties}
     visited = set()
     queue = []
     heappush(queue, (0, junction['id']))
@@ -53,34 +53,34 @@ def calculate_range(junction, properties, dst_scale, limit):
         # Update the range values
         scaled_dst = 1 / ((dst_scale * dst + 1) ** 2)
         for key in properties:
-            ranges[key] += junctions[next_jun][properties[key]] * scaled_dst
+            reaches[key] += junctions[next_jun][properties[key]] * scaled_dst
               
         for neighbor, delta, s_id in junctions[next_jun]['neighbors']:
             if neighbor in visited: continue
             neighbor_dst = dst + delta
             heappush(queue, (neighbor_dst, neighbor))
-    return ranges
+    return reaches
 
-def calculate_ranges(junctions, properties, dst_scale, limit):
+def calculate_reaches(junctions, properties, dst_scale, limit):
     for i, junction in enumerate(junctions):
-        ranges = calculate_range(junction, properties, dst_scale, limit)
-        for key in ranges:
-            junction[key] = ranges[key]
+        reaches = calculate_reach(junction, properties, dst_scale, limit)
+        for key in reaches:
+            junction[key] = reaches[key]
         
         if (i+1) % 100 == 0:
             print(f'\rCalculated {i+1}/{len(junctions)}           ', end='')
     print(f'\rCalculated {len(junctions)}/{len(junctions)}        ')
     
-calculate_ranges(
+calculate_reaches(
     junctions, 
     {
-        'crime_range': 'crime_count',
-        'store_range': 'stores_count',
-        'transit_range': 'transit_count',
-        'rtransit_range': 'rtransit_count',
-        'schools_range': 'schools_count'
+        'crime_reach': 'crime_count',
+        'store_reach': 'stores_count',
+        'transit_reach': 'transit_count',
+        'rtransit_reach': 'rtransit_count',
+        'schools_reach': 'schools_count'
     }, 
     0.01, 
     500
 )
-junctions.write_to_file('../processed_data/range_junctions.csv')
+junctions.write_to_file('../processed_data/reach_junctions.csv')

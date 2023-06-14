@@ -19,7 +19,7 @@ from data_wrangler.relationship_property_matchers import match_props
 # Change this to point to the directory of your database information
 DATABASE_INFO_FILEPATH = r"../../dbinfo.txt"
 
-JUNCTION_FILE = '../processed_data/junctions.csv'
+JUNCTION_FILE = '../processed_data/reach_junctions.csv'
 SEGMENT_FILE = '../processed_data/segments.csv'
 CRIME_FILE = '../processed_data/crime.csv'
 TRANSIT_FILE = '../processed_data/transit.csv'
@@ -115,6 +115,11 @@ def load_junctions():
             'rtransit_count': int,
             'neighbor_ids': (lambda v: [n[0] for n in literal_eval(v if v else '[]')], 'neighbors'),
             'street_ids': (lambda v: [n[2] for n in literal_eval(v if v else '[]')], 'neighbors'),
+            'crime_reach': float,
+            'store_reach': float,
+            'transit_reach': float,
+            'rtransit_reach': float,
+            'schools_reach': float,
         }
     )
     
@@ -132,7 +137,12 @@ def load_junctions():
             'transit_count',
             'stores_count',
             'schools_count',
-            'rtransit_count'
+            'rtransit_count',
+            'crime_reach',
+            'store_reach',
+            'transit_reach',
+            'rtransit_count',
+            'schools_reach',
         ]
     )
     
