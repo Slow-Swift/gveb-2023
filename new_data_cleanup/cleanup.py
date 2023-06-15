@@ -26,9 +26,9 @@ crime_2021 = Dataset.load_file(CRIME_2021, primary_key_start=len(crime_2022) + 1
 junctions = Dataset.load_file(JUNCTIONS, primary_key="JunctionID")
 segments = Dataset.load_file(SEGMENTS, primary_key="StreetID")
 stores = Dataset.load_file(STORES, delimiter=';')
-transit = Dataset.load_file(TRANSIT)
-rapid_transit = Dataset.load_file(RAPID_TRANSIT)
-schools = Dataset.load_file(SCHOOLS)
+transit = Dataset.load_file(TRANSIT, primary_key='stop_id')
+rapid_transit = Dataset.load_file(RAPID_TRANSIT, delimiter=';', primary_key_start=1)
+schools = Dataset.load_file(SCHOOLS, delimiter=';', primary_key_start=1)
 
 crime_2022.merge(crime_2021)
 crime = crime_2022
@@ -132,9 +132,8 @@ for row in crime:
     del row['Y']
     
 # Match to junctions
-#crime.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='crime_count', distance_limit=200)
-
-#crime.filter(lambda row: row['junction_id'] != 0)
+crime.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='crime_count', distance_limit=200)
+crime.filter(lambda row: row['junction_id'] != 0)
 print(f"Filtered No Connections. Remaining {len(crime)} ({len(crime) / starting_crime_count:.0%})")
 
 
@@ -173,3 +172,55 @@ print(f"Removed vacant stores. Remaining {len(stores)} ({len(stores) / starting_
 stores.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='stores_count', distance_limit=200)
 stores.filter(lambda row: row['junction_id'] != 0)
 print(f"Removed stores with no connections. Remaining {len(stores)} ({len(stores) / starting_stores_count:.0%})")
+
+
+## Cleanup Transit ##
+print()
+print(f"Initial transit count: {starting_transit_count}")
+
+transit.rename('stop_lat', 'latitude')
+transit.rename('stop_lon', 'longitude')
+transit.convert_properties({
+    'stop_id': int,
+    'latitude': float,
+    'longitude': float
+})
+
+transit.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='stores_count', distance_limit=200)
+transit.filter(lambda row: row['junction_id'] != 0)
+print(f"Removed transit with no connections. Remaining {len(transit)} ({len(transit) / starting_transit_count:.0%})")
+
+
+## Cleanup Rapid Transit ##
+print()
+print(f"Initial rapid transit count: {starting_rapid_transit_count}")
+
+rapid_transit.rename('STATION', 'name')
+rapid_transit.rename('Geo Local Area', 'area')
+
+rapid_transit.add_property('latitude', lambda row: split_latitude(row['geo_point_2d']))
+rapid_transit.add_property('longitude', lambda row: split_longitude(row['geo_point_2d']))
+rapid_transit.drop('geo_point_2d')
+
+rapid_transit.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='stores_count', distance_limit=200)
+rapid_transit.filter(lambda row: row['junction_id'] != 0)
+print(f"Removed rapid transit with no connections. Remaining {len(rapid_transit)} ({len(rapid_transit) / starting_rapid_transit_count:.0%})")
+
+## Cleanup Schools ##
+print()
+print(f"Initial school count: {starting_schools_count}")
+
+schools.rename('ADDRESS', 'address')
+schools.rename('SCHOOL_CATEGORY', 'category')
+schools.rename('SCHOOL_NAME', 'name')
+
+schools.add_property('latitude', lambda row: split_latitude(row['geo_point_2d']))
+schools.add_property('longitude', lambda row: split_longitude(row['geo_point_2d']))
+schools.drop('geo_point_2d')
+
+schools.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='stores_count', distance_limit=200)
+schools.filter(lambda row: row['junction_id'] != 0)
+print(f"Removed schools with no connections. Remaining {len(schools)} ({len(schools) / starting_schools_count:.0%})")
+
+
+## Write Data ##
