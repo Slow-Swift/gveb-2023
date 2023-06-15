@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import csv
-from haversine import haversine
+from haversine import haversine, Unit
 
 from math import cos, sin, atan2, sqrt, pi
 from copy import copy
@@ -191,33 +191,11 @@ class Dataset:
             if count_field:
                 row_2[count_field] = row_2[count_field] + 1
             
-        # Implementation of the haversine formula found at 
-        # https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula#:~:text=from%20math%20import%20cos%2C%20asin,of%20completeness%3A%20Haversine%20on%20Wikipedia.
         def distance(row_1: Row, row_2: Row):
-            degrees_to_radians = pi / 180
-            radius = 6371   # Radius of the earth in km
+            p1 = (row_1['latitude'], row_1['longitude'])
+            p2 = (row_2['latitude'], row_2['longitude'])
             
-            lat1 = row_1['latitude']
-            lon1 = row_1['longitude']
-            lat2 = row_2['latitude']
-            lon2 = row_2['longitude']
-            
-            delta_lat = lat1 - lat2
-            delta_lon = lon1 - lon2
-            
-            delta_lat_rad = delta_lat * degrees_to_radians
-            delta_lon_rad = delta_lon * degrees_to_radians
-            
-            a = (
-                sin(delta_lat_rad / 2) ** 2 + 
-                cos(lat1 * degrees_to_radians) * cos(lat2 * degrees_to_radians) *
-                sin(delta_lon_rad / 2) ** 2
-            )
-            a = min(a, 1) # Clamp a to 1 incase of floating point errors or approximations
-            
-            
-            c = 2 * atan2(sqrt(a), sqrt(1-a))
-            return radius * c * 1000
+            return haversine(p1, p2, unit=Unit.METERS)
         
         self.match_closest(other_data, distance, on_match, distance_limit=distance_limit)
     
@@ -249,32 +227,11 @@ class Dataset:
             if count_field:
                 row_2[count_field] = row_2[count_field] + 1
             
-        # Implementation of the haversine formula found at 
-        # https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula#:~:text=from%20math%20import%20cos%2C%20asin,of%20completeness%3A%20Haversine%20on%20Wikipedia.
         def distance(row_1: Row, row_2: Row):
-            degrees_to_radians = pi / 180
-            radius = 6371   # Radius of the earth in km
+            p1 = (row_1['latitude'], row_1['longitude'])
+            p2 = (row_2['latitude'], row_2['longitude'])
             
-            lat1 = row_1['latitude']
-            lon1 = row_1['longitude']
-            lat2 = row_2['latitude']
-            lon2 = row_2['longitude']
-            
-            delta_lat = lat1 - lat2
-            delta_lon = lon1 - lon2
-            
-            delta_lat_rad = delta_lat * degrees_to_radians
-            delta_lon_rad = delta_lon * degrees_to_radians
-            
-            # delta_lat_rad and delta_lon_rad should be quite small so sin(delta_lat_rad) can be approximated with delta_lat_rad
-            a = (
-                delta_lat_rad * delta_lat_rad +
-                cos(lat1 * degrees_to_radians) * cos(lat2 * degrees_to_radians) *
-                delta_lon_rad * delta_lon_rad
-            )
-            
-            c = 2 * atan2(sqrt(a), sqrt(1-a))
-            return radius * c * 1000
+            return haversine(p1, p2, unit=Unit.METERS)
         
         self.match_closest(other_data, distance, on_match, distance_limit=distance_limit)
         
