@@ -72,7 +72,7 @@ class Dataset:
         for row in self:
             func(row)
             
-    def match_closest(self, other_data: Dataset, distance_func: Callable[[Row, Row], float], on_match: Callable[[Row, Row, float], None]):
+    def match_closest(self, other_data: Dataset, distance_func: Callable[[Row, Row], float], on_match: Callable[[Row, Row, float], None], distance_limit: float=float('inf')):
         """ Pair all the nodes in one data set to the closest node in another dataset
         
         WARNING: Creates a cross product between the two data sets. May run slowly for large datasets.
@@ -85,12 +85,10 @@ class Dataset:
             on_match (Callable[[Row, Row, float], None]): The function to run when a row is matched with its closest row
         """
         
-        # TODO: Add a distance limiter
-        
         # Match for each node in this dataset
         for i, row_1 in enumerate(self):
             closest = None
-            b_dist = float('inf')
+            b_dist = distance_limit
             
             # Find the closest node in data set 2
             for row_2 in other_data:
@@ -137,7 +135,7 @@ class Dataset:
         
         self.match_closest(other_data, distance, on_match)
         
-    def match_lat_lng(self, other_data: Dataset, match_field: str, dst_field:str, count_field: str = ''):
+    def match_lat_lng(self, other_data: Dataset, match_field: str, dst_field:str, count_field: str = '', distance_limit=float('inf')):
         """ Pair all the rows in this dataset with the closest row in [other_data] based on latitude and longitude.
         
         The haversine formula is used to calculate distance in meters from latitude and longitude
@@ -151,6 +149,10 @@ class Dataset:
         if count_field:
             for row in other_data:
                 row[count_field] = row.get(count_field, 0)
+                
+        for row in self:
+            row[match_field] = 0
+            row[dst_field] = 0
         
         def on_match(row_1, row_2, dst):
             row_1[match_field] = row_2[other_data.primary_key]
@@ -187,9 +189,9 @@ class Dataset:
             c = 2 * atan2(sqrt(a), sqrt(1-a))
             return radius * c * 1000
         
-        self.match_closest(other_data, distance, on_match)
+        self.match_closest(other_data, distance, on_match, distance_limit=distance_limit)
     
-    def match_lat_lng_approx(self, other_data: Dataset, match_field: str, dst_field:str, count_field: str = ''):
+    def match_lat_lng_approx(self, other_data: Dataset, match_field: str, dst_field:str, count_field: str = '', distance_limit=float('inf')):
         """ Pair all the rows in this dataset with the aprroximated closes row in [other_data] based on latitude and longitude.
         
         The haversine formula is used to calculate distance in meters from latitude and longitude
@@ -205,6 +207,10 @@ class Dataset:
         if count_field:
             for row in other_data:
                 row[count_field] = row.get(count_field, 0)
+                
+        for row in self:
+            row[match_field] = 0
+            row[dst_field] = 0
         
         def on_match(row_1, row_2, dst):
             row_1[match_field] = row_2[other_data.primary_key]
@@ -240,7 +246,7 @@ class Dataset:
             c = 2 * atan2(sqrt(a), sqrt(1-a))
             return radius * c * 1000
         
-        self.match_closest(other_data, distance, on_match)
+        self.match_closest(other_data, distance, on_match, distance_limit=distance_limit)
         
     def get_fieldnames(self):
         if len(self) == 0: return []

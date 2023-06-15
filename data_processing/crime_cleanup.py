@@ -55,9 +55,12 @@ crimes = crimes_2022
 original_crime_number = len(crimes)
 print(f"Collected {original_crime_number} crimes")
 crimes.filter(lambda row: row['latitude'] != 0 or row['longitude'] != 0)
-print(f"Filtered Crimes. Remaining {len(crimes)} ({len(crimes) / original_crime_number:.0%})")
+print(f"Filtered Null Locations. Remaining {len(crimes)} ({len(crimes) / original_crime_number:.0%})")
 
-crimes.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='crime_count')
-# crimes.write_to_file('../processed_data/crime.csv')
+crimes.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='crime_count', distance_limit=200)
+crimes.filter(lambda row: row['junction_id'] != 0)
+print(f"Filteres No Connections. Remaining {len(crimes)} ({len(crimes) / original_crime_number:.0%})")
 
-# junctions.write_to_file(JUNCTION_FILE)
+crimes.write_to_file('../processed_data/crime.csv')
+
+junctions.write_to_file(JUNCTION_FILE)
