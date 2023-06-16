@@ -1,195 +1,195 @@
-﻿Geom,Geo Local Area,id,address,category,name,latitude,longitude,junction_id,junction_dst
-"{""coordinates"": [-123.11400985419304, 49.28500059925005], ""type"": ""Point""}",Downtown,1,688 W Hastings St,Independent School,Alexander Academy,49.2850005993,-123.114009854,2725,35.408541652770616
-"{""coordinates"": [-123.12579095999999, 49.23963096106753], ""type"": ""Point""}",South Cambie,2,5025 Willow St,Public School,BC Children's Adol. Psych. Unit,49.2396309611,-123.12579096,2360,157.47780391469107
-"{""coordinates"": [-123.07192309841, 49.27523599085204], ""type"": ""Point""}",Grandview-Woodland,3,1001 Cotton Drive,Public School,Britannia Community Secondary,49.2752359909,-123.071923098,4491,146.6592443052216
-"{""coordinates"": [-123.03582905, 49.219380799067466], ""type"": ""Point""}",Killarney,4,3340 E 54th Av,Public School,Captain James Cook Elementary,49.2193807991,-123.03582905,6081,89.42946946662005
-"{""coordinates"": [-123.03582905, 49.219380799067466], ""type"": ""Point""}",Killarney,5,3340 E 54th Av,StrongStart BC,Captain James Cook StrongStart Centre,49.2193807991,-123.03582905,6081,89.42946946662005
-"{""coordinates"": [-123.05058984, 49.26788631306769], ""type"": ""Point""}",Hastings-Sunrise,6,2684 E 2nd Av,StrongStart BC,Chief Maquinna StrongStart Centre,49.2678863131,-123.05058984,5521,87.91430210370198
-"{""coordinates"": [-123.0483494372457, 49.25235796846878], ""type"": ""Point""}",Renfrew-Collingwood,7,3575 Kaslo St,Independent School,Children's Hearing and Speech Centre BC,49.2523579685,-123.048349437,5503,88.6872772743588
-"{""coordinates"": [-123.032313, 49.23634859906753], ""type"": ""Point""}",Renfrew-Collingwood,8,3417 Euclid Av,Public School,Collingwood Neighbourhood School,49.2363485991,-123.032313,6150,94.62787303199698
-"{""coordinates"": [-123.07063159999998, 49.220439256067465], ""type"": ""Point""}",Victoria-Fraserview,9,1755 E 55th Av,Public School,David Thompson Secondary,49.2204392561,-123.0706316,4594,107.05126760715315
-"{""coordinates"": [-123.03951720287967, 49.27964048422215], ""type"": ""Point""}",Hastings-Sunrise,10,555 Lillooet St,Public School,Dr A R Lord Elementary,49.2796404842,-123.039517203,5954,80.47664292895129
-"{""coordinates"": [-123.12100426, 49.22690693506749], ""type"": ""Point""}",Oakridge,11,6350 Tisdall St,Public School,Dr Annie B Jamieson Elementary,49.2269069351,-123.12100426,2421,64.95468681806203
-"{""coordinates"": [-123.19253813000002, 49.25956780506763], ""type"": ""Point""}",West Point Grey,12,3050 Crown St,Public School,Ecole Jules Quesnel Elementary,49.2595678051,-123.19253813,204,115.35463783754687
-"{""coordinates"": [-123.122482, 49.27223799906772], ""type"": ""Point""}",Downtown,13,150 Drake St,Public School,Elsie Roy Elementary,49.2722379991,-123.122482,2440,85.43625029258551
-"{""coordinates"": [-123.12609640999999, 49.2500416520676], ""type"": ""Point""}",South Cambie,14,4070 Oak St,Public School,Emily Carr Elementary,49.2500416521,-123.12609641,2299,105.06325421806929
-"{""coordinates"": [-123.1982460233882, 49.267667982326586], ""type"": ""Point""}",West Point Grey,15,4196 W 4th Av,Independent School,Family Montessori School,49.2676679823,-123.198246023,149,157.92959759255487
-"{""coordinates"": [-123.15727596082289, 49.26266070419338], ""type"": ""Point""}",Kitsilano,16,2294 W 10th Av,Independent School,Fraser Academy,49.2626607042,-123.157275961,1061,37.41604005312708
-"{""coordinates"": [-123.05745595, 49.23673222606754], ""type"": ""Point""}",Renfrew-Collingwood,17,2330 E 37th Av,Public School,G T Cunningham Elementary,49.2367322261,-123.05745595,5138,75.14974474359103
-"{""coordinates"": [-123.02567271, 49.24206908706756], ""type"": ""Point""}",Renfrew-Collingwood,18,3633 Tanner St,Public School,Graham Bruce Community Elementary,49.2420690871,-123.02567271,6488,77.0602910796538
-"{""coordinates"": [-123.14935629, 49.2722458780677], ""type"": ""Point""}",Kitsilano,19,1551 Cypress St,Public School,Henry Hudson Elementary,49.2722458781,-123.14935629,1323,37.811145810552425
-"{""coordinates"": [-123.09527169, 49.222569588067465], ""type"": ""Point""}",Sunset,20,451 E 53rd Av,Public School,John Henderson Elementary,49.2225695881,-123.09527169,3525,83.87255382920758
-"{""coordinates"": [-123.0516408, 49.24142469506758], ""type"": ""Point""}",Renfrew-Collingwood,21,4710 Slocan St,Public School,John Norquay Elementary,49.2414246951,-123.0516408,5387,66.56540635496457
-"{""coordinates"": [-123.1227909397854, 49.23344818232933], ""type"": ""Point""}",Oakridge,22,5718 Willow St,Independent School,King David High School,49.2334481823,-123.12279094,2390,46.52565004113322
-"{""coordinates"": [-123.13644517, 49.28982415206781], ""type"": ""Point""}",West End,23,1755 Barclay St,Public School,King George Secondary,49.2898241521,-123.13644517,1767,83.98833502315581
-"{""coordinates"": [-123.14226149913934, 49.24843134181949], ""type"": ""Point""}",Shaughnessy,24,4195 Alexandra St,Independent School,Little Flower Academy,49.2484313418,-123.142261499,1588,55.317753834814326
-"{""coordinates"": [-123.05269627000001, 49.2521383750676], ""type"": ""Point""}",Renfrew-Collingwood,25,3663 Penticton St,Public School,Lord Beaconsfield Elementary,49.2521383751,-123.05269627,5400,45.25474031112228
-"{""coordinates"": [-123.18024556263893, 49.250581806373596], ""type"": ""Point""}",Dunbar-Southlands,26,3455 W King Edward Av,Public School,Lord Kitchener Elementary,49.2505818064,-123.180245563,465,127.67078296021444
-"{""coordinates"": [-123.12980600999998, 49.283091710067765], ""type"": ""Point""}",West End,27,1150 Nelson St,Public School,Lord Roberts Annex,49.2830917101,-123.12980601,2082,92.02567950253082
-"{""coordinates"": [-123.07246012, 49.24532077406758], ""type"": ""Point""}",Kensington-Cedar Cottage,28,4444 Dumfries St,Public School,Lord Selkirk Annex,49.2453207741,-123.07246012,4407,72.36841183837927
-"{""coordinates"": [-123.16601055529476, 49.263528260800655], ""type"": ""Point""}",Kitsilano,29,2678 W Broadway,Independent School,Madrona School,49.2635282608,-123.166010555,846,43.940103866319284
-"{""coordinates"": [-123.09399954, 49.26396573206767], ""type"": ""Point""}",Mount Pleasant,30,2300 Guelph St,StrongStart BC,Mount Pleasant StrongStart Centre,49.2639657321,-123.09399954,3506,77.93974195482421
-"{""coordinates"": [-123.19617943097614, 49.264135070670505], ""type"": ""Point""}",West Point Grey,31,2550 Camosun St,Independent School,Our Lady of Perpetual Help,49.2641350707,-123.196179431,196,62.855267756245055
-"{""coordinates"": [-123.16244364510744, 49.269785798267485], ""type"": ""Point""}",Kitsilano,32,1819 Larch St,Independent School,Pacific Rim Montessori Academy,49.2697857983,-123.162443645,954,34.75407197418912
-"{""coordinates"": [-123.14026052001878, 49.26329988232251], ""type"": ""Point""}",Fairview,33,1580 W Broadway,Public School,Peak House,49.2632998823,-123.14026052,1618,65.3801508411506
-"{""coordinates"": [-123.20112784000001, 49.257791772067634], ""type"": ""Point""}",Dunbar-Southlands,34,4102 W 16th Av,Public School,Queen Elizabeth Elementary,49.2577917721,-123.20112784,137,80.63498534948435
-"{""coordinates"": [-123.06634874, 49.267187849067696], ""type"": ""Point""}",Grandview-Woodland,35,1850 E 3rd Av,Public School,Queen Victoria Annex,49.2671878491,-123.06634874,4736,54.40128409548725
-"{""coordinates"": [-123.03205805, 49.25145777406758], ""type"": ""Point""}",Renfrew-Collingwood,36,3315 E 22nd Av,Public School,Renfrew Community Elementary,49.2514577741,-123.03205805,6232,120.29788303073059
-"{""coordinates"": [-123.14380998000001, 49.24867607506759], ""type"": ""Point""}",Shaughnessy,37,4250 Marguerite St,Public School,Shaughnessy Elementary,49.2486760751,-123.14380998,1487,108.83309105527634
-"{""coordinates"": [-123.08671432, 49.23453643506752], ""type"": ""Point""}",Kensington-Cedar Cottage,38,960 E 39th Av,Public School,Sir Alexander Mackenzie Elementary,49.2345364351,-123.08671432,3814,84.07996911589224
-"{""coordinates"": [-123.09480947999998, 49.249753501067595], ""type"": ""Point""}",Riley Park,39,419 E 24th Av,Public School,Sir Charles Tupper Secondary,49.2497535011,-123.09480948,3545,78.97327016339544
-"{""coordinates"": [-123.03760798, 49.234347746067506], ""type"": ""Point""}",Renfrew-Collingwood,40,3250 Kingsway,Public School,Sir Guy Carleton Community Elementary,49.2343477461,-123.03760798,5966,61.9637952229521
-"{""coordinates"": [-123.07817551, 49.244156609067566], ""type"": ""Point""}",Kensington-Cedar Cottage,41,1300 E 29th Av,Public School,Sir Richard McBride Elementary,49.2441566091,-123.07817551,4184,46.70917744160169
-"{""coordinates"": [-123.06467911, 49.280723909067746], ""type"": ""Point""}",Grandview-Woodland,42,1950 E Hastings St,Public School,Sir William Macdonald Community,49.2807239091,-123.06467911,4769,80.90519176784231
-"{""coordinates"": [-123.12561546, 49.22105956806746], ""type"": ""Point""}",Oakridge,43,7055 Heather St,Public School,Sir Winston Churchill Secondary,49.2210595681,-123.12561546,2277,53.047664791474396
-"{""coordinates"": [-123.10656921, 49.23156648606752], ""type"": ""Point""}",Oakridge,44,5855 Ontario St,Public School,Sir Wm Van Horne Elementary,49.2315664861,-123.10656921,3000,66.2835809871138
-"{""coordinates"": [-123.13700792036838, 49.20446493818909], ""type"": ""Point""}",Marpole,45,1370 W 73rd Av,Independent School,St Anthony of Padua,49.2044649382,-123.13700792,1809,51.60919538592891
-"{""coordinates"": [-123.1561791428068, 49.26317767149081], ""type"": ""Point""}",Kitsilano,46,2215 W 10th Av,Independent School,St John's School,49.2631776715,-123.156179143,1120,69.89681659705887
-"{""coordinates"": [-123.03370590892874, 49.237501631148845], ""type"": ""Point""}",Renfrew-Collingwood,47,5239 Joyce St,Independent School,St Mary's,49.2375016311,-123.033705909,6175,79.86490652014521
-"{""coordinates"": [-123.10260439171995, 49.261404544549904], ""type"": ""Point""}",Mount Pleasant,48,115 E 11th Av,Independent School,St Patrick Regional Secondary,49.2614045445,-123.102604392,3112,42.68874105131619
-"{""coordinates"": [-123.1024366967439, 49.259762302830595], ""type"": ""Point""}",Mount Pleasant,49,2850 Quebec St,Independent School,St Patrick's Elementary,49.2597623028,-123.102436697,3110,68.33194970447252
-"{""coordinates"": [-123.0371743, 49.246512456067585], ""type"": ""Point""}",Renfrew-Collingwood,50,3155 E 27th Av,Public School,Sunny Hill Hospital Program,49.2465124561,-123.0371743,6020,48.69949352357499
-"{""coordinates"": [-123.03187058558184, 49.263648890401456], ""type"": ""Point""}",Hastings-Sunrise,51,2325 Cassiar St,Public School,Thunderbird Elementary,49.2636488904,-123.031870586,6237,88.29581385943337
-"{""coordinates"": [-123.07382164, 49.25356935406761], ""type"": ""Point""}",Kensington-Cedar Cottage,52,3525 Dumphries St,Public School,Tyee Elementary,49.2535693541,-123.07382164,4431,66.35242136205402
-"{""coordinates"": [-123.02856693112142, 49.25471221591419], ""type"": ""Point""}",Renfrew-Collingwood,53,3496 Mons Drive,Independent School,Vancouver Christian,49.2547122159,-123.028566931,6391,76.19018036669362
-"{""coordinates"": [-123.1361713344514, 49.23495941876865], ""type"": ""Point""}",Shaughnessy,54,5400 Cartier St,Independent School,Vancouver College,49.2349594188,-123.136171334,1776,79.721402455618
-"{""coordinates"": [-123.1413692647842, 49.21547172757715], ""type"": ""Point""}",Marpole,55,1545 W 62nd Av,Independent School,Vancouver Hebrew Academy,49.2154717276,-123.141369265,1644,92.43947981336134
-"{""coordinates"": [-123.14463359946043, 49.20779039590787], ""type"": ""Point""}",Marpole,56,8650 Barnard St,Independent School,Vancouver Montessori School,49.2077903959,-123.144633599,1467,91.7689133328395
-"{""coordinates"": [-123.08434542, 49.216109230067424], ""type"": ""Point""}",Sunset,57,1000 E 59th Av,Public School,Walter Moberly Elementary,49.2161092301,-123.08434542,3858,90.85053492456639
-"{""coordinates"": [-123.0503919492473, 49.256937847571606], ""type"": ""Point""}",Renfrew-Collingwood,58,3075 Slocan St,Independent School,Westside Montessori Academy,49.2569378476,-123.050391949,5514,64.03866506342817
-"{""coordinates"": [-123.14034013611547, 49.248848218981884], ""type"": ""Point""}",Shaughnessy,59,4176 Alexandra St,Independent School,York House School,49.248848219,-123.140340136,1588,100.18198403113436
-"{""coordinates"": [-123.13091892226645, 49.277061847359775], ""type"": ""Point""}",Downtown,60,1351 Hornby St,Independent School,Anchor Point Montessori,49.2770618474,-123.130918922,2033,72.50374752067708
-"{""coordinates"": [-123.12579095999999, 49.23963096106753], ""type"": ""Point""}",South Cambie,61,5025 Willow St,Public School,BCCH Eating Disorders School Program,49.2396309611,-123.12579096,2360,157.47780391469107
-"{""coordinates"": [-123.1193909103338, 49.2583379074734], ""type"": ""Point""}",Fairview,62,3020 Heather St,Independent School,Blessed Sacrament School,49.2583379075,-123.11939091,2502,55.30111823926496
-"{""coordinates"": [-123.14531440269688, 49.263384758081116], ""type"": ""Point""}",Fairview,63,1788 W Broadway,Independent School,Century High School,49.2633847581,-123.145314403,1450,47.523818951417454
-"{""coordinates"": [-123.08271031, 49.2502130610676], ""type"": ""Point""}",Kensington-Cedar Cottage,64,3877 Glen Drive,Public School,Charles Dickens Annex,49.2502130611,-123.08271031,4001,65.29459802934565
-"{""coordinates"": [-123.04511809000002, 49.266421543067686], ""type"": ""Point""}",Hastings-Sunrise,65,2882 E 4th Av,Public School,Chief Maquinna Annex,49.2664215431,-123.04511809,5726,68.98664719653203
-"{""coordinates"": [-123.17721815907593, 49.233677833584544], ""type"": ""Point""}",Kerrisdale,66,3200 W 41st Av,Independent School,Crofton House,49.2336778336,-123.177218159,609,108.86684719731693
-"{""coordinates"": [-123.106594, 49.27863099906775], ""type"": ""Point""}",Downtown,67,55 Expo Blvd,Public School,Crosstown Elementary,49.2786309991,-123.106594,2985,72.8036544382444
-"{""coordinates"": [-123.02935503511594, 49.22799018553298], ""type"": ""Point""}",Killarney,68,6100 Battison St,Public School,Dr H N MacCorkindale Elementary,49.2279901855,-123.029355035,6382,114.49634955523985
-"{""coordinates"": [-123.09371757, 49.260059324067655], ""type"": ""Point""}",Mount Pleasant,69,2740 Guelph St,Public School,Florence Nightingale Elementary,49.2600593241,-123.09371757,3581,61.756126115918654
-"{""coordinates"": [-123.10063141, 49.24121522106756], ""type"": ""Point""}",Riley Park,70,4860 Main St,Public School,General Brock Elementary,49.2412152211,-123.10063141,3265,91.7645962220857
-"{""coordinates"": [-123.0743697, 49.266193169067684], ""type"": ""Point""}",Grandview-Woodland,71,2055 Woodland Dr,Public School,Grandview Elementary,49.2661931691,-123.0743697,4402,63.33216792293518
-"{""coordinates"": [-123.06022338, 49.26173570306765], ""type"": ""Point""}",Kensington-Cedar Cottage,72,2500 Lakewood Drive,Public School,Laura Secord Elementary,49.2617357031,-123.06022338,4994,50.355074271944176
-"{""coordinates"": [-123.13784476, 49.28678528206777], ""type"": ""Point""}",West End,73,1100 Bidwell St,Public School,Lord Roberts Elementary,49.2867852821,-123.13784476,1739,96.58344763207013
-"{""coordinates"": [-123.06900705, 49.249691952067586], ""type"": ""Point""}",Kensington-Cedar Cottage,74,1750 E 22nd Av,Public School,Lord Selkirk Elementary,49.2496919521,-123.06900705,4586,77.88107062931378
-"{""coordinates"": [-123.09147679242075, 49.27981151466552], ""type"": ""Point""}",Strathcona,75,592 E Pender St,Public School,Lord Strathcona Community Elementary,49.2798115147,-123.091476792,3615,46.43330245044782
-"{""coordinates"": [-123.15151486, 49.22940869906749], ""type"": ""Point""}",Kerrisdale,76,6199 Cypress St,Public School,Maple Grove Elementary,49.2294086991,-123.15151486,1223,68.25644071532783
-"{""coordinates"": [-123.09399954, 49.26396573206767], ""type"": ""Point""}",Mount Pleasant,77,2300 Guelph St,Public School,Mount Pleasant Elementary,49.2639657321,-123.09399954,3506,77.93974195482421
-"{""coordinates"": [-123.20112784000001, 49.257791772067634], ""type"": ""Point""}",Dunbar-Southlands,78,4102 W 16th Av,Public School,Norma Rose Point School,49.2577917721,-123.20112784,137,80.63498534948435
-"{""coordinates"": [-123.15953565, 49.24498305306758], ""type"": ""Point""}",Arbutus-Ridge,79,2250 Eddington Drive,Public School,Prince of Wales Secondary,49.2449830531,-123.15953565,1019,68.42198359693553
-"{""coordinates"": [-123.07592057, 49.261970549067655], ""type"": ""Point""}",Kensington-Cedar Cottage,80,1300 E Broadway,Public School,Queen Alexandra Elementary,49.2619705491,-123.07592057,4310,50.94244179276683
-"{""coordinates"": [-123.10819689943345, 49.25717135541721], ""type"": ""Point""}",Mount Pleasant,81,100 W 15th Av,Public School,Simon Fraser Elementary,49.2571713554,-123.108196899,2943,95.19078394974767
-"{""coordinates"": [-123.08671432, 49.23453643506752], ""type"": ""Point""}",Kensington-Cedar Cottage,82,960 E 39th Av,StrongStart BC,Sir Alexander Mackenzie StrongStart,49.2345364351,-123.08671432,3814,84.07996911589224
-"{""coordinates"": [-123.0557042, 49.221596673067474], ""type"": ""Point""}",Victoria-Fraserview,83,6901 Elliott St,Public School,Sir Charles Kingsford-Smith,49.2215966731,-123.0557042,5285,76.89733862598912
-"{""coordinates"": [-123.07329351, 49.214830464067425], ""type"": ""Point""}",Victoria-Fraserview,84,7668 Borden St,Public School,Sir James Douglas Annex,49.2148304641,-123.07329351,4371,58.50245137062226
-"{""coordinates"": [-123.08495018892324, 49.241944229212045], ""type"": ""Point""}",Kensington-Cedar Cottage,85,4750 St. Catherines St,Public School,Sir Richard McBride Annex,49.2419442292,-123.084950189,3830,80.56892338895848
-"{""coordinates"": [-123.07657409, 49.22574768906748], ""type"": ""Point""}",Victoria-Fraserview,86,1401 E 49th Av,Public School,Sir Sandford Fleming Elementary,49.2257476891,-123.07657409,4224,72.12475207704239
-"{""coordinates"": [-123.0348073745407, 49.242891620676865], ""type"": ""Point""}",Renfrew-Collingwood,87,3323 Wellington Av,StrongStart BC,Sir Wilfred Grenfell StrongStart Centre,49.2428916207,-123.034807375,6072,98.44099239477765
-"{""coordinates"": [-123.09452064422761, 49.26646231107508], ""type"": ""Point""}",Mount Pleasant,88,428 Great Northern Way,Independent School,St Francis Xavier,49.2664623111,-123.094520644,3508,39.68785266663401
-"{""coordinates"": [-123.14789881614395, 49.2640409804403], ""type"": ""Point""}",Kitsilano,89,1885 W Broadway,Independent School,St John's International,49.2640409804,-123.147898816,1363,36.32889500047791
-"{""coordinates"": [-123.06946327228026, 49.257469215545306], ""type"": ""Point""}",Kensington-Cedar Cottage,90,3000 Commercial Drive,Independent School,Stratford Hall,49.2574692155,-123.069463272,4553,40.822338655391924
-"{""coordinates"": [-123.07309884, 49.23711627206752], ""type"": ""Point""}",Kensington-Cedar Cottage,91,1551 E 37th Av,Public School,Tecumseh Annex,49.2371162721,-123.07309884,4436,43.43430328940264
-"{""coordinates"": [-123.06800394, 49.2320557420675], ""type"": ""Point""}",Victoria-Fraserview,92,1850 E 41st Av,Public School,Tecumseh Elementary,49.2320557421,-123.06800394,4607,80.74282752066387
-"{""coordinates"": [-123.11344354347607, 49.27757064431133], ""type"": ""Point""}",Downtown,93,788 Beatty St,Independent School,The Westside School,49.2775706443,-123.113443543,2723,37.947512256778495
-"{""coordinates"": [-123.08031429999998, 49.27859426906773], ""type"": ""Point""}",Strathcona,94,1130 Keefer St,Public School,Admiral Seymour Elementary,49.2785942691,-123.0803143,4142,79.17986649461447
-"{""coordinates"": [-123.07137879542154, 49.27451200859733], ""type"": ""Point""}",Grandview-Woodland,95,1110 Cotton Drive,Public School,Britannia Community Elementary,49.2745120086,-123.071378795,4491,62.7841550922532
-"{""coordinates"": [-123.03054968939806, 49.2140784317513], ""type"": ""Point""}",Killarney,96,7835 Champlain Crescent,Public School,Champlain Heights Annex,49.2140784318,-123.030549689,6215,167.5973615976899
-"{""coordinates"": [-123.03054968939806, 49.2140784317513], ""type"": ""Point""}",Killarney,97,7835 Champlain Crescent,StrongStart BC,Champlain Heights Annex StrongStart Cntr,49.2140784318,-123.030549689,6215,167.5973615976899
-"{""coordinates"": [-123.09798144, 49.2507533360676], ""type"": ""Point""}",Riley Park,98,315 E 23rd Av,Public School,David Livingstone Elementary,49.2507533361,-123.09798144,3341,62.32772740838319
-"{""coordinates"": [-123.04440254, 49.22957875906749], ""type"": ""Point""}",Killarney,99,2900 E 44th Av,Public School,Dr George M Weir Elementary,49.2295787591,-123.04440254,5682,80.26975474825115
-"{""coordinates"": [-123.11722884, 49.25290710906762], ""type"": ""Point""}",South Cambie,100,500 W 20th Av,Public School,Edith Cavell Elementary,49.2529071091,-123.11722884,2564,89.21278664582789
-"{""coordinates"": [-123.12579095999999, 49.23963096106753], ""type"": ""Point""}",South Cambie,101,5025 Willow St,Public School,G F Strong School Program,49.2396309611,-123.12579096,2360,157.47780391469107
-"{""coordinates"": [-123.10596494, 49.247228706067595], ""type"": ""Point""}",Riley Park,102,4251 Ontario St,Public School,General Wolfe Elementary,49.2472287061,-123.10596494,3019,68.00247592501651
-"{""coordinates"": [-123.05057740868249, 49.28261095988815], ""type"": ""Point""}",Hastings-Sunrise,103,2625 Franklin St,Public School,Hastings Community Elementary,49.2826109599,-123.050577409,5540,100.0204988132907
-"{""coordinates"": [-123.16209828723368, 49.238114800850234], ""type"": ""Point""}",Arbutus-Ridge,104,2490 W 37th Av,Independent School,Ivy Montessori School,49.2381148009,-123.162098287,934,48.331267802385405
-"{""coordinates"": [-123.08804322, 49.22104214306744], ""type"": ""Point""}",Sunset,105,801 E 54th Av,Public School,John Henderson Annex,49.2210421431,-123.08804322,3808,94.24362739732477
-"{""coordinates"": [-123.17345921, 49.23616824506754], ""type"": ""Point""}",Dunbar-Southlands,106,5555 Carnarvon St,Public School,Kerrisdale Elementary,49.2361682451,-123.17345921,672,59.731588756440786
-"{""coordinates"": [-123.04415722000002, 49.22530010406748], ""type"": ""Point""}",Killarney,107,6454 Killarney St,Public School,Killarney Secondary,49.2253001041,-123.04415722,5732,63.0479107701899
-"{""coordinates"": [-123.14937705, 49.262518934067664], ""type"": ""Point""}",Kitsilano,108,1936 W 10th Av,Public School,Lord Tennyson Elementary,49.2625189341,-123.14937705,1277,91.37492115179617
-"{""coordinates"": [-123.06467911, 49.280723909067746], ""type"": ""Point""}",Grandview-Woodland,109,1950 E Hastings St,StrongStart BC,MacDonald StrongStart Centre,49.2807239091,-123.06467911,4769,80.90519176784231
-"{""coordinates"": [-123.12761225509908, 49.23342156632536], ""type"": ""Point""}",Oakridge,110,5750 Oak St,Independent School,Pacific Torah Institute,49.2334215663,-123.127612255,2162,58.78459992343866
-"{""coordinates"": [-123.12511331828341, 49.28108362095662], ""type"": ""Point""}",Downtown,111,981 Nelson St,Independent School,Pattison High School,49.281083621,-123.125113318,2290,63.39921770657862
-"{""coordinates"": [-123.12511331828341, 49.28108362095662], ""type"": ""Point""}",Downtown,112,981 Nelson St,Independent School,Pattison School,49.281083621,-123.125113318,2290,63.39921770657862
-"{""coordinates"": [-123.15343060436416, 49.23728903611385], ""type"": ""Point""}",Shaughnessy,113,5350 East Boulevard,Public School,Point Grey Secondary,49.2372890361,-123.153430604,1107,146.41032311819316
-"{""coordinates"": [-123.15157081, 49.23724621006754], ""type"": ""Point""}",Shaughnessy,114,5300 Maple St,Public School,Quilchena Elementary,49.2372462101,-123.15157081,1231,100.93489352284935
-"{""coordinates"": [-123.11860774594169, 49.20724201501598], ""type"": ""Point""}",Marpole,115,8610 Ash St,Independent School,Royal Canadian College,49.207242015,-123.118607746,2534,33.66042961812428
-"{""coordinates"": [-123.0348073745407, 49.242891620676865], ""type"": ""Point""}",Renfrew-Collingwood,116,3323 Wellington Av,Public School,Sir Wilfred Grenfell Community,49.2428916207,-123.034807375,6072,98.44099239477765
-"{""coordinates"": [-123.12504721, 49.21776253406744], ""type"": ""Point""}",Marpole,117,7350 Laurel St,Public School,Sir Wilfrid Laurier Elementary,49.2177625341,-123.12504721,2257,85.35460801521873
-"{""coordinates"": [-123.03187058558184, 49.263648890401456], ""type"": ""Point""}",Hastings-Sunrise,118,2325 Cassiar St,StrongStart BC,Thunderbird StrongStart Centre,49.2636488904,-123.031870586,6237,88.29581385943337
-"{""coordinates"": [-123.05559853, 49.28626345506777], ""type"": ""Point""}",Hastings-Sunrise,119,2450 Cambridge St,StrongStart BC,Tillicum Annex StrongStart Centre,49.2862634551,-123.05559853,5232,75.54835131171998
-"{""coordinates"": [-123.05559853, 49.28626345506777], ""type"": ""Point""}",Hastings-Sunrise,120,2450 Cambridge St,Public School,Tillicum Community Annex,49.2862634551,-123.05559853,5232,75.54835131171998
-"{""coordinates"": [-123.16460607, 49.250178756067605], ""type"": ""Point""}",Arbutus-Ridge,121,4170 Trafalgar St,Public School,Trafalgar Elementary,49.2501787561,-123.16460607,870,52.25690380523657
-"{""coordinates"": [-123.14026052001878, 49.26329988232251], ""type"": ""Point""}",Fairview,122,1580 W Broadway,Public School,Vancouver Alternate,49.2632998823,-123.14026052,1618,65.3801508411506
-"{""coordinates"": [-123.09279776, 49.23195715006752], ""type"": ""Point""}",Sunset,123,530 E 41st Av,Public School,Vancouver Learning Network,49.2319571501,-123.09279776,3551,129.65205763229775
-"{""coordinates"": [-123.12682202118758, 49.2475796718668], ""type"": ""Point""}",South Cambie,124,998 W 26th Av,Independent School,Vancouver Talmud Torah Elementary,49.2475796719,-123.126822021,2184,69.09205215016055
-"{""coordinates"": [-123.04453612333309, 49.284984466234356], ""type"": ""Point""}",Hastings-Sunrise,125,15 N Renfrew St,Independent School,West Coast Christian School,49.2849844662,-123.044536123,5749,42.06175972076333
-"{""coordinates"": [-123.20150739365414, 49.26706634514379], ""type"": ""Point""}",West Point Grey,126,4125 W 8th Av,Independent School,West Point Grey Academy,49.2670663451,-123.201507394,119,100.74378192224266
-"{""coordinates"": [-123.08031429999998, 49.27859426906773], ""type"": ""Point""}",Strathcona,127,1130 Keefer St,StrongStart BC,Admiral Seymour StrongStart Centre,49.2785942691,-123.0803143,4142,79.17986649461447
-"{""coordinates"": [-123.12579095999999, 49.23963096106753], ""type"": ""Point""}",South Cambie,128,5025 Willow St,Public School,BC Childrens Hosp School Program,49.2396309611,-123.12579096,2360,157.47780391469107
-"{""coordinates"": [-123.18233379, 49.26648700606768], ""type"": ""Point""}",Kitsilano,129,2251 Collingwood St,Public School,Bayview Community Elementary,49.2664870061,-123.18233379,481,58.12991725639267
-"{""coordinates"": [-123.14306239951357, 49.251669525820965], ""type"": ""Point""}",Shaughnessy,130,1690 Matthews Av,Public School,Canuck Place School Program,49.2516695258,-123.1430624,1521,45.062187953787834
-"{""coordinates"": [-123.09507768504591, 49.27155962112064], ""type"": ""Point""}",Strathcona,131,438 Terminal Av,Independent School,Columbia College,49.2715596211,-123.095077685,3477,56.925446358458686
-"{""coordinates"": [-123.05758354036608, 49.226406104158166], ""type"": ""Point""}",Victoria-Fraserview,132,6344 Nanaimo St,Independent School,Corpus Christi School,49.2264061042,-123.05758354,5058,111.2437066427409
-"{""coordinates"": [-123.13634890999998, 49.209962411067416], ""type"": ""Point""}",Marpole,133,8370 Cartier St,StrongStart BC,David Lloyd George StrongStart Centre,49.2099624111,-123.13634891,1839,105.7606413777025
-"{""coordinates"": [-123.05829331021336, 49.21331811031946], ""type"": ""Point""}",Victoria-Fraserview,134,2421 Scarboro Av,Public School,David Oppenheimer Elementary,49.2133181103,-123.05829331,5037,78.84320186335216
-"{""coordinates"": [-123.17067418, 49.26597990206767], ""type"": ""Point""}",Kitsilano,135,2896 W 6th Av,Public School,General Gordon Elementary,49.2659799021,-123.17067418,714,37.39700739861304
-"{""coordinates"": [-123.06163307000001, 49.24761203506759], ""type"": ""Point""}",Kensington-Cedar Cottage,136,4105 Gladstone St,Public School,Gladstone Secondary,49.2476120351,-123.06163307,4878,77.91121506969364
-"{""coordinates"": [-123.10879442, 49.21726779206743], ""type"": ""Point""}",Marpole,137,7455 Ontario St,Public School,J.W. Sexsmith Community Elementary,49.2172677921,-123.10879442,2867,86.05002590610718
-"{""coordinates"": [-123.09279776, 49.23195715006752], ""type"": ""Point""}",Sunset,138,530 E 41st Av,Public School,John Oliver Secondary,49.2319571501,-123.09279776,3551,129.65205763229775
-"{""coordinates"": [-123.16358941, 49.262654772067656], ""type"": ""Point""}",Kitsilano,139,2550 W 10th Av,Public School,Kitsilano Secondary,49.2626547721,-123.16358941,888,90.90687439359046
-"{""coordinates"": [-123.13038640000002, 49.25808403306762], ""type"": ""Point""}",Fairview,140,1166 W 14th Av,Public School,L'Ecole Bilingue Elementary,49.2580840331,-123.1303864,2075,27.861571920130483
-"{""coordinates"": [-123.1925309529982, 49.259566550086106], ""type"": ""Point""}",West Point Grey,141,3939 W 16th Av,Public School,Lord Byng Secondary,49.2595665501,-123.192530953,204,115.88992003338608
-"{""coordinates"": [-123.05971209, 49.27250773706771], ""type"": ""Point""}",Grandview-Woodland,142,2235 Kitchener St,Public School,Lord Nelson Elementary,49.2725077371,-123.05971209,5011,51.716591525526326
-"{""coordinates"": [-123.05971209, 49.27250773706771], ""type"": ""Point""}",Grandview-Woodland,143,2235 Kitchener St,StrongStart BC,Lord Nelson StrongStart Centre,49.2725077371,-123.05971209,5011,51.716591525526326
-"{""coordinates"": [-123.06900705, 49.249691952067586], ""type"": ""Point""}",Kensington-Cedar Cottage,144,1750 E 22nd Av,StrongStart BC,Lord Selkirk StrongStart Centre,49.2496919521,-123.06900705,4586,77.88107062931378
-"{""coordinates"": [-123.15153798760876, 49.22855386506042], ""type"": ""Point""}",Kerrisdale,145,6360 Maple St,Public School,Magee Secondary,49.2285538651,-123.151537988,1222,66.42177791908195
-"{""coordinates"": [-123.04294917, 49.25359297006762], ""type"": ""Point""}",Renfrew-Collingwood,146,3375 Nootka St,Public School,Nootka Community Elementary,49.2535929701,-123.04294917,5815,109.40565233587806
-"{""coordinates"": [-123.04556662808874, 49.275802839348714], ""type"": ""Point""}",Hastings-Sunrise,147,2880 Venables St,Independent School,Notre Dame Regional Secondary,49.2758028393,-123.045566628,5681,47.69519645492734
-"{""coordinates"": [-123.05015370472844, 49.27957121602082], ""type"": ""Point""}",Hastings-Sunrise,148,575 Slocan St,Independent School,Our Lady of Sorrows,49.279571216,-123.050153705,5535,81.64752235145932
-"{""coordinates"": [-123.05595432992459, 49.28051480952856], ""type"": ""Point""}",Hastings-Sunrise,149,2409 E Pender St,Independent School,PALS Autism School,49.2805148095,-123.05595433,5225,53.978021234367425
-"{""coordinates"": [-123.1982460233882, 49.267667982326586], ""type"": ""Point""}",West Point Grey,150,4196 W 4th Av,Independent School,Pacific Spirit School,49.2676679823,-123.198246023,149,157.92959759255487
-"{""coordinates"": [-123.12761225509908, 49.23342156632536], ""type"": ""Point""}",Oakridge,151,5750 Oak St,Independent School,Pacific Torah Institute International,49.2334215663,-123.127612255,2162,58.78459992343866
-"{""coordinates"": [-123.096959, 49.21445400406743], ""type"": ""Point""}",Sunset,152,449 E 62nd Av,Public School,Pierre Elliott Trudeau Elementary,49.2144540041,-123.096959,3375,69.57002118754498
-"{""coordinates"": [-123.032313, 49.23634859906753], ""type"": ""Point""}",Renfrew-Collingwood,153,3417 Euclid Av,Public School,Prov. Early Intervention Resource Prg,49.2363485991,-123.032313,6150,94.62787303199698
-"{""coordinates"": [-123.07592057, 49.261970549067655], ""type"": ""Point""}",Kensington-Cedar Cottage,154,1300 E Broadway,StrongStart BC,Queen Alexandra StrongStart Centre,49.2619705491,-123.07592057,4310,50.94244179276683
-"{""coordinates"": [-123.19469107, 49.24893677906758], ""type"": ""Point""}",Dunbar-Southlands,155,4275 Crown St,Public School,Queen Elizabeth Annex,49.2489367791,-123.19469107,224,121.64899151755934
-"{""coordinates"": [-123.20479699, 49.26785642206768], ""type"": ""Point""}",West Point Grey,156,2000 Trimble St,Public School,Queen Mary Elementary,49.2678564221,-123.20479699,88,83.31547143834135
-"{""coordinates"": [-123.05026876999999, 49.27541639106772], ""type"": ""Point""}",Hastings-Sunrise,157,1025 Slocan St,Public School,SD 39 DL Elementary,49.2754163911,-123.05026877,5531,78.9327544513866
-"{""coordinates"": [-123.0646531767478, 49.21604932869144], ""type"": ""Point""}",Victoria-Fraserview,158,2150 Brigadoon Av,Public School,Sir James Douglas Elementary,49.2160493287,-123.064653177,4808,60.89269111285299
-"{""coordinates"": [-123.02758566, 49.28249619606777], ""type"": ""Point""}",Hastings-Sunrise,159,250S Skeena St,Public School,Sir John Franklin Community,49.2824961961,-123.02758566,6357,72.16528390060206
-"{""coordinates"": [-123.03801003712412, 49.27183079984159], ""type"": ""Point""}",Hastings-Sunrise,160,1430 Lillooet St,Public School,Sir Matthew Begbie Elementary,49.2718307998,-123.038010037,5940,80.95348642982346
-"{""coordinates"": [-123.11944529999998, 49.210717995067405], ""type"": ""Point""}",Marpole,161,590 W 65th Av,Public School,Sir Wilfrid Laurier Annex,49.2107179951,-123.1194453,2482,72.08132420121579
-"{""coordinates"": [-123.13266216000001, 49.23076242206749], ""type"": ""Point""}",Oakridge,162,5970 Selkirk St,Public School,Sir William Osler Elementary,49.2307624221,-123.13266216,1998,69.52059686374442
-"{""coordinates"": [-123.19781516, 49.23813758506754], ""type"": ""Point""}",Dunbar-Southlands,163,5351 Camosun St,Public School,Southlands Elementary,49.2381375851,-123.19781516,172,87.73153209574535
-"{""coordinates"": [-123.09585589038312, 49.22721361145612], ""type"": ""Point""}",Sunset,164,450 E 47th Av,Independent School,St Andrew's,49.2272136115,-123.09585589,3399,118.37249594720265
-"{""coordinates"": [-123.15355224259545, 49.26517255153582], ""type"": ""Point""}",Kitsilano,165,2145 W 8th Av,Independent School,St Augustine's,49.2651725515,-123.153552243,1198,67.80576354593592
-"{""coordinates"": [-123.06504858875364, 49.276881634743646], ""type"": ""Point""}",Grandview-Woodland,166,870 Victoria Drive,Independent School,St Francis of Assisi,49.2768816347,-123.065048589,4760,49.3363510392915
-"{""coordinates"": [-123.19846496388473, 49.24758226745896], ""type"": ""Point""}",Dunbar-Southlands,167,4175 W 29th Av,Independent School,St George's School,49.2475822675,-123.198464964,185,133.5545425797606
-"{""coordinates"": [-123.0716470523458, 49.255914408245054], ""type"": ""Point""}",Kensington-Cedar Cottage,168,3261 Fleming St,Independent School,St Joseph's,49.2559144082,-123.071647052,4514,77.75901235040746
-"{""coordinates"": [-123.04262672835044, 49.256545786691255], ""type"": ""Point""}",Renfrew-Collingwood,169,2953 E 15th Av,Independent School,St Jude's,49.2565457867,-123.042626728,5820,80.59610296381292
-"{""coordinates"": [-123.06069106000001, 49.278439093067725], ""type"": ""Point""}",Grandview-Woodland,170,727 Templeton Drive,Public School,Templeton Secondary,49.2784390931,-123.06069106,4949,76.42825154696992
-"{""coordinates"": [-123.1361713344514, 49.23495941876865], ""type"": ""Point""}",Shaughnessy,171,5400 Cartier St,Independent School,Vancouver College DL,49.2349594188,-123.136171334,1776,79.721402455618
-"{""coordinates"": [-123.04636736023019, 49.233747421132286], ""type"": ""Point""}",Renfrew-Collingwood,172,5621 Killarney St,Independent School,Vancouver Formosa Academy,49.2337474211,-123.04636736,5661,47.12408140641095
-"{""coordinates"": [-123.05129983999998, 49.260755475067654], ""type"": ""Point""}",Renfrew-Collingwood,173,2600 E Broadway,Public School,Vancouver Technical Secondary,49.2607554751,-123.05129984,5372,126.23231670538696
-"{""coordinates"": [-123.08434542, 49.216109230067424], ""type"": ""Point""}",Sunset,174,1000 E 59th Av,StrongStart BC,Walter Moberly StrongStart Centre,49.2161092301,-123.08434542,3858,90.85053492456639
-"{""coordinates"": [-123.05578593, 49.22783722506748], ""type"": ""Point""}",Victoria-Fraserview,175,6111 Elliott St,Public School,Waverley Elementary,49.2278372251,-123.05578593,5295,87.31596248156758
-"{""coordinates"": [-123.05578593, 49.22783722506748], ""type"": ""Point""}",Victoria-Fraserview,176,6111 Elliott St,StrongStart BC,Waverley StrongStart Centre,49.2278372251,-123.05578593,5295,87.31596248156758
-"{""coordinates"": [-123.1280001050362, 49.24857412675284], ""type"": ""Point""}",Shaughnessy,177,4157 Oak St,Independent School,Westside Montessori,49.2485741268,-123.128000105,2185,57.00528179244558
-"{""coordinates"": [-123.0371743, 49.246512456067585], ""type"": ""Point""}",Renfrew-Collingwood,178,3155 E 27th Av,Public School,Windermere Community Secondary,49.2465124561,-123.0371743,6020,48.69949352357499
-"{""coordinates"": [-123.152101, 49.25670999906763], ""type"": ""Point""}",Shaughnessy,179,3274 East Boulevard,Independent School,York House Little School,49.2567099991,-123.152101,1217,49.04638674197243
-"{""coordinates"": [-123.17355723856548, 49.25658742134096], ""type"": ""Point""}",Arbutus-Ridge,180,3400 Balaclava St,Public School,Carnarvon Community Elementary,49.2565874213,-123.173557239,640,58.197486974652755
-"{""coordinates"": [-123.02774835, 49.22064030106746], ""type"": ""Point""}",Killarney,181,6955 Frontenac St,Public School,Champlain Heights Community Elementary,49.2206403011,-123.02774835,6406,94.12355650117046
-"{""coordinates"": [-123.08239063270196, 49.254854500002445], ""type"": ""Point""}",Kensington-Cedar Cottage,182,1010 E 17th Av,Public School,Charles Dickens Elementary,49.2548545,-123.082390633,4009,63.046348586857754
-"{""coordinates"": [-123.05058984, 49.26788631306769], ""type"": ""Point""}",Hastings-Sunrise,183,2684 E 2nd Av,Public School,Chief Maquinna Elementary,49.2678863131,-123.05058984,5521,87.91430210370198
-"{""coordinates"": [-123.032313, 49.23634859906753], ""type"": ""Point""}",Renfrew-Collingwood,184,3417 Euclid Av,StrongStart BC,Collingwood StrongStart Centre,49.2363485991,-123.032313,6150,94.62787303199698
-"{""coordinates"": [-123.14026052001878, 49.26329988232251], ""type"": ""Point""}",Fairview,185,1580 W Broadway,Public School,Continuing Ed SD 39,49.2632998823,-123.14026052,1618,65.3801508411506
-"{""coordinates"": [-123.13634890999998, 49.209962411067416], ""type"": ""Point""}",Marpole,186,8370 Cartier St,Public School,David Lloyd George Elementary,49.2099624111,-123.13634891,1839,105.7606413777025
-"{""coordinates"": [-123.15401133, 49.21770658906743], ""type"": ""Point""}",Kerrisdale,187,7455 Maple St,Public School,Dr R E McKechnie Elementary,49.2177065891,-123.15401133,1155,57.82224600259364
-"{""coordinates"": [-123.12579095999999, 49.23963096106753], ""type"": ""Point""}",South Cambie,188,5025 Willow St,Public School,Eric Hamber Secondary,49.2396309611,-123.12579096,2360,157.47780391469107
-"{""coordinates"": [-123.12685921, 49.26710311106769], ""type"": ""Point""}",Fairview,189,900 School Green,Public School,False Creek Elementary,49.2671031111,-123.12685921,2249,48.84608405205803
-"{""coordinates"": [-123.09371757, 49.260059324067655], ""type"": ""Point""}",Mount Pleasant,190,2740 Guelph St,StrongStart BC,Florence Nightingale StrongStart Centre,49.2600593241,-123.09371757,3581,61.756126115918654
-"{""coordinates"": [-123.05026876999999, 49.27541639106772], ""type"": ""Point""}",Hastings-Sunrise,191,1025 Slocan St,Public School,Garibaldi Annex,49.2754163911,-123.05026877,5531,78.9327544513866
-"{""coordinates"": [-123.18770751925071, 49.24759061248421], ""type"": ""Point""}",Dunbar-Southlands,192,3745 W 28th Av,Independent School,Immaculate Conception School,49.2475906125,-123.187707519,313,60.1625779816233
-"{""coordinates"": [-123.08804322, 49.22104214306744], ""type"": ""Point""}",Sunset,193,801 E 54th Av,StrongStart BC,John Henderson StrongStart Centre,49.2210421431,-123.08804322,3808,94.24362739732477
-"{""coordinates"": [-123.177405, 49.232867999067516], ""type"": ""Point""}",Kerrisdale,194,3250 W 43rd Av,Public School,Kerrisdale Annex,49.2328679991,-123.177405,526,94.91877809430335
+﻿id,address,category,name,latitude,longitude,junction_id,junction_dst
+1,688 W Hastings St,Independent School,Alexander Academy,49.2850005993,-123.114009854,2725,35.408541652770616
+2,5025 Willow St,Public School,BC Children's Adol. Psych. Unit,49.2396309611,-123.12579096,2360,157.47780391469107
+3,1001 Cotton Drive,Public School,Britannia Community Secondary,49.2752359909,-123.071923098,4491,146.6592443052216
+4,3340 E 54th Av,Public School,Captain James Cook Elementary,49.2193807991,-123.03582905,6081,89.42946946662005
+5,3340 E 54th Av,StrongStart BC,Captain James Cook StrongStart Centre,49.2193807991,-123.03582905,6081,89.42946946662005
+6,2684 E 2nd Av,StrongStart BC,Chief Maquinna StrongStart Centre,49.2678863131,-123.05058984,5521,87.91430210370198
+7,3575 Kaslo St,Independent School,Children's Hearing and Speech Centre BC,49.2523579685,-123.048349437,5503,88.6872772743588
+8,3417 Euclid Av,Public School,Collingwood Neighbourhood School,49.2363485991,-123.032313,6150,94.62787303199698
+9,1755 E 55th Av,Public School,David Thompson Secondary,49.2204392561,-123.0706316,4594,107.05126760715315
+10,555 Lillooet St,Public School,Dr A R Lord Elementary,49.2796404842,-123.039517203,5954,80.47664292895129
+11,6350 Tisdall St,Public School,Dr Annie B Jamieson Elementary,49.2269069351,-123.12100426,2421,64.95468681806203
+12,3050 Crown St,Public School,Ecole Jules Quesnel Elementary,49.2595678051,-123.19253813,204,115.35463783754687
+13,150 Drake St,Public School,Elsie Roy Elementary,49.2722379991,-123.122482,2440,85.43625029258551
+14,4070 Oak St,Public School,Emily Carr Elementary,49.2500416521,-123.12609641,2299,105.06325421806929
+15,4196 W 4th Av,Independent School,Family Montessori School,49.2676679823,-123.198246023,149,157.92959759255487
+16,2294 W 10th Av,Independent School,Fraser Academy,49.2626607042,-123.157275961,1061,37.41604005312708
+17,2330 E 37th Av,Public School,G T Cunningham Elementary,49.2367322261,-123.05745595,5138,75.14974474359103
+18,3633 Tanner St,Public School,Graham Bruce Community Elementary,49.2420690871,-123.02567271,6488,77.0602910796538
+19,1551 Cypress St,Public School,Henry Hudson Elementary,49.2722458781,-123.14935629,1323,37.811145810552425
+20,451 E 53rd Av,Public School,John Henderson Elementary,49.2225695881,-123.09527169,3525,83.87255382920758
+21,4710 Slocan St,Public School,John Norquay Elementary,49.2414246951,-123.0516408,5387,66.56540635496457
+22,5718 Willow St,Independent School,King David High School,49.2334481823,-123.12279094,2390,46.52565004113322
+23,1755 Barclay St,Public School,King George Secondary,49.2898241521,-123.13644517,1767,83.98833502315581
+24,4195 Alexandra St,Independent School,Little Flower Academy,49.2484313418,-123.142261499,1588,55.317753834814326
+25,3663 Penticton St,Public School,Lord Beaconsfield Elementary,49.2521383751,-123.05269627,5400,45.25474031112228
+26,3455 W King Edward Av,Public School,Lord Kitchener Elementary,49.2505818064,-123.180245563,465,127.67078296021444
+27,1150 Nelson St,Public School,Lord Roberts Annex,49.2830917101,-123.12980601,2082,92.02567950253082
+28,4444 Dumfries St,Public School,Lord Selkirk Annex,49.2453207741,-123.07246012,4407,72.36841183837927
+29,2678 W Broadway,Independent School,Madrona School,49.2635282608,-123.166010555,846,43.940103866319284
+30,2300 Guelph St,StrongStart BC,Mount Pleasant StrongStart Centre,49.2639657321,-123.09399954,3506,77.93974195482421
+31,2550 Camosun St,Independent School,Our Lady of Perpetual Help,49.2641350707,-123.196179431,196,62.855267756245055
+32,1819 Larch St,Independent School,Pacific Rim Montessori Academy,49.2697857983,-123.162443645,954,34.75407197418912
+33,1580 W Broadway,Public School,Peak House,49.2632998823,-123.14026052,1618,65.3801508411506
+34,4102 W 16th Av,Public School,Queen Elizabeth Elementary,49.2577917721,-123.20112784,137,80.63498534948435
+35,1850 E 3rd Av,Public School,Queen Victoria Annex,49.2671878491,-123.06634874,4736,54.40128409548725
+36,3315 E 22nd Av,Public School,Renfrew Community Elementary,49.2514577741,-123.03205805,6232,120.29788303073059
+37,4250 Marguerite St,Public School,Shaughnessy Elementary,49.2486760751,-123.14380998,1487,108.83309105527634
+38,960 E 39th Av,Public School,Sir Alexander Mackenzie Elementary,49.2345364351,-123.08671432,3814,84.07996911589224
+39,419 E 24th Av,Public School,Sir Charles Tupper Secondary,49.2497535011,-123.09480948,3545,78.97327016339544
+40,3250 Kingsway,Public School,Sir Guy Carleton Community Elementary,49.2343477461,-123.03760798,5966,61.9637952229521
+41,1300 E 29th Av,Public School,Sir Richard McBride Elementary,49.2441566091,-123.07817551,4184,46.70917744160169
+42,1950 E Hastings St,Public School,Sir William Macdonald Community,49.2807239091,-123.06467911,4769,80.90519176784231
+43,7055 Heather St,Public School,Sir Winston Churchill Secondary,49.2210595681,-123.12561546,2277,53.047664791474396
+44,5855 Ontario St,Public School,Sir Wm Van Horne Elementary,49.2315664861,-123.10656921,3000,66.2835809871138
+45,1370 W 73rd Av,Independent School,St Anthony of Padua,49.2044649382,-123.13700792,1809,51.60919538592891
+46,2215 W 10th Av,Independent School,St John's School,49.2631776715,-123.156179143,1120,69.89681659705887
+47,5239 Joyce St,Independent School,St Mary's,49.2375016311,-123.033705909,6175,79.86490652014521
+48,115 E 11th Av,Independent School,St Patrick Regional Secondary,49.2614045445,-123.102604392,3112,42.68874105131619
+49,2850 Quebec St,Independent School,St Patrick's Elementary,49.2597623028,-123.102436697,3110,68.33194970447252
+50,3155 E 27th Av,Public School,Sunny Hill Hospital Program,49.2465124561,-123.0371743,6020,48.69949352357499
+51,2325 Cassiar St,Public School,Thunderbird Elementary,49.2636488904,-123.031870586,6237,88.29581385943337
+52,3525 Dumphries St,Public School,Tyee Elementary,49.2535693541,-123.07382164,4431,66.35242136205402
+53,3496 Mons Drive,Independent School,Vancouver Christian,49.2547122159,-123.028566931,6391,76.19018036669362
+54,5400 Cartier St,Independent School,Vancouver College,49.2349594188,-123.136171334,1776,79.721402455618
+55,1545 W 62nd Av,Independent School,Vancouver Hebrew Academy,49.2154717276,-123.141369265,1644,92.43947981336134
+56,8650 Barnard St,Independent School,Vancouver Montessori School,49.2077903959,-123.144633599,1467,91.7689133328395
+57,1000 E 59th Av,Public School,Walter Moberly Elementary,49.2161092301,-123.08434542,3858,90.85053492456639
+58,3075 Slocan St,Independent School,Westside Montessori Academy,49.2569378476,-123.050391949,5514,64.03866506342817
+59,4176 Alexandra St,Independent School,York House School,49.248848219,-123.140340136,1588,100.18198403113436
+60,1351 Hornby St,Independent School,Anchor Point Montessori,49.2770618474,-123.130918922,2033,72.50374752067708
+61,5025 Willow St,Public School,BCCH Eating Disorders School Program,49.2396309611,-123.12579096,2360,157.47780391469107
+62,3020 Heather St,Independent School,Blessed Sacrament School,49.2583379075,-123.11939091,2502,55.30111823926496
+63,1788 W Broadway,Independent School,Century High School,49.2633847581,-123.145314403,1450,47.523818951417454
+64,3877 Glen Drive,Public School,Charles Dickens Annex,49.2502130611,-123.08271031,4001,65.29459802934565
+65,2882 E 4th Av,Public School,Chief Maquinna Annex,49.2664215431,-123.04511809,5726,68.98664719653203
+66,3200 W 41st Av,Independent School,Crofton House,49.2336778336,-123.177218159,609,108.86684719731693
+67,55 Expo Blvd,Public School,Crosstown Elementary,49.2786309991,-123.106594,2985,72.8036544382444
+68,6100 Battison St,Public School,Dr H N MacCorkindale Elementary,49.2279901855,-123.029355035,6382,114.49634955523985
+69,2740 Guelph St,Public School,Florence Nightingale Elementary,49.2600593241,-123.09371757,3581,61.756126115918654
+70,4860 Main St,Public School,General Brock Elementary,49.2412152211,-123.10063141,3265,91.7645962220857
+71,2055 Woodland Dr,Public School,Grandview Elementary,49.2661931691,-123.0743697,4402,63.33216792293518
+72,2500 Lakewood Drive,Public School,Laura Secord Elementary,49.2617357031,-123.06022338,4994,50.355074271944176
+73,1100 Bidwell St,Public School,Lord Roberts Elementary,49.2867852821,-123.13784476,1739,96.58344763207013
+74,1750 E 22nd Av,Public School,Lord Selkirk Elementary,49.2496919521,-123.06900705,4586,77.88107062931378
+75,592 E Pender St,Public School,Lord Strathcona Community Elementary,49.2798115147,-123.091476792,3615,46.43330245044782
+76,6199 Cypress St,Public School,Maple Grove Elementary,49.2294086991,-123.15151486,1223,68.25644071532783
+77,2300 Guelph St,Public School,Mount Pleasant Elementary,49.2639657321,-123.09399954,3506,77.93974195482421
+78,4102 W 16th Av,Public School,Norma Rose Point School,49.2577917721,-123.20112784,137,80.63498534948435
+79,2250 Eddington Drive,Public School,Prince of Wales Secondary,49.2449830531,-123.15953565,1019,68.42198359693553
+80,1300 E Broadway,Public School,Queen Alexandra Elementary,49.2619705491,-123.07592057,4310,50.94244179276683
+81,100 W 15th Av,Public School,Simon Fraser Elementary,49.2571713554,-123.108196899,2943,95.19078394974767
+82,960 E 39th Av,StrongStart BC,Sir Alexander Mackenzie StrongStart,49.2345364351,-123.08671432,3814,84.07996911589224
+83,6901 Elliott St,Public School,Sir Charles Kingsford-Smith,49.2215966731,-123.0557042,5285,76.89733862598912
+84,7668 Borden St,Public School,Sir James Douglas Annex,49.2148304641,-123.07329351,4371,58.50245137062226
+85,4750 St. Catherines St,Public School,Sir Richard McBride Annex,49.2419442292,-123.084950189,3830,80.56892338895848
+86,1401 E 49th Av,Public School,Sir Sandford Fleming Elementary,49.2257476891,-123.07657409,4224,72.12475207704239
+87,3323 Wellington Av,StrongStart BC,Sir Wilfred Grenfell StrongStart Centre,49.2428916207,-123.034807375,6072,98.44099239477765
+88,428 Great Northern Way,Independent School,St Francis Xavier,49.2664623111,-123.094520644,3508,39.68785266663401
+89,1885 W Broadway,Independent School,St John's International,49.2640409804,-123.147898816,1363,36.32889500047791
+90,3000 Commercial Drive,Independent School,Stratford Hall,49.2574692155,-123.069463272,4553,40.822338655391924
+91,1551 E 37th Av,Public School,Tecumseh Annex,49.2371162721,-123.07309884,4436,43.43430328940264
+92,1850 E 41st Av,Public School,Tecumseh Elementary,49.2320557421,-123.06800394,4607,80.74282752066387
+93,788 Beatty St,Independent School,The Westside School,49.2775706443,-123.113443543,2723,37.947512256778495
+94,1130 Keefer St,Public School,Admiral Seymour Elementary,49.2785942691,-123.0803143,4142,79.17986649461447
+95,1110 Cotton Drive,Public School,Britannia Community Elementary,49.2745120086,-123.071378795,4491,62.7841550922532
+96,7835 Champlain Crescent,Public School,Champlain Heights Annex,49.2140784318,-123.030549689,6215,167.5973615976899
+97,7835 Champlain Crescent,StrongStart BC,Champlain Heights Annex StrongStart Cntr,49.2140784318,-123.030549689,6215,167.5973615976899
+98,315 E 23rd Av,Public School,David Livingstone Elementary,49.2507533361,-123.09798144,3341,62.32772740838319
+99,2900 E 44th Av,Public School,Dr George M Weir Elementary,49.2295787591,-123.04440254,5682,80.26975474825115
+100,500 W 20th Av,Public School,Edith Cavell Elementary,49.2529071091,-123.11722884,2564,89.21278664582789
+101,5025 Willow St,Public School,G F Strong School Program,49.2396309611,-123.12579096,2360,157.47780391469107
+102,4251 Ontario St,Public School,General Wolfe Elementary,49.2472287061,-123.10596494,3019,68.00247592501651
+103,2625 Franklin St,Public School,Hastings Community Elementary,49.2826109599,-123.050577409,5540,100.0204988132907
+104,2490 W 37th Av,Independent School,Ivy Montessori School,49.2381148009,-123.162098287,934,48.331267802385405
+105,801 E 54th Av,Public School,John Henderson Annex,49.2210421431,-123.08804322,3808,94.24362739732477
+106,5555 Carnarvon St,Public School,Kerrisdale Elementary,49.2361682451,-123.17345921,672,59.731588756440786
+107,6454 Killarney St,Public School,Killarney Secondary,49.2253001041,-123.04415722,5732,63.0479107701899
+108,1936 W 10th Av,Public School,Lord Tennyson Elementary,49.2625189341,-123.14937705,1277,91.37492115179617
+109,1950 E Hastings St,StrongStart BC,MacDonald StrongStart Centre,49.2807239091,-123.06467911,4769,80.90519176784231
+110,5750 Oak St,Independent School,Pacific Torah Institute,49.2334215663,-123.127612255,2162,58.78459992343866
+111,981 Nelson St,Independent School,Pattison High School,49.281083621,-123.125113318,2290,63.39921770657862
+112,981 Nelson St,Independent School,Pattison School,49.281083621,-123.125113318,2290,63.39921770657862
+113,5350 East Boulevard,Public School,Point Grey Secondary,49.2372890361,-123.153430604,1107,146.41032311819316
+114,5300 Maple St,Public School,Quilchena Elementary,49.2372462101,-123.15157081,1231,100.93489352284935
+115,8610 Ash St,Independent School,Royal Canadian College,49.207242015,-123.118607746,2534,33.66042961812428
+116,3323 Wellington Av,Public School,Sir Wilfred Grenfell Community,49.2428916207,-123.034807375,6072,98.44099239477765
+117,7350 Laurel St,Public School,Sir Wilfrid Laurier Elementary,49.2177625341,-123.12504721,2257,85.35460801521873
+118,2325 Cassiar St,StrongStart BC,Thunderbird StrongStart Centre,49.2636488904,-123.031870586,6237,88.29581385943337
+119,2450 Cambridge St,StrongStart BC,Tillicum Annex StrongStart Centre,49.2862634551,-123.05559853,5232,75.54835131171998
+120,2450 Cambridge St,Public School,Tillicum Community Annex,49.2862634551,-123.05559853,5232,75.54835131171998
+121,4170 Trafalgar St,Public School,Trafalgar Elementary,49.2501787561,-123.16460607,870,52.25690380523657
+122,1580 W Broadway,Public School,Vancouver Alternate,49.2632998823,-123.14026052,1618,65.3801508411506
+123,530 E 41st Av,Public School,Vancouver Learning Network,49.2319571501,-123.09279776,3551,129.65205763229775
+124,998 W 26th Av,Independent School,Vancouver Talmud Torah Elementary,49.2475796719,-123.126822021,2184,69.09205215016055
+125,15 N Renfrew St,Independent School,West Coast Christian School,49.2849844662,-123.044536123,5749,42.06175972076333
+126,4125 W 8th Av,Independent School,West Point Grey Academy,49.2670663451,-123.201507394,119,100.74378192224266
+127,1130 Keefer St,StrongStart BC,Admiral Seymour StrongStart Centre,49.2785942691,-123.0803143,4142,79.17986649461447
+128,5025 Willow St,Public School,BC Childrens Hosp School Program,49.2396309611,-123.12579096,2360,157.47780391469107
+129,2251 Collingwood St,Public School,Bayview Community Elementary,49.2664870061,-123.18233379,481,58.12991725639267
+130,1690 Matthews Av,Public School,Canuck Place School Program,49.2516695258,-123.1430624,1521,45.062187953787834
+131,438 Terminal Av,Independent School,Columbia College,49.2715596211,-123.095077685,3477,56.925446358458686
+132,6344 Nanaimo St,Independent School,Corpus Christi School,49.2264061042,-123.05758354,5058,111.2437066427409
+133,8370 Cartier St,StrongStart BC,David Lloyd George StrongStart Centre,49.2099624111,-123.13634891,1839,105.7606413777025
+134,2421 Scarboro Av,Public School,David Oppenheimer Elementary,49.2133181103,-123.05829331,5037,78.84320186335216
+135,2896 W 6th Av,Public School,General Gordon Elementary,49.2659799021,-123.17067418,714,37.39700739861304
+136,4105 Gladstone St,Public School,Gladstone Secondary,49.2476120351,-123.06163307,4878,77.91121506969364
+137,7455 Ontario St,Public School,J.W. Sexsmith Community Elementary,49.2172677921,-123.10879442,2867,86.05002590610718
+138,530 E 41st Av,Public School,John Oliver Secondary,49.2319571501,-123.09279776,3551,129.65205763229775
+139,2550 W 10th Av,Public School,Kitsilano Secondary,49.2626547721,-123.16358941,888,90.90687439359046
+140,1166 W 14th Av,Public School,L'Ecole Bilingue Elementary,49.2580840331,-123.1303864,2075,27.861571920130483
+141,3939 W 16th Av,Public School,Lord Byng Secondary,49.2595665501,-123.192530953,204,115.88992003338608
+142,2235 Kitchener St,Public School,Lord Nelson Elementary,49.2725077371,-123.05971209,5011,51.716591525526326
+143,2235 Kitchener St,StrongStart BC,Lord Nelson StrongStart Centre,49.2725077371,-123.05971209,5011,51.716591525526326
+144,1750 E 22nd Av,StrongStart BC,Lord Selkirk StrongStart Centre,49.2496919521,-123.06900705,4586,77.88107062931378
+145,6360 Maple St,Public School,Magee Secondary,49.2285538651,-123.151537988,1222,66.42177791908195
+146,3375 Nootka St,Public School,Nootka Community Elementary,49.2535929701,-123.04294917,5815,109.40565233587806
+147,2880 Venables St,Independent School,Notre Dame Regional Secondary,49.2758028393,-123.045566628,5681,47.69519645492734
+148,575 Slocan St,Independent School,Our Lady of Sorrows,49.279571216,-123.050153705,5535,81.64752235145932
+149,2409 E Pender St,Independent School,PALS Autism School,49.2805148095,-123.05595433,5225,53.978021234367425
+150,4196 W 4th Av,Independent School,Pacific Spirit School,49.2676679823,-123.198246023,149,157.92959759255487
+151,5750 Oak St,Independent School,Pacific Torah Institute International,49.2334215663,-123.127612255,2162,58.78459992343866
+152,449 E 62nd Av,Public School,Pierre Elliott Trudeau Elementary,49.2144540041,-123.096959,3375,69.57002118754498
+153,3417 Euclid Av,Public School,Prov. Early Intervention Resource Prg,49.2363485991,-123.032313,6150,94.62787303199698
+154,1300 E Broadway,StrongStart BC,Queen Alexandra StrongStart Centre,49.2619705491,-123.07592057,4310,50.94244179276683
+155,4275 Crown St,Public School,Queen Elizabeth Annex,49.2489367791,-123.19469107,224,121.64899151755934
+156,2000 Trimble St,Public School,Queen Mary Elementary,49.2678564221,-123.20479699,88,83.31547143834135
+157,1025 Slocan St,Public School,SD 39 DL Elementary,49.2754163911,-123.05026877,5531,78.9327544513866
+158,2150 Brigadoon Av,Public School,Sir James Douglas Elementary,49.2160493287,-123.064653177,4808,60.89269111285299
+159,250S Skeena St,Public School,Sir John Franklin Community,49.2824961961,-123.02758566,6357,72.16528390060206
+160,1430 Lillooet St,Public School,Sir Matthew Begbie Elementary,49.2718307998,-123.038010037,5940,80.95348642982346
+161,590 W 65th Av,Public School,Sir Wilfrid Laurier Annex,49.2107179951,-123.1194453,2482,72.08132420121579
+162,5970 Selkirk St,Public School,Sir William Osler Elementary,49.2307624221,-123.13266216,1998,69.52059686374442
+163,5351 Camosun St,Public School,Southlands Elementary,49.2381375851,-123.19781516,172,87.73153209574535
+164,450 E 47th Av,Independent School,St Andrew's,49.2272136115,-123.09585589,3399,118.37249594720265
+165,2145 W 8th Av,Independent School,St Augustine's,49.2651725515,-123.153552243,1198,67.80576354593592
+166,870 Victoria Drive,Independent School,St Francis of Assisi,49.2768816347,-123.065048589,4760,49.3363510392915
+167,4175 W 29th Av,Independent School,St George's School,49.2475822675,-123.198464964,185,133.5545425797606
+168,3261 Fleming St,Independent School,St Joseph's,49.2559144082,-123.071647052,4514,77.75901235040746
+169,2953 E 15th Av,Independent School,St Jude's,49.2565457867,-123.042626728,5820,80.59610296381292
+170,727 Templeton Drive,Public School,Templeton Secondary,49.2784390931,-123.06069106,4949,76.42825154696992
+171,5400 Cartier St,Independent School,Vancouver College DL,49.2349594188,-123.136171334,1776,79.721402455618
+172,5621 Killarney St,Independent School,Vancouver Formosa Academy,49.2337474211,-123.04636736,5661,47.12408140641095
+173,2600 E Broadway,Public School,Vancouver Technical Secondary,49.2607554751,-123.05129984,5372,126.23231670538696
+174,1000 E 59th Av,StrongStart BC,Walter Moberly StrongStart Centre,49.2161092301,-123.08434542,3858,90.85053492456639
+175,6111 Elliott St,Public School,Waverley Elementary,49.2278372251,-123.05578593,5295,87.31596248156758
+176,6111 Elliott St,StrongStart BC,Waverley StrongStart Centre,49.2278372251,-123.05578593,5295,87.31596248156758
+177,4157 Oak St,Independent School,Westside Montessori,49.2485741268,-123.128000105,2185,57.00528179244558
+178,3155 E 27th Av,Public School,Windermere Community Secondary,49.2465124561,-123.0371743,6020,48.69949352357499
+179,3274 East Boulevard,Independent School,York House Little School,49.2567099991,-123.152101,1217,49.04638674197243
+180,3400 Balaclava St,Public School,Carnarvon Community Elementary,49.2565874213,-123.173557239,640,58.197486974652755
+181,6955 Frontenac St,Public School,Champlain Heights Community Elementary,49.2206403011,-123.02774835,6406,94.12355650117046
+182,1010 E 17th Av,Public School,Charles Dickens Elementary,49.2548545,-123.082390633,4009,63.046348586857754
+183,2684 E 2nd Av,Public School,Chief Maquinna Elementary,49.2678863131,-123.05058984,5521,87.91430210370198
+184,3417 Euclid Av,StrongStart BC,Collingwood StrongStart Centre,49.2363485991,-123.032313,6150,94.62787303199698
+185,1580 W Broadway,Public School,Continuing Ed SD 39,49.2632998823,-123.14026052,1618,65.3801508411506
+186,8370 Cartier St,Public School,David Lloyd George Elementary,49.2099624111,-123.13634891,1839,105.7606413777025
+187,7455 Maple St,Public School,Dr R E McKechnie Elementary,49.2177065891,-123.15401133,1155,57.82224600259364
+188,5025 Willow St,Public School,Eric Hamber Secondary,49.2396309611,-123.12579096,2360,157.47780391469107
+189,900 School Green,Public School,False Creek Elementary,49.2671031111,-123.12685921,2249,48.84608405205803
+190,2740 Guelph St,StrongStart BC,Florence Nightingale StrongStart Centre,49.2600593241,-123.09371757,3581,61.756126115918654
+191,1025 Slocan St,Public School,Garibaldi Annex,49.2754163911,-123.05026877,5531,78.9327544513866
+192,3745 W 28th Av,Independent School,Immaculate Conception School,49.2475906125,-123.187707519,313,60.1625779816233
+193,801 E 54th Av,StrongStart BC,John Henderson StrongStart Centre,49.2210421431,-123.08804322,3808,94.24362739732477
+194,3250 W 43rd Av,Public School,Kerrisdale Annex,49.2328679991,-123.177405,526,94.91877809430335

@@ -3,6 +3,7 @@
 import sys
 sys.path.append('../') # This should probably be changed to a more sofisticated system at some point. i.e. install the package
 
+import os
 import utm
 
 from data_wrangler import Dataset
@@ -16,14 +17,19 @@ ZONE_LETTER = 'U'
 
 JUNCTION_FILE = '../original_data/junctions.csv'
 SEGMENT_FILE = '../original_data/streetsegments.csv'
-CRIME_FILE = '../original_data/vanc_crime_2022.csv'
 TRANSIT_FILE = '../original_data/transitstops.csv'
 RAPID_TRANSIT_FILE = '../original_data/rapid-transit-stations.csv'
 COMMERCIAL_FILE = '../original_data/storefronts-inventory.csv'
 SCHOOL_FILE = '../original_data/schools.csv'
+CRIME_2022 = '../original_data/crime_2022.csv'
+CRIME_2021 = '../original_data/crime_2021.csv'
 
 OUTPUT_FOLDER = '../temp'
 
+if not os.path.exists(OUTPUT_FOLDER):
+    os.makedirs(OUTPUT_FOLDER)
+
+print("Pre-processing Junctions")
 Dataset.load_file(
     JUNCTION_FILE, 
     {
@@ -35,6 +41,7 @@ Dataset.load_file(
     }
 ).write_to_file(f'{OUTPUT_FOLDER}/junctions.csv')
 
+print("Pre-processing Segments")
 Dataset.load_file(
     SEGMENT_FILE, 
     {
@@ -75,44 +82,14 @@ Dataset.load_file(
     }
 ).write_to_file(f'{OUTPUT_FOLDER}/segments.csv')
 
-Dataset.load_file(
-    TRANSIT_FILE, 
-    {
-        'stop_id': int,
-        'stop_code': int,
-        'stop_name': str,
-        'zone_id': str,
-        'latitude': (float, 'stop_lat'),
-        'longitude': (float, 'stop_lon'),
-    },
-    primary_key='stop_id'
-).write_to_file(f'{OUTPUT_FOLDER}/transit.csv')
-
-Dataset.load_file(
-    CRIME_FILE,
-    {
-        # Generating id because crime doesn't have id already
-        'id': generate_id,
-        'type_of_crime': (str, 'TYPE'),
-        
-        # Creating a date field in format yyyy-mm-dd
-        'date_of_crime': RowFunction(lambda row, i: f"{row['YEAR']}-{create_regular_str(row['MONTH'])}-{create_regular_str(row['DAY'])}"),
-        
-        # Creating a time field in the format HH:MM
-        'time_of_crime': RowFunction(lambda row, i: f"{create_regular_str(row['HOUR'])}:{create_regular_str(row['MINUTE'])}"),
-        'hundred_block': (str, 'HUNDRED_BLOCK'),
-        'recency': (str, 'RECENCY'),
-        
-        # Determining latitude and longitude from utm location
-        'latitude': RowFunction(lambda row, i: utm.to_latlon(float(row["X"]), float(row["Y"]), ZONE_NUMBER, ZONE_LETTER)[0]),
-        'longitude': RowFunction(lambda row, i: utm.to_latlon(float(row["X"]), float(row["Y"]), ZONE_NUMBER, ZONE_LETTER)[1]),
-    },
-).write_to_file('../processed_data/crime.csv')
-
+print("Pre-processing Stores")
+# There are multiple stores with the same ID so I will create a custom ID for now
 Dataset.load_file(
     COMMERCIAL_FILE,
     {
-        'id': (int, 'ID'),
+        'id': generate_id,
+        'store_id': (int, 'ID'),
+        'year_recorded': (int, 'Year recorded'),
         'unit': (str, 'Unit'),
         'civic_number': (int, 'Civic number - Parcel'),
         'street_name': (str, 'Street name - Parcel'),
@@ -122,9 +99,25 @@ Dataset.load_file(
         # Getting lat and lon fom "lat, lon" format
         'latitude': (split_latitude, 'geo_point_2d'),
         'longitude': (split_longitude, 'geo_point_2d'),
-    }
+    },
+    delimiter=';'
 ).write_to_file(f'{OUTPUT_FOLDER}/stores.csv')
 
+print("Pre-processing Transit")
+Dataset.load_file(
+    TRANSIT_FILE, 
+    {
+        'id': (int, 'stop_id'),
+        'stop_code': int,
+        'stop_name': str,
+        'zone_id': str,
+        'latitude': (float, 'stop_lat'),
+        'longitude': (float, 'stop_lon'),
+    },
+    primary_key='stop_id'
+).write_to_file(f'{OUTPUT_FOLDER}/transit.csv')
+
+print("Pre-processing Rapid Transit")
 rtransit_data = Dataset.load_file(
     RAPID_TRANSIT_FILE,
     {
@@ -137,8 +130,9 @@ rtransit_data = Dataset.load_file(
         'longitude': (split_longitude, 'geo_point_2d'),
     },
     delimiter=';'
-).write_to_file('../processed_data/rapid_transit.csv')
+).write_to_file(f'{OUTPUT_FOLDER}/rapid_transit.csv')
 
+print("Pre-processing Schools")
 Dataset.load_file(
     SCHOOL_FILE,
     {
@@ -152,4 +146,32 @@ Dataset.load_file(
         'longitude': (split_longitude, 'geo_point_2d'),
     },
     delimiter=';'
-).write_to_file('../processed_data/schools.csv')
+).write_to_file(f'{OUTPUT_FOLDER}/schools.csv')
+
+print("Pre-processing Crimes")
+crime_conversion_props = {
+    # Generating id because crime doesn't have id already
+    'id': generate_id,
+    'type_of_crime': (str, 'TYPE'),
+    
+    # Creating a date field in format yyyy-mm-dd
+    'date_of_crime': RowFunction(lambda row, i: f"{row['YEAR']}-{create_regular_str(row['MONTH'])}-{create_regular_str(row['DAY'])}"),
+    
+    # Creating a time field in the format HH:MM
+    'time_of_crime': RowFunction(lambda row, i: f"{create_regular_str(row['HOUR'])}:{create_regular_str(row['MINUTE'])}"),
+    'hundred_block': (str, 'HUNDRED_BLOCK'),
+    
+    # Determining latitude and longitude from utm location
+    'latitude': RowFunction(lambda row, i: utm.to_latlon(float(row["X"]), float(row["Y"]), ZONE_NUMBER, ZONE_LETTER)[0] if row["X"] and row["Y"] and (float(row["X"]) or float(row["Y"])) else 0),
+    'longitude': RowFunction(lambda row, i: utm.to_latlon(float(row["X"]), float(row["Y"]), ZONE_NUMBER, ZONE_LETTER)[1] if row["X"] and row["Y"] and (float(row["X"]) or float(row["Y"])) else 0),
+}
+
+crime_2022 = Dataset.load_file(CRIME_2022, crime_conversion_props)
+crime_2021 = Dataset.load_file(CRIME_2021, crime_conversion_props)
+
+# Modify the crime 2021 ID values
+crime_2021_id_start = len(crime_2022)
+crime_2021.convert_property('id', lambda id: id + crime_2021_id_start)
+
+crime_2022.merge(crime_2021)
+crime_2022.write_to_file(f'{OUTPUT_FOLDER}/crimes.csv')
