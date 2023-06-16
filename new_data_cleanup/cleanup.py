@@ -67,6 +67,7 @@ segments.rename('SD_CURRENT_LAND_VALUE', 'current_land_val_sd')
 segments.rename('Avg_CURRENT_IMPROVEMENT_VALUE', 'current_improvement_avg')
 segments.rename('SD_CURRENT_IMPROVEMENT_VALUE', 'current_improvement_sd')
 segments.rename('Avg_ASSESSMENT_YEAR', 'year_assessment_avg')
+segments.rename('SD_ASSESSMENT_YEAR', 'year_assessment_sd')
 segments.rename('Avg_PREVIOUS_LAND_VALUE', 'prev_land_val_avg')
 segments.rename('SD_PREVIOUS_LAND_VALUE', 'prev_land_val_sd')
 segments.rename('Avg_PREVIOUS_IMPROVEMENT_VALUE', 'prev_improv_val_avg')
@@ -122,6 +123,8 @@ print(f"Removed crimes with null locations. Remaining: {len(crime)} ({len(crime)
 crime.rename('TYPE', 'type')
 crime.rename('HUNDRED_BLOCK', 'hundred_block')
 crime.rename('NEIGHBOURHOOD', 'neighborhood')
+
+crime.add_property('date', lambda row: )
 
 # Calculate latitude and longitude
 for row in crime:
@@ -186,7 +189,7 @@ transit.convert_properties({
     'longitude': float
 })
 
-transit.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='stores_count', distance_limit=200)
+transit.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='transit_count', distance_limit=200)
 transit.filter(lambda row: row['junction_id'] != 0)
 print(f"Removed transit with no connections. Remaining {len(transit)} ({len(transit) / starting_transit_count:.0%})")
 
@@ -202,7 +205,7 @@ rapid_transit.add_property('latitude', lambda row: split_latitude(row['geo_point
 rapid_transit.add_property('longitude', lambda row: split_longitude(row['geo_point_2d']))
 rapid_transit.drop('geo_point_2d')
 
-rapid_transit.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='stores_count', distance_limit=200)
+rapid_transit.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='rapid_transit_count', distance_limit=200)
 rapid_transit.filter(lambda row: row['junction_id'] != 0)
 print(f"Removed rapid transit with no connections. Remaining {len(rapid_transit)} ({len(rapid_transit) / starting_rapid_transit_count:.0%})")
 
@@ -218,9 +221,17 @@ schools.add_property('latitude', lambda row: split_latitude(row['geo_point_2d'])
 schools.add_property('longitude', lambda row: split_longitude(row['geo_point_2d']))
 schools.drop('geo_point_2d')
 
-schools.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='stores_count', distance_limit=200)
+schools.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='schools_count', distance_limit=200)
 schools.filter(lambda row: row['junction_id'] != 0)
 print(f"Removed schools with no connections. Remaining {len(schools)} ({len(schools) / starting_schools_count:.0%})")
 
 
 ## Write Data ##
+
+junctions.write_to_file('../cleaned_data/junctions.csv')
+segments.write_to_file('../cleaned_data/segments.csv')
+crime.write_to_file('../cleaned_data/crime.csv')
+stores.write_to_file('../cleaned_data/stores.csv')
+transit.write_to_file('../cleaned_data/transit.csv')
+rapid_transit.write_to_file('../cleaned_data/rapid_transit.csv')
+schools.write_to_file('../cleaned_data/schools.csv')

@@ -237,7 +237,11 @@ class Dataset:
         
     def get_fieldnames(self):
         if len(self) == 0: return []
-        return [key for key in next(iter(self._rows.values()))]
+        fieldnames =  [key for key in self.get_single_row()]  # type: ignore  # We know it's not none because we checked in the first line
+        if fieldnames[0] != self.primary_key:
+            fieldnames.remove(self.primary_key)
+            fieldnames.insert(0, self.primary_key)
+        return fieldnames
     
     def merge(self, other: Dataset):
         empty = len(self) == 0 or len(other) == 0
