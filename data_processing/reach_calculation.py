@@ -8,7 +8,10 @@ from heapq import heappush, heappop
 from ast import literal_eval
 from data_wrangler import Dataset
 
-JUNCTION_FILE = '../processed_data/junctions.csv'
+INPUT_FOLDER = '../cleaned_data'
+OUTPUT_FOLDER = '../processed_data'
+
+JUNCTION_FILE = f'{INPUT_FOLDER}/junctions.csv'
 
 DISTANCE_SCALE = 0.0032
 STANDARD_DEVIATION = 200
@@ -20,7 +23,7 @@ junctions.convert_properties({
     'crime_count': int,
     'stores_count': int,
     'transit_count': int,
-    'rtransit_count': int,
+    'rapid_transit_count': int,
     'schools_count': int,
     'neighbors': lambda v : literal_eval(v) if v else []
 })
@@ -32,16 +35,19 @@ def normal_dst(distance, standard_deviation):
     return scale * distribution
 
 def reach_dst(distance, scale):
+    """ Calculate a modified version of Borgatti's reach formula
+    
+    TODO: Check that convergence is important and that if is whether we actually need to cube the denominator
+    The range formula is:  sumweight * 1 / (dst_scale * dst + 1) ^ 2
+    We have +1 because we want distance of zero to be constant with respect to dst_scale
+    We cube the denominator because this causes it to converge
+    """
+    
     return 1 / ((distance / scale + 1) ** 3)
 
 def calculate_reach(junction, properties, dst_func):
-    """ Calculate a modified version of Borgatti's reach formula
+    """
     
-    The range formula is:  sumweight * 1 / (dst_scale * dst + 1) ^ 2
-    We have +1 because we want distance of zero to be constant with respect to dst_scale
-    We square the denominator because this causes it to converge
-    
-    TODO: Check that convergence is important and that if is whether we actually need to cube the denominator
 
     Args:
         junction (Row): The junction to calculate the reach for
@@ -99,9 +105,9 @@ calculate_reaches(
         'crime_reach': 'crime_count',
         'store_reach': 'stores_count',
         'transit_reach': 'transit_count',
-        'rtransit_reach': 'rtransit_count',
+        'rapid_transit_reach': 'rapid_transit_count',
         'schools_reach': 'schools_count'
     }, 
     lambda dst: normal_dst(dst, STANDARD_DEVIATION)
 )
-junctions.write_to_file('../processed_data/reach_junctions.csv')
+junctions.write_to_file(f'{OUTPUT_FOLDER}/reach_junctions.csv')

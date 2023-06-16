@@ -16,12 +16,12 @@ junctions = Dataset.load_file(
         'crime_count': int,
         'stores_count': int,
         'transit_count': int,
-        'rtransit_count': int,
+        'rapid_transit_count': int,
         'schools_count': int,
         'crime_reach': float,
         'store_reach': float,
         'transit_reach': float,
-        'rtransit_reach': float,
+        'rapid_transit_reach': float,
         'schools_reach': float,
     }
 )
@@ -29,13 +29,13 @@ junctions = Dataset.load_file(
 crime_reaches = [j['crime_reach'] for j in junctions]
 store_reaches = [j['store_reach'] for j in junctions]
 transit_reaches = [j['transit_reach'] for j in junctions]
-rtransit_reaches = [j['rtransit_reach'] for j in junctions]
+rtransit_reaches = [j['rapid_transit_reach'] for j in junctions]
 schools_reaches = [j['schools_reach'] for j in junctions]
 
 crime_counts = [j['crime_count'] for j in junctions]
 store_counts = [j['stores_count'] for j in junctions]
 transit_count = [j['transit_count'] for j in junctions]
-rtransit_count = [j['rtransit_count'] for j in junctions]
+rtransit_count = [j['rapid_transit_count'] for j in junctions]
 schools_count = [j['schools_count'] for j in junctions]
 
 use_reach = True
