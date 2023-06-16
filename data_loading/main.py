@@ -19,13 +19,15 @@ from data_wrangler.relationship_property_matchers import match_props
 # Change this to point to the directory of your database information
 DATABASE_INFO_FILEPATH = r"../../dbinfo.txt"
 
-JUNCTION_FILE = '../processed_data/reach_junctions.csv'
-SEGMENT_FILE = '../processed_data/segments.csv'
-CRIME_FILE = '../processed_data/crime.csv'
-TRANSIT_FILE = '../processed_data/transit.csv'
-RAPID_TRANSIT_FILE = '../processed_data/rapid_transit.csv'
-COMMERCIAL_FILE = '../processed_data/stores.csv'
-SCHOOL_FILE = '../processed_data/schools.csv'
+INPUT_FOLDER = '../cleaned_data'
+
+JUNCTION_FILE = f'{INPUT_FOLDER}/junctions.csv'
+SEGMENT_FILE = f'{INPUT_FOLDER}/segments.csv'
+CRIME_FILE = f'{INPUT_FOLDER}/crimes.csv'
+TRANSIT_FILE = f'{INPUT_FOLDER}/transit.csv'
+RAPID_TRANSIT_FILE = f'{INPUT_FOLDER}/rapid_transit.csv'
+COMMERCIAL_FILE = f'{INPUT_FOLDER}/stores.csv'
+SCHOOL_FILE = f'{INPUT_FOLDER}/schools.csv'
 
 ZONE_NUMBER = 10
 ZONE_LETTER = 'U'
@@ -104,7 +106,6 @@ def load_junctions():
         {
             'id': int,
             'type': str,
-            'vulnerability_score': float,
             'longitude': float,
             'latitude': float,
             'street_count': int,
@@ -112,14 +113,14 @@ def load_junctions():
             'transit_count': int,
             'stores_count': int,
             'schools_count': int,
-            'rtransit_count': int,
+            'rapid_transit_count': int,
             'neighbor_ids': (lambda v: [n[0] for n in literal_eval(v if v else '[]')], 'neighbors'),
             'street_ids': (lambda v: [n[2] for n in literal_eval(v if v else '[]')], 'neighbors'),
-            'crime_reach': float,
-            'store_reach': float,
-            'transit_reach': float,
-            'rtransit_reach': float,
-            'schools_reach': float,
+            # 'crime_reach': float,
+            # 'store_reach': float,
+            # 'transit_reach': float,
+            # 'rtransit_reach': float,
+            # 'schools_reach': float,
         }
     )
     
@@ -132,17 +133,16 @@ def load_junctions():
             'street_count',
             'longitude',
             'latitude',
-            'vulnerability_score',
             'crime_count',
             'transit_count',
             'stores_count',
             'schools_count',
-            'rtransit_count',
-            'crime_reach',
-            'store_reach',
-            'transit_reach',
-            'rtransit_count',
-            'schools_reach',
+            'rapid_transit_count',
+            # 'crime_reach',
+            # 'store_reach',
+            # 'transit_reach',
+            # 'rtransit_count',
+            # 'schools_reach',
         ]
     )
     
@@ -158,18 +158,12 @@ def load_segments():
             'hblock': str,
             'type': str,
             'property_count': convert_if_not_null,
-            'PseudoJunctionCount': int,
-            'pseudoJunctionID1': int,
-            'pseudoJunctionID2': int,
-            'adjustJunctionID1': int,
-            'adjustJunctionID2': int,
-            'adjustStreetID1': lambda v: convert_if_not_null(v, on_null=None),
-            'adjustStreetID2': lambda v: convert_if_not_null(v, on_null=None),
             'current_land_val_avg': convert_if_not_null,
             'current_land_val_sd': convert_if_not_null,
             'current_improvement_avg': convert_if_not_null,
             'current_improvement_sd': convert_if_not_null,
-            'Avg_ASSESSMENT_YEAR': convert_if_not_null,
+            'year_assessment_avg': convert_if_not_null,
+            'year_assessment_sd': convert_if_not_null,
             'prev_land_val_avg': convert_if_not_null,
             'prev_land_val_sd': convert_if_not_null,
             'prev_improv_val_avg': convert_if_not_null,
@@ -200,7 +194,7 @@ def load_transit():
     transit_data = Dataset.load_file(
         TRANSIT_FILE, 
         {
-            'stop_id': int,
+            'id': int,
             'stop_code': int,
             'stop_name': str,
             'zone_id': str,
@@ -216,7 +210,7 @@ def load_transit():
         "Transit",
         transit_data,
         [
-            "stop_id",
+            "id",
             "stop_code",
             "stop_name",
             "zone_id",
@@ -239,7 +233,6 @@ def load_crimes():
             'date_of_crime': str,
             'time_of_crime': str,
             'hundred_block': str,
-            'recency': str,
             'latitude': float,
             'longitude': float,
             'junction_id': int,
@@ -256,7 +249,6 @@ def load_crimes():
             'date_of_crime',
             'time_of_crime',
             'hundred_block',
-            'recency',
             'latitude',
             'longitude'
         ]
