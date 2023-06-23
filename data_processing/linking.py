@@ -10,46 +10,62 @@ TRANSIT_FILE = '../processed_data/transit.csv'
 RAPID_TRANSIT_FILE = '../processed_data/rapid_transit.csv'
 COMMERCIAL_FILE = '../processed_data/stores.csv'
 SCHOOL_FILE = '../processed_data/schools.csv'
+BUSINESS_FILE = '../cleaned_data/businesses.csv'
 
 junctions = Dataset.load_file(JUNCTION_FILE)
 junctions.convert_property('id', int)
 junctions.convert_property('longitude', float)
 junctions.convert_property('latitude', float)
 
-transit = Dataset.load_file(TRANSIT_FILE, primary_key='stop_id')
-transit.convert_property('stop_id', int)
-transit.convert_property('latitude', float)
-transit.convert_property('longitude', float)
+businesses = Dataset.load_file(BUSINESS_FILE)
+businesses.convert_property('id', int)
+businesses.convert_property('latitude', float)
+businesses.convert_property('longitude', float)
+businesses.convert_property('retail', lambda v: True if v == "True" else False)
 
-crime = Dataset.load_file(CRIME_FILE)
-crime.convert_property('id', int)
-crime.convert_property('latitude', float)
-crime.convert_property('longitude', float)
+# transit = Dataset.load_file(TRANSIT_FILE, primary_key='stop_id')
+# transit.convert_property('stop_id', int)
+# transit.convert_property('latitude', float)
+# transit.convert_property('longitude', float)
 
-stores = Dataset.load_file(COMMERCIAL_FILE)
-stores.convert_property('id', int)
-stores.convert_property('latitude', float)
-stores.convert_property('longitude', float)
+# crime = Dataset.load_file(CRIME_FILE)
+# crime.convert_property('id', int)
+# crime.convert_property('latitude', float)
+# crime.convert_property('longitude', float)
 
-rtransit = Dataset.load_file(RAPID_TRANSIT_FILE)
-rtransit.convert_property('id', int)
-rtransit.convert_property('latitude', float)
-rtransit.convert_property('longitude', float)
+# stores = Dataset.load_file(COMMERCIAL_FILE)
+# stores.convert_property('id', int)
+# stores.convert_property('latitude', float)
+# stores.convert_property('longitude', float)
 
-schools = Dataset.load_file(SCHOOL_FILE)
-schools.convert_property('id', int)
-schools.convert_property('latitude', float)
-schools.convert_property('longitude', float)
+# rtransit = Dataset.load_file(RAPID_TRANSIT_FILE)
+# rtransit.convert_property('id', int)
+# rtransit.convert_property('latitude', float)
+# rtransit.convert_property('longitude', float)
 
-transit.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='transit_count')
-crime.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='crime_count')
-stores.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='stores_count')
-rtransit.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='rtransit_count')
-schools.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='schools_count')
+# schools = Dataset.load_file(SCHOOL_FILE)
+# schools.convert_property('id', int)
+# schools.convert_property('latitude', float)
+# schools.convert_property('longitude', float)
+
+# transit.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='transit_count')
+# crime.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='crime_count')
+# stores.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='stores_count')
+# rtransit.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='rtransit_count')
+# schools.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='schools_count')
+businesses.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='business_count')
+
+for junction in junctions:
+    junction['retail_count'] = 0
+
+for business in businesses:
+    if not business['retail']: continue
+    junctions[business['junction_id']]['retail_count'] += 1
 
 junctions.write_to_file(JUNCTION_FILE)
-transit.write_to_file(TRANSIT_FILE)
-crime.write_to_file(CRIME_FILE)
-stores.write_to_file(COMMERCIAL_FILE)
-rtransit.write_to_file(RAPID_TRANSIT_FILE)
-schools.write_to_file(SCHOOL_FILE)
+businesses.write_to_file('../processed_data/business_data.csv')
+# transit.write_to_file(TRANSIT_FILE)
+# crime.write_to_file(CRIME_FILE)
+# stores.write_to_file(COMMERCIAL_FILE)
+# rtransit.write_to_file(RAPID_TRANSIT_FILE)
+# schools.write_to_file(SCHOOL_FILE)
