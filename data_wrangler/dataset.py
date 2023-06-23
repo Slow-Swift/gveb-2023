@@ -105,7 +105,7 @@ class Dataset:
     def match_closest(self, other_data: Dataset, distance_func: Callable[[Row, Row], float], on_match: Callable[[Row, Row, float], None], distance_limit: float=float('inf')):
         """ Pair all the nodes in one data set to the closest node in another dataset
         
-        WARNING: Creates a cross product between the two data sets. May run slowly for large datasets.
+        !WARNING: Creates a cross product between the two data sets. May run slowly for large datasets.
         
         Distance is the manhattan distance
 
@@ -143,7 +143,7 @@ class Dataset:
     ):
         """ Pair all the nodes in one data set to the closest node in another dataset
         
-        WARNING: Creates a cross product between the two data sets. May run slowly for large datasets.
+        !WARNING: Creates a cross product between the two data sets. May run slowly for large datasets.
         
         Distance is the manhattan distance
 
@@ -287,7 +287,7 @@ class Dataset:
     def cross_data(data_1: Dataset, data_2: Dataset, func: Callable[[Row, Row], None]):
         """ Run a function on the cross product of two data sets
         
-        WARNING: Creates a cross product between the two data sets. May run slowly for large datasets.
+        !WARNING: Creates a cross product between the two data sets. May run slowly for large datasets.
         
         Useful for computing something based on the combination of two data sets. eg. matching nodes
         [func] will receive every combination of pairs of rows with 1 row from data set 1 and 1 row from data set 2
