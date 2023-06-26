@@ -1,11 +1,8 @@
 import sys
 sys.path.append('../') # This should probably be changed to a more sofisticated system at some point. i.e. install the package
 
-from data_wrangler import Dataset
-
 import seaborn as sns
 import pandas as pd
-import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -15,46 +12,54 @@ sns.set_theme()
 
 JUNCTION_FILE = '../processed_data/reach_junctions.csv'
 
-# junctions = pd.read_csv(JUNCTION_FILE)
+junctions = pd.read_csv(JUNCTION_FILE)
+junctions = junctions.loc[ :, [
+    'crime_reach', 'store_reach', 'transit_reach', 'rapid_transit_reach', 'schools_reach', 'business_reach', 'retail_reach',
+    'crime_count', 'stores_count', 'transit_count', 'rapid_transit_count', 'schools_count', 'business_count', 'retail_count'
+]]
 
-# sns.lmplot(junctions, x='store_reach', y="crime_reach")
+reaches = junctions.loc[ :, [
+    'crime_reach', 'retail_reach', 'transit_reach', 'rapid_transit_reach'
+]]
 
-junctions = Dataset.load_file(
-    JUNCTION_FILE,
-    {
-        'id': int,
-        'crime_count': int,
-        'stores_count': int,
-        'transit_count': int,
-        'rapid_transit_count': int,
-        'schools_count': int,
-        'business_count': int,
-        'retail_count': int,
-        'crime_reach': float,
-        'store_reach': float,
-        'transit_reach': float,
-        'rapid_transit_reach': float,
-        'schools_reach': float,
-        'business_reach': float,
-        'retail_reach': float,
-    }
-)
 
-crime_reaches = np.array([j['crime_reach'] for j in junctions])
-store_reaches = np.array([j['store_reach'] for j in junctions])
-transit_reaches = np.array([j['transit_reach'] for j in junctions])
-rtransit_reaches = np.array([j['rapid_transit_reach'] for j in junctions])
-schools_reaches = np.array([j['schools_reach'] for j in junctions])
-business_reaches = np.array([j['business_reach'] for j in junctions])
-retail_reaches = np.array([j['retail_reach'] for j in junctions])
+def coff_multi_corr(predictor, target):
+    R_inv = np.linalg.inv(predictor.corr().to_numpy())
+    
+    combined = predictor.copy()
+    combined['_target'] = target
+    c = np.matrix(combined.corr()['_target'].drop('_target').to_numpy())
+   
+    r_sqr = (c * R_inv * np.transpose(c)).item()
+    
+    return r_sqr ** 0.5
+    
 
-crime_counts = np.array([j['crime_count'] for j in junctions])
-store_counts = np.array([j['stores_count'] for j in junctions])
-transit_count = np.array([j['transit_count'] for j in junctions])
-rtransit_count = np.array([j['rapid_transit_count'] for j in junctions])
-schools_count = np.array([j['schools_count'] for j in junctions])
-business_count = np.array([j['business_count'] for j in junctions])
-retail_count = np.array([j['retail_count'] for j in junctions])
+corr = reaches.corr()
+print(corr)
+# hm = sns.heatmap(round(corr, 2), annot=True, cmap='coolwarm', fmt='.2f', linewidths=.05)
+
+# sns.lmplot(junctions, x='transit_reach', y="retail_reach")
+
+print(coff_multi_corr(reaches.loc[:, 'retail_reach':'rapid_transit_reach'], reaches['crime_reach']))
+
+sns.jointplot(x='retail_reach', y='crime_reach', data=reaches, kind='reg')
+
+crime_reaches = junctions['crime_reach']
+store_reaches = junctions['store_reach']
+transit_reaches = junctions['transit_reach']
+rtransit_reaches = junctions['rapid_transit_reach']
+schools_reaches = junctions['schools_reach']
+business_reaches = junctions['business_reach']
+retail_reaches = junctions['retail_reach']
+
+crime_counts = junctions['crime_count']
+store_counts = junctions['stores_count']
+transit_count = junctions['transit_count']
+rtransit_count = junctions['rapid_transit_count']
+schools_count = junctions['schools_count']
+business_count = junctions['business_count']
+retail_count = junctions['retail_count']
 
 use_reach = True
 label_names = "Reach" if use_reach else "Count"
@@ -93,29 +98,30 @@ def analyze(ax: plt.Axes, data, xlabel, ylabel):
     x_data = x_data[sort]
     y_data = y_data[sort]
     
-    bins_x, bins_y, bins_count, width = hist_mean(x_data, y_data, 20)
+    bins_x, bins_y, bins_count, width = hist_mean(x_data, y_data, 16)
     
     # Plot the data
-    # ax.scatter(x_data, y_data)
+    ax.scatter(x_data, y_data)
     ax.bar(bins_x, bins_count, width=width, align='edge', color="purple", alpha=0.5)
     ax.step([*bins_x, max(x_data)], [*bins_y, bins_y[-1]], where="post", color="green", linewidth=3)
     ax.plot(np.unique(x_data), np.poly1d(np.polyfit(x_data, y_data, 1))(np.unique(x_data)), color="red", linewidth=3)
+    ax.vlines([np.mean(x_data), np.mean(x_data) + np.std(x_data)], 0, 1)
+    
+    print(f'{xlabel} - {ylabel} Correlation Coefficient: {np.corrcoef(x_data, y_data)[1,0]:.3f}')
     
     # Label the plot
     ax.set_ylabel(f'{ylabel} {label_names}')
     ax.set_xlabel(f'{xlabel} {label_names}')
   
-analyze(plt.subplot(2, 2, 1), (store_data, crime_data), 'Store', 'Crime')  
-analyze(plt.subplot(2, 2, 2), (transit_data, crime_data), 'Transit', 'Crime')  
-analyze(plt.subplot(2, 2, 3), (business_data, crime_data), 'Business', 'Crime')
-analyze(plt.subplot(2, 2, 4), (retail_data, crime_data), 'Retail', 'Crime')
+# analyze(plt.subplot(2, 2, 1), (retail_data, crime_data), 'Retail', 'Crime')  
+# analyze(plt.subplot(2, 2, 2), (transit_data, crime_data), 'Transit', 'Crime')  
 # analyze(plt.subplot(2, 2, 3), (rtransit_data, crime_data), 'Rapid Transit', 'Crime')  
-# analyze(plt.subplot(2, 2, 4), (schools_data, crime_data), 'Schools', 'Crime')  
+# analyze(plt.subplot(2, 2, 4), (retail_data, transit_data), 'Retail', 'Transit')
 
 # fig = plt.figure()
 # ax = fig.add_subplot(projection='3d')
-# ax.scatter(store_data, transit_data, crime_data)
-# ax.set_xlabel(f"Stores {label_names}")
+# ax.scatter(retail_data, transit_data, crime_data)
+# ax.set_xlabel(f"Retail {label_names}")
 # ax.set_ylabel(f"Transit {label_names}")
 # ax.set_zlabel(f'Crime {label_names}')
 
