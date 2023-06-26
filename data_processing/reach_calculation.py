@@ -8,7 +8,7 @@ from heapq import heappush, heappop
 from ast import literal_eval
 from data_wrangler import Dataset
 
-INPUT_FOLDER = '../cleaned_data'
+INPUT_FOLDER = '../processed_data'
 OUTPUT_FOLDER = '../processed_data'
 
 JUNCTION_FILE = f'{INPUT_FOLDER}/junctions.csv'
@@ -23,10 +23,13 @@ junctions.convert_properties({
     'crime_count': int,
     'stores_count': int,
     'transit_count': int,
-    'rapid_transit_count': int,
+    'rtransit_count': int,
     'schools_count': int,
+    'business_count': int,
+    'retail_count': int,
     'neighbors': lambda v : literal_eval(v) if v else []
 })
+junctions.rename('rtransit_count', 'rapid_transit_count')
 
 def normal_dst(distance, standard_deviation):
     scale = 1 / (2 * math.pi * (standard_deviation ** 2))
@@ -106,7 +109,9 @@ calculate_reaches(
         'store_reach': 'stores_count',
         'transit_reach': 'transit_count',
         'rapid_transit_reach': 'rapid_transit_count',
-        'schools_reach': 'schools_count'
+        'schools_reach': 'schools_count',
+        'business_reach': 'business_count',
+        'retail_reach': 'retail_count',
     }, 
     lambda dst: normal_dst(dst, STANDARD_DEVIATION)
 )
