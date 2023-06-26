@@ -21,13 +21,14 @@ DATABASE_INFO_FILEPATH = r"../../dbinfo.txt"
 
 INPUT_FOLDER = '../cleaned_data'
 
-JUNCTION_FILE = f'{INPUT_FOLDER}/junctions.csv'
-SEGMENT_FILE = f'{INPUT_FOLDER}/segments.csv'
+JUNCTION_FILE = f'../processed_data/reach_junctions.csv'
+SEGMENT_FILE = f'../cleaned_data/segments.csv'
 CRIME_FILE = f'{INPUT_FOLDER}/crimes.csv'
 TRANSIT_FILE = f'{INPUT_FOLDER}/transit.csv'
 RAPID_TRANSIT_FILE = f'{INPUT_FOLDER}/rapid_transit.csv'
 COMMERCIAL_FILE = f'{INPUT_FOLDER}/stores.csv'
 SCHOOL_FILE = f'{INPUT_FOLDER}/schools.csv'
+BUSINESSES_FILE = f'../processed_data/business_data.csv'
 
 ZONE_NUMBER = 10
 ZONE_LETTER = 'U'
@@ -114,13 +115,18 @@ def load_junctions():
             'stores_count': int,
             'schools_count': int,
             'rapid_transit_count': int,
+            'business_count': int,
+            'retail_count': int,
+            'rapid_transit_count': int,
             'neighbor_ids': (lambda v: [n[0] for n in literal_eval(v if v else '[]')], 'neighbors'),
             'street_ids': (lambda v: [n[2] for n in literal_eval(v if v else '[]')], 'neighbors'),
-            # 'crime_reach': float,
-            # 'store_reach': float,
-            # 'transit_reach': float,
-            # 'rtransit_reach': float,
-            # 'schools_reach': float,
+            'crime_reach': float,
+            'store_reach': float,
+            'transit_reach': float,
+            'rapid_transit_reach': float,
+            'schools_reach': float,
+            'business_reach': float,
+            'retail_reach': float,
         }
     )
     
@@ -138,11 +144,15 @@ def load_junctions():
             'stores_count',
             'schools_count',
             'rapid_transit_count',
-            # 'crime_reach',
-            # 'store_reach',
-            # 'transit_reach',
-            # 'rtransit_count',
-            # 'schools_reach',
+            'business_count',
+            'retail_count',
+            'crime_reach',
+            'store_reach',
+            'transit_reach',
+            'rapid_transit_reach',
+            'schools_reach',
+            'business_reach',
+            'retail_reach',
         ]
     )
     
@@ -357,7 +367,53 @@ def load_schools():
     
     return schools_data, schools
 
-def create_relationships(junctions, segments, transit, crimes, stores, rtransit, schools):
+def load_businesses():
+    print("Loading Businesses")
+    
+    businesses_data = Dataset.load_file(
+        BUSINESSES_FILE,
+        {
+            'id': int,
+            'licence_rsn': int,
+            'licence_number': str,
+            'name': str,
+            'trade_name': str,
+            'business_type': str,
+            'sub_type': str,
+            'employees_count': str,
+            'local_area': str,
+            'retail': str,
+            'latitude': float,
+            'longitude': float,
+            'junction_id': int,
+            'junction_dst': float
+        }
+    )
+    
+    businesses = Category(
+        "Business",
+        businesses_data,
+        [
+            'id',
+            'licence_rsn',
+            'licence_number',
+            'name',
+            'trade_name',
+            'business_type',
+            'sub_type',
+            'employees_count',
+            'local_area',
+            'retail',
+            'latitude',
+            'longitude'
+        ]
+    )
+    
+    print("Loaded Schools")
+    
+    return businesses_data, businesses
+
+def create_relationships(junctions, segments, transit, crimes, stores, rtransit, schools, businesses):
     def junction_prop_matcher(j1, j2):
         segment_id = j1['street_ids'][j1['neighbor_ids'].index(j2['id'])]
         segment = segments[segment_id]
@@ -421,13 +477,19 @@ def create_relationships(junctions, segments, transit, crimes, stores, rtransit,
         prop_matcher=first_set_prop_match([('school_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
     )
     
+    nearest_business_jn = Relationship(
+        "NEAREST_BUSINESS_JN", businesses, junctions, 'junction_id',
+        prop_matcher=first_set_prop_match([('business_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
+    )
+    
     relationships = [
         connects_to,
         nearest_transit_jn,
         nearest_crime_jn,
         nearest_store_jn,
         nearest_station_jn,
-        nearest_school_jn
+        nearest_school_jn,
+        nearest_business_jn
     ]
     
     return relationships
@@ -445,6 +507,7 @@ def load_data(session):
     stores_data, stores = load_stores()
     rtransit_data, rtransit = load_rapid_transit()
     schools_data, schools = load_schools()
+    businesses_data, businesses = load_businesses()
     
     categories = [
         junctions,
@@ -452,11 +515,12 @@ def load_data(session):
         crimes,
         stores,
         rtransit,
-        schools
+        schools,
+        businesses
     ]
     
     relationships = create_relationships(
-        junctions, segment_data, transit, crimes, stores, rtransit, schools
+        junctions, segment_data, transit, crimes, stores, rtransit, schools, businesses
     )
     
     print("Writing Data")

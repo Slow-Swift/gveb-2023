@@ -214,7 +214,7 @@ class Dataset:
         
         if count_field:
             for row in other_data:
-                row[count_field] = row.get(count_field, 0)
+                row[count_field] = 0
                 
         for row in self:
             row[match_field] = 0
