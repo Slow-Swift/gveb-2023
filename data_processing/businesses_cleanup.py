@@ -96,9 +96,12 @@ licences.drop('Geom', inplace=True, axis=1)
 licences.drop('geo_point_2d', inplace=True, axis=1)
 
 licences.rename(columns={
-    'licenceRSN': 'licence_rsn',
+    'LicenceRSN': 'licence_rsn',
     'LicenceNumber': 'licence_number',
     'BusinessName': 'name',
+    'BusinessTradeName': 'trade_name',
+    'BusinessSubType': 'sub_type',
+    'NumberofEmployees': 'employees_count',
     'IssuedDate': 'issued_date',
     'ExpiredDate': 'expired_date',
     'BusinessType': 'business_type',
@@ -107,7 +110,7 @@ licences.rename(columns={
     'PostalCode': 'postal_code',
     'LocalArea': 'local_area',
     'NumberOfEmployees': 'number_of_employees',
-})
+}, inplace=True)
 
 licences.reset_index(inplace=True, drop=True)
 licences.index.name = "id"
