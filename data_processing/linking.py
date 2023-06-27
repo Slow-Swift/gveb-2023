@@ -19,6 +19,7 @@ junctions.convert_property('latitude', float)
 
 businesses = Dataset.load_file(BUSINESS_FILE)
 businesses.convert_property('id', int)
+businesses.convert_property('employees_count', float)
 businesses.convert_property('latitude', float)
 businesses.convert_property('longitude', float)
 businesses.convert_property('retail', lambda v: True if v == "True" else False)
@@ -57,10 +58,12 @@ businesses.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_
 
 for junction in junctions:
     junction['retail_count'] = 0
+    junction['employees'] = 0
 
 for business in businesses:
     if not business['retail']: continue
     junctions[business['junction_id']]['retail_count'] += 1
+    junctions[business['junction_id']]['employees'] += business['employees_count']
 
 junctions.write_to_file(JUNCTION_FILE)
 businesses.write_to_file('../processed_data/business_data.csv')

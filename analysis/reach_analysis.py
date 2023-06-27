@@ -14,12 +14,12 @@ JUNCTION_FILE = '../processed_data/reach_junctions.csv'
 
 junctions = pd.read_csv(JUNCTION_FILE)
 junctions = junctions.loc[ :, [
-    'crime_reach', 'store_reach', 'transit_reach', 'rapid_transit_reach', 'schools_reach', 'business_reach', 'retail_reach',
-    'crime_count', 'stores_count', 'transit_count', 'rapid_transit_count', 'schools_count', 'business_count', 'retail_count'
+    'crime_reach', 'store_reach', 'transit_reach', 'rapid_transit_reach', 'schools_reach', 'business_reach', 'retail_reach', 'employees_reach',
+    'crime_count', 'stores_count', 'transit_count', 'rapid_transit_count', 'schools_count', 'business_count', 'retail_count', 'employees'
 ]]
 
 reaches = junctions.loc[ :, [
-    'crime_reach', 'retail_reach', 'transit_reach', 'rapid_transit_reach'
+    'crime_reach', 'retail_reach', 'transit_reach', 'rapid_transit_reach', 'employees_reach'
 ]]
 
 
@@ -33,17 +33,10 @@ def coff_multi_corr(predictor, target):
     r_sqr = (c * R_inv * np.transpose(c)).item()
     
     return r_sqr ** 0.5
-    
 
 corr = reaches.corr()
-print(corr)
-# hm = sns.heatmap(round(corr, 2), annot=True, cmap='coolwarm', fmt='.2f', linewidths=.05)
+print(coff_multi_corr(reaches.loc[:, 'retail_reach':'employees_reach'], reaches['crime_reach']))
 
-# sns.lmplot(junctions, x='transit_reach', y="retail_reach")
-
-print(coff_multi_corr(reaches.loc[:, 'retail_reach':'rapid_transit_reach'], reaches['crime_reach']))
-
-sns.jointplot(x='retail_reach', y='crime_reach', data=reaches, kind='reg')
 
 crime_reaches = junctions['crime_reach']
 store_reaches = junctions['store_reach']
@@ -52,6 +45,7 @@ rtransit_reaches = junctions['rapid_transit_reach']
 schools_reaches = junctions['schools_reach']
 business_reaches = junctions['business_reach']
 retail_reaches = junctions['retail_reach']
+employees_reaches = junctions['employees_reach']
 
 crime_counts = junctions['crime_count']
 store_counts = junctions['stores_count']
@@ -60,6 +54,7 @@ rtransit_count = junctions['rapid_transit_count']
 schools_count = junctions['schools_count']
 business_count = junctions['business_count']
 retail_count = junctions['retail_count']
+employees_count = junctions['employees']
 
 use_reach = True
 label_names = "Reach" if use_reach else "Count"
@@ -71,6 +66,7 @@ rtransit_data = rtransit_reaches if use_reach else rtransit_count
 schools_data = schools_reaches if use_reach else schools_count
 business_data = business_reaches if use_reach else business_count
 retail_data = retail_reaches if use_reach else retail_count
+employees_data = employees_reaches if use_reach else employees_count
 
 def hist_mean(x_data, y_data, bin_count):
     bins = [[0,0] for _ in range(bin_count)]
@@ -113,16 +109,10 @@ def analyze(ax: plt.Axes, data, xlabel, ylabel):
     ax.set_ylabel(f'{ylabel} {label_names}')
     ax.set_xlabel(f'{xlabel} {label_names}')
   
-# analyze(plt.subplot(2, 2, 1), (retail_data, crime_data), 'Retail', 'Crime')  
-# analyze(plt.subplot(2, 2, 2), (transit_data, crime_data), 'Transit', 'Crime')  
-# analyze(plt.subplot(2, 2, 3), (rtransit_data, crime_data), 'Rapid Transit', 'Crime')  
-# analyze(plt.subplot(2, 2, 4), (retail_data, transit_data), 'Retail', 'Transit')
-
-# fig = plt.figure()
-# ax = fig.add_subplot(projection='3d')
-# ax.scatter(retail_data, transit_data, crime_data)
-# ax.set_xlabel(f"Retail {label_names}")
-# ax.set_ylabel(f"Transit {label_names}")
-# ax.set_zlabel(f'Crime {label_names}')
+analyze(plt.subplot(2, 2, 1), (retail_data, crime_data), 'Retail', 'Crime')  
+analyze(plt.subplot(2, 2, 2), (transit_data, crime_data), 'Transit', 'Crime')  
+analyze(plt.subplot(2, 2, 3), (rtransit_data, crime_data), 'Rapid Transit', 'Crime')  
+# analyze(plt.subplot(2, 2, 4), (employees_data, crime_data), 'Employees', 'Crime')
+sns.heatmap(round(corr, 2), annot=True, cmap='coolwarm', fmt='.2f', linewidths=.05, ax=plt.subplot(2, 2, 4))
 
 plt.show()

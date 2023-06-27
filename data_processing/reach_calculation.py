@@ -27,6 +27,7 @@ junctions.convert_properties({
     'schools_count': int,
     'business_count': int,
     'retail_count': int,
+    'employees': float,
     'neighbors': lambda v : literal_eval(v) if v else []
 })
 junctions.rename('rtransit_count', 'rapid_transit_count')
@@ -112,6 +113,7 @@ calculate_reaches(
         'schools_reach': 'schools_count',
         'business_reach': 'business_count',
         'retail_reach': 'retail_count',
+        'employees_reach': 'employees'
     }, 
     lambda dst: normal_dst(dst, STANDARD_DEVIATION)
 )
