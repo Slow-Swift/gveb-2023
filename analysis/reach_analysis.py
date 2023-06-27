@@ -14,12 +14,12 @@ JUNCTION_FILE = '../processed_data/reach_junctions.csv'
 
 junctions = pd.read_csv(JUNCTION_FILE)
 junctions = junctions.loc[ :, [
-    'crime_reach', 'store_reach', 'transit_reach', 'rapid_transit_reach', 'schools_reach', 'business_reach', 'retail_reach', 'employees_reach',
-    'crime_count', 'stores_count', 'transit_count', 'rapid_transit_count', 'schools_count', 'business_count', 'retail_count', 'employees'
+    'crime_reach', 'store_reach', 'transit_reach', 'rapid_transit_reach', 'schools_reach', 'business_reach', 'retail_reach',
+    'crime_count', 'stores_count', 'transit_count', 'rapid_transit_count', 'schools_count', 'business_count', 'retail_count',
 ]]
 
 reaches = junctions.loc[ :, [
-    'crime_reach', 'retail_reach', 'transit_reach', 'rapid_transit_reach', 'employees_reach'
+    'crime_reach', 'retail_reach', 'transit_reach', 'rapid_transit_reach',
 ]]
 
 
@@ -35,7 +35,7 @@ def coff_multi_corr(predictor, target):
     return r_sqr ** 0.5
 
 corr = reaches.corr()
-print(coff_multi_corr(reaches.loc[:, 'retail_reach':'employees_reach'], reaches['crime_reach']))
+print(coff_multi_corr(reaches.loc[:, 'retail_reach':'rapid_transit_reach'], reaches['crime_reach']))
 
 
 crime_reaches = junctions['crime_reach']
@@ -45,7 +45,6 @@ rtransit_reaches = junctions['rapid_transit_reach']
 schools_reaches = junctions['schools_reach']
 business_reaches = junctions['business_reach']
 retail_reaches = junctions['retail_reach']
-employees_reaches = junctions['employees_reach']
 
 crime_counts = junctions['crime_count']
 store_counts = junctions['stores_count']
@@ -54,7 +53,6 @@ rtransit_count = junctions['rapid_transit_count']
 schools_count = junctions['schools_count']
 business_count = junctions['business_count']
 retail_count = junctions['retail_count']
-employees_count = junctions['employees']
 
 use_reach = True
 label_names = "Reach" if use_reach else "Count"
@@ -66,7 +64,6 @@ rtransit_data = rtransit_reaches if use_reach else rtransit_count
 schools_data = schools_reaches if use_reach else schools_count
 business_data = business_reaches if use_reach else business_count
 retail_data = retail_reaches if use_reach else retail_count
-employees_data = employees_reaches if use_reach else employees_count
 
 def hist_mean(x_data, y_data, bin_count):
     bins = [[0,0] for _ in range(bin_count)]
