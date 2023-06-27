@@ -13,8 +13,8 @@ OUTPUT_FOLDER = '../processed_data'
 
 JUNCTION_FILE = f'{INPUT_FOLDER}/junctions.csv'
 
-DISTANCE_SCALE = 0.0032
-STANDARD_DEVIATION = 200
+CRIME_SIGMA = 200
+STANDARD_DEVIATION = 400
 
 
 junctions = Dataset.load_file(JUNCTION_FILE)
@@ -75,9 +75,13 @@ def calculate_reach(junction, properties, dst_func):
         # We square the denominator because this causes it to converge
         
         # Update the range values
+        crime_dst = normal_dst(dst, CRIME_SIGMA)
         scaled_dst = dst_func(dst)
         for key in properties:
-            reaches[key] += junctions[next_jun][properties[key]] * scaled_dst
+            if key == 'crime_reach':
+                reaches[key] += junctions[next_jun][properties[key]] * crime_dst
+            else:
+                reaches[key] += junctions[next_jun][properties[key]] * scaled_dst
               
         for neighbor, delta, s_id in junctions[next_jun]['neighbors']:
             if neighbor in visited: continue
