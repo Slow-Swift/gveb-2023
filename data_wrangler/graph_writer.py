@@ -68,6 +68,7 @@ class GraphWriter:
         # Run the query for each batch
         for batch in range(0, len(links), batch_size):
             sub_link_values = links[batch:batch + batch_size]
+            print(sub_link_values[0])
             self._session.run(
                 query, # type: ignore
                 data = sub_link_values
