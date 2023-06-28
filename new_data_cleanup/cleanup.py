@@ -22,6 +22,10 @@ SCHOOLS = f'{INPUT_FOLDER}/schools.csv'
 ZONE_NUMBER = 10
 ZONE_LETTER = 'U'
 
+# TODO: Combine Commercial Broadway stations
+# TODO: Remove stores more than 200 meters from a junction
+
+
 print("Loading Data")
 crime = Dataset.load_file(CRIME)
 junctions = Dataset.load_file(JUNCTIONS)
@@ -157,6 +161,7 @@ rapid_transit.convert_properties({
 
 rapid_transit.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='rapid_transit_count', distance_limit=200)
 rapid_transit.filter(lambda row: row['junction_id'] != 0)
+rapid_transit.filter(lambda row: row['id'] != 18) # Removing one of the commercial - broadway stations
 print(f"Removed rapid transit with no connections. Remaining {len(rapid_transit)} ({len(rapid_transit) / starting_rapid_transit_count:.0%})")
 
 ## Cleanup Schools ##

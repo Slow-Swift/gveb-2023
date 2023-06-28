@@ -54,7 +54,9 @@ businesses.convert_property('retail', lambda v: True if v == "True" else False)
 # stores.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='stores_count')
 # rtransit.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='rtransit_count')
 # schools.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='schools_count')
-businesses.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='business_count')
+businesses.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='business_count', distance_limit=200)
+businesses.filter(lambda row: row['junction_id'] != 0)
+print(sum(business['retail'] for business in businesses))
 
 for junction in junctions:
     junction['retail_count'] = 0
