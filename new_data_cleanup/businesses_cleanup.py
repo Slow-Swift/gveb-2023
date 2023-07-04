@@ -78,6 +78,8 @@ print(f"Removed non-commercial businesses: {licences.shape[0]}")
 # Give licences a tag indicating whether they are retail type
 retailTypes = ['Wholesale Dealer - Food with Anc. Retail', 'Retail Dealer - Market Outlet', 'Wholesale Dealer w/ Anc. Retail', 'Manufacturer with Anc. Retail', 'Manufacturer - Food with Anc. Retail', 'Retail Dealer - Grocery', 'Liquor Retail Store', 'Wholesale Dealer - Food', 'Wholesale  Dealer', 'Retail Dealer - Food', 'Retail Dealer', 'Ltd Service Food Establishment']
 licences['retail'] = licences['BusinessType'].isin(retailTypes)
+licences = licences[licences['retail']]
+print(f"Removed non-retail businesses: {licences.shape[0]}")
 
 licences['latitude'] = licences['geo_point_2d'].apply(lambda p: float(p.split(',')[0]))
 licences['longitude'] = licences['geo_point_2d'].apply(lambda p: float(p.split(',')[1]))
@@ -115,4 +117,6 @@ licences.rename(columns={
 licences.reset_index(inplace=True, drop=True)
 licences.index.name = "id"
 
-licences.to_csv('../cleaned_data/businesses.csv')
+print(f"Final count: {licences.shape[0]}")
+
+licences.to_csv('../temp/businesses.csv')
