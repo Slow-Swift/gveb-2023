@@ -456,39 +456,39 @@ def create_relationships(junctions, segments, transit, crimes, stores, rtransit,
         prop_matcher=first_set_prop_match([('stop_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
     )
     
-    # nearest_crime_jn = Relationship(
-    #     'NEAREST_CRIME_JN', crimes, junctions, 'junction_id',
-    #     prop_matcher=first_set_prop_match([('crime_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
-    # )
+    nearest_crime_jn = Relationship(
+        'NEAREST_CRIME_JN', crimes, junctions, 'junction_id',
+        prop_matcher=first_set_prop_match([('crime_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
+    )
     
-    # nearest_store_jn = Relationship(
-    #     'NEAREST_STORE_JN', stores, junctions, 'junction_id',
-    #     prop_matcher=first_set_prop_match([('store_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
-    # )
+    nearest_store_jn = Relationship(
+        'NEAREST_STORE_JN', stores, junctions, 'junction_id',
+        prop_matcher=first_set_prop_match([('store_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
+    )
     
-    # nearest_station_jn = Relationship(
-    #     'NEAREST_STATION_JN', rtransit, junctions, 'junction_id',
-    #     prop_matcher=first_set_prop_match([('station_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
-    # )
+    nearest_station_jn = Relationship(
+        'NEAREST_STATION_JN', rtransit, junctions, 'junction_id',
+        prop_matcher=first_set_prop_match([('station_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
+    )
     
-    # nearest_school_jn = Relationship(
-    #     'NEAREST_SCHOOL_JN', schools, junctions, 'junction_id',
-    #     prop_matcher=first_set_prop_match([('school_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
-    # )
+    nearest_school_jn = Relationship(
+        'NEAREST_SCHOOL_JN', schools, junctions, 'junction_id',
+        prop_matcher=first_set_prop_match([('school_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
+    )
     
-    # nearest_business_jn = Relationship(
-    #     "NEAREST_BUSINESS_JN", businesses, junctions, 'junction_id',
-    #     prop_matcher=first_set_prop_match([('business_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
-    # )
+    nearest_business_jn = Relationship(
+        "NEAREST_BUSINESS_JN", businesses, junctions, 'junction_id',
+        prop_matcher=first_set_prop_match([('business_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
+    )
     
     relationships = [
-        # connects_to,
+        connects_to,
         nearest_transit_jn,
-        # nearest_crime_jn,
-        # nearest_store_jn,
-        # nearest_station_jn,
-        # nearest_school_jn,
-        # nearest_business_jn
+        nearest_crime_jn,
+        nearest_store_jn,
+        nearest_station_jn,
+        nearest_school_jn,
+        nearest_business_jn
     ]
     
     return relationships
@@ -502,20 +502,20 @@ def load_data(session):
     junction_data, junctions = load_junctions()
     segment_data = load_segments()
     transit_data, transit = load_transit()
-    # crime_data, crimes = load_crimes()
-    # stores_data, stores = load_stores()
-    # rtransit_data, rtransit = load_rapid_transit()
-    # schools_data, schools = load_schools()
-    # businesses_data, businesses = load_businesses()
+    crime_data, crimes = load_crimes()
+    stores_data, stores = load_stores()
+    rtransit_data, rtransit = load_rapid_transit()
+    schools_data, schools = load_schools()
+    businesses_data, businesses = load_businesses()
     
     categories = [
         junctions,
         transit,
-        # crimes,
-        # stores,
-        # rtransit,
-        # schools,
-        # businesses
+        crimes,
+        stores,
+        rtransit,
+        schools,
+        businesses
     ]
     
     relationships = create_relationships(
@@ -524,14 +524,14 @@ def load_data(session):
     
     print("Writing Data")
     writer = GraphWriter(session)
-    # writer.clear_all()
+    writer.clear_all()
     
-    # print()
-    # print("-- Writing Categories --")
-    # for category in categories:
-    #     writer.clear_category(category)
-    #     writer.write_category(category)
-    #     print(f"Wrote {category.name}")
+    print()
+    print("-- Writing Categories --")
+    for category in categories:
+        writer.clear_category(category)
+        writer.write_category(category)
+        print(f"Wrote {category.name}")
     
     print()
     print("-- Writing Relationships --")
