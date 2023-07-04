@@ -9,6 +9,7 @@ import numpy as np
 import math
 
 sns.set_theme()
+sns.set_context('notebook', font_scale=1.5)
 
 JUNCTION_FILE = '../processed_data/reach_junctions.csv'
 
@@ -19,9 +20,12 @@ junctions = junctions.loc[ :, [
 ]]
 
 reaches = junctions.loc[ :, [
-    'crime_reach', 'retail_reach', 'transit_reach', 'rapid_transit_reach',
+    'crime_reach', 'retail_reach', 'transit_reach', 'rapid_transit_reach', 'schools_reach'
 ]]
 
+counts = junctions.loc[ :, [
+    'crime_count', 'retail_count', 'transit_count', 'rapid_transit_count', 'schools_count'
+]]
 
 def coff_multi_corr(predictor, target):
     R_inv = np.linalg.inv(predictor.corr().to_numpy())
@@ -35,7 +39,8 @@ def coff_multi_corr(predictor, target):
     return r_sqr ** 0.5
 
 corr = reaches.corr()
-print(coff_multi_corr(reaches.loc[:, 'retail_reach':'rapid_transit_reach'], reaches['crime_reach']))
+corr_count = counts.corr()
+print(coff_multi_corr(reaches.loc[:, 'retail_reach':'schools_reach'], reaches['crime_reach']))
 
 
 crime_reaches = junctions['crime_reach']
@@ -54,7 +59,7 @@ schools_count = junctions['schools_count']
 business_count = junctions['business_count']
 retail_count = junctions['retail_count']
 
-use_reach = True
+use_reach = False
 label_names = "Reach" if use_reach else "Count"
 
 crime_data = crime_reaches if use_reach else crime_counts
@@ -85,6 +90,7 @@ def hist_mean(x_data, y_data, bin_count):
     return bins_x, bins_y, bins_count_norm, width
 
 def analyze(ax: plt.Axes, data, xlabel, ylabel):
+    
     # Get and sort the data
     x_data, y_data = data
     sort = x_data.argsort()
@@ -95,21 +101,27 @@ def analyze(ax: plt.Axes, data, xlabel, ylabel):
     
     # Plot the data
     ax.scatter(x_data, y_data)
-    ax.bar(bins_x, bins_count, width=width, align='edge', color="purple", alpha=0.5)
-    ax.step([*bins_x, max(x_data)], [*bins_y, bins_y[-1]], where="post", color="green", linewidth=3)
+    # ax.bar(bins_x, bins_count, width=width, align='edge', color="purple", alpha=0.5)
+    # ax.step([*bins_x, max(x_data)], [*bins_y, bins_y[-1]], where="post", color="green", linewidth=3)
     ax.plot(np.unique(x_data), np.poly1d(np.polyfit(x_data, y_data, 1))(np.unique(x_data)), color="red", linewidth=3)
-    ax.vlines([np.mean(x_data), np.mean(x_data) + np.std(x_data)], 0, 1)
+
+    # ax.vlines([np.mean(x_data)], 0, 1, color='green', linewidth=3)
+    # ax.vlines([np.mean(x_data) + np.std(x_data)], 0, 1, color='red', linewidth=3)
     
     print(f'{xlabel} - {ylabel} Correlation Coefficient: {np.corrcoef(x_data, y_data)[1,0]:.3f}')
     
     # Label the plot
     ax.set_ylabel(f'{ylabel} {label_names}')
     ax.set_xlabel(f'{xlabel} {label_names}')
+    # ax.get_yaxis().set_visible(False)
   
-analyze(plt.subplot(2, 2, 1), (retail_data, crime_data), 'Retail', 'Crime')  
-analyze(plt.subplot(2, 2, 2), (transit_data, crime_data), 'Transit', 'Crime')  
-analyze(plt.subplot(2, 2, 3), (rtransit_data, crime_data), 'Rapid Transit', 'Crime')  
+# analyze(plt.subplot(1, 1, 1), (crime_data, crime_data), 'Crime', 'Crime')  
+# analyze(plt.subplot(2, 2, 1), (retail_data, crime_data), 'Retail', 'Crime')  
+# analyze(plt.subplot(2, 2, 2), (transit_data, crime_data), 'Transit', 'Crime')  
+# analyze(plt.subplot(2, 2, 3), (rtransit_data, crime_data), 'Rapid Transit', 'Crime')  
+# analyze(plt.subplot(2, 2, 4), (schools_data, crime_data), 'School', 'Crime')  
 # analyze(plt.subplot(2, 2, 4), (employees_data, crime_data), 'Employees', 'Crime')
-sns.heatmap(round(corr, 2), annot=True, cmap='coolwarm', fmt='.2f', linewidths=.05, ax=plt.subplot(2, 2, 4))
+# sns.heatmap(round(corr, 2), annot=True, cmap='coolwarm', fmt='.2f', linewidths=.05, ax=plt.subplot(2, 2, 2))
+sns.heatmap(round(corr, 2), annot=True, cmap='coolwarm', fmt='.2f', linewidths=.05, ax=plt.subplot(2, 2, 2))
 
 plt.show()

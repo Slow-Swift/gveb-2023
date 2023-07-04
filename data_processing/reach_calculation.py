@@ -13,7 +13,7 @@ OUTPUT_FOLDER = '../processed_data'
 
 JUNCTION_FILE = f'{INPUT_FOLDER}/junctions.csv'
 
-CRIME_SIGMA = 200
+CRIME_SIGMA = 132
 STANDARD_DEVIATION = 400
 
 
@@ -49,10 +49,8 @@ def reach_dst(distance, scale):
     
     return 1 / ((distance / scale + 1) ** 3)
 
-def calculate_reach(junction, properties, dst_func):
+def calculate_reach(junction, properties, dst_func, limit=float('inf')):
     """
-    
-
     Args:
         junction (Row): The junction to calculate the reach for
         prop (str): The property to use for junction weights
@@ -69,6 +67,7 @@ def calculate_reach(junction, properties, dst_func):
         dst, next_jun = heappop(queue)
         if next_jun in visited: continue
         visited.add(next_jun)
+        if dst > limit: continue
         
         # The range formula is: weight * 1 / (dst_scale * dst + 1) ^ 2
         # We have +1 because we want distance of zero to be constant with respect to dst_scale
@@ -89,11 +88,11 @@ def calculate_reach(junction, properties, dst_func):
             heappush(queue, (neighbor_dst, neighbor))
     return reaches
 
-def calculate_reaches(junctions, properties, dst_func):
+def calculate_reaches(junctions, properties, dst_func, limit=float('inf')):
     highest = { key: 0 for key in properties}
     
     for i, junction in enumerate(junctions):
-        reaches = calculate_reach(junction, properties, dst_func)
+        reaches = calculate_reach(junction, properties, dst_func, limit)
         for key in reaches:
             junction[key] = reaches[key]
             highest[key] = max(highest[key], reaches[key])
@@ -119,6 +118,7 @@ calculate_reaches(
         'retail_reach': 'retail_count',
         'employees_reach': 'employees'
     }, 
-    lambda dst: normal_dst(dst, STANDARD_DEVIATION)
+    lambda dst: normal_dst(dst, STANDARD_DEVIATION),
+    limit=1000
 )
 junctions.write_to_file(f'{OUTPUT_FOLDER}/reach_junctions.csv')
