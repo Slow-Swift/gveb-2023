@@ -18,13 +18,12 @@ STORES = f'{INPUT_FOLDER}/stores.csv'
 TRANSIT = f'{INPUT_FOLDER}/transit.csv'
 RAPID_TRANSIT = f'{INPUT_FOLDER}/rapid_transit.csv'
 SCHOOLS = f'{INPUT_FOLDER}/schools.csv'
+BUSINESSES = f'{INPUT_FOLDER}/businesses.csv'
 
 ZONE_NUMBER = 10
 ZONE_LETTER = 'U'
 
-# TODO: Combine Commercial Broadway stations
 # TODO: Remove stores more than 200 meters from a junction
-
 
 print("Loading Data")
 crime = Dataset.load_file(CRIME)
@@ -34,6 +33,7 @@ stores = Dataset.load_file(STORES)
 transit = Dataset.load_file(TRANSIT)
 rapid_transit = Dataset.load_file(RAPID_TRANSIT)
 schools = Dataset.load_file(SCHOOLS)
+businesses = Dataset.load_file(BUSINESSES)
 print("Loaded Data")
 
 starting_crime_count = len(crime)
@@ -43,6 +43,7 @@ starting_stores_count = len(stores)
 starting_transit_count = len(transit)
 starting_rapid_transit_count = len(rapid_transit)
 starting_schools_count = len(schools)
+starting_business_count = len(businesses)
 
 ## Cleanup Junctions ##
 print()
@@ -178,6 +179,17 @@ schools.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_fie
 schools.filter(lambda row: row['junction_id'] != 0)
 print(f"Removed schools with no connections. Remaining {len(schools)} ({len(schools) / starting_schools_count:.0%})")
 
+## Cleanup Businesses ##
+print(f"Initial business count: {starting_business_count}")
+businesses.convert_properties({
+    'id': int,
+    'latitude': float,
+    'longitude': float
+})
+
+businesses.match_lat_lng_approx(junctions, 'junction_id', 'junction_dst', count_field='retail_count', distance_limit=200)
+businesses.filter(lambda row: row['junction_id'] != 0)
+print(f"Removed businesses with no connections. Remaining {len(businesses)} ({len(businesses) / starting_business_count:.0%})")
 
 ## Write Data ##
 
@@ -188,3 +200,4 @@ stores.write_to_file(f'{OUTPUT_FOLDER}/stores.csv')
 transit.write_to_file(f'{OUTPUT_FOLDER}/transit.csv')
 rapid_transit.write_to_file(f'{OUTPUT_FOLDER}/rapid_transit.csv')
 schools.write_to_file(f'{OUTPUT_FOLDER}/schools.csv')
+businesses.write_to_file(f'{OUTPUT_FOLDER}/businesses.csv')
