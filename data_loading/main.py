@@ -19,13 +19,16 @@ from data_wrangler.relationship_property_matchers import match_props
 # Change this to point to the directory of your database information
 DATABASE_INFO_FILEPATH = r"../../dbinfo.txt"
 
-JUNCTION_FILE = '../processed_data/reach_junctions.csv'
-SEGMENT_FILE = '../processed_data/segments.csv'
-CRIME_FILE = '../processed_data/crime.csv'
-TRANSIT_FILE = '../processed_data/transit.csv'
-RAPID_TRANSIT_FILE = '../processed_data/rapid_transit.csv'
-COMMERCIAL_FILE = '../processed_data/stores.csv'
-SCHOOL_FILE = '../processed_data/schools.csv'
+INPUT_FOLDER = '../cleaned_data'
+
+JUNCTION_FILE = f'../processed_data/reach_junctions.csv'
+SEGMENT_FILE = f'{INPUT_FOLDER}/segments.csv'
+CRIME_FILE = f'{INPUT_FOLDER}/crimes.csv'
+TRANSIT_FILE = f'{INPUT_FOLDER}/transit.csv'
+RAPID_TRANSIT_FILE = f'{INPUT_FOLDER}/rapid_transit.csv'
+COMMERCIAL_FILE = f'{INPUT_FOLDER}/stores.csv'
+SCHOOL_FILE = f'{INPUT_FOLDER}/schools.csv'
+BUSINESSES_FILE = f'{INPUT_FOLDER}/businesses.csv'
 
 ZONE_NUMBER = 10
 ZONE_LETTER = 'U'
@@ -104,7 +107,6 @@ def load_junctions():
         {
             'id': int,
             'type': str,
-            'vulnerability_score': float,
             'longitude': float,
             'latitude': float,
             'street_count': int,
@@ -112,14 +114,17 @@ def load_junctions():
             'transit_count': int,
             'stores_count': int,
             'schools_count': int,
-            'rtransit_count': int,
+            'rapid_transit_count': int,
+            'retail_count': int,
+            'rapid_transit_count': int,
             'neighbor_ids': (lambda v: [n[0] for n in literal_eval(v if v else '[]')], 'neighbors'),
             'street_ids': (lambda v: [n[2] for n in literal_eval(v if v else '[]')], 'neighbors'),
             'crime_reach': float,
             'store_reach': float,
             'transit_reach': float,
-            'rtransit_reach': float,
+            'rapid_transit_reach': float,
             'schools_reach': float,
+            'retail_reach': float,
         }
     )
     
@@ -132,17 +137,18 @@ def load_junctions():
             'street_count',
             'longitude',
             'latitude',
-            'vulnerability_score',
             'crime_count',
             'transit_count',
             'stores_count',
             'schools_count',
-            'rtransit_count',
+            'rapid_transit_count',
+            'retail_count',
             'crime_reach',
             'store_reach',
             'transit_reach',
-            'rtransit_count',
+            'rapid_transit_reach',
             'schools_reach',
+            'retail_reach',
         ]
     )
     
@@ -158,18 +164,12 @@ def load_segments():
             'hblock': str,
             'type': str,
             'property_count': convert_if_not_null,
-            'PseudoJunctionCount': int,
-            'pseudoJunctionID1': int,
-            'pseudoJunctionID2': int,
-            'adjustJunctionID1': int,
-            'adjustJunctionID2': int,
-            'adjustStreetID1': lambda v: convert_if_not_null(v, on_null=None),
-            'adjustStreetID2': lambda v: convert_if_not_null(v, on_null=None),
             'current_land_val_avg': convert_if_not_null,
             'current_land_val_sd': convert_if_not_null,
             'current_improvement_avg': convert_if_not_null,
             'current_improvement_sd': convert_if_not_null,
-            'Avg_ASSESSMENT_YEAR': convert_if_not_null,
+            'year_assessment_avg': convert_if_not_null,
+            'year_assessment_sd': convert_if_not_null,
             'prev_land_val_avg': convert_if_not_null,
             'prev_land_val_sd': convert_if_not_null,
             'prev_improv_val_avg': convert_if_not_null,
@@ -200,7 +200,7 @@ def load_transit():
     transit_data = Dataset.load_file(
         TRANSIT_FILE, 
         {
-            'stop_id': int,
+            'id': int,
             'stop_code': int,
             'stop_name': str,
             'zone_id': str,
@@ -209,14 +209,13 @@ def load_transit():
             'junction_id': int,
             'junction_dst': float
         },
-        primary_key='stop_id'
     )
     
     transit = Category(
         "Transit",
         transit_data,
         [
-            "stop_id",
+            "id",
             "stop_code",
             "stop_name",
             "zone_id",
@@ -239,7 +238,6 @@ def load_crimes():
             'date_of_crime': str,
             'time_of_crime': str,
             'hundred_block': str,
-            'recency': str,
             'latitude': float,
             'longitude': float,
             'junction_id': int,
@@ -256,7 +254,6 @@ def load_crimes():
             'date_of_crime',
             'time_of_crime',
             'hundred_block',
-            'recency',
             'latitude',
             'longitude'
         ]
@@ -365,7 +362,53 @@ def load_schools():
     
     return schools_data, schools
 
-def create_relationships(junctions, segments, transit, crimes, stores, rtransit, schools):
+def load_businesses():
+    print("Loading Businesses")
+    
+    businesses_data = Dataset.load_file(
+        BUSINESSES_FILE,
+        {
+            'id': int,
+            'licence_rsn': int,
+            'licence_number': str,
+            'name': str,
+            'trade_name': str,
+            'business_type': str,
+            'sub_type': str,
+            'employees_count': str,
+            'local_area': str,
+            'retail': str,
+            'latitude': float,
+            'longitude': float,
+            'junction_id': int,
+            'junction_dst': float
+        }
+    )
+    
+    businesses = Category(
+        "Business",
+        businesses_data,
+        [
+            'id',
+            'licence_rsn',
+            'licence_number',
+            'name',
+            'trade_name',
+            'business_type',
+            'sub_type',
+            'employees_count',
+            'local_area',
+            'retail',
+            'latitude',
+            'longitude'
+        ]
+    )
+    
+    print("Loaded Schools")
+    
+    return businesses_data, businesses
+
+def create_relationships(junctions, segments, transit, crimes, stores, rtransit, schools, businesses):
     def junction_prop_matcher(j1, j2):
         segment_id = j1['street_ids'][j1['neighbor_ids'].index(j2['id'])]
         segment = segments[segment_id]
@@ -406,7 +449,7 @@ def create_relationships(junctions, segments, transit, crimes, stores, rtransit,
     
     nearest_transit_jn = Relationship(
         'NEAREST_TRANSIT_JN', transit, junctions, 'junction_id',
-        prop_matcher=first_set_prop_match(['stop_id', 'junction_id', ('distance', 'junction_dst')])
+        prop_matcher=first_set_prop_match([('stop_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
     )
     
     nearest_crime_jn = Relationship(
@@ -429,13 +472,19 @@ def create_relationships(junctions, segments, transit, crimes, stores, rtransit,
         prop_matcher=first_set_prop_match([('school_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
     )
     
+    nearest_business_jn = Relationship(
+        "NEAREST_BUSINESS_JN", businesses, junctions, 'junction_id',
+        prop_matcher=first_set_prop_match([('business_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
+    )
+    
     relationships = [
         connects_to,
         nearest_transit_jn,
         nearest_crime_jn,
         nearest_store_jn,
         nearest_station_jn,
-        nearest_school_jn
+        nearest_school_jn,
+        nearest_business_jn
     ]
     
     return relationships
@@ -443,7 +492,7 @@ def create_relationships(junctions, segments, transit, crimes, stores, rtransit,
 def load_data(session):
     
     # This makes it easer to only load some of the data without having to modify too much code
-    junctions = transit = crimes = stores = rtransit = schools = None
+    junctions = transit = crimes = stores = rtransit = schools = businesses = None
     
     print("Loading Data")
     junction_data, junctions = load_junctions()
@@ -453,6 +502,7 @@ def load_data(session):
     stores_data, stores = load_stores()
     rtransit_data, rtransit = load_rapid_transit()
     schools_data, schools = load_schools()
+    businesses_data, businesses = load_businesses()
     
     categories = [
         junctions,
@@ -460,11 +510,12 @@ def load_data(session):
         crimes,
         stores,
         rtransit,
-        schools
+        schools,
+        businesses
     ]
     
     relationships = create_relationships(
-        junctions, segment_data, transit, crimes, stores, rtransit, schools
+        junctions, segment_data, transit, crimes, stores, rtransit, schools, businesses
     )
     
     print("Writing Data")

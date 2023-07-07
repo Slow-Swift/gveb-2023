@@ -1,13 +1,17 @@
 from __future__ import annotations
 
-import warnings
-
 import csv
+from haversine import haversine, Unit
+
 from math import cos, sin, atan2, sqrt, pi
+from copy import copy
+
+from itertools import islice
 
 from typing import Callable
 from typing import Any
 from collections.abc import Sequence
+
 
 from .conversion_functions import Row
 from .conversion_functions import RowFunction
@@ -34,7 +38,36 @@ class Dataset:
     def __getitem__(self, index):
         return self._rows[index]
     
+    def remove(self, key_value):
+        del self._rows[key_value]
+    
+    def set_primary_key(self, primary_key):
+        self.primary_key = primary_key
+        self._rows = { row[self.primary_key]: row for row in self._rows.values() }
+    
+    def add_property_default(self, name, default):
+        for row in self:
+            row[name] = copy(default)
+            
+    def add_property(self, name, func: Callable[[Row], Any]):
+        for row in self:
+            row[name] = func(row)
+    
+    def drop(self, property_name):
+        for row in self:
+            del row[property_name]
+    
+    def get_single_row(self):
+        if len(self) == 0: return None
+        return next(iter(self))
+    
+    def get_rows(self, row_count):
+        return islice(self, row_count)
+    
     def rename(self, original_name: str, new_name: str):
+        if original_name == self.primary_key:
+            self.primary_key = new_name
+        
         for row in self:
             row[new_name] = row[original_name]
             del row[original_name]
@@ -56,10 +89,7 @@ class Dataset:
                 row[field_name] = conversions[field_name](row[field_name])
                 
         if self.primary_key in conversions:
-            new_rows = {}
-            for key in self._rows:
-                new_rows[conversions[self.primary_key](key)] = self._rows[key]
-            self._rows = new_rows
+            self._rows = { row[self.primary_key]: row for row in self._rows.values() }
     
     def for_each(self, func: Callable[[Row], None]):
         """ Run a function on every row in the data
@@ -72,10 +102,10 @@ class Dataset:
         for row in self:
             func(row)
             
-    def match_closest(self, other_data: Dataset, distance_func: Callable[[Row, Row], float], on_match: Callable[[Row, Row, float], None]):
+    def match_closest(self, other_data: Dataset, distance_func: Callable[[Row, Row], float], on_match: Callable[[Row, Row, float], None], distance_limit: float=float('inf')):
         """ Pair all the nodes in one data set to the closest node in another dataset
         
-        WARNING: Creates a cross product between the two data sets. May run slowly for large datasets.
+        !WARNING: Creates a cross product between the two data sets. May run slowly for large datasets.
         
         Distance is the manhattan distance
 
@@ -85,12 +115,10 @@ class Dataset:
             on_match (Callable[[Row, Row, float], None]): The function to run when a row is matched with its closest row
         """
         
-        # TODO: Add a distance limiter
-        
         # Match for each node in this dataset
         for i, row_1 in enumerate(self):
             closest = None
-            b_dist = float('inf')
+            b_dist = distance_limit
             
             # Find the closest node in data set 2
             for row_2 in other_data:
@@ -115,7 +143,7 @@ class Dataset:
     ):
         """ Pair all the nodes in one data set to the closest node in another dataset
         
-        WARNING: Creates a cross product between the two data sets. May run slowly for large datasets.
+        !WARNING: Creates a cross product between the two data sets. May run slowly for large datasets.
         
         Distance is the manhattan distance
 
@@ -137,7 +165,7 @@ class Dataset:
         
         self.match_closest(other_data, distance, on_match)
         
-    def match_lat_lng(self, other_data: Dataset, match_field: str, dst_field:str, count_field: str = ''):
+    def match_lat_lng(self, other_data: Dataset, match_field: str, dst_field:str, count_field: str = '', distance_limit=float('inf')):
         """ Pair all the rows in this dataset with the closest row in [other_data] based on latitude and longitude.
         
         The haversine formula is used to calculate distance in meters from latitude and longitude
@@ -151,6 +179,10 @@ class Dataset:
         if count_field:
             for row in other_data:
                 row[count_field] = row.get(count_field, 0)
+                
+        for row in self:
+            row[match_field] = 0
+            row[dst_field] = 0
         
         def on_match(row_1, row_2, dst):
             row_1[match_field] = row_2[other_data.primary_key]
@@ -159,37 +191,15 @@ class Dataset:
             if count_field:
                 row_2[count_field] = row_2[count_field] + 1
             
-        # Implementation of the haversine formula found at 
-        # https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula#:~:text=from%20math%20import%20cos%2C%20asin,of%20completeness%3A%20Haversine%20on%20Wikipedia.
         def distance(row_1: Row, row_2: Row):
-            degrees_to_radians = pi / 180
-            radius = 6371   # Radius of the earth in km
+            p1 = (row_1['latitude'], row_1['longitude'])
+            p2 = (row_2['latitude'], row_2['longitude'])
             
-            lat1 = row_1['latitude']
-            lon1 = row_1['longitude']
-            lat2 = row_2['latitude']
-            lon2 = row_2['longitude']
-            
-            delta_lat = lat1 - lat2
-            delta_lon = lon1 - lon2
-            
-            delta_lat_rad = delta_lat * degrees_to_radians
-            delta_lon_rad = delta_lon * degrees_to_radians
-            
-            a = (
-                sin(delta_lat_rad / 2) ** 2 + 
-                cos(lat1 * degrees_to_radians) * cos(lat2 * degrees_to_radians) *
-                sin(delta_lon_rad / 2) ** 2
-            )
-            a = min(a, 1) # Clamp a to 1 incase of floating point errors or approximations
-            
-            
-            c = 2 * atan2(sqrt(a), sqrt(1-a))
-            return radius * c * 1000
+            return haversine(p1, p2, unit=Unit.METERS)
         
-        self.match_closest(other_data, distance, on_match)
+        self.match_closest(other_data, distance, on_match, distance_limit=distance_limit)
     
-    def match_lat_lng_approx(self, other_data: Dataset, match_field: str, dst_field:str, count_field: str = ''):
+    def match_lat_lng_approx(self, other_data: Dataset, match_field: str, dst_field:str, count_field: str = '', distance_limit=float('inf')):
         """ Pair all the rows in this dataset with the aprroximated closes row in [other_data] based on latitude and longitude.
         
         The haversine formula is used to calculate distance in meters from latitude and longitude
@@ -204,7 +214,11 @@ class Dataset:
         
         if count_field:
             for row in other_data:
-                row[count_field] = row.get(count_field, 0)
+                row[count_field] = 0
+                
+        for row in self:
+            row[match_field] = 0
+            row[dst_field] = 0
         
         def on_match(row_1, row_2, dst):
             row_1[match_field] = row_2[other_data.primary_key]
@@ -213,34 +227,37 @@ class Dataset:
             if count_field:
                 row_2[count_field] = row_2[count_field] + 1
             
-        # Implementation of the haversine formula found at 
-        # https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula#:~:text=from%20math%20import%20cos%2C%20asin,of%20completeness%3A%20Haversine%20on%20Wikipedia.
         def distance(row_1: Row, row_2: Row):
-            degrees_to_radians = pi / 180
-            radius = 6371   # Radius of the earth in km
+            p1 = (row_1['latitude'], row_1['longitude'])
+            p2 = (row_2['latitude'], row_2['longitude'])
             
-            lat1 = row_1['latitude']
-            lon1 = row_1['longitude']
-            lat2 = row_2['latitude']
-            lon2 = row_2['longitude']
-            
-            delta_lat = lat1 - lat2
-            delta_lon = lon1 - lon2
-            
-            delta_lat_rad = delta_lat * degrees_to_radians
-            delta_lon_rad = delta_lon * degrees_to_radians
-            
-            # delta_lat_rad and delta_lon_rad should be quite small so sin(delta_lat_rad) can be approximated with delta_lat_rad
-            a = (
-                delta_lat_rad * delta_lat_rad +
-                cos(lat1 * degrees_to_radians) * cos(lat2 * degrees_to_radians) *
-                delta_lon_rad * delta_lon_rad
-            )
-            
-            c = 2 * atan2(sqrt(a), sqrt(1-a))
-            return radius * c * 1000
+            return haversine(p1, p2, unit=Unit.METERS)
         
-        self.match_closest(other_data, distance, on_match)
+        self.match_closest(other_data, distance, on_match, distance_limit=distance_limit)
+        
+    def get_fieldnames(self):
+        if len(self) == 0: return []
+        fieldnames =  [key for key in self.get_single_row()]  # type: ignore  # We know it's not none because we checked in the first line
+        if fieldnames[0] != self.primary_key:
+            fieldnames.remove(self.primary_key)
+            fieldnames.insert(0, self.primary_key)
+        return fieldnames
+    
+    def merge(self, other: Dataset):
+        empty = len(self) == 0 or len(other) == 0
+        if not empty:
+            if self.primary_key != other.primary_key: return
+            if self.get_fieldnames() != other.get_fieldnames(): return
+            
+        self._rows.update(other._rows)
+        
+    def filter(self, filter: Callable[[Row], bool]):
+        toDelete = []
+        for row in self:
+            if not filter(row):
+                toDelete.append(row)
+        for row in toDelete:
+            del self._rows[row[self.primary_key]]
         
     def write_to_file(self, filename: str, delimiter: str = ',', fieldnames=None, write_header = True):
         """ Write the dataset to a csv file
@@ -256,7 +273,7 @@ class Dataset:
             return
         
         if fieldnames == None:
-            fieldnames = [key for key in next(iter(self._rows.values()))]
+            fieldnames = self.get_fieldnames()
         
         with open(filename, 'w', newline='', encoding='utf-8-sig') as out_file:
             writer = csv.DictWriter(out_file, fieldnames=fieldnames, quoting=csv.QUOTE_MINIMAL)
@@ -270,7 +287,7 @@ class Dataset:
     def cross_data(data_1: Dataset, data_2: Dataset, func: Callable[[Row, Row], None]):
         """ Run a function on the cross product of two data sets
         
-        WARNING: Creates a cross product between the two data sets. May run slowly for large datasets.
+        !WARNING: Creates a cross product between the two data sets. May run slowly for large datasets.
         
         Useful for computing something based on the combination of two data sets. eg. matching nodes
         [func] will receive every combination of pairs of rows with 1 row from data set 1 and 1 row from data set 2
@@ -285,7 +302,7 @@ class Dataset:
                 func(row_1, row_2)
     
     @staticmethod
-    def load_file(filename: str, conversion_map: ConversionMap | None = None, primary_key='id', delimiter: str =',', fieldnames: Sequence[str] | None=None, has_header=True):
+    def load_file(filename: str, conversion_map: ConversionMap | None = None, primary_key='id', delimiter: str =',', fieldnames: Sequence[str] | None=None, has_header=True, primary_key_start=0):
         """Load data from a csv file
         
         [conversion_map] is used to manipulate the read data in order to turn it into more useful formats and types. A ConversionMap is a dictionary
@@ -343,9 +360,17 @@ class Dataset:
                         key: conversions[key](row, i) for key in conversions
                     }
                     
+                    if primary_key not in result:
+                        result[primary_key] = i + primary_key_start
+                    
                     data.append(result)
             else:
                 data = list(rows)
+                
+                # Generate a primary key if it is not in the data
+                if len(data) > 0 and primary_key not in data[0]:
+                    for i, row in enumerate(data):
+                        row[primary_key] = i + primary_key_start
                 
             return Dataset(data, primary_key)
         
