@@ -22,13 +22,13 @@ DATABASE_INFO_FILEPATH = r"../../dbinfo.txt"
 INPUT_FOLDER = '../cleaned_data'
 
 JUNCTION_FILE = f'../processed_data/reach_junctions.csv'
-SEGMENT_FILE = f'../cleaned_data/segments.csv'
+SEGMENT_FILE = f'{INPUT_FOLDER}/segments.csv'
 CRIME_FILE = f'{INPUT_FOLDER}/crimes.csv'
 TRANSIT_FILE = f'{INPUT_FOLDER}/transit.csv'
 RAPID_TRANSIT_FILE = f'{INPUT_FOLDER}/rapid_transit.csv'
 COMMERCIAL_FILE = f'{INPUT_FOLDER}/stores.csv'
 SCHOOL_FILE = f'{INPUT_FOLDER}/schools.csv'
-BUSINESSES_FILE = f'../processed_data/business_data.csv'
+BUSINESSES_FILE = f'{INPUT_FOLDER}/businesses.csv'
 
 ZONE_NUMBER = 10
 ZONE_LETTER = 'U'
@@ -115,7 +115,6 @@ def load_junctions():
             'stores_count': int,
             'schools_count': int,
             'rapid_transit_count': int,
-            'business_count': int,
             'retail_count': int,
             'rapid_transit_count': int,
             'neighbor_ids': (lambda v: [n[0] for n in literal_eval(v if v else '[]')], 'neighbors'),
@@ -125,7 +124,6 @@ def load_junctions():
             'transit_reach': float,
             'rapid_transit_reach': float,
             'schools_reach': float,
-            'business_reach': float,
             'retail_reach': float,
         }
     )
@@ -144,14 +142,12 @@ def load_junctions():
             'stores_count',
             'schools_count',
             'rapid_transit_count',
-            'business_count',
             'retail_count',
             'crime_reach',
             'store_reach',
             'transit_reach',
             'rapid_transit_reach',
             'schools_reach',
-            'business_reach',
             'retail_reach',
         ]
     )
