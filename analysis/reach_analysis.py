@@ -10,13 +10,14 @@ import math
 
 sns.set_theme()
 sns.set_context('notebook', font_scale=1.5)
+plt.tight_layout(pad=10);
 
 JUNCTION_FILE = '../processed_data/reach_junctions.csv'
 
 junctions = pd.read_csv(JUNCTION_FILE)
 junctions = junctions.loc[ :, [
-    'crime_reach', 'store_reach', 'transit_reach', 'rapid_transit_reach', 'schools_reach', 'business_reach', 'retail_reach',
-    'crime_count', 'stores_count', 'transit_count', 'rapid_transit_count', 'schools_count', 'business_count', 'retail_count',
+    'crime_reach', 'store_reach', 'transit_reach', 'rapid_transit_reach', 'schools_reach', 'retail_reach',
+    'crime_count', 'stores_count', 'transit_count', 'rapid_transit_count', 'schools_count', 'retail_count',
 ]]
 
 reaches = junctions.loc[ :, [
@@ -48,7 +49,6 @@ store_reaches = junctions['store_reach']
 transit_reaches = junctions['transit_reach']
 rtransit_reaches = junctions['rapid_transit_reach']
 schools_reaches = junctions['schools_reach']
-business_reaches = junctions['business_reach']
 retail_reaches = junctions['retail_reach']
 
 crime_counts = junctions['crime_count']
@@ -56,18 +56,16 @@ store_counts = junctions['stores_count']
 transit_count = junctions['transit_count']
 rtransit_count = junctions['rapid_transit_count']
 schools_count = junctions['schools_count']
-business_count = junctions['business_count']
 retail_count = junctions['retail_count']
 
 use_reach = False
 label_names = "Reach" if use_reach else "Count"
 
-crime_data = crime_reaches if use_reach else crime_counts
+crime_data = crime_reaches #crime_reaches if use_reach else crime_counts
 store_data = store_reaches if use_reach else store_counts
 transit_data = transit_reaches if use_reach else transit_count
 rtransit_data = rtransit_reaches if use_reach else rtransit_count
 schools_data = schools_reaches if use_reach else schools_count
-business_data = business_reaches if use_reach else business_count
 retail_data = retail_reaches if use_reach else retail_count
 
 def hist_mean(x_data, y_data, bin_count):
@@ -115,13 +113,13 @@ def analyze(ax: plt.Axes, data, xlabel, ylabel):
     ax.set_xlabel(f'{xlabel} {label_names}')
     # ax.get_yaxis().set_visible(False)
   
-# analyze(plt.subplot(1, 1, 1), (crime_data, crime_data), 'Crime', 'Crime')  
-# analyze(plt.subplot(2, 2, 1), (retail_data, crime_data), 'Retail', 'Crime')  
-# analyze(plt.subplot(2, 2, 2), (transit_data, crime_data), 'Transit', 'Crime')  
-# analyze(plt.subplot(2, 2, 3), (rtransit_data, crime_data), 'Rapid Transit', 'Crime')  
-# analyze(plt.subplot(2, 2, 4), (schools_data, crime_data), 'School', 'Crime')  
+# analyze(plt.subplot(2, 2, 1), (crime_data, crime_data), 'Crime', 'Crime')  
+analyze(plt.subplot(2, 2, 1), (retail_data, crime_data), 'Retail', 'Crime')  
+analyze(plt.subplot(2, 2, 2), (transit_data, crime_data), 'Transit', 'Crime')  
+analyze(plt.subplot(2, 2, 3), (rtransit_data, crime_data), 'Rapid Transit', 'Crime')  
+analyze(plt.subplot(2, 2, 4), (schools_data, crime_data), 'School', 'Crime')  
 # analyze(plt.subplot(2, 2, 4), (employees_data, crime_data), 'Employees', 'Crime')
 # sns.heatmap(round(corr, 2), annot=True, cmap='coolwarm', fmt='.2f', linewidths=.05, ax=plt.subplot(2, 2, 2))
-sns.heatmap(round(corr, 2), annot=True, cmap='coolwarm', fmt='.2f', linewidths=.05, ax=plt.subplot(2, 2, 2))
+# sns.heatmap(round(corr_count, 2), annot=True, cmap='coolwarm', fmt='.2f', linewidths=.05, ax=plt.subplot(2, 2, 2))
 
 plt.show()
