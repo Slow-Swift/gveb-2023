@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 from haversine import haversine, Unit
+from ast import literal_eval
 
 from math import cos, sin, atan2, sqrt, pi
 from copy import copy
@@ -27,6 +28,7 @@ class Dataset:
             raise Exception(f"Primary key: {primary_key}, is not a valid key in the dataset")
         
         self._rows = { row[primary_key]: row for row in rows }
+        self.generate_fieldnames()
         
         
     def __len__(self):
@@ -40,22 +42,44 @@ class Dataset:
     
     def remove(self, key_value):
         del self._rows[key_value]
+        
+    def is_unique(self, column):
+        values = set(row[column] for row in self)
+        return len(values) == len(self)
     
     def set_primary_key(self, primary_key):
+        if not self.is_unique(primary_key): return False
+        
         self.primary_key = primary_key
         self._rows = { row[self.primary_key]: row for row in self._rows.values() }
+        self._fieldnames.remove(primary_key)
+        self._fieldnames.insert(0, primary_key)
+        return True
     
     def add_property_default(self, name, default):
+        self._fieldnames.append(name)
+        
         for row in self:
             row[name] = copy(default)
             
     def add_property(self, name, func: Callable[[Row], Any]):
+        self._fieldnames.append(name)
+        
         for row in self:
             row[name] = func(row)
     
     def drop(self, property_name):
+        if property_name == self.primary_key:
+            return
+        
+        self._fieldnames.remove(property_name)
+        
         for row in self:
             del row[property_name]
+            
+    def get_types(self):
+        row = self.get_single_row()
+        return [type(row[key]) for key in self._fieldnames]
     
     def get_single_row(self):
         if len(self) == 0: return None
@@ -67,6 +91,8 @@ class Dataset:
     def rename(self, original_name: str, new_name: str):
         if original_name == self.primary_key:
             self.primary_key = new_name
+            
+        self._fieldnames[self._fieldnames.index(original_name)] = new_name
         
         for row in self:
             row[new_name] = row[original_name]
@@ -82,6 +108,18 @@ class Dataset:
                 new_rows[conversion(key)] = self._rows[key]
             self._rows = new_rows
                 
+    def try_convert_property(self, field_name: str, conversion: ConversionFunction):
+        try:
+            new_rows = {}
+            for row in self:
+                new_row = row.copy()
+                new_row[field_name] = conversion(row[field_name])
+                
+                new_rows[new_row[self.primary_key]] = new_row
+            self._rows = new_rows
+            return True
+        except:
+            return False
             
     def convert_properties(self, conversions: dict[str, ConversionFunction]):
         for row in self:
@@ -235,13 +273,16 @@ class Dataset:
         
         self.match_closest(other_data, distance, on_match, distance_limit=distance_limit)
         
-    def get_fieldnames(self):
+    def generate_fieldnames(self):
         if len(self) == 0: return []
         fieldnames =  [key for key in self.get_single_row()]  # type: ignore  # We know it's not none because we checked in the first line
         if fieldnames[0] != self.primary_key:
             fieldnames.remove(self.primary_key)
             fieldnames.insert(0, self.primary_key)
-        return fieldnames
+        self._fieldnames = fieldnames
+        
+    def get_fieldnames(self):
+        return self._fieldnames
     
     def merge(self, other: Dataset):
         empty = len(self) == 0 or len(other) == 0
@@ -302,7 +343,10 @@ class Dataset:
                 func(row_1, row_2)
     
     @staticmethod
-    def load_file(filename: str, conversion_map: ConversionMap | None = None, primary_key='id', delimiter: str =',', fieldnames: Sequence[str] | None=None, has_header=True, primary_key_start=0):
+    def load_file(
+        filename: str, conversion_map: ConversionMap | None = None, primary_key='id', delimiter: str =',', fieldnames: Sequence[str] | None=None, 
+        has_header=True, primary_key_start=0, use_literal_eval = False
+    ):
         """Load data from a csv file
         
         [conversion_map] is used to manipulate the read data in order to turn it into more useful formats and types. A ConversionMap is a dictionary
@@ -364,8 +408,27 @@ class Dataset:
                         result[primary_key] = i + primary_key_start
                     
                     data.append(result)
+            elif use_literal_eval:
+                for i, row in enumerate(rows):
+                    # Apply the conversion to the row to get a result
+                    # result = { 
+                    #     key: literal_eval(row[key]) for key in row
+                    # }
+                    result = dict()
+                    for key in row:
+                        try:
+                            result[key] = literal_eval(row[key])
+                        except:
+                            result[key] = str(row[key])
+                    
+                    if primary_key not in result:
+                        result[primary_key] = i + primary_key_start
+                    
+                    data.append(result)
             else:
                 data = list(rows)
+                if len(data) > 0 and None in data[0]:
+                    return False
                 
                 # Generate a primary key if it is not in the data
                 if len(data) > 0 and primary_key not in data[0]:
