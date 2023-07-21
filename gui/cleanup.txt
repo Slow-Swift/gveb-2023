@@ -1,0 +1,14 @@
+Dataset Junctions C:/Users/daspi/Workspace/EnvironmentalBackcloth/gveb-2023/original_data/junctions.csv -delimiter ,
+Action Junctions set_primary_key JunctionID
+Action Junctions drop id
+Action Junctions rename JunctionID id
+Action Junctions rename StreetIntersectCount street_count
+Action Junctions rename JunctionType type
+Action Junctions drop Vulnerability
+Dataset Schools C:/Users/daspi/Workspace/EnvironmentalBackcloth/gveb-2023/original_data/schools.csv -delimiter ;
+Action Schools rename ADDRESS address
+Action Schools rename SCHOOL_CATEGORY category
+Action Schools rename SCHOOL_NAME name
+Action Schools drop Geom
+
+Category Junction Junctions 

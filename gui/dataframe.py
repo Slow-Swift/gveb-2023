@@ -12,10 +12,11 @@ from confirm_dialog import ConfirmDialog
 
 class DatasetFrame(ttk.Frame):
     
-    def __init__(self, parent, root, *args, **kwargs):
+    def __init__(self, parent, root, datasets, action_manager, *args, **kwargs):
         super().__init__(parent, *args, **kwargs)
         
-        self.datasets = {}
+        self.action_manager = action_manager
+        self.datasets = datasets
         self.root = root
         
         self.selected_dataset_name = StringVar()
@@ -57,6 +58,11 @@ class DatasetFrame(ttk.Frame):
         
         self.header_menu = Menu(self)
         
+        self.update_dataset_options()
+        
+    def get_datasets(self):
+        return self.datasets
+        
     def update_header_menu(self):
         column_name = self.columns[self.selected_column_index]
         
@@ -89,6 +95,7 @@ class DatasetFrame(ttk.Frame):
             type_conversion = {'int': int, 'float': float, 'str': str, 'bool': bool}[type_variable.get()]
             if self.selected_dataset.try_convert_property(self.columns[column_index], type_conversion):
                 self.dataset_selected()
+            self.action_manager.add_action(self.selected_dataset_name.get(), "convert", self.columns[column_index], type_variable.get())
             type_dialog.destroy()
             
         type_variable.set(str(self.selected_dataset.get_types()[column_index]).split("'")[1])
@@ -135,6 +142,7 @@ class DatasetFrame(ttk.Frame):
         
             
     def set_primary_key(self):
+        self.action_manager.add_action(self.selected_dataset_name.get(), "set_primary_key", self.columns[self.selected_column_index])
         self.selected_dataset.set_primary_key(self.columns[self.selected_column_index])
         self.dataset_selected()
             
@@ -145,7 +153,7 @@ class DatasetFrame(ttk.Frame):
             self.table.heading(column, text=f'{column}')
         
     def dataset_selected(self):
-        self.selected_dataset = self.datasets[self.selected_dataset_name.get()][1]
+        self.selected_dataset = self.datasets[self.selected_dataset_name.get()]
         self.columns = self.selected_dataset.get_fieldnames()
         
         for row in self.table.get_children():
@@ -173,6 +181,7 @@ class DatasetFrame(ttk.Frame):
             old_columns.pop(self.selected_column_index)
             if name.get() in old_columns: return
             
+            self.action_manager.add_action(self.selected_dataset_name.get(), "rename", self.columns[self.selected_column_index], name.get())
             self.selected_dataset.rename(self.columns[self.selected_column_index], name.get())
             self.columns[self.selected_column_index] = name.get()
             self.update_columns()
@@ -192,13 +201,16 @@ class DatasetFrame(ttk.Frame):
         rename_dialog.geometry(f"+{x}+{y}")
     
     def delete_column(self):
+        column_name = self.columns[self.selected_column_index]
         self.selected_dataset.drop(self.columns[self.selected_column_index])    
+        self.action_manager.add_action(self.selected_dataset_name.get(), "drop", column_name)
         self.dataset_selected()
         
     def delete_dataset(self):
         dataset_name = self.selected_dataset_name.get()
         def on_delete_confirmed():
             del self.datasets[dataset_name]
+            self.action_manager.delete_dataset(dataset_name)
             
             if len(self.datasets) == 0:
                 self.clear_dataset_display()
@@ -235,7 +247,8 @@ class DatasetFrame(ttk.Frame):
                     print("Could not load dataset")
                     return
                 
-                self.datasets[name.get()] = (filename, dataset)
+                self.action_manager.add_dataset(name.get(), filename, delimiter.get())
+                self.datasets[name.get()] = dataset
                 self.update_dataset_options()
                 self.selected_dataset_name.set(name.get())
                 self.dataset_selected()
