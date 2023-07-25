@@ -3,7 +3,6 @@ from __future__ import annotations
 import csv
 from haversine import haversine, Unit
 
-from math import cos, sin, atan2, sqrt, pi
 from copy import copy
 
 from itertools import islice
@@ -12,11 +11,11 @@ from typing import Callable
 from typing import Any
 from collections.abc import Sequence
 
-
 from .conversion_functions import Row
 from .conversion_functions import RowFunction
 from .conversion_functions import ConversionMap
 from .conversion_functions import ConversionFunction
+
 
 class Dataset:
     
@@ -39,19 +38,46 @@ class Dataset:
         return self._rows[index]
     
     def remove(self, key_value):
+        """Remove a row from the dataset
+
+        Args:
+            key_value (Any): The primary key of the row to remove
+        """
         del self._rows[key_value]
     
-    def set_primary_key(self, primary_key):
+    def set_primary_key(self, primary_key: str):
+        """Set the primary key of this dataset
+        
+        If the values of the primary key property are not unique some data will be lost
+
+        Args:
+            primary_key (str): The name of the property that will become the primary key
+        """
         self.primary_key = primary_key
         self._rows = { row[self.primary_key]: row for row in self._rows.values() }
     
-    def add_property_default(self, name, default):
-        for row in self:
-            row[name] = copy(default)
-            
-    def add_property(self, name, func: Callable[[Row], Any]):
-        for row in self:
-            row[name] = func(row)
+    def add_property(self, name: str, **kwargs):
+        """Add a property to each row of the dataset
+        
+        Either value or func should be set. If neither is set default will be 0.
+
+        Args:
+            name (str): The name of the new property
+        Kwargs:
+            value (Any): The default value of the property
+            func (Callable[[Row], Any]): The function to generate values. Is given the row
+        """
+        
+        # TODO: Make sure name is not already a property
+        if "value" in kwargs:  
+            for row in self:
+                row[name] = kwargs["value"]
+        elif "func" in kwargs:
+            for row in self:
+                row[name] = kwargs["func"](row)
+        else:
+            for row in self:
+                row[name] = 0
     
     def drop(self, property_name):
         for row in self:
@@ -97,7 +123,7 @@ class Dataset:
         Used for setting more advanced fields that cannot be set in the initial loading
 
         Args:
-            func (Callable[[Row], None]): The function to run on every row
+            func (Callable[[Row], None]): The function to run on every row  
         """
         for row in self:
             func(row)
