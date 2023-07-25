@@ -1,8 +1,10 @@
+### Computes the midpoint of a segment based on its two junctions
+
 import csv
 
 # Load the junctions
 junctions = {}
-with open('../data/junctions.csv', 'r') as jcsvinput:
+with open('../data/original_data/junctions.csv', 'r') as jcsvinput:
     jdr = csv.DictReader(jcsvinput,quoting=csv.QUOTE_MINIMAL)
     for jdict_row in jdr:
         junctionll=[float(jdict_row["latitude"]),float(jdict_row["longitude"])]
@@ -11,7 +13,7 @@ with open('../data/junctions.csv', 'r') as jcsvinput:
 # Load the segments
 segments = []
 fieldnames = []
-with open('../data/streetsegments.csv', 'r') as streetInput:
+with open('../data/original_data/streetsegments.csv', 'r') as streetInput:
     streetReader = csv.DictReader(streetInput,quoting=csv.QUOTE_MINIMAL)
     fieldnames = streetReader.fieldnames
     for street in streetReader:
@@ -30,7 +32,7 @@ with open('../data/streetsegments.csv', 'r') as streetInput:
         street["longitude"] = longitude
         segments.append(street)
         
-with open('../data/streetsegments_new.csv', 'w', newline='') as streetOutput:
+with open('../data/original_data/streetsegments_new.csv', 'w', newline='') as streetOutput:
     writer = csv.DictWriter(f=streetOutput, fieldnames=fieldnames, quoting=csv.QUOTE_MINIMAL) # type: ignore
     writer.writeheader()
     writer.writerows(segments)

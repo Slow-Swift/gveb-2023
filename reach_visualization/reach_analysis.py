@@ -1,3 +1,5 @@
+### Displays various graphs combaring junction reach attributes
+
 import sys
 sys.path.append('../') # This should probably be changed to a more sofisticated system at some point. i.e. install the package
 
@@ -12,7 +14,7 @@ sns.set_theme()
 sns.set_context('notebook', font_scale=1.5)
 plt.tight_layout(pad=10);
 
-JUNCTION_FILE = '../processed_data/reach_junctions.csv'
+JUNCTION_FILE = '../data/cleaned_data/reach_junctions.csv'
 
 junctions = pd.read_csv(JUNCTION_FILE)
 junctions = junctions.loc[ :, [

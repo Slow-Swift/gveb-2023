@@ -1,3 +1,5 @@
+### Displays an example 3D normal distribution
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
