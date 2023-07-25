@@ -9,6 +9,8 @@ The project aims to simulate the street networks of the city of Vancouver, and
 derive research results based on the different factors that influence the 
 susceptibility of a street segment or junction to crime.
 
+For more in depth details about the project check out project_description.md or project_description.pdf.
+
 ## Tech Stack
 
 **Graph Visualization:** GraphXR
