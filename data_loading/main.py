@@ -19,9 +19,9 @@ from data_wrangler.relationship_property_matchers import match_props
 # Change this to point to the directory of your database information
 DATABASE_INFO_FILEPATH = r"../../dbinfo.txt"
 
-INPUT_FOLDER = '../cleaned_data'
+INPUT_FOLDER = '../data/cleaned_data'
 
-JUNCTION_FILE = f'../processed_data/reach_junctions.csv'
+JUNCTION_FILE = f'{INPUT_FOLDER}/reach_junctions.csv'
 SEGMENT_FILE = f'{INPUT_FOLDER}/segments.csv'
 CRIME_FILE = f'{INPUT_FOLDER}/crimes.csv'
 TRANSIT_FILE = f'{INPUT_FOLDER}/transit.csv'
