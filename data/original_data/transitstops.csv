@@ -1,0 +1,1924 @@
+stop_lat,stop_code,stop_lon,stop_id,stop_name,zone_id
+49.277974,61522,-123.127034,11542,Southbound Howe St @ Davie St,BUS ZN
+49.219164,51114,-123.150433,11541,Southbound West Blvd @ W 57 Ave,BUS ZN
+49.266827,50268,-123.241849,271,Eastbound University Blvd @ Allison Rd,BUS ZN
+49.265327,50270,-123.235217,273,Eastbound University Blvd @ 5300 Block,BUS ZN
+49.263486,50271,-123.229095,274,Eastbound University Blvd @ 5100 Block,BUS ZN
+49.264289,50272,-123.215067,275,Northbound Blanca St @ W 10 Ave,BUS ZN
+49.265243,50273,-123.21585,276,Blanca Loop @ Bay 1,BUS ZN
+49.263836,50274,-123.214641,277,Eastbound W 10 Ave @ Blanca St,BUS ZN
+49.26381,50275,-123.211737,278,Eastbound W 10 Ave @ Tolmie St,BUS ZN
+49.263764,50276,-123.208525,279,Eastbound W 10 Ave @ Sasamat St,BUS ZN
+49.207179,52126,-123.123861,2146,Eastbound SW Marine Dr @ Heather St,BUS ZN
+49.263228,61896,-123.256272,12011,Southbound Lower Mall @ University Blvd,BUS ZN
+49.25836,61833,-123.244207,12013,Northbound East Mall @ Eagles Dr,BUS ZN
+49.251694,61893,-123.237733,12012,Westbound Ross Dr @ Birney Ave,BUS ZN
+49.278914,50098,-123.12964,98,Southbound Burrard St @ Davie St,BUS ZN
+49.280707,50091,-123.104998,91,Westbound W Pender St @ Carrall St,BUS ZN
+49.28129,50093,-123.108213,93,Westbound W Pender St @ Abbott St,BUS ZN
+49.283818,50095,-123.113429,95,Westbound W Pender St @ Seymour St,BUS ZN
+49.285523,50097,-123.116055,97,Westbound W Pender St @ Howe St,BUS ZN
+49.284575,50096,-123.114596,96,Westbound W Pender St @ Granville St,BUS ZN
+49.23266,51170,-123.019689,1179,Westbound Kingsway @ Smith Ave,BUS ZN
+49.232908,51169,-123.016178,1178,Westbound Kingsway @ Inman Ave,BUS ZN
+49.205733,50866,-123.140764,873,Southbound Granville St @ SW Marine Dr,BUS ZN
+49.211828,50863,-123.140547,870,Southbound Granville St @ W 65 Ave,BUS ZN
+49.286053,57944,-123.11158,8019,Waterfront Station Eastbound,WCE1Z
+49.266503,57938,-123.237822,8013,Eastbound University Blvd @ Acadia Rd,BUS ZN
+49.268471,50389,-123.181214,393,Eastbound W 4th Ave @ Collingwood St,BUS ZN
+49.234268,50388,-123.140768,392,Eastbound W 41 Ave @ Granville St,BUS ZN
+49.2343,50386,-123.142893,390,Eastbound W 41 Ave @ Adera St,BUS ZN
+49.268274,50393,-123.167779,397,Eastbound W 4th Ave @ Macdonald St,BUS ZN
+49.268236,50394,-123.164123,398,Eastbound W 4th Ave @ Trafalgar St,BUS ZN
+49.249172,61372,-123.115228,11281,King Edward Station @ Platform 1,ZN 1
+49.249186,61371,-123.115716,11280,King Edward Station @ Platform 2,ZN 1
+49.233731,61374,-123.116176,11283,Oakridge-41st Avenue Station @ Platform 1,ZN 1
+49.233747,61373,-123.116422,11282,Oakridge-41st Avenue Station @ Platform 2,ZN 1
+49.225709,61376,-123.116289,11285,Langara-49th Avenue Station @ Platform 1,ZN 1
+49.225743,61375,-123.116752,11284,Langara-49th Avenue Station @ Platform 2,ZN 1
+49.209663,61378,-123.116921,11287,Marine Drive Station @ Platform 1,ZN 1
+49.209661,61377,-123.117078,11286,Marine Drive Station @ Platform 2,ZN 1
+49.254064,61579,-123.23498,11759,Southbound Wesbrook Mall @ Birney Ave,BUS ZN
+49.247646,61581,-123.232002,11758,Southbound Wesbrook Mall @ Triumf Centre,BUS ZN
+49.269455,50179,-123.100505,179,Northbound Main St @ E 2nd Ave,BUS ZN
+49.266719,50178,-123.100662,178,Northbound Main St @ E 5th Ave,BUS ZN
+49.265339,50177,-123.100685,177,Northbound Main St @ E 6th Ave,BUS ZN
+49.263233,50176,-123.100792,176,Northbound Main St @ E Broadway,BUS ZN
+49.260528,50174,-123.100888,174,Northbound Main St @ E 12 Ave,BUS ZN
+49.258782,59582,-123.100989,173,Northbound Main St @ E 14 Ave,BUS ZN
+49.255006,59835,-123.100984,171,Northbound Main St @ E 18 Ave,BUS ZN
+49.253226,59836,-123.100763,170,Northbound Main St @ E 20 Ave,BUS ZN
+49.284576,59832,-123.117067,10399,Southbound Howe St @ Dunsmuir St,BUS ZN
+49.225896,51968,-123.112498,1985,Eastbound W 49 Ave @ Alberta St,BUS ZN
+49.232733,60402,-123.066544,12667,Westbound E 41 Ave @ Victoria Dr,BUS ZN
+49.232982,60399,-123.102441,12664,Eastbound E 41 Ave @ Main St,BUS ZN
+49.283253,51746,-123.031278,1760,Northbound Cassiar Connector @ 100 Block,BUS ZN
+49.254756,50685,-123.056762,692,Southbound Nanaimo St @ E 17 Ave,BUS ZN
+49.252026,50686,-123.056768,693,Southbound Nanaimo St @ E 20 Ave,BUS ZN
+49.250553,51532,-123.043474,1544,Eastbound E 22 Ave @ Boyd Diversion,BUS ZN
+49.250535,51533,-123.038654,1545,Eastbound E 22 Ave @ Lillooet St,BUS ZN
+49.250567,51530,-123.049111,1542,Eastbound E 22 Ave @ Slocan St,BUS ZN
+49.250547,50690,-123.055999,697,Eastbound E 22 Ave @ Nanaimo St,BUS ZN
+49.250268,50687,-123.056774,694,Southbound Nanaimo St @ E 22 Ave,BUS ZN
+49.248412,50688,-123.055476,695,Nanaimo Station @ Bay 3,BUS ZN
+49.264156,52095,-123.167544,11113,Westbound W Broadway @ Macdonald St,BUS ZN
+49.24424,50692,-123.050004,699,Southbound Slocan St @ E 29 Ave,BUS ZN
+49.24878,51537,-123.023043,1549,Eastbound Kincaid St @ Boundary Rd,BUS ZN
+49.254485,61580,-123.235195,11760,Northbound Wesbrook Mall @ Birney Ave,BUS ZN
+49.278573,58721,-123.130164,11563,Southbound Burrard St @ Burnaby St,BUS ZN
+49.257067,50362,-123.185245,366,Southbound Dunbar St @ W 17 Ave,BUS ZN
+49.228145,50256,-123.101625,258,Southbound Main St @ E 46 Ave,BUS ZN
+49.258657,50361,-123.184116,365,Southbound Dunbar St @ W 15 Ave,BUS ZN
+49.23788,50250,-123.101715,252,Southbound Main St @ E 36 Ave,BUS ZN
+49.243003,50248,-123.101498,250,Southbound Main St @ E 30 Ave,BUS ZN
+49.240211,50249,-123.101629,251,Southbound Main St @ E 33 Ave,BUS ZN
+49.232735,59041,-123.101636,256,Southbound Main St @ E 41 Ave,BUS ZN
+49.230612,50255,-123.101591,257,Southbound Main St @ E 43 Ave,BUS ZN
+49.232967,50253,-123.101913,255,Eastbound E 41 Ave @ Main St,BUS ZN
+49.20149,61670,-123.018581,12030,Westbound North Fraser Way @ Fraserwood Court,BUS ZN
+49.285131,61917,-123.115432,12036,Westbound W Pender St @ Howe St,BUS ZN
+49.285687,61925,-123.111773,12034,Waterfront Station,ZN 1
+49.26367,50357,-123.186028,361,Southbound Alma St @ W 10 Ave,BUS ZN
+49.211303,58762,-123.091221,10439,Southbound Fraser St @ SE Marine Dr,BUS ZN
+49.287718,59576,-123.023214,10180,Northbound N Boundary Rd @ Eton St,BUS ZN
+49.234792,51150,-123.037515,1159,Eastbound Kingsway @ McKinnon St,BUS ZN
+49.235786,51149,-123.041963,1158,Eastbound Kingsway @ Rupert St,BUS ZN
+49.246687,51145,-123.06866,1154,Eastbound Kingsway @ Miller St,BUS ZN
+49.236159,51148,-123.045333,1157,Eastbound Kingsway @ Killarney St,BUS ZN
+49.23728,51147,-123.048397,1156,Eastbound Kingsway @ Earles St,BUS ZN
+49.249736,51142,-123.075484,1151,Eastbound Kingsway @ Knight St,BUS ZN
+49.250834,51141,-123.077633,1150,Eastbound Kingsway @ Clark Dr,BUS ZN
+49.247719,51144,-123.070924,1153,Eastbound Kingsway @ Perry St,BUS ZN
+49.24866,51143,-123.072988,1152,Eastbound Kingsway @ Dumfries St,BUS ZN
+49.286063,57960,-123.111306,8035,Waterfront Station Northbound,ZN 1
+49.286116,57959,-123.111512,8034,Waterfront Station Unload Only,WCE1Z
+49.285907,57964,-123.111578,8039,Waterfront Station @ Platform 2,ZN 1
+49.286137,57963,-123.111403,8038,Waterfront Station Southbound,ZN 1
+49.279676,60342,-123.112876,12581,Southbound Cambie St @ W Georgia St,BUS ZN
+49.233415,50137,-123.115623,12585,Eastbound W 41 Ave @ Cambie St,BUS ZN
+49.275543,59393,-123.132974,10047,Westbound Beach Ave @ Hornby St,BUS ZN
+49.25498,59940,-123.24893,10433,Westbound Stadium Rd @ West Mall,BUS ZN
+49.281495,58042,-123.026062,8139,Kootenay Loop @ Bay 2,BUS ZN
+49.225975,50151,-123.10147,151,Northbound Main St @ E 49 Ave,BUS ZN
+49.223638,50150,-123.101593,150,Northbound Main St @ E 51 Ave,BUS ZN
+49.228719,59842,-123.101386,152,Northbound Main St @ E 46 Ave,BUS ZN
+49.233445,50155,-123.101394,155,Northbound Main St @ E 41 Ave,BUS ZN
+49.231454,50154,-123.101306,154,Northbound Main St @ E 43 Ave,BUS ZN
+49.233269,50157,-123.106197,157,Westbound W 41 Ave @ Ontario St,BUS ZN
+49.233442,50158,-123.11122,158,Westbound W 41 Ave @ Columbia St,BUS ZN
+49.265799,60825,-123.079054,10374,VCC-Clark Station @ Platform 2,ZN 1
+49.265873,60824,-123.079049,10375,VCC-Clark Station @ Platform 1,ZN 1
+49.203898,59783,-123.023178,10371,Northbound Boundary Rd @ E Kent Ave North,BUS ZN
+49.274765,60014,-123.116234,10513,Westbound Expo Blvd @ Nelson St,BUS ZN
+49.261831,50683,-123.056764,690,Southbound Nanaimo St @ E Broadway,BUS ZN
+49.260804,58130,-123.033608,8860,Rupert Station @ Bay 1,BUS ZN
+49.218926,50811,-123.128765,818,Southbound Oak St @ W 57 Ave,BUS ZN
+49.216857,50812,-123.129581,819,Southbound Oak St @ W 59 Ave,BUS ZN
+49.2338,50804,-123.126888,811,Eastbound W 41 Ave @ Oak St,BUS ZN
+49.233541,50805,-123.128231,812,Southbound Oak St @ W 41 Ave,BUS ZN
+49.231779,50806,-123.128278,813,Southbound Oak St @ W 43 Ave,BUS ZN
+49.229046,50807,-123.128376,814,Southbound Oak St @ W 46 Ave,BUS ZN
+49.22616,50808,-123.128478,815,Southbound Oak St @ W 49 Ave,BUS ZN
+49.221231,50810,-123.128635,817,Southbound Oak St @ W 54 Ave,BUS ZN
+49.270822,51687,-123.033606,1701,Northbound Rupert St @ Graveley St,BUS ZN
+49.274384,51689,-123.03354,1703,Northbound Rupert St @ William St,BUS ZN
+49.27613,51690,-123.03352,1704,Northbound Rupert St @ Parker St,BUS ZN
+49.277384,51692,-123.029097,1706,Eastbound Adanac St @ Skeena St,BUS ZN
+49.278725,51694,-123.023311,1708,Northbound Boundary Rd @ Georgia St,BUS ZN
+49.281408,51695,-123.026254,1709,Kootenay Loop @ Bay 3,BUS ZN
+49.282683,52991,-123.023697,3022,Southbound Boundary Rd @ Pandora St,BUS ZN
+49.284524,52990,-123.023659,3021,Southbound Boundary Rd @ Dundas St,BUS ZN
+49.286231,52989,-123.023627,3020,Southbound N Boundary Rd @ Cambridge St,BUS ZN
+49.244095,50339,-123.127861,343,Southbound Oak St @ Devonshire Cres,BUS ZN
+49.23952,61825,-123.055375,12050,Northbound Clarendon St @ E 33 Ave,BUS ZN
+49.267419,61935,-123.246831,12057,UBC Exchange @ Bay 7,BUS ZN
+49.274506,50232,-123.100141,234,Southbound Main St @ National Ave,BUS ZN
+49.273072,50233,-123.100189,235,Main Street-Science World Station @ Bay 1,BUS ZN
+49.270621,50234,-123.100821,236,Southbound Main St @ Switchmen St,BUS ZN
+49.282229,50228,-123.099988,230,Eastbound E Cordova St @ Main St,BUS ZN
+49.28081,50229,-123.099812,231,Southbound Main St @ E Hastings St,BUS ZN
+49.279029,50230,-123.099896,232,Southbound Main St @ Keefer St,BUS ZN
+49.248429,51525,-123.075675,1537,Eastbound E King Edward Ave @ Knight St,BUS ZN
+49.283054,50931,-123.110546,939,Eastbound W Hastings St @ Homer St,BUS ZN
+49.284334,50930,-123.112551,938,Eastbound W Hastings St @ Seymour St,BUS ZN
+49.26336,50924,-123.118098,932,Westbound W Broadway @ Ash St,BUS ZN
+49.226003,51967,-123.11584,10745,Langara-49th Station @ Bay 3,BUS ZN
+49.263433,50926,-123.122318,934,Westbound W Broadway @ Willow St,BUS ZN
+49.26604,51740,-123.023373,1754,Northbound Boundary Rd @ Lougheed Hwy,BUS ZN
+49.232478,50790,-123.090705,797,Southbound Fraser St @ E 41 Ave,BUS ZN
+49.234521,50789,-123.090651,796,Southbound Fraser St @ E 39 Ave,BUS ZN
+49.236049,50788,-123.090613,795,Southbound Fraser St @ E 37 Ave,BUS ZN
+49.238045,50787,-123.090514,794,Southbound Fraser St @ E 35 Ave,BUS ZN
+49.239976,50786,-123.090476,793,Southbound Fraser St @ E 33 Ave,BUS ZN
+49.242261,58954,-123.090417,792,Southbound Fraser St @ E 31 Ave,BUS ZN
+49.244247,50784,-123.090388,791,Southbound Fraser St @ E 29 Ave,BUS ZN
+49.246305,50783,-123.090308,790,Southbound Fraser St @ E 27 Ave,BUS ZN
+49.228897,50792,-123.090762,799,Southbound Fraser St @ E 45 Ave,BUS ZN
+49.230719,50791,-123.090713,798,Southbound Fraser St @ E 43 Ave,BUS ZN
+49.233197,51130,-123.036985,1139,Eastbound E 41 Ave @ School Ave,BUS ZN
+49.232892,51129,-123.039828,1138,Eastbound E 41 Ave @ Kerr St,BUS ZN
+49.232754,51124,-123.054813,1133,Eastbound E 41 Ave @ Clarendon St,BUS ZN
+49.232788,51123,-123.058373,1132,Eastbound E 41 Ave @ Nanaimo St,BUS ZN
+49.232817,51122,-123.06167,1131,Eastbound E 41 Ave @ Gladstone St,BUS ZN
+49.232713,51121,-123.06505,1130,Eastbound E 41 Ave @ Victoria Dr,BUS ZN
+49.23288,51128,-123.042556,1137,Eastbound E 41 Ave @ Rupert St,BUS ZN
+49.232892,51127,-123.045427,1136,Eastbound E 41 Ave @ Killarney St,BUS ZN
+49.232715,51126,-123.04831,1135,Eastbound E 41 Ave @ Earles St,BUS ZN
+49.232722,51125,-123.051214,1134,Eastbound E 41 Ave @ Wales St,BUS ZN
+49.259575,59964,-123.254983,10454,Northbound NW Marine Dr @ Agronomy Rd,BUS ZN
+49.26234,50682,-123.057336,689,Westbound E Broadway @ Nanaimo St,BUS ZN
+49.24547,51561,-123.056785,1573,Southbound Nanaimo St @ E 28 Ave,BUS ZN
+49.26581,61701,-123.248129,11793,UBC Exchange @ Bay 10,BUS ZN
+49.265923,61702,-123.247364,11794,UBC Exchange @ Bay 11,BUS ZN
+49.243673,51562,-123.056787,1574,Southbound Nanaimo St @ Brock St,BUS ZN
+49.266199,59751,-123.132576,10357,Westbound W 6th Ave @ Alder Crossing,BUS ZN
+49.269283,59761,-123.101217,10352,Westbound E 2nd Ave @ Main St,BUS ZN
+49.213088,52680,-123.02068,2705,Northbound Joffre Ave @ Clinton St,BUS ZN
+49.210668,58962,-123.019815,2704,Northbound Joffre Ave @ Carson St,BUS ZN
+49.214764,52682,-123.017582,2707,Eastbound Rumble St @ Greenall Ave,BUS ZN
+49.214742,52681,-123.020308,2706,Eastbound Rumble St @ Joffre Ave,BUS ZN
+49.279698,54832,-123.124449,4884,Southbound Howe St @ Nelson St,BUS ZN
+49.265832,59754,-123.120144,10359,Eastbound W 6th Ave @ Heather St,BUS ZN
+49.209345,52678,-123.019766,2703,Northbound Joffre Ave @ Maple Tree Lane,BUS ZN
+49.26318,60517,-123.101149,12749,Southbound Main St @ E Broadway,BUS ZN
+49.281403,59889,-123.025625,12318,Kootenay Loop @ Bay 1,BUS ZN
+49.227274,60746,-123.159273,12744,Westbound W 49 Ave @ Yew St,BUS ZN
+49.223033,50825,-123.090707,832,Northbound Fraser St @ E 52 Ave,BUS ZN
+49.218589,50823,-123.090819,830,Northbound Fraser St @ E 57 Ave,BUS ZN
+49.22126,50824,-123.090756,831,Northbound Fraser St @ E 54 Ave,BUS ZN
+49.229442,50829,-123.090556,836,Northbound Fraser St @ E 45 Ave,BUS ZN
+49.231265,50830,-123.0905,837,Northbound Fraser St @ E 43 Ave,BUS ZN
+49.225766,50827,-123.090643,834,Northbound Fraser St @ E 49 Ave,BUS ZN
+49.235102,50832,-123.090364,839,Northbound Fraser St @ E 39 Ave,BUS ZN
+49.240272,61110,-123.053886,11623,Southbound Slocan St @ Kingsway,BUS ZN
+49.197093,56956,-123.073397,7023,Southbound Viking Way @ Vulcan Way,BUS ZN
+49.25033,51714,-123.033942,1728,Southbound Rupert St @ E 22 Ave,BUS ZN
+49.196014,56955,-123.07839,7022,Eastbound Vulcan Way @ Viscount Way,BUS ZN
+49.253698,51712,-123.033945,1726,Southbound Rupert St @ E 18 Ave,BUS ZN
+49.252011,51713,-123.033936,1727,Southbound Rupert St @ E 20 Ave,BUS ZN
+49.257755,51710,-123.033953,1724,Southbound Rupert St @ Grandview Hwy,BUS ZN
+49.255276,51711,-123.03393,1725,Southbound Rupert St @ E 16 Ave,BUS ZN
+49.263542,51706,-123.033894,1720,Southbound Rupert St @ E 7th Ave,BUS ZN
+49.262185,51707,-123.03393,1721,Southbound Rupert St @ E Broadway,BUS ZN
+49.249302,51576,-123.125107,1588,Westbound W King Edward Ave @ Laurel St,BUS ZN
+49.249375,51577,-123.128078,1589,Westbound W King Edward Ave @ Oak St,BUS ZN
+49.248783,51570,-123.097125,1582,Westbound E King Edward Ave @ Prince Edward St,BUS ZN
+49.248868,51571,-123.101632,1583,Westbound E King Edward Ave @ Main St,BUS ZN
+49.248724,51568,-123.090591,1580,Westbound E King Edward Ave @ Fraser St,BUS ZN
+49.248752,51569,-123.094411,1581,Westbound E King Edward Ave @ St. George St,BUS ZN
+49.249121,51574,-123.116003,1586,King Edward Station @ Bay 1,BUS ZN
+49.249205,51575,-123.120844,1587,Westbound W King Edward Ave @ Heather St,BUS ZN
+49.248922,51572,-123.105388,1584,Westbound W King Edward Ave @ Ontario St,BUS ZN
+49.249023,51573,-123.110516,1585,Westbound W King Edward Ave @ Columbia St,BUS ZN
+49.249632,50456,-123.127357,460,Northbound Oak St @ W King Edward Ave,BUS ZN
+49.25921,50213,-123.138595,214,Northbound Granville St @ W 14 Ave,BUS ZN
+49.261157,50214,-123.13852,215,Northbound Granville St @ W 12 Ave,BUS ZN
+49.253467,50211,-123.138804,212,Northbound Granville St @ Matthews Ave,BUS ZN
+49.257367,50212,-123.138663,213,Northbound Granville St @ W 16 Ave,BUS ZN
+49.250127,50209,-123.138924,210,Northbound Granville St @ W King Edward Ave,BUS ZN
+49.252263,50210,-123.138834,211,Northbound Granville St @ Balfour Ave,BUS ZN
+49.265651,50217,-123.138349,218,Northbound Granville St @ W 7th Ave,BUS ZN
+49.283161,61930,-123.076463,12071,Westbound Powell St @ Clark Dr,BUS ZN
+49.282052,61933,-123.086717,12070,Eastbound Cordova Diversion @ Hawks Ave,BUS ZN
+49.29023,50611,-123.133644,11477,Eastbound Robson St @ Bidwell St,BUS ZN
+49.275854,50536,-123.128375,11475,Southbound Granville St @ Drake St,BUS ZN
+49.269179,51941,-123.145428,11473,Northbound Burrard St @ W 3rd Ave,BUS ZN
+49.262356,50911,-123.062394,919,Westbound E Broadway @ Lakewood Dr,BUS ZN
+49.262127,50910,-123.055187,918,Westbound E Broadway @ Kamloops St,BUS ZN
+49.262097,50907,-123.044962,915,Westbound E Broadway @ Renfrew St,BUS ZN
+49.262111,50909,-123.051889,917,Westbound E Broadway @ Penticton St,BUS ZN
+49.262111,50908,-123.050045,916,Westbound E Broadway @ Slocan St,BUS ZN
+49.262009,50904,-123.034312,911,Westbound E Broadway @ Rupert St,BUS ZN
+49.262053,50903,-123.031548,910,Westbound E Broadway @ Cassiar St,BUS ZN
+49.261989,50905,-123.037125,912,Westbound E Broadway @ Windermere St,BUS ZN
+49.266906,61684,-123.09471,11813,Westbound Great Northern Way @ Thornton St,BUS ZN
+49.285962,58003,-123.111516,8078,Waterfront Station @ Platform 1,ZN 1
+49.24431,57996,-123.04608,8071,29th Avenue Station @ Platform 1,ZN 1
+49.23843,57995,-123.031759,8070,Joyce-Collingwood Station @ Platform 1,ZN 1
+49.262311,57998,-123.069077,8073,Commercial-Broadway Station @ Platform 3,ZN 1
+49.248334,57997,-123.055868,8072,Nanaimo Station @ Platform 1,ZN 1
+49.279271,58000,-123.109109,8075,Stadium-Chinatown Station @ Platform 1,ZN 1
+49.273172,57999,-123.10035,8074,Main Street-Science World Station @ Platform 1,ZN 1
+49.28558,58002,-123.119598,8077,Burrard Station @ Platform 1,ZN 1
+49.283193,58001,-123.115674,8076,Granville Station @ Platform 1,ZN 1
+49.223425,51208,-123.065653,1217,Northbound Victoria Dr @ E 51 Ave,BUS ZN
+49.21691,51205,-123.065874,1214,Northbound Victoria Dr @ Brigadoon Ave,BUS ZN
+49.218398,51206,-123.065832,1215,Northbound Victoria Dr @ Upland Dr,BUS ZN
+49.244919,51102,-123.153466,1111,Southbound Arbutus St @ Valley Dr,BUS ZN
+49.239992,51104,-123.155467,1113,Southbound Arbutus St @ W 35 Ave,BUS ZN
+49.242695,51103,-123.15359,1112,Southbound Arbutus St @ W 32 Ave,BUS ZN
+49.236097,51106,-123.155609,1115,Southbound West Blvd @ W 39 Ave,BUS ZN
+49.23803,51105,-123.155552,1114,Southbound West Blvd @ W 37 Ave,BUS ZN
+49.232443,51108,-123.155746,1117,Southbound West Blvd @ W 43 Ave,BUS ZN
+49.234303,51107,-123.155677,1116,Southbound West Blvd @ W 41 Ave,BUS ZN
+49.227465,51210,-123.065556,1219,Northbound Victoria Dr @ Waverley Ave,BUS ZN
+49.224744,51987,-123.054297,2004,Eastbound E 49 Ave @ Elliott St,BUS ZN
+49.22471,51988,-123.049761,2005,Eastbound E 49 Ave @ Vivian St,BUS ZN
+49.234673,60745,-123.186318,12168,Dunbar Loop @ Bay 3,BUS ZN
+49.205381,61360,-123.130464,11262,Southbound Oak St @ W 72 Ave,BUS ZN
+49.266245,61040,-123.115944,11260,Olympic Village Station @ Bay 1,BUS ZN
+49.237907,51787,-123.031047,1801,Joyce Station @ Bay 4,BUS ZN
+49.23422,50199,-123.138484,199,Eastbound W 41 Ave @ Granville St,BUS ZN
+49.234391,50198,-123.139167,198,Westbound W 41 Ave @ Granville St,BUS ZN
+49.234081,50195,-123.128633,195,Westbound W 41 Ave @ Oak St,BUS ZN
+49.234332,50197,-123.137,197,Westbound W 41 Ave @ Cartier St,BUS ZN
+49.234201,50196,-123.132951,196,Westbound W 41 Ave @ Selkirk St,BUS ZN
+49.281944,50190,-123.115253,190,Southbound Richards St @ Dunsmuir St,BUS ZN
+49.28128,59040,-123.119551,193,Westbound Robson St @ Granville St,BUS ZN
+49.263652,60552,-123.134884,12791,Westbound W Broadway @ Hemlock St,BUS ZN
+49.242913,52735,-123.019292,2760,Eastbound Moscrop St @ Smith Ave,BUS ZN
+49.255774,50843,-123.089737,850,Northbound Fraser St @ E 17 Ave,BUS ZN
+49.258292,50844,-123.089096,851,Northbound Fraser St @ E 14 Ave,BUS ZN
+49.260077,50845,-123.089055,852,Northbound Fraser St @ E 12 Ave,BUS ZN
+49.261837,50846,-123.08903,853,Northbound Fraser St @ E 10 Ave,BUS ZN
+49.284435,50852,-123.112367,859,Westbound W Hastings St @ Richards St,BUS ZN
+49.25903,58401,-123.044439,8907,Renfrew Station @ Bay 1,BUS ZN
+49.255003,60709,-123.076054,1304,Southbound Knight St @ E 17 Ave,BUS ZN
+49.249651,51296,-123.076243,1307,Southbound Knight St @ E 23 Ave,BUS ZN
+49.264806,51289,-123.07763,1300,Southbound Clark Dr @ E 6th Ave,BUS ZN
+49.262018,51290,-123.07773,1301,Southbound Clark Dr @ E Broadway,BUS ZN
+49.259354,51291,-123.077691,1302,Southbound Clark Dr @ E 12 Ave,BUS ZN
+49.248155,51297,-123.076298,1308,Southbound Knight St @ E King Edward Ave,BUS ZN
+49.24614,51298,-123.076373,1309,Southbound Knight St @ E 27 Ave,BUS ZN
+49.284871,50494,-123.060143,498,Westbound Dundas St @ N Templeton Dr,BUS ZN
+49.284888,50495,-123.063271,499,Westbound Dundas St @ Wall St,BUS ZN
+49.288801,50490,-123.052418,494,Westbound McGill St @ N Penticton St,BUS ZN
+49.288026,50491,-123.05666,495,Southbound N Nanaimo St @ McGill St,BUS ZN
+49.286276,50492,-123.056672,496,Southbound N Nanaimo St @ Cambridge St,BUS ZN
+49.284885,50493,-123.057411,497,Westbound Dundas St @ N Garden Dr,BUS ZN
+49.28882,50489,-123.047415,493,Westbound McGill St @ N Kaslo St,BUS ZN
+49.258091,51592,-123.18653,1604,Westbound W 16 Ave @ Alma St,BUS ZN
+49.26801,61762,-123.150017,12814,Eastbound W 4th Ave @ Maple St,BUS ZN
+49.252727,50968,-123.066107,977,Southbound Victoria Dr @ Victoria Diversion,BUS ZN
+49.253864,50967,-123.067594,976,Southbound Victoria Diversion @ Commercial St,BUS ZN
+49.257485,58093,-123.069954,974,Southbound Commercial Dr @ E 14 Ave,BUS ZN
+49.259177,58092,-123.06995,973,Southbound Commercial Dr @ E 12 Ave,BUS ZN
+49.261929,50963,-123.069913,972,Commercial-Broadway Station @ Bay 2,BUS ZN
+49.281228,50961,-123.052402,970,Westbound E Hastings St @ Penticton St,BUS ZN
+49.268415,60570,-123.177316,12811,Eastbound W 4th Ave @ Blenheim St,BUS ZN
+49.274606,59914,-123.119683,10471,Westbound Pacific Blvd @ Cambie St,BUS ZN
+49.279326,58169,-123.105758,10470,Eastbound Keefer Place @ Taylor St,BUS ZN
+49.27487,59926,-123.101464,10478,Eastbound National Ave @ Quebec St,BUS ZN
+49.219851,61800,-123.065682,11871,Victoria Dr @ 54th Avenue Loop,BUS ZN
+49.229625,51668,-123.043009,1681,Northbound Rupert St @ E 45 Ave,BUS ZN
+49.227532,51667,-123.041348,1680,Northbound Rupert St @ Kerr St,BUS ZN
+49.233276,51670,-123.042996,1683,Northbound Rupert St @ E 41 Ave,BUS ZN
+49.231367,51669,-123.042993,1682,Northbound Rupert St @ E 43 Ave,BUS ZN
+49.238709,51671,-123.032702,1685,Joyce Station @ Bay 2,BUS ZN
+49.244846,51675,-123.033756,1689,Northbound Rupert St @ E 29 Ave,BUS ZN
+49.264278,50315,-123.185239,318,Eastbound W Broadway @ Alma St,BUS ZN
+49.256755,50310,-123.185003,313,Northbound Dunbar St @ W 18 Ave,BUS ZN
+49.253177,50308,-123.18504,311,Northbound Dunbar St @ W 22 Ave,BUS ZN
+49.250494,50307,-123.185062,310,Northbound Dunbar St @ W King Edward Ave,BUS ZN
+49.263872,50314,-123.185744,317,Northbound Alma St @ W 10 Ave,BUS ZN
+49.261926,50313,-123.185815,316,Northbound Alma St @ W 12 Ave,BUS ZN
+49.260126,50312,-123.184213,315,Northbound Dunbar Diversion @ W 14 Ave,BUS ZN
+49.256969,61097,-123.121578,11209,Eastbound W 16 Ave @ Willow St,BUS ZN
+49.285176,50438,-123.05639,442,Northbound N Nanaimo St @ Dundas St,BUS ZN
+49.284738,50437,-123.059274,441,Eastbound Dundas St @ Templeton Dr,BUS ZN
+49.284754,50436,-123.061245,440,Eastbound Dundas St @ Lakewood Dr,BUS ZN
+49.288617,50443,-123.048823,447,Eastbound McGill St @ N Slocan St,BUS ZN
+49.288627,50442,-123.051421,446,Eastbound McGill St @ N Penticton St,BUS ZN
+49.24353,60433,-123.061464,12679,Westbound Kingsway @ Gladstone,BUS ZN
+49.288013,50440,-123.056367,444,Northbound N Nanaimo St @ Eton St,BUS ZN
+49.267853,50401,-123.140145,405,Eastbound W 4th Ave @ Fir St,BUS ZN
+49.234826,60395,-123.174148,12671,Westbound W 41 Ave @ Carnarvon St,BUS ZN
+49.234437,60431,-123.141226,12670,Westbound W 41 Ave @ Churchill St,BUS ZN
+49.233818,58268,-123.127728,12672,Eastbound W 41 Ave @ Oak St,BUS ZN
+49.283285,50038,-123.102896,38,Westbound Powell St @ Columbia St,BUS ZN
+49.284786,50035,-123.111191,35,Waterfront Station @ Bay 4,BUS ZN
+49.209597,50864,-123.140672,871,Southbound Granville St @ W 68 Ave,BUS ZN
+49.225263,52019,-123.067538,2036,Westbound E 49 Ave @ Beatrice St,BUS ZN
+49.281222,52718,-123.043342,2743,Westbound E Hastings St @ Renfrew St,BUS ZN
+49.281204,52717,-123.025393,2742,Kootenay Loop @ Bay 7,BUS ZN
+49.243026,52719,-123.017349,2744,Westbound Moscrop St @ Inman Ave,BUS ZN
+49.225388,52022,-123.077939,2039,Westbound E 49 Ave @ Knight St,BUS ZN
+49.225316,52021,-123.073579,2038,Westbound E 49 Ave @ Fleming St,BUS ZN
+49.266066,51085,-123.044136,1094,Northbound Renfrew St @ E 5th Ave,BUS ZN
+49.26794,51086,-123.044107,1095,Northbound Renfrew St @ E 3rd Ave,BUS ZN
+49.269832,51087,-123.044037,1096,Northbound Renfrew St @ E 1st Ave,BUS ZN
+49.271682,51088,-123.044039,1097,Northbound Renfrew St @ Grant St,BUS ZN
+49.257532,51081,-123.044132,1090,Northbound Renfrew St @ Grandview Hwy,BUS ZN
+49.259529,51082,-123.0441,1091,Renfrew Station @ Bay 3,BUS ZN
+49.262253,51083,-123.044105,1092,Northbound Renfrew St @ E Broadway,BUS ZN
+49.264174,51084,-123.04414,1093,Northbound Renfrew St @ E 7th Ave,BUS ZN
+49.273636,51089,-123.044011,1098,Northbound Renfrew St @ Charles St,BUS ZN
+49.276287,51090,-123.043972,1099,Northbound Renfrew St @ Venables St,BUS ZN
+49.221522,51311,-123.077568,1322,Southbound Knight St @ E 53 Ave,BUS ZN
+49.224925,51309,-123.077479,1320,Southbound Knight St @ E 49 Ave,BUS ZN
+49.223084,51310,-123.077505,1321,Southbound Knight St @ E 51 Ave,BUS ZN
+49.215154,51315,-123.077208,1326,Southbound Knight St @ E 60 Ave,BUS ZN
+49.213443,51316,-123.077228,1327,Southbound Knight St @ E 62 Ave,BUS ZN
+49.218344,51313,-123.077162,1324,Southbound Knight St @ E 57 Ave,BUS ZN
+49.216969,51314,-123.077184,1325,Southbound Knight St @ E 58 Ave,BUS ZN
+49.212389,51317,-123.077238,1328,Southbound Knight St @ E 63 Ave,BUS ZN
+49.21125,51318,-123.076921,1329,Knight St Underpass @ SE Marine Dr,BUS ZN
+49.285445,51374,-123.11425,11438,Eastbound W Hastings St @ Granville St,BUS ZN
+49.254148,51773,-123.022894,11436,Eastbound Laurel St @ Boundary Rd,BUS ZN
+49.281012,50951,-123.043299,959,Eastbound E Hastings St @ Renfrew St,BUS ZN
+49.281035,50950,-123.046243,958,Eastbound E Hastings St @ Kaslo St,BUS ZN
+49.28111,50943,-123.069698,951,Eastbound E Hastings St @ Commercial Dr,BUS ZN
+49.281191,58283,-123.073421,950,Eastbound E Hastings St @ McLean Dr,BUS ZN
+49.281063,50945,-123.061265,953,Eastbound E Hastings St @ Lakewood Dr,BUS ZN
+49.28108,50944,-123.064979,952,Eastbound E Hastings St @ Victoria Dr,BUS ZN
+49.281059,50947,-123.055828,955,Eastbound E Hastings St @ Nanaimo St,BUS ZN
+49.281098,50946,-123.059289,954,Eastbound E Hastings St @ Templeton Dr,BUS ZN
+49.281041,50949,-123.048668,957,Eastbound E Hastings St @ Slocan St,BUS ZN
+49.281035,50948,-123.054098,956,Eastbound E Hastings St @ Kamloops St,BUS ZN
+49.263181,59587,-123.256083,12169,Northbound Lower Mall @ University Blvd,BUS ZN
+49.257665,59941,-123.249997,10451,Southbound West Mall @ Hawthorn Lane,BUS ZN
+49.259061,59942,-123.249148,10450,Westbound Thunderbird Blvd @ Larkin Dr,BUS ZN
+49.270734,59957,-123.254576,10455,Eastbound NW Marine Dr @ East Mall,BUS ZN
+49.210765,51656,-123.027827,1668,Westbound Champlain Cres @ Matheson Cres,BUS ZN
+49.214374,51655,-123.025642,1667,Southbound Matheson Cres @ Raintree Court,BUS ZN
+49.212728,51654,-123.025161,1666,Southbound Matheson Cres @ Chickadee Place,BUS ZN
+49.216164,51653,-123.025247,1665,Southbound Matheson Cres @ Borham Cres,BUS ZN
+49.217523,51652,-123.024331,1664,Westbound Arbor Ave @ Boundary Rd,BUS ZN
+49.22009,51651,-123.024161,1663,Eastbound Hurst Ave @ Boundary Rd,BUS ZN
+49.220252,51650,-123.026594,1662,Southbound Frontenac St @ Hurst Ave,BUS ZN
+49.221872,51649,-123.026506,1661,Southbound Frontenac St @ Hennepin Ave,BUS ZN
+49.223027,51648,-123.027926,1660,Eastbound E 49 Ave @ Arlington St,BUS ZN
+49.268459,50585,-123.168863,591,Westbound W 4th Ave @ Macdonald St,BUS ZN
+49.268401,50584,-123.164962,590,Westbound W 4th Ave @ Trafalgar St,BUS ZN
+49.268528,50587,-123.174217,593,Westbound W 4th Ave @ Balaclava St,BUS ZN
+49.268578,50588,-123.178075,594,Westbound W 4th Ave @ Blenheim St,BUS ZN
+49.268794,50591,-123.191056,597,Westbound W 4th Ave @ Wallace St,BUS ZN
+49.26871,50590,-123.186254,596,Westbound W 4th Ave @ Alma St,BUS ZN
+49.268917,50593,-123.197836,599,Westbound W 4th Ave @ 4100 Block,BUS ZN
+49.250529,51534,-123.033251,1546,Eastbound E 22 Ave @ Rupert St,BUS ZN
+49.280463,50689,-123.100688,696,Westbound E Pender St @ Main St,BUS ZN
+49.266642,50356,-123.185897,360,Southbound Alma St @ W 6th Ave,BUS ZN
+49.254123,50335,-123.127471,339,Southbound Oak St @ Douglas Cres,BUS ZN
+49.260251,50331,-123.126842,335,Southbound Oak St @ W 12 Ave,BUS ZN
+49.256751,50333,-123.127351,337,Southbound Oak St @ W 16 Ave,BUS ZN
+49.263448,50327,-123.134715,331,Eastbound W Broadway @ Hemlock St,BUS ZN
+49.263381,50328,-123.130979,332,Eastbound W Broadway @ Alder St,BUS ZN
+49.250584,51536,-123.025808,1548,Eastbound E 22 Ave @ Kootenay St,BUS ZN
+49.264648,50483,-123.114622,11227,Northbound Cambie St @ W 7th Ave,BUS ZN
+49.264477,50412,-123.114982,11221,Southbound Cambie St @ W 7th Ave,BUS ZN
+49.288846,51372,-123.125208,11220,Eastbound W Pender St @ Jervis St,BUS ZN
+49.27258,60519,-123.14994,12755,Westbound Cornwall Ave @ Maple St,BUS ZN
+49.23468,58650,-123.194664,9119,Eastbound W 41 Ave @ Crown St,BUS ZN
+49.251149,51585,-123.156163,1597,Westbound W King Edward Ave @ Yew St,BUS ZN
+49.287392,52968,-123.018147,10660,Eastbound Eton St @ N Ingleton Ave,BUS ZN
+49.263084,60579,-123.104155,12822,Westbound E Broadway @ Quebec,BUS ZN
+49.280182,60302,-123.111842,10591,Northbound Cambie St @ Dunsmuir St,BUS ZN
+49.23327,50138,-123.111462,10595,Eastbound W 41 Ave @ Columbia St,BUS ZN
+49.235113,51337,-123.07681,1348,Northbound Knight St @ E 39 Ave,BUS ZN
+49.237188,51338,-123.076748,1349,Northbound Knight St @ E 37 Ave,BUS ZN
+49.218444,51329,-123.076884,1340,Northbound Knight St @ E 57 Ave,BUS ZN
+49.223765,51331,-123.077214,1342,Northbound Knight St @ E 51 Ave,BUS ZN
+49.225701,51332,-123.077098,1343,Northbound Knight St @ E 49 Ave,BUS ZN
+49.227974,51333,-123.077067,1344,Northbound Knight St @ E 47 Ave,BUS ZN
+49.229335,51334,-123.077025,1345,Northbound Knight St @ E 45 Ave,BUS ZN
+49.230966,51335,-123.076961,1346,Northbound Knight St @ E 43 Ave,BUS ZN
+49.233088,51336,-123.076848,1347,Northbound Knight St @ E 41 Ave,BUS ZN
+49.244236,57971,-123.046136,8046,29th Avenue Station @ Platform 2,ZN 1
+49.225393,51017,-123.155125,1026,Northbound Arbutus St @ W 51 Ave,BUS ZN
+49.215648,51012,-123.148305,1021,Northbound Angus Dr @ W 61 Ave,BUS ZN
+49.231163,51020,-123.155603,1029,Northbound West Blvd @ W 45 Ave,BUS ZN
+49.230145,51019,-123.155632,1028,Northbound West Blvd @ W 46 Ave,BUS ZN
+49.286833,58893,-123.118031,9307,Westbound W Pender St @ Burrard St,BUS ZN
+49.228978,51633,-123.031961,1645,Northbound Tyne St @ E 45 Ave,BUS ZN
+49.226688,51632,-123.032071,1644,Northbound Tyne St @ E 47 Ave,BUS ZN
+49.231836,51635,-123.03734,1647,Northbound Joyce St @ Marmion Ave,BUS ZN
+49.229581,51634,-123.037333,1646,Northbound Joyce St @ E 45 Ave,BUS ZN
+49.222065,51629,-123.024529,1641,Westbound E 49 Ave @ Boundary Rd,BUS ZN
+49.220212,51628,-123.023547,1640,Northbound Boundary Rd @ Hurst Ave,BUS ZN
+49.225083,51631,-123.032151,1643,Northbound Tyne St @ E 49 Ave,BUS ZN
+49.223442,51630,-123.028307,1642,Westbound E 49 Ave @ Arlington St,BUS ZN
+49.234391,51636,-123.03552,1648,Northbound Joyce St @ Kingsway,BUS ZN
+49.263781,50574,-123.200725,579,Westbound W 10 Ave @ Courtenay St,BUS ZN
+49.263725,50573,-123.197332,578,Westbound W 10 Ave @ Camosun St,BUS ZN
+49.264377,50568,-123.182257,573,Westbound W Broadway @ Collingwood St,BUS ZN
+49.264311,50567,-123.178243,572,Westbound W Broadway @ Blenheim St,BUS ZN
+49.264241,50566,-123.174408,571,Westbound W Broadway @ Balaclava St,BUS ZN
+49.264221,50565,-123.171711,570,Westbound W Broadway @ Bayswater St,BUS ZN
+49.263683,50572,-123.194468,577,Westbound W 10 Ave @ Crown St,BUS ZN
+49.263644,50571,-123.191417,576,Westbound W 10 Ave @ Wallace St,BUS ZN
+49.285306,50043,-123.119982,8535,Burrard Station @ Bay 1,BUS ZN
+49.287961,52967,-123.020951,10661,Southbound N Esmond Ave @ McGill St,BUS ZN
+49.221886,51994,-123.017609,2011,Eastbound Imperial St @ Mandy Ave,BUS ZN
+49.221875,51993,-123.022768,2010,Eastbound Imperial St @ Boundary Rd,BUS ZN
+49.268214,50355,-123.18585,359,Southbound Alma St @ W 4th Ave,BUS ZN
+49.268538,50354,-123.185205,358,Eastbound W 4th Ave @ Alma St,BUS ZN
+49.268938,61138,-123.200648,11071,Westbound NW Marine Dr @ W 4th Ave,BUS ZN
+49.278412,60525,-123.13473,12771,Eastbound Pacific St @ Thurlow St,BUS ZN
+49.284303,60526,-123.142591,12772,Westbound Beach Ave @ Bidwell St,BUS ZN
+49.273429,50015,-123.123135,10441,Eastbound Pacific Blvd @ Drake St,BUS ZN
+49.256014,51484,-123.235156,10958,Eastbound W 16 Ave @ Wesbrook Mall,BUS ZN
+49.256287,61043,-123.234956,10959,Westbound W 16 Ave @ Wesbrook Mall,BUS ZN
+49.262416,50913,-123.06875,11606,Commercial-Broadway Station @ Bay 5,BUS ZN
+49.233182,52054,-123.18528,2071,Northbound Dunbar St @ W 43 Ave,BUS ZN
+49.231041,52053,-123.185323,2070,Northbound Dunbar St @ SW Marine Dr,BUS ZN
+49.266459,52058,-123.129345,2075,Westbound Lameys Mill Rd @ Sitka Square,BUS ZN
+49.266191,52057,-123.120109,2074,Heather Square @ Bay 1,BUS ZN
+49.207431,50757,-123.1404,8394,Northbound Granville St @ W 71 Ave,BUS ZN
+49.272363,58280,-123.096638,1366,Westbound Terminal Ave @ 300 Block,BUS ZN
+49.269991,51356,-123.077215,1367,Northbound Clark Dr @ E 1st Ave,BUS ZN
+49.270771,51353,-123.087153,1364,Westbound Terminal Ave @ Begg St,BUS ZN
+49.271779,51354,-123.093108,1365,Westbound Terminal Ave @ Thornton St,BUS ZN
+49.264845,51351,-123.077316,1362,Northbound Clark Dr @ E 6th Ave,BUS ZN
+49.268147,51352,-123.077256,1363,Northbound Clark Dr @ E 3rd Ave,BUS ZN
+49.260268,51349,-123.077343,1360,Northbound Clark Dr @ E 11 Ave,BUS ZN
+49.262754,51350,-123.077367,1361,Northbound Clark Dr @ E Broadway,BUS ZN
+49.271749,51357,-123.077197,1368,Northbound Clark Dr @ Grant St,BUS ZN
+49.274264,51358,-123.077153,1369,Northbound Clark Dr @ William St,BUS ZN
+49.234831,50296,-123.179103,299,Westbound W 41 Ave @ Blenheim St,BUS ZN
+49.234819,50293,-123.170795,296,Westbound W 41 Ave @ Mackenzie St,BUS ZN
+49.23482,50294,-123.173542,297,Westbound W 41 Ave @ Carnarvon St,BUS ZN
+49.234767,50291,-123.163165,294,Westbound W 41 Ave @ Larch St,BUS ZN
+49.23481,50292,-123.167912,295,Westbound W 41 Ave @ Macdonald St,BUS ZN
+49.234721,50290,-123.160343,293,Westbound W 41 Ave @ Vine St,BUS ZN
+49.234633,50288,-123.152449,291,Westbound W 41 Ave @ Maple St,BUS ZN
+49.221906,51611,-123.041297,1623,Southbound Kerr St @ E 52 Ave,BUS ZN
+49.225373,51976,-123.08761,1993,Eastbound E 49 Ave @ Prince Albert St,BUS ZN
+49.227481,51608,-123.041563,1620,Southbound Rupert St @ Kerr St,BUS ZN
+49.21544,51615,-123.040483,1627,Eastbound Rosemont Dr @ Kerr St,BUS ZN
+49.225337,51977,-123.084766,1994,Eastbound E 49 Ave @ Windsor St,BUS ZN
+49.218403,51613,-123.041467,1625,Southbound Kerr St @ E 56 Ave,BUS ZN
+49.219855,51612,-123.041405,1624,Southbound Kerr St @ E 54 Ave,BUS ZN
+49.22514,51982,-123.068504,1999,Eastbound E 49 Ave @ Commercial St,BUS ZN
+49.225164,51981,-123.071276,1998,Eastbound E 49 Ave @ Argyle St,BUS ZN
+49.216166,51617,-123.034529,1629,Southbound Butler St @ Rosemont Dr,BUS ZN
+49.215571,51616,-123.036746,1628,Eastbound Rosemont Dr @ 3200 Block,BUS ZN
+49.237706,50554,-123.139593,559,Southbound Granville St @ W 37 Ave,BUS ZN
+49.239615,50553,-123.139528,558,Southbound Granville St @ W 35 Ave,BUS ZN
+49.241525,50552,-123.139454,557,Southbound Granville St @ W 33 Ave,BUS ZN
+49.243251,50551,-123.139408,556,Southbound Granville St @ W 32 Ave,BUS ZN
+49.252781,50546,-123.139073,551,Southbound Granville St @ Matthews Ave,BUS ZN
+49.254178,50545,-123.13903,550,Southbound Granville St @ Angus Dr,BUS ZN
+49.2505,50547,-123.139186,552,Southbound Granville St @ Laurier Ave,BUS ZN
+49.247137,51190,-123.06911,1199,Westbound Kingsway @ Miller St,BUS ZN
+49.245543,51189,-123.065671,1198,Westbound Kingsway @ Victoria Dr,BUS ZN
+49.23303,51182,-123.046378,1191,Westbound E 41 Ave @ Killarney St,BUS ZN
+49.233057,51181,-123.043713,1190,Westbound E 41 Ave @ Rupert St,BUS ZN
+49.235237,51184,-123.038053,1193,Westbound Kingsway @ McKinnon St,BUS ZN
+49.232858,51183,-123.049155,1192,Westbound E 41 Ave @ Earles St,BUS ZN
+49.236114,51186,-123.04296,1195,Westbound Kingsway @ Rupert St,BUS ZN
+49.235933,51185,-123.041047,1194,Westbound Kingsway @ Spencer St,BUS ZN
+49.236931,51187,-123.046942,1196,Westbound Kingsway @ Fairmont St,BUS ZN
+49.244894,50454,-123.127493,458,Northbound Oak St @ Devonshire Cres,BUS ZN
+49.247506,50455,-123.12749,459,Northbound Oak St @ W 27 Ave,BUS ZN
+49.288595,50446,-123.0434,450,Eastbound McGill St @ N Renfrew St,BUS ZN
+49.288825,50449,-123.044601,453,Westbound McGill St @ N Renfrew St,BUS ZN
+49.237021,50451,-123.12785,455,Northbound Oak St @ W 38 Ave,BUS ZN
+49.241748,50453,-123.12769,457,Northbound Oak St @ W 33 Ave,BUS ZN
+49.234095,60397,-123.129021,12669,Westbound W 41 Ave @ Oak St,BUS ZN
+49.247813,50367,-123.185322,371,Southbound Dunbar St @ W 27 Ave,BUS ZN
+49.249684,50366,-123.185302,370,Southbound Dunbar St @ W King Edward Ave,BUS ZN
+49.243962,50369,-123.185351,373,Southbound Dunbar St @ W 31 Ave,BUS ZN
+49.240149,50371,-123.185397,375,Southbound Dunbar St @ W 35 Ave,BUS ZN
+49.242056,50370,-123.185368,374,Southbound Dunbar St @ W 33 Ave,BUS ZN
+49.238349,50372,-123.185425,376,Southbound Dunbar St @ W 37 Ave,BUS ZN
+49.234646,60404,-123.03528,12665,Northbound Joyce St @ Church St,BUS ZN
+49.23467,60396,-123.173495,12663,Eastbound W 41 Ave @ Carnarvon St,BUS ZN
+49.260557,60417,-123.12041,12712,Westbound W 12th Ave @ Heather St,BUS ZN
+49.260482,60418,-123.11559,12713,Westbound W 12th Ave @ Cambie St,BUS ZN
+49.260622,60415,-123.124667,12710,Westbound W 12th Ave @ Laurel St,BUS ZN
+49.260394,60416,-123.120306,12711,Eastbound W 12th Ave @ Heather St,BUS ZN
+49.282699,61074,-123.099733,10976,Southbound Main St @ Powell St,BUS ZN
+49.262911,50878,-123.104471,11596,Eastbound E Broadway @ Ontario St,BUS ZN
+49.226178,61218,-123.116035,2051,Langara-49th Station @ Bay 2,BUS ZN
+49.226074,52033,-123.113387,2050,Westbound W 49 Ave @ Alberta St,BUS ZN
+49.226538,52036,-123.125587,2053,Westbound W 49 Ave @ Laurel St,BUS ZN
+49.226382,52035,-123.121438,2052,Westbound W 49 Ave @ Tisdall St,BUS ZN
+49.226761,52038,-123.13243,2055,Westbound W 49 Ave @ Montgomery St,BUS ZN
+49.226658,52037,-123.128988,2054,Westbound W 49 Ave @ Oak St,BUS ZN
+49.22688,52039,-123.135533,2056,Westbound W 49 Ave @ Hudson St,BUS ZN
+49.233193,50714,-123.101267,11622,Westbound E 41st Ave @ Main St,BUS ZN
+49.26236,58614,-123.088379,10620,Eastbound E Broadway St @ Fraser St,BUS ZN
+49.219642,50797,-123.091056,804,Southbound Fraser St @ E 55 Ave,BUS ZN
+49.266634,60219,-123.244736,12483,Westbound University Blvd @ Western Parkway,BUS ZN
+49.253266,60223,-123.089851,12487,Northbound Fraser St @ E 20 Ave,BUS ZN
+49.207204,58183,-123.053335,8621,Eastbound SE Marine Dr @ 2600 Block,BUS ZN
+49.263296,58145,-123.099681,8622,Westbound Kingsway @ E Broadway,BUS ZN
+49.224736,59318,-123.032636,9989,Westbound E 49 Ave @ Tyne St,BUS ZN
+49.224659,59317,-123.040479,9987,Eastbound E 49 Ave @ Kerr St,BUS ZN
+49.257181,61124,-123.12688,11021,Westbound W 16 Ave @ Oak St,BUS ZN
+49.240577,61118,-123.101925,11020,Westbound E 33 Ave @ Main St,BUS ZN
+49.257372,61128,-123.153431,11023,Westbound W 16 Ave @ Arbutus St,BUS ZN
+49.240373,61116,-123.090765,11022,Westbound E 33 Ave @ Fraser St,BUS ZN
+49.282211,50410,-123.109799,414,Southbound Cambie St @ W Hastings St,BUS ZN
+49.275788,50411,-123.117719,415,Eastbound Nelson St @ Cambie St,BUS ZN
+49.287073,50406,-123.119204,410,Eastbound W Pender St @ Thurlow St,BUS ZN
+49.280991,51377,-123.018168,1389,Eastbound Hastings St @ Ingleton Ave,BUS ZN
+49.288213,51373,-123.123062,1385,Eastbound W Pender St @ Bute St,BUS ZN
+49.281026,58143,-123.024952,1387,Kootenay Loop @ Bay 8,BUS ZN
+49.260113,50414,-123.115144,418,Southbound Cambie St @ W 12 Ave,BUS ZN
+49.256555,50415,-123.115252,419,Southbound Cambie St @ W 16 Ave,BUS ZN
+49.289898,51370,-123.128771,1382,Eastbound W Pender St @ Nicola St,BUS ZN
+49.289364,51371,-123.127117,1383,Eastbound W Pender St @ Broughton St,BUS ZN
+49.27654,51762,-123.02375,1776,Southbound Boundary Rd @ Douglas Rd,BUS ZN
+49.26913,51765,-123.023801,1779,Southbound Boundary Rd @ E 1st Ave,BUS ZN
+49.271739,51764,-123.023795,1778,Southbound Boundary Rd @ Kitchener St,BUS ZN
+49.207215,51834,-123.059043,1848,Eastbound SE Marine Dr @ Nanaimo St,BUS ZN
+49.26302,60006,-123.10905,12101,Eastbound W Broadway @ Columbia St,BUS ZN
+49.208533,51800,-123.062381,1814,Westbound SE Marine Dr @ Gladstone St,BUS ZN
+49.212049,51803,-123.059294,1817,Northbound Nanaimo St @ Fraserview Dr,BUS ZN
+49.208162,51796,-123.042926,1810,Westbound SE Marine Dr @ Kerr St,BUS ZN
+49.207743,51797,-123.048165,1811,Westbound SE Marine Dr @ Jellicoe St,BUS ZN
+49.207187,51798,-123.057208,1812,Westbound SE Marine Dr @ Elliott St,BUS ZN
+49.213192,51804,-123.057069,1818,Northbound Muirfield Dr @ Scarboro Ave,BUS ZN
+49.214723,51805,-123.055961,1819,Northbound Muirfield Dr @ Bobolink Ave,BUS ZN
+49.258508,51597,-123.21457,1609,Westbound W 16 Ave @ Blanca St,BUS ZN
+49.258432,51596,-123.20978,1608,Westbound W 16 Ave @ Sasamat St,BUS ZN
+49.226598,51962,-123.131458,1979,Eastbound W 49 Ave @ Montgomery St,BUS ZN
+49.226708,51961,-123.134675,1978,Eastbound W 49 Ave @ Hudson St,BUS ZN
+49.250163,51589,-123.176132,1601,Westbound W King Edward Ave @ Balaclava St,BUS ZN
+49.226972,51958,-123.144546,1975,Eastbound W 49 Ave @ Marguerite St,BUS ZN
+49.22701,51957,-123.147554,1974,Eastbound W 49 Ave @ Angus Dr,BUS ZN
+49.227103,51954,-123.15547,1971,Eastbound W 49 Ave @ Arbutus St,BUS ZN
+49.25846,61149,-123.115193,11101,Southbound Cambie St @ W 14 Ave,BUS ZN
+49.232871,51892,-123.05213,1906,Westbound E 41 Ave @ Wales St,BUS ZN
+49.234704,51890,-123.187956,1904,Eastbound W 41 Ave @ Highbury St,BUS ZN
+49.234701,51889,-123.190529,1903,Eastbound W 41 Ave @ Wallace St,BUS ZN
+49.236996,51887,-123.204972,1901,Eastbound SW Marine Dr @ Kullahun Dr,BUS ZN
+49.288812,60502,-123.139345,12730,Northbound Denman St @ Comox St,BUS ZN
+49.287679,60504,-123.129709,12732,Eastbound Robson St @ Broughton St,BUS ZN
+49.233946,50133,-123.124174,12737,Westbound W 41st Ave @ Willow St,BUS ZN
+49.227149,51953,-123.15842,1970,Eastbound W 49 Ave @ Yew St,BUS ZN
+49.283023,60529,-123.1416,12768,Westbound Beach Ave @ Cardero St,BUS ZN
+49.263181,60534,-123.117852,12763,Broadway-City Hall Station   @ Bay 6,BUS ZN
+49.205803,60472,-123.030484,12761,Eastbound Sawmill Cres @ River District Crossing,BUS ZN
+49.26315,60535,-123.116587,12764,Broadway-City Hall Station @ Bay 1,BUS ZN
+49.289741,51473,-123.12775,11643,Westbound W Pender St @ Broughton St,BUS ZN
+49.282004,53392,-123.10684,11646,Westbound W Hastings St @ Abbott St,BUS ZN
+49.21392,59042,-123.140853,1018,63 Ave Loop @ Granville St,BUS ZN
+49.213261,51010,-123.144003,1019,Westbound W 64 Ave @ Adera St,BUS ZN
+49.281477,58065,-123.117549,1016,Northbound Seymour St @ W Georgia St,BUS ZN
+49.230342,51008,-123.139857,1017,Southbound Granville St @ W 45 Ave,BUS ZN
+49.276811,51004,-123.124629,1013,Northbound Seymour St @ Davie St,BUS ZN
+49.276328,61143,-123.215494,11002,Bus Stop @ Spanish Banks Loop,BUS ZN
+49.240146,61106,-123.075958,11007,Eastbound E 33 Ave @ Knight St,BUS ZN
+49.239826,61108,-123.06484,11009,Eastbound E 33 Ave @ Victoria Dr,BUS ZN
+49.284771,50435,-123.065065,439,Eastbound Powell St @ Victoria Dr,BUS ZN
+49.283885,50433,-123.069837,437,Eastbound Powell St @ Commercial Dr,BUS ZN
+49.283029,50431,-123.076625,435,Eastbound Powell St @ Clark Dr,BUS ZN
+49.282672,50429,-123.081697,433,Eastbound Powell St @ Glen Dr,BUS ZN
+49.282136,50426,-123.094846,430,Eastbound E Cordova St @ Dunlevy Ave,BUS ZN
+49.282067,50427,-123.091063,431,Eastbound E Cordova St @ Princess Ave,BUS ZN
+49.270517,51919,-123.255442,11341,Westbound NW Marine Dr @ Cecil Green Park Rd,BUS ZN
+49.232875,51003,-123.115999,11348,Northbound Cambie St @ W 42 Ave,BUS ZN
+49.226473,50999,-123.116241,11349,Langara-49th Station @ Bay 1,BUS ZN
+49.206184,52219,-123.126813,2241,Westbound SW Marine Dr @ Laurel St,BUS ZN
+49.210359,51793,-123.027535,12691,Southbound Matheson Cres @ Champlain Cres,BUS ZN
+49.208301,51839,-123.030733,12690,Northbound Matheson Cres @ SE Marine Dr,BUS ZN
+49.269159,51042,-123.044397,1051,Southbound Renfrew St @ E 1st Ave,BUS ZN
+49.266425,51043,-123.044405,1052,Southbound Renfrew St @ E 4th Ave,BUS ZN
+49.262644,51045,-123.044459,1054,Southbound Renfrew St @ E 8th Ave,BUS ZN
+49.261461,51046,-123.04446,1055,Southbound Renfrew St @ E Broadway,BUS ZN
+49.257863,51048,-123.044471,1057,Southbound Renfrew St @ Grandview Hwy,BUS ZN
+49.278835,51006,-123.121579,9366,Northbound Seymour St @ Nelson St,BUS ZN
+49.296637,58008,-123.136713,8983,Southbound Lost Lagoon Rd @ Stanley Park Causeway,BUS ZN
+49.244269,51818,-123.045608,1832,29th Avenue Station @ Bay 1,BUS ZN
+49.232504,51819,-123.055437,1833,Southbound Clarendon St @ E 41 Ave,BUS ZN
+49.237621,51816,-123.055365,1830,Northbound Clarendon St @ E 37 Ave,BUS ZN
+49.229145,51821,-123.054924,1835,Southbound Elliott St @ E 45 Ave,BUS ZN
+49.224553,51824,-123.054884,1838,Southbound Elliott St @ E 49 Ave,BUS ZN
+49.222288,51825,-123.054911,1839,Southbound Elliott St @ E 51 Ave,BUS ZN
+49.210918,52135,-123.093606,2155,Eastbound SE Marine Dr @ St. George St,BUS ZN
+49.210909,52136,-123.090507,2156,Eastbound SE Marine Dr @ Fraser St,BUS ZN
+49.21214,52132,-123.106006,2152,Eastbound SE Marine Dr @ Ontario St,BUS ZN
+49.210807,52133,-123.101511,2153,Eastbound SE Marine Dr @ Main St,BUS ZN
+49.211036,52138,-123.083514,2158,Eastbound SE Marine Dr @ Ross St,BUS ZN
+49.268549,51942,-123.145798,1959,Southbound Burrard St @ W 3rd Ave,BUS ZN
+49.225455,51973,-123.093656,1990,Eastbound E 49 Ave @ St. George St,BUS ZN
+49.287731,51471,-123.120865,1483,Westbound W Pender St @ Thurlow St,BUS ZN
+49.281212,51470,-123.026407,1482,Kootenay Loop @ Bay 6,BUS ZN
+49.281222,51469,-123.021845,1481,Westbound Hastings St @ Esmond Ave,BUS ZN
+49.281179,51468,-123.01911,1480,Westbound Hastings St @ Ingleton Ave,BUS ZN
+49.292951,51475,-123.134018,1487,Westbound W Georgia St @ Denman St,BUS ZN
+49.288565,51472,-123.123694,1484,Westbound W Pender St @ Bute St,BUS ZN
+49.294006,51476,-123.13563,1488,Westbound W Georgia St @ Gilford St,BUS ZN
+49.251452,59837,-123.100866,10611,Northbound Main St @ E 22 Ave,BUS ZN
+49.241595,51261,-123.170144,1271,Northbound Mackenzie St @ W 34 Ave,BUS ZN
+49.262593,58613,-123.09009,10619,Westbound E Broadway @ Fraser St,BUS ZN
+49.283146,50515,-123.093725,519,Westbound Powell St @ Jackson Ave,BUS ZN
+49.283076,50514,-123.089941,518,Westbound Powell St @ Heatley Ave,BUS ZN
+49.281356,50507,-123.095847,511,Westbound E Hastings St @ Dunlevy Ave,BUS ZN
+49.281321,50506,-123.093904,510,Westbound E Hastings St @ Jackson Ave,BUS ZN
+49.283837,50508,-123.070862,512,Westbound Powell St @ Commercial Dr,BUS ZN
+49.28303,50513,-123.087522,517,Westbound Powell St @ Hawks Ave,BUS ZN
+49.282792,50512,-123.081659,516,Westbound Powell St @ Glen Dr,BUS ZN
+49.254682,51217,-123.068394,1226,Northbound Commercial Dr @ Findlay St,BUS ZN
+49.253274,51216,-123.066572,1225,Northbound Victoria Diversion @ Victoria Dr,BUS ZN
+49.250596,51215,-123.064898,1224,Northbound Victoria Dr @ E 22 Ave,BUS ZN
+49.234,50621,-123.116425,627,Southbound Cambie St @ W 41 Ave,BUS ZN
+49.247959,51213,-123.064952,1222,Northbound Victoria Dr @ E 26 Ave,BUS ZN
+49.231503,51212,-123.065432,1221,Northbound Victoria Dr @ E 43 Ave,BUS ZN
+49.229847,51211,-123.065483,1220,Northbound Victoria Dr @ E 45 Ave,BUS ZN
+49.279145,50622,-123.116259,628,Westbound Robson St @ Hamilton St,BUS ZN
+49.259948,51220,-123.069673,1229,Northbound Commercial Dr @ E 12 Ave,BUS ZN
+49.258015,51219,-123.069745,1228,Northbound Commercial Dr @ E 14 Ave,BUS ZN
+49.266296,58054,-123.120135,8297,Heather Square @ Bay 2,BUS ZN
+49.202765,59930,-123.134919,10431,Southbound Hudson St @ SW Marine Dr,BUS ZN
+49.209141,52217,-123.119749,2239,Westbound SW Marine Dr @ Ash St,BUS ZN
+49.211147,52209,-123.089925,2231,Westbound SE Marine Dr @ Chester St,BUS ZN
+49.211024,52211,-123.097713,2233,Westbound SE Marine Dr @ Prince Edward St,BUS ZN
+49.211151,52210,-123.095708,2232,Westbound SE Marine Dr @ Buscombe St,BUS ZN
+49.212459,52213,-123.107012,2235,Westbound SW Marine Dr @ Ontario St,BUS ZN
+49.211554,52212,-123.103214,2234,Westbound SE Marine Dr @ Main St,BUS ZN
+49.212212,52214,-123.110409,2236,Westbound SW Marine Dr @ Manitoba St,BUS ZN
+49.214195,51619,-123.02994,1631,Southbound Champlain Cres @ Langford Ave,BUS ZN
+49.210846,56958,-123.075497,7025,Northbound Knight St Bridge Offramp @ SE Marine Dr,BUS ZN
+49.247961,51029,-123.153085,1038,Northbound Arbutus St @ Nanton Ave,BUS ZN
+49.251937,51030,-123.152909,1039,Northbound Arbutus St @ W King Edward Ave,BUS ZN
+49.236779,51023,-123.155392,1032,Northbound West Blvd @ W 39 Ave,BUS ZN
+49.238609,51024,-123.155335,1033,Northbound West Blvd @ W 37 Ave,BUS ZN
+49.232961,51021,-123.155537,1030,Northbound West Blvd @ W 43 Ave,BUS ZN
+49.2349,51022,-123.155429,1031,Northbound West Blvd @ W 41 Ave,BUS ZN
+49.242436,51027,-123.153359,1036,Northbound Arbutus St @ W 33 Ave,BUS ZN
+49.245478,51028,-123.153186,1037,Northbound Arbutus St @ Valley Dr,BUS ZN
+49.241393,51026,-123.153894,1035,Northbound Arbutus St @ Quilchena Cres,BUS ZN
+49.275093,51938,-123.212054,11069,Westbound NW Marine Dr @ Tolmie St,BUS ZN
+49.273327,61133,-123.205803,11068,Southbound Trimble St @ Belmont Ave,BUS ZN
+49.240296,61134,-123.080645,11061,Westbound E 33 Ave @ Inverness St,BUS ZN
+49.240161,61135,-123.079787,11060,Eastbound E 33 Ave @ Inverness St,BUS ZN
+49.25729,61092,-123.157508,11063,Eastbound W 16 Ave @ Vine St,BUS ZN
+49.240343,61103,-123.096513,11062,Eastbound E 33 Ave @ Prince Edward St,BUS ZN
+49.274065,51935,-123.205593,11065,Northbound NW Marine Dr @ Belmont Ave,BUS ZN
+49.240204,61105,-123.085349,11064,Eastbound E 33 Ave @ Somerville St,BUS ZN
+49.257964,61125,-123.134406,11067,Westbound W 15 Ave @ Birch St,BUS ZN
+49.274742,51906,-123.211352,11066,Eastbound NW Marine Dr @ Tolmie St,BUS ZN
+49.239663,58090,-123.019922,11322,Southbound Smith Ave @ Belleville Ave,BUS ZN
+49.242674,58088,-123.019874,11323,Southbound Smith Ave @ Moscrop St,BUS ZN
+49.23703,58089,-123.020478,11321,Westbound Burke St @ Smith Ave,BUS ZN
+49.240426,51728,-123.019753,11324,Northbound Smith Ave @ Price St,BUS ZN
+49.23903,51727,-123.019776,11325,Northbound Smith Ave @ Brandon St,BUS ZN
+49.237291,51726,-123.019798,11328,Northbound Smith Ave @ Burke St,BUS ZN
+49.260754,51480,-123.240994,11499,Southbound Wesbrook Mall @ Thunderbird Blvd,BUS ZN
+49.278791,59991,-123.108015,11495,Westbound Expo Blvd @ Abbott St,BUS ZN
+49.269052,51703,-123.033883,10813,Southbound Rupert St @ E 1st Ave,BUS ZN
+49.225333,59583,-123.10178,10812,Southbound Main St @ E 49 Ave,BUS ZN
+49.255125,50478,-123.115019,10810,Northbound Cambie St @ W 18 Ave,BUS ZN
+49.256943,59581,-123.101068,10816,Northbound Main St @ E 16 Ave,BUS ZN
+49.267232,51704,-123.033871,10815,Southbound Rupert St @ E 3rd Ave,BUS ZN
+49.268688,59580,-123.100898,10814,Southbound Main St @ E 2nd Ave,BUS ZN
+49.207592,51836,-123.047214,1850,Eastbound SE Marine Dr @ Jellicoe St,BUS ZN
+49.207748,51837,-123.044803,1851,Eastbound SE Marine Dr @ Kerr St,BUS ZN
+49.208333,51838,-123.035248,1852,Eastbound SE Marine Dr @ Fieldstone Ave,BUS ZN
+49.286899,51842,-123.12119,1856,Burrard Station @ Bay 4,BUS ZN
+49.286391,51843,-123.121757,1857,Burrard Station @ Bay 3,BUS ZN
+49.268693,50598,-123.215183,604,Southbound Blanca St @ W 4th Ave,BUS ZN
+49.264016,50601,-123.215915,607,Westbound University Blvd @ Blanca St,BUS ZN
+49.265146,50600,-123.215302,606,Blanca Loop @ Bay 2,BUS ZN
+49.269028,50595,-123.206426,601,Westbound W 4th Ave @ Trimble St,BUS ZN
+49.260171,51199,-123.096663,1208,Westbound Kingsway @ E 12 Ave,BUS ZN
+49.269083,50596,-123.209399,602,Westbound W 4th Ave @ Sasamat St,BUS ZN
+49.254147,51195,-123.084079,1204,Westbound Kingsway @ Windsor St,BUS ZN
+49.25817,51198,-123.093585,1207,Westbound Kingsway @ St. George St,BUS ZN
+49.257027,51197,-123.090227,1206,Westbound Kingsway @ Fraser St,BUS ZN
+49.265815,50603,-123.235541,609,Westbound University Blvd @ 5300 Block,BUS ZN
+49.263693,50602,-123.229837,608,Westbound University Blvd @ 5100 Block,BUS ZN
+49.252366,51194,-123.080257,1203,Westbound Kingsway @ Inverness St,BUS ZN
+49.25051,51193,-123.076585,1202,Westbound Kingsway @ Knight St,BUS ZN
+49.262004,58044,-123.039504,8277,Westbound E Broadway @ Lillooet St,BUS ZN
+49.262724,50927,-123.14034,935,Westbound W 10 Ave @ Fir St,BUS ZN
+49.251967,50457,-123.127311,461,Northbound Oak St @ W 22 Ave,BUS ZN
+49.227081,52042,-123.144091,2059,Westbound W 49 Ave @ Adera St,BUS ZN
+49.256575,50459,-123.127109,463,Northbound Oak St @ W 17 Ave,BUS ZN
+49.253935,50458,-123.127236,462,Northbound Oak St @ W 20 Ave,BUS ZN
+49.249415,50475,-123.115245,10799,King Edward Station @ Bay 2,BUS ZN
+49.275982,59860,-123.124529,12334,Eastbound Davie St @ Richards St,BUS ZN
+49.276256,60103,-123.117748,12330,Northbound Cambie St @ Nelson St,BUS ZN
+49.278318,60104,-123.114655,12331,Northbound Cambie St @ Robson St,BUS ZN
+49.281297,50733,-123.066124,740,Westbound E Hastings St @ Victoria Dr,BUS ZN
+49.281413,50735,-123.056378,742,Northbound Nanaimo St @ E Hastings St,BUS ZN
+49.234424,50737,-123.185469,744,Dunbar Loop @ Bay 1,BUS ZN
+49.202789,50738,-123.133802,745,Marpole Loop @ Bay 1,BUS ZN
+49.204348,50739,-123.130671,746,Eastbound SW Marine Dr @ Oak St,BUS ZN
+49.205921,50740,-123.128497,747,Northbound Oak Cloverleaf @ SW Marine Dr,BUS ZN
+49.208777,50742,-123.13011,749,Northbound Oak St @ W 70 Ave,BUS ZN
+49.271997,51041,-123.04431,1050,Southbound Renfrew St @ Kitchener St,BUS ZN
+49.265468,51044,-123.044419,1053,Southbound Renfrew St @ E 5th Ave,BUS ZN
+49.255993,51049,-123.044447,1058,Southbound Renfrew St @ E 15 Ave,BUS ZN
+49.254177,51050,-123.044433,1059,Southbound Renfrew St @ E 17 Ave,BUS ZN
+49.240633,61119,-123.105056,11047,Westbound E 33 Ave @ Ontario St,BUS ZN
+49.268649,50589,-123.182096,11046,Westbound W 4th Ave @ Collingwood St,BUS ZN
+49.257758,61130,-123.165382,11044,Westbound W 16 Ave @ Trafalgar St,BUS ZN
+49.257239,61127,-123.146565,11043,Westbound W 16 Ave @ Burrard St,BUS ZN
+49.257961,61131,-123.178447,11042,Westbound W 16 Ave @ Blenheim St,BUS ZN
+49.257435,61129,-123.15827,11041,Westbound W 16 Ave @ Vine St,BUS ZN
+49.257062,61122,-123.120455,11040,Westbound W 16 Ave @ Heather St,BUS ZN
+49.240505,61101,-123.104966,11049,Eastbound E 33 Ave @ Ontario St,BUS ZN
+49.239843,61111,-123.059192,11048,Westbound E 33 Ave @ Nanaimo St,BUS ZN
+49.263172,58620,-123.068542,8649,Eastbound N Grandview Hwy @ Commercial Dr,BUS ZN
+49.22201,52005,-123.018511,8642,Westbound Imperial St @ Mandy Ave,BUS ZN
+49.290935,51474,-123.130883,8643,Westbound W Georgia St @ Cardero St,BUS ZN
+49.26373,58239,-123.139771,8640,Westbound W Broadway @ Granville St,BUS ZN
+49.285139,61393,-123.114206,11302,Waterfront Station Canada Line @ Platform 2,ZN 1
+49.285093,61394,-123.114139,11303,Waterfront Station @ Canada Line,ZN 1
+49.267805,51686,-123.033576,1700,Northbound Rupert St @ E 3rd Ave,BUS ZN
+49.272547,51688,-123.033591,1702,Northbound Rupert St @ Kitchener St,BUS ZN
+49.277386,51691,-123.03308,1705,Eastbound Adanac St @ Rupert St,BUS ZN
+49.28102,60277,-123.11824,12535,Northbound Seymour St @ Robson St,BUS ZN
+49.277369,51693,-123.024867,1707,Eastbound Adanac St @ Kootenay St,BUS ZN
+49.248213,51588,-123.165826,1600,Westbound W King Edward Ave @ Trafalgar St,BUS ZN
+49.262728,60384,-123.242289,12653,Northbound Wesbrook Mall @ Agronomy Rd,BUS ZN
+49.26369,60383,-123.243491,12652,Southbound Wesbrook Mall @ Agronomy Rd,BUS ZN
+49.213825,50990,-123.117204,10872,Southbound Cambie St @ W 62 Ave,BUS ZN
+49.258162,51593,-123.191535,1605,Westbound W 16 Ave @ Wallace St,BUS ZN
+49.258337,51595,-123.203675,1607,Westbound W 16 Ave @ Discovery St,BUS ZN
+49.263212,52099,-123.120173,2118,Eastbound W Broadway @ Heather St,BUS ZN
+49.265243,52092,-123.02541,2110,Westbound Lougheed Hwy @ Boundary Loop,BUS ZN
+49.262833,58621,-123.067725,2111,Southbound N Grandview Hwy @ E 8th Ave,BUS ZN
+49.278392,59992,-123.107518,10492,Northbound Pat Quinn Way @ Expo Blvd,BUS ZN
+49.263205,50874,-123.119257,881,Eastbound W Broadway @ Heather St,BUS ZN
+49.26323,50873,-123.121293,880,Eastbound W Broadway @ Willow St,BUS ZN
+49.262778,50880,-123.099816,887,Eastbound E Broadway @ Kingsway St,BUS ZN
+49.26852,50352,-123.190183,356,Eastbound W 4th Ave @ Wallace St,BUS ZN
+49.268679,50350,-123.197617,354,Eastbound W 4th Ave @ 4100 Block,BUS ZN
+49.268907,50349,-123.2064,353,Eastbound W 4th Ave @ Trimble St,BUS ZN
+49.268974,50347,-123.21149,351,Eastbound W 4th Ave @ Tolmie St,BUS ZN
+49.237919,51259,-123.170182,1269,Northbound Mackenzie St @ W 38 Ave,BUS ZN
+49.24028,50662,-123.053651,669,Northbound Slocan St @ Kingsway,BUS ZN
+49.23969,50661,-123.053631,668,Eastbound Kingsway @ Slocan St,BUS ZN
+49.241611,50660,-123.057829,667,Eastbound Kingsway @ Nanaimo St,BUS ZN
+49.244769,50659,-123.064604,666,Eastbound Kingsway @ Victoria Dr,BUS ZN
+49.244828,50658,-123.065039,665,Northbound Victoria Dr @ Kingsway,BUS ZN
+49.241893,50657,-123.065138,664,Northbound Victoria Dr @ E 32 Ave,BUS ZN
+49.24032,50656,-123.065188,663,Northbound Victoria Dr @ E 33 Ave,BUS ZN
+49.21118,51256,-123.066167,1266,Southbound Victoria Dr @ E 64 Ave,BUS ZN
+49.213015,51255,-123.066138,1265,Southbound Victoria Dr @ Thornhill Dr,BUS ZN
+49.234784,50653,-123.065348,660,Northbound Victoria Dr @ E 39 Ave,BUS ZN
+49.235286,51897,-123.197663,1911,Westbound SW Marine Dr @ Camosun St,BUS ZN
+49.234042,51896,-123.193856,1910,Southbound Crown St @ SW Marine Dr,BUS ZN
+49.237441,51898,-123.205607,1912,Westbound SW Marine Dr @ Kullahun Dr,BUS ZN
+49.249256,60540,-123.073752,12775,Westbound Kingsway @ Dumfries St,BUS ZN
+49.280513,60530,-123.137988,12770,Eastbound Pacific St @ Jervis St,BUS ZN
+49.285634,60826,-123.119515,8040,Burrard Station @ Platform 2,ZN 1
+49.279178,57967,-123.109213,8042,Stadium-Chinatown Station @ Platform 2,ZN 1
+49.267415,60158,-123.247954,12358,UBC Exchange @ Bay 1,BUS ZN
+49.2673,60159,-123.24828,12359,UBC Exchange @ Bay 2,BUS ZN
+49.216886,50762,-123.140114,769,Northbound Granville St @ Park Dr,BUS ZN
+49.204167,50755,-123.137246,762,Westbound SW Marine Dr @ Montcalm St,BUS ZN
+49.205047,50756,-123.139869,763,Westbound SW Marine Dr @ Granville St,BUS ZN
+49.232346,50753,-123.128003,760,Northbound Oak St @ W 43 Ave,BUS ZN
+49.23366,50754,-123.127934,761,Northbound Oak St @ W 41 Ave,BUS ZN
+49.211168,50759,-123.140317,766,Northbound Granville St @ W 67 Ave,BUS ZN
+49.213646,50760,-123.140212,767,Northbound Granville St @ W 64 Ave,BUS ZN
+49.208885,50758,-123.14035,765,Northbound Granville St @ W 70 Ave,BUS ZN
+49.232961,51069,-123.062675,1078,Westbound E 41 Ave @ Gladstone St,BUS ZN
+49.232565,51070,-123.065972,1079,Eastbound E 41 Ave @ Victoria Dr,BUS ZN
+49.232902,51067,-123.055955,1076,Westbound E 41 Ave @ Clarendon St,BUS ZN
+49.235635,51065,-123.05558,1074,Southbound Clarendon St @ E 38 Ave,BUS ZN
+49.24856,51521,-123.08963,1533,Eastbound E King Edward Ave @ Fraser St,BUS ZN
+49.248638,51519,-123.096185,1531,Eastbound E King Edward Ave @ Prince Edward St,BUS ZN
+49.248697,51518,-123.100559,1530,Eastbound E King Edward Ave @ Main St,BUS ZN
+49.20317,60251,-123.135556,12518,Eastbound SW Marine Dr @ Hudson St,BUS ZN
+49.212634,50992,-123.116832,10857,Northbound Cambie St @ W 64 Ave,BUS ZN
+49.230066,60996,-123.116096,10853,Northbound Cambie St @ W 45 Ave,BUS ZN
+49.258543,51034,-123.152972,1043,Northbound Arbutus St @ W 15 Ave,BUS ZN
+49.254791,51032,-123.15286,1041,Northbound Arbutus St @ W 20 Ave,BUS ZN
+49.224634,60020,-123.036296,12187,Eastbound E 49 Ave @ Doman St,BUS ZN
+49.224782,60022,-123.036952,12186,Westbound E 49 Ave @ Doman St,BUS ZN
+49.219894,60025,-123.032299,12185,Northbound Champlain Cres @ E 54 Ave,BUS ZN
+49.219811,60024,-123.032506,12184,Southbound Champlain Cres @ E 54 Ave,BUS ZN
+49.222808,60023,-123.028887,12183,Southbound Arlington St @ E 49 Ave,BUS ZN
+49.280776,51037,-123.044219,1046,Southbound Renfrew St @ E Hastings St,BUS ZN
+49.208535,52118,-123.138831,2138,Eastbound W 70 Ave @ French St,BUS ZN
+49.208213,52119,-123.1347,2139,Southbound Hudson St @ W 70 Ave,BUS ZN
+49.263761,61660,-123.154831,11724,Eastbound W Broadway @ Yew St,BUS ZN
+49.269373,52062,-123.140897,2079,Southbound Fir St @ W 2nd Ave,BUS ZN
+49.26952,52061,-123.138092,2078,Westbound W 2nd Ave @ Anderson St,BUS ZN
+49.217768,51252,-123.066039,1262,Southbound Victoria Dr @ Upland Dr,BUS ZN
+49.219611,51251,-123.065976,1261,Southbound Victoria Dr @ Argyle Dr,BUS ZN
+49.234733,51785,-123.024194,1799,Westbound Vanness Ave @ Boundary Rd,BUS ZN
+49.221481,51250,-123.065964,1260,Southbound Victoria Dr @ E 53 Ave,BUS ZN
+49.24847,51779,-123.019893,1793,Southbound Smith Ave @ Kincaid St,BUS ZN
+49.249331,51778,-123.017521,1792,Southbound Ingleton Ave @ Sunset St,BUS ZN
+49.25,51777,-123.019899,1791,Southbound Smith Ave @ Sunset St,BUS ZN
+49.251237,51776,-123.019879,1790,Southbound Smith Ave @ Nithsdale St,BUS ZN
+49.24677,51780,-123.019897,1794,Southbound Smith Ave @ Spruce St,BUS ZN
+49.236203,50654,-123.065307,661,Northbound Victoria Dr @ E 38 Ave,BUS ZN
+49.267336,52060,-123.134423,2077,Westbound Lameys Mill Rd @ 1300 Block,BUS ZN
+49.266831,52059,-123.132521,2076,Westbound Lameys Mill Rd @ Alder Crossing,BUS ZN
+49.221951,51015,-123.151884,1024,Northbound West Blvd @ W 54 Ave,BUS ZN
+49.277014,51231,-123.069433,1240,Northbound Commercial Diversion @ Venables St,BUS ZN
+49.248473,51523,-123.081441,1535,Eastbound E King Edward Ave @ Glen Dr,BUS ZN
+49.280571,51233,-123.070272,1242,Northbound Commercial Dr @ E Pender St,BUS ZN
+49.279104,51235,-123.070545,1245,Southbound Commercial Dr @ Frances St,BUS ZN
+49.275512,51237,-123.06961,1247,Southbound Commercial Dr @ Parker St,BUS ZN
+49.277328,51236,-123.069881,1246,Southbound Commercial Diversion @ Adanac St,BUS ZN
+49.271878,51239,-123.069692,1249,Southbound Commercial Dr @ Kitchener St,BUS ZN
+49.273685,51238,-123.069647,1248,Southbound Commercial Dr @ William St,BUS ZN
+49.227498,51018,-123.155196,1027,Northbound West Blvd @ W 49 Ave,BUS ZN
+49.244157,51527,-123.056503,1539,Northbound Nanaimo St @ Brock St,BUS ZN
+49.242099,51526,-123.057651,1538,Northbound Nanaimo St @ Kingsway,BUS ZN
+49.276179,50024,-123.124555,10424,Westbound Davie St @ Richards St,BUS ZN
+49.280784,58144,-123.120537,11532,Northbound Granville St @ Smithe St,BUS ZN
+49.225913,52032,-123.109025,11537,Westbound W 49 Ave @ Manitoba St,BUS ZN
+49.282782,61519,-123.115596,11535,Northbound Seymour St @ Dunsmuir St,BUS ZN
+49.280837,59558,-123.112004,11534,Westbound Dunsmuir St @ Cambie St,BUS ZN
+49.265849,50236,-123.100989,238,Southbound Main St @ E 5th Ave,BUS ZN
+49.280964,59390,-123.138406,10064,Westbound Pacific St @ Jervis St,BUS ZN
+49.285975,58099,-123.118965,12375,Burrard Station @ Bay 5,BUS ZN
+49.280892,58529,-123.106976,9063,Eastbound W Pender St @ Abbott St,BUS ZN
+49.244809,50697,-123.0653,704,Southbound Victoria Dr @ Kingsway,BUS ZN
+49.24251,50698,-123.065373,705,Southbound Victoria Dr @ E 31 Ave,BUS ZN
+49.242186,50693,-123.052022,700,Southbound Slocan St @ Norquay St,BUS ZN
+49.240309,50694,-123.054367,701,Westbound Kingsway @ Slocan St,BUS ZN
+49.242199,50695,-123.0585,702,Westbound Kingsway @ Nanaimo St,BUS ZN
+49.280758,61759,-123.126431,11881,Northbound Burrard St @ Comox St,BUS ZN
+49.226275,51965,-123.123158,1982,Eastbound W 49 Ave @ Heather St,BUS ZN
+49.22645,51963,-123.12776,1980,Eastbound W 49 Ave @ Oak St,BUS ZN
+49.250183,51590,-123.179077,1602,Westbound W King Edward Ave @ Blenheim St,BUS ZN
+49.28202,60336,-123.089076,12572,Eastbound E Cordova St @ Heatley Ave,BUS ZN
+49.248771,60335,-123.104633,12570,Eastbound E King Edward Ave @ Ontario St,BUS ZN
+49.260225,60359,-123.168239,12619,Northbound Macdonald St @ W 13 Ave,BUS ZN
+49.266868,60375,-123.091178,12616,Westbound Great Northern Way @ Carolina Street,BUS ZN
+49.221998,51330,-123.077282,1341,Northbound Knight St @ E 53 Ave,BUS ZN
+49.228469,50855,-123.139921,862,Southbound Granville St @ W 47 Ave,BUS ZN
+49.282879,61031,-123.118524,11706,Westbound W Georgia St @ Granville St,BUS ZN
+49.249858,50121,-123.167913,121,Southbound Macdonald St @ Alamein Ave,BUS ZN
+49.248641,50122,-123.168633,122,Westbound W King Edward Ave @ Macdonald St,BUS ZN
+49.249627,50123,-123.170432,123,Westbound W King Edward Ave @ Puget Dr,BUS ZN
+49.249603,50124,-123.171914,124,Southbound Quesnel Dr @ W King Edward Ave,BUS ZN
+49.245848,50126,-123.170308,126,Southbound Mackenzie St @ W 29 Ave,BUS ZN
+49.241997,50128,-123.170345,128,Southbound Mackenzie St @ W 33 Ave,BUS ZN
+49.233838,51178,-123.036343,1187,Southbound Joyce St @ Kingsway,BUS ZN
+49.232284,51173,-123.026273,1182,Westbound Kingsway @ Lincoln St,BUS ZN
+49.232118,51174,-123.029643,1183,Westbound Kingsway @ Melbourne St,BUS ZN
+49.272582,50067,-123.159332,10542,Eastbound Cornwall Ave @ Balsam St,BUS ZN
+49.264012,58390,-123.019214,8745,Westbound Henning Dr @ 3800 Block,BUS ZN
+49.263596,58392,-123.022725,8742,Eastbound Henning Dr @ Boundary Rd,BUS ZN
+49.263862,58391,-123.018496,8741,Eastbound Henning Dr @ 3800 Block,BUS ZN
+49.263401,50925,-123.120227,933,Westbound W Broadway @ Heather St,BUS ZN
+49.249267,51507,-123.138678,1519,Eastbound W King Edward Ave @ Granville St,BUS ZN
+49.250503,51503,-123.151127,1515,Eastbound W King Edward Ave @ Maple Cres,BUS ZN
+49.251448,51502,-123.153365,1514,Eastbound W King Edward Ave @ Arbutus St,BUS ZN
+49.249352,51505,-123.144254,1517,Eastbound W King Edward Ave @ Marguerite St,BUS ZN
+49.248553,51499,-123.162016,1511,Eastbound W King Edward Ave @ Brakenridge St,BUS ZN
+49.247954,51498,-123.167306,1510,Eastbound W King Edward Ave @ Puget Dr,BUS ZN
+49.251217,51501,-123.155187,1513,Eastbound W King Edward Ave @ Yew St,BUS ZN
+49.249818,51500,-123.158783,1512,Eastbound W King Edward Ave @ Valley Dr,BUS ZN
+49.284791,54828,-123.116768,11553,Southbound Howe St @ W Pender St,BUS ZN
+49.216491,59538,-123.102076,263,Southbound Main St @ E 59 Ave,BUS ZN
+49.218969,50260,-123.102003,262,Southbound Main St @ E 56 Ave,BUS ZN
+49.22075,50259,-123.101949,261,Southbound Main St @ E 54 Ave,BUS ZN
+49.223508,50258,-123.101804,260,Southbound Main St @ E 51 Ave,BUS ZN
+49.211695,50265,-123.101625,267,Eastbound E 65 Ave @ Main St,BUS ZN
+49.212975,50264,-123.102245,266,Southbound Main St @ E 63 Ave,BUS ZN
+49.213842,50263,-123.102217,265,Southbound Main St @ E 62 Ave,BUS ZN
+49.277896,59392,-123.135648,10048,Westbound Beach Ave @ Thurlow St,BUS ZN
+49.279589,59391,-123.137338,10049,Westbound Beach Ave @ Bute St,BUS ZN
+49.244604,59402,-123.019856,10042,Southbound Smith Ave @ Fir St,BUS ZN
+49.292217,50972,-123.133397,981,Eastbound W Georgia St @ Denman St,BUS ZN
+49.28264,50976,-123.118529,985,Eastbound W Georgia St @ Granville St,BUS ZN
+49.244435,60208,-123.044461,12393,29th Avenue Station @ Bay 4,BUS ZN
+49.245383,58286,-123.115868,9087,Southbound Cambie St @ W 29 Ave,BUS ZN
+49.222475,58281,-123.026533,9085,Westbound E 49 Ave @ Frontenac St,BUS ZN
+49.225286,52020,-123.070409,2037,Westbound E 49 Ave @ Bruce St,BUS ZN
+49.260339,50720,-123.056471,727,Northbound Nanaimo St @ E 11 Ave,BUS ZN
+49.255356,50717,-123.056484,724,Northbound Nanaimo St @ E 17 Ave,BUS ZN
+49.257382,50718,-123.056473,725,Northbound Nanaimo St @ S Grandview Hwy,BUS ZN
+49.251051,50715,-123.056489,722,Northbound Nanaimo St @ E 22 Ave,BUS ZN
+49.252691,50716,-123.056482,723,Northbound Nanaimo St @ E 20 Ave,BUS ZN
+49.233094,50713,-123.097712,720,Westbound E 41 Ave @ Prince Edward St,BUS ZN
+49.262477,50721,-123.056433,728,Northbound Nanaimo St @ E Broadway,BUS ZN
+49.265123,50722,-123.056462,729,Northbound Nanaimo St @ E 6th Ave,BUS ZN
+49.232088,51155,-123.026055,1164,Eastbound Kingsway @ Lincoln St,BUS ZN
+49.232257,51156,-123.022286,1165,Eastbound Kingsway @ Boundary Rd,BUS ZN
+49.232578,51157,-123.018383,1166,Eastbound Kingsway @ Smith Ave,BUS ZN
+49.233834,51151,-123.03553,1160,Eastbound Kingsway @ Joyce St,BUS ZN
+49.232943,51152,-123.033767,1161,Eastbound Kingsway @ Wessex St,BUS ZN
+49.231987,51153,-123.031656,1162,Eastbound Kingsway @ Tyne St,BUS ZN
+49.231961,51154,-123.028846,1163,Eastbound Kingsway @ Melbourne St,BUS ZN
+49.225238,52018,-123.065364,2035,Westbound E 49 Ave @ Victoria Dr,BUS ZN
+49.225187,52017,-123.06295,2034,Westbound E 49 Ave @ Gladstone St,BUS ZN
+49.225118,52016,-123.05961,2033,Westbound E 49 Ave @ Nanaimo St,BUS ZN
+49.274423,60506,-123.128718,12804,Eastbound Pacific St @ Seymour Mews,BUS ZN
+49.27109,51702,-123.033737,1716,Southbound Rupert St @ Grant St,BUS ZN
+49.224889,52015,-123.05517,2032,Westbound E 49 Ave @ Elliott St,BUS ZN
+49.265956,51705,-123.03388,1719,Southbound Rupert St @ E 5th Ave,BUS ZN
+49.26203,58953,-123.099601,10895,Westbound E 10 Ave @ Kingsway,BUS ZN
+49.197551,56964,-123.073845,7031,Westbound Vulcan Way @ Viking Way,BUS ZN
+49.244392,61616,-123.044987,11762,29th Avenue Station @ Bay 5,BUS ZN
+49.266274,50109,-123.168483,109,Southbound Macdonald St @ W 6th Ave,BUS ZN
+49.272608,50103,-123.152989,103,Westbound Cornwall Ave @ Arbutus St,BUS ZN
+49.272799,50106,-123.164636,106,Westbound Cornwall Ave @ Trafalgar St,BUS ZN
+49.270753,50107,-123.168323,107,Southbound Macdonald St @ W 1st Ave,BUS ZN
+49.272645,50104,-123.155439,104,Westbound Cornwall Ave @ Yew St,BUS ZN
+49.272731,50105,-123.160216,105,Westbound Cornwall Ave @ Point Grey Rd,BUS ZN
+49.206144,59687,-123.017836,10384,Northbound Greenall Ave @ Marine Way,BUS ZN
+49.241077,50341,-123.12796,345,Southbound Oak St @ W 33 Ave,BUS ZN
+49.251423,50336,-123.12759,340,Southbound Oak St @ Balfour Ave,BUS ZN
+49.248653,50337,-123.127716,341,Southbound Oak St @ W King Edward Ave,BUS ZN
+49.245988,50338,-123.127793,342,Southbound Oak St @ Nanton Ave,BUS ZN
+49.257321,58290,-123.056751,8838,Southbound Nanaimo St @ Grandview Hwy,BUS ZN
+49.276981,51745,-123.023311,1759,Northbound Boundary Rd @ Venables St,BUS ZN
+49.274253,51744,-123.023314,1758,Northbound Boundary Rd @ William St,BUS ZN
+49.272518,51743,-123.02333,1757,Northbound Boundary Rd @ Kitchener St,BUS ZN
+49.269895,51742,-123.023355,1756,Northbound Boundary Rd @ 1st Ave,BUS ZN
+49.268791,51741,-123.023347,1755,Northbound Boundary Rd @ 2nd Ave,BUS ZN
+49.258575,51737,-123.023406,1751,Northbound Boundary Rd @ Grandview Hwy,BUS ZN
+49.256757,51736,-123.023409,1750,Northbound Boundary Rd @ Dominion St,BUS ZN
+49.27736,51274,-123.09702,1285,Southbound Gore Ave @ Union St,BUS ZN
+49.279105,51273,-123.097251,1284,Southbound Gore Ave @ Keefer St,BUS ZN
+49.271619,51276,-123.093947,1287,Eastbound Terminal Ave @ Thornton St,BUS ZN
+49.272477,51275,-123.098889,1286,Eastbound Terminal Ave @ Western St,BUS ZN
+49.280323,51272,-123.099245,1283,Eastbound E Pender St @ Main St,BUS ZN
+49.276624,51278,-123.095194,1289,Eastbound Prior St @ Dunlevy Ave,BUS ZN
+49.270461,51277,-123.087037,1288,Eastbound Terminal Ave @ Begg St,BUS ZN
+49.248642,51566,-123.084376,1578,Westbound E King Edward Ave @ Windsor St,BUS ZN
+49.260733,60819,-123.032821,8761,Rupert Station @ Platform 2,ZN 1
+49.262912,60823,-123.068491,8763,Commercial-Broadway Station @ Platform 2,ZN 1
+49.258877,60821,-123.045348,8762,Renfrew Station @ Platform 2,ZN 1
+49.269138,50678,-123.05673,685,Southbound Nanaimo St @ E 1st Ave,BUS ZN
+49.248591,51560,-123.055976,1572,Nanaimo Station @ Bay 2,BUS ZN
+49.265535,50680,-123.056743,687,Southbound Nanaimo St @ E 5th Ave,BUS ZN
+49.250692,51558,-123.043612,1570,Westbound E 22 Ave @ Renfrew St,BUS ZN
+49.248594,51565,-123.080402,1577,Westbound E King Edward Ave @ Inverness St,BUS ZN
+49.248608,51564,-123.076586,1576,Westbound E King Edward Ave @ Knight St,BUS ZN
+49.24854,51563,-123.073107,1575,Westbound E King Edward Ave @ Kingsway,BUS ZN
+49.27362,50675,-123.056724,682,Southbound Nanaimo St @ William St,BUS ZN
+49.260917,60412,-123.143876,12707,Westbound W 12th Ave @ Pine St,BUS ZN
+49.260786,60411,-123.143122,12706,Eastbound W 12 Ave @ Pine St,BUS ZN
+49.260473,60414,-123.12392,12709,Eastbound W 12th Ave @ Laurel St,BUS ZN
+49.280806,51234,-123.070549,1244,Southbound Commercial Dr @ E Hastings St,BUS ZN
+49.254339,58307,-123.100959,245,Southbound Main St @ E 18 Ave,BUS ZN
+49.256251,50242,-123.101386,244,Southbound Main St @ E 16 Ave,BUS ZN
+49.250676,50245,-123.101089,247,Southbound Main St @ E 22 Ave,BUS ZN
+49.252395,50244,-123.101095,246,Southbound Main St @ E 20 Ave,BUS ZN
+49.258082,50241,-123.101305,243,Southbound Main St @ E 14 Ave,BUS ZN
+49.259888,50240,-123.10127,242,Southbound Main St @ E 12 Ave,BUS ZN
+49.248466,50246,-123.101194,248,Southbound Main St @ E King Edward Ave,BUS ZN
+49.258079,61832,-123.24443,12008,Southbound East Mall @ Eagles Dr,BUS ZN
+49.251615,61894,-123.237747,12009,Eastbound Ross Dr @ Birney Ave,BUS ZN
+49.259395,61895,-123.247674,12007,Eastbound Thunderbird Blvd @ Eagles Dr,BUS ZN
+49.210767,52134,-123.097945,2154,Eastbound SE Marine Dr @ Prince Edward St,BUS ZN
+49.264263,58037,-123.184623,9530,Eastbound W Broadway @ Alma St,BUS ZN
+49.262551,51134,-123.099412,1143,Eastbound Kingsway @ E Broadway,BUS ZN
+49.257418,51137,-123.092371,1146,Eastbound Kingsway @ Carolina St,BUS ZN
+49.256214,51138,-123.089018,1147,Eastbound Kingsway @ Fraser St,BUS ZN
+49.260192,51135,-123.097102,1144,Eastbound Kingsway @ E 12 Ave,BUS ZN
+49.258948,51136,-123.095429,1145,Eastbound Kingsway @ E 13 Ave,BUS ZN
+49.252628,51140,-123.081356,1149,Eastbound Kingsway @ Glen Dr,BUS ZN
+49.215299,50761,-123.140165,768,Northbound Granville St @ W 62 Ave,BUS ZN
+49.247336,51731,-123.019726,1745,Northbound Smith Ave @ Spruce St,BUS ZN
+49.249893,50970,-123.065127,8537,Southbound Victoria Dr @ E 22 Ave,BUS ZN
+49.234677,50377,-123.172505,381,Eastbound W 41 Ave @ Carnarvon St,BUS ZN
+49.234665,50378,-123.166968,382,Eastbound W 41 Ave @ Macdonald St,BUS ZN
+49.234632,50379,-123.16364,383,Eastbound W 41 Ave @ Elm St,BUS ZN
+49.234588,50380,-123.160946,384,Eastbound W 41 Ave @ Balsam St,BUS ZN
+49.234552,50381,-123.158131,385,Eastbound W 41 Ave @ Yew St,BUS ZN
+49.234437,50383,-123.151616,387,Eastbound W 41 Ave @ Maple St,BUS ZN
+49.234394,50384,-123.148854,388,Eastbound W 41 Ave @ Cypress St,BUS ZN
+49.234351,50385,-123.145952,389,Eastbound W 41 Ave @ Wiltshire St,BUS ZN
+49.232926,51068,-123.059252,1077,Westbound E 41 Ave @ Nanaimo St,BUS ZN
+49.233499,51066,-123.055616,1075,Southbound Clarendon St @ E 40 Ave,BUS ZN
+49.237873,51062,-123.049127,1071,Westbound Kingsway @ Earles St,BUS ZN
+49.22566,52029,-123.098055,2046,Westbound E 49 Ave @ Prince Edward St,BUS ZN
+49.225733,52030,-123.102131,2047,Westbound E 49 Ave @ Main St,BUS ZN
+49.28411,59525,-123.107364,39,Westbound Water St @ Abbott St,BUS ZN
+49.225535,52027,-123.091289,2044,Westbound E 49 Ave @ Fraser St,BUS ZN
+49.225593,52028,-123.094471,2045,Westbound E 49 Ave @ St. George St,BUS ZN
+49.249121,50169,-123.100891,169,Northbound Main St @ E King Edward Ave,BUS ZN
+49.241308,50165,-123.101314,165,Northbound Main St @ E 33 Ave,BUS ZN
+49.243554,50166,-123.101232,166,Northbound Main St @ E 30 Ave,BUS ZN
+49.245968,50167,-123.101101,167,Northbound Main St @ E 28 Ave,BUS ZN
+49.233681,50160,-123.116855,160,Oakridge-41st Ave Station @ Bay 5,BUS ZN
+49.235734,50162,-123.101505,162,Northbound Main St @ E 39 Ave,BUS ZN
+49.23802,50163,-123.101502,163,Northbound Main St @ E 36 Ave,BUS ZN
+49.225407,52023,-123.080565,2040,Westbound E 49 Ave @ Inverness St,BUS ZN
+49.225453,52024,-123.083275,2041,Westbound E 49 Ave @ Elgin St,BUS ZN
+49.282214,52712,-123.108834,2737,Eastbound W Hastings St @ Abbott St,BUS ZN
+49.20373,52705,-123.023457,2730,Southbound Boundary Rd @ E Kent Ave,BUS ZN
+49.201108,52706,-123.017666,2731,Eastbound North Fraser Way @ Fraserwood Court,BUS ZN
+49.20204,52707,-123.021851,2732,Eastbound North Fraser Way @ 3700 Block,BUS ZN
+49.28122,52713,-123.098307,2738,Eastbound E Hastings St @ Main St,BUS ZN
+49.281131,52714,-123.07086,2739,Eastbound E Hastings St @ Commercial Dr,BUS ZN
+49.266021,59766,-123.086122,10365,Eastbound Great Northern Way @ Foley St,BUS ZN
+49.266743,59763,-123.095812,10364,Eastbound Great Northern Way @ Brunswick St,BUS ZN
+49.269029,59758,-123.109733,10361,Eastbound W 2nd Ave @ Columbia St,BUS ZN
+49.266425,61039,-123.114936,10360,Olympic Village Station @ Bay 2,BUS ZN
+49.269125,59760,-123.104153,10362,Eastbound E 2nd Ave @ Ontario St,BUS ZN
+49.284493,58313,-123.114994,11616,Northbound Granville St @ W Pender St,BUS ZN
+49.224856,59434,-123.050858,11610,Westbound E 49 Ave @ Vivian St,BUS ZN
+49.211508,50802,-123.091218,809,Southbound Fraser St @ E 65 Ave,BUS ZN
+49.212749,50801,-123.091181,808,Southbound Fraser St @ E 63 Ave,BUS ZN
+49.22148,50796,-123.091,803,Southbound Fraser St @ E 53 Ave,BUS ZN
+49.223292,50795,-123.090958,802,Southbound Fraser St @ E 51 Ave,BUS ZN
+49.225133,50794,-123.090918,801,Southbound Fraser St @ E 49 Ave,BUS ZN
+49.227099,50793,-123.090813,800,Southbound Fraser St @ E 47 Ave,BUS ZN
+49.214571,50800,-123.091155,807,Southbound Fraser St @ E 61 Ave,BUS ZN
+49.216234,50799,-123.091124,806,Southbound Fraser St @ E 59 Ave,BUS ZN
+49.217937,50798,-123.091092,805,Southbound Fraser St @ E 57 Ave,BUS ZN
+49.274644,51763,-123.023771,1777,Southbound Boundary Rd @ Napier St,BUS ZN
+49.234696,50375,-123.178303,379,Eastbound W 41 Ave @ Blenheim St,BUS ZN
+49.248763,51538,-123.019355,1550,Eastbound Kincaid St @ Smith Ave,BUS ZN
+49.233905,50467,-123.115953,11103,Oakridge-41st Ave Station @ Bay 6,BUS ZN
+49.242588,61100,-123.108805,11100,Eastbound Midlothian Ave @ Clancy Loranger Way,BUS ZN
+49.276112,61810,-123.114934,12026,Northbound Smithe St @ Expo Blvd,BUS ZN
+49.203203,52123,-123.133071,12027,Marpole Loop @ Bay 5,BUS ZN
+49.289497,60562,-123.023179,11829,Northbound N Boundary Rd @ Trinity St,BUS ZN
+49.249192,51508,-123.133894,1520,Eastbound W King Edward Ave @ Hudson St,BUS ZN
+49.27342,50086,-123.124214,10058,Westbound Pacific Blvd @ Drake St,BUS ZN
+49.24909,51510,-123.127001,1522,Eastbound W King Edward Ave @ Oak St,BUS ZN
+49.224314,51610,-123.041185,1622,Southbound Kerr St @ E 49 Ave,BUS ZN
+49.248988,51511,-123.121932,1523,Eastbound W King Edward Ave @ Willow St,BUS ZN
+49.225406,51975,-123.090264,1992,Eastbound E 49 Ave @ Fraser St,BUS ZN
+49.273623,50087,-123.127085,10057,Westbound Pacific St @ Richards St,BUS ZN
+49.225278,51978,-123.080946,1995,Eastbound E 49 Ave @ Sherbrooke St,BUS ZN
+49.216248,51614,-123.041587,1626,Southbound Kerr St @ E 59 Ave,BUS ZN
+49.265975,59767,-123.079842,10196,VCC-Clark Station @ Unloading Only,BUS ZN
+49.225193,51980,-123.074083,1997,Eastbound E 49 Ave @ Dumfries St,BUS ZN
+49.225208,51979,-123.076725,1996,Eastbound E 49 Ave @ Knight St,BUS ZN
+49.213522,51119,-123.143433,1128,Northbound Adera St @ W 64 Ave,BUS ZN
+49.20325,51120,-123.132871,1129,Marpole Loop @ Bay 2,BUS ZN
+49.226773,51111,-123.155273,1120,Southbound Arbutus St @ W 49 Ave,BUS ZN
+49.224918,51112,-123.154675,1121,Eastbound W 51 Ave @ Arbutus St,BUS ZN
+49.222481,51113,-123.1524,1122,Southbound West Blvd @ W 53 Ave,BUS ZN
+49.216794,51115,-123.149023,1124,Southbound West Blvd @ W 60 Ave,BUS ZN
+49.2139,51117,-123.148557,1126,Southbound Angus Dr @ W 63 Ave,BUS ZN
+49.213182,51118,-123.146293,1127,Eastbound W 64 Ave @ East Blvd,BUS ZN
+49.283136,57966,-123.115744,8041,Granville Station @ Platform 2,ZN 1
+49.273099,57968,-123.100399,8043,Main Street-Science World Station @ Platform 2,ZN 1
+49.262317,57969,-123.069179,8044,Commercial-Broadway Station @ Platform 4,ZN 1
+49.238353,57972,-123.031827,8047,Joyce-Collingwood Station @ Platform 2,ZN 1
+49.244793,50550,-123.139357,555,Southbound Granville St @ N Connaught Dr,BUS ZN
+49.247111,58588,-123.139289,554,Southbound Granville St @ Nanton Ave,BUS ZN
+49.266404,59765,-123.087137,10350,Westbound Great Northern Way @ Foley St,BUS ZN
+49.284055,58321,-123.11788,4881,Southbound Howe St @ Dunsmuir St,BUS ZN
+49.282906,54830,-123.119595,4882,Southbound Howe St @ W Georgia St,BUS ZN
+49.217015,50146,-123.101819,146,Northbound Main St @ E 59 Ave,BUS ZN
+49.218788,50147,-123.10174,147,Northbound Main St @ E 57 Ave,BUS ZN
+49.214623,59844,-123.101909,144,Northbound Main St @ E 62 Ave,BUS ZN
+49.281831,54831,-123.121239,4883,Southbound Howe St @ Robson St,BUS ZN
+49.211565,50142,-123.102035,142,Northbound Main St @ SE Marine Dr,BUS ZN
+49.233063,50140,-123.105218,140,Eastbound E 41 Ave @ Ontario St,BUS ZN
+49.266704,54835,-123.138572,4887,Southbound Granville St @ W Cloverleaf,BUS ZN
+49.273529,50013,-123.127316,10694,Eastbound Pacific St @ Richards St,BUS ZN
+49.234483,60386,-123.154407,12631,Eastbound W 41 Ave @ East Blvd,BUS ZN
+49.234672,60385,-123.15479,12632,Westbound W 41 Ave @ East Blvd,BUS ZN
+49.214241,50821,-123.090903,828,Northbound Fraser St @ E 62 Ave,BUS ZN
+49.212147,50820,-123.090933,827,Northbound Fraser St @ E 65 Ave,BUS ZN
+49.20453,50819,-123.131063,826,Westbound SW Marine Dr @ Oak St,BUS ZN
+49.214689,50813,-123.130177,820,Southbound Oak St @ Park Dr,BUS ZN
+49.208654,50816,-123.130386,823,Southbound Oak St @ W 70 Ave,BUS ZN
+49.21048,50815,-123.130325,822,Southbound Oak St @ W 67 Ave,BUS ZN
+49.277105,51699,-123.033686,1713,Southbound Rupert St @ Adanac St,BUS ZN
+49.277492,51698,-123.028787,1712,Westbound Adanac St @ Skeena St,BUS ZN
+49.277916,51697,-123.023773,1711,Southbound Boundary Rd @ E Georgia St,BUS ZN
+49.279904,51696,-123.023768,1710,Southbound Boundary Rd @ E Pender St,BUS ZN
+49.272956,51701,-123.033718,1715,Southbound Rupert St @ Charles St,BUS ZN
+49.275459,51700,-123.033703,1714,Southbound Rupert St @ Parker St,BUS ZN
+49.262447,50914,-123.074067,922,Westbound E Broadway @ Woodland Dr,BUS ZN
+49.287261,52988,-123.02361,3019,Southbound N Boundary Rd @ Eton St,BUS ZN
+49.233911,50201,-123.129836,201,Eastbound W 41 Ave @ Osler St,BUS ZN
+49.23404,50200,-123.132898,200,Eastbound W 41 Ave @ Selkirk St,BUS ZN
+49.234888,56125,-123.139463,202,Northbound Granville St @ W 41 Ave,BUS ZN
+49.239279,50204,-123.13931,205,Northbound Granville St @ W 36 Ave,BUS ZN
+49.237418,50203,-123.139374,204,Northbound Granville St @ W 38 Ave,BUS ZN
+49.243144,50206,-123.139178,207,Northbound Granville St @ Minto Cres,BUS ZN
+49.241186,50205,-123.13924,206,Northbound Granville St @ W 34 Ave,BUS ZN
+49.24769,50208,-123.139023,209,Northbound Granville St @ Nanton Ave,BUS ZN
+49.245722,50207,-123.139081,208,Northbound Granville St @ N Connaught Dr,BUS ZN
+49.272658,61809,-123.163937,12040,Eastbound Cornwall Ave @ Trafalgar St,BUS ZN
+49.239443,61826,-123.055538,12048,Southbound Clarendon St @ E 33 Ave,BUS ZN
+49.227632,50828,-123.090596,835,Northbound Fraser St @ E 47 Ave,BUS ZN
+49.233627,50831,-123.090406,838,Northbound Fraser St @ E 41 Ave,BUS ZN
+49.283478,59420,-123.136106,10070,Eastbound Davie St @ Broughton St,BUS ZN
+49.262384,50912,-123.064374,920,Westbound E Broadway @ Semlin Dr,BUS ZN
+49.262487,50915,-123.07607,923,Westbound E Broadway @ McLean Dr,BUS ZN
+49.262499,50916,-123.078554,924,Westbound E Broadway @ Clark Dr,BUS ZN
+49.262497,50917,-123.080761,925,Westbound E Broadway @ Glen Dr,BUS ZN
+49.262532,50918,-123.083724,926,Westbound E Broadway @ Windsor St,BUS ZN
+49.25611,50778,-123.090058,785,Southbound Fraser St @ E 16 Ave,BUS ZN
+49.25162,50780,-123.090186,787,Southbound Fraser St @ E 21 Ave,BUS ZN
+49.262454,50773,-123.095524,780,Eastbound E Broadway @ Prince Edward St,BUS ZN
+49.262402,50774,-123.092514,781,Eastbound E Broadway @ St. George St,BUS ZN
+49.249808,50781,-123.090246,788,Southbound Fraser St @ E 23 Ave,BUS ZN
+49.248306,50782,-123.090273,789,Southbound Fraser St @ E King Edward Ave,BUS ZN
+49.276868,51360,-123.079737,1371,Westbound Venables St @ Vernon Dr,BUS ZN
+49.276876,51361,-123.083149,1372,Westbound Venables St @ Raymur Ave,BUS ZN
+49.276651,51363,-123.09021,1374,Westbound Prior St @ Heatley Ave,BUS ZN
+49.258479,50777,-123.089284,784,Southbound Fraser St @ E 13 Ave,BUS ZN
+49.281177,60577,-123.115895,12823,Westbound W Georgia St @ Richards St,BUS ZN
+49.25348,50779,-123.090123,786,Southbound Fraser St @ E 19 Ave,BUS ZN
+49.262021,50775,-123.089232,782,Southbound Fraser St @ E Broadway,BUS ZN
+49.26032,50776,-123.089275,783,Southbound Fraser St @ E 11 Ave,BUS ZN
+49.255057,51097,-123.153065,1106,Southbound Arbutus St @ W 19 Ave,BUS ZN
+49.253174,51098,-123.153131,1107,Southbound Arbutus St @ W 21 Ave,BUS ZN
+49.258823,51095,-123.153203,1104,Southbound Arbutus St @ W 14 Ave,BUS ZN
+49.256894,51096,-123.153045,1105,Southbound Arbutus St @ W 16 Ave,BUS ZN
+49.260673,51094,-123.153185,1103,Southbound Arbutus St @ W 12 Ave,BUS ZN
+49.251137,51099,-123.153214,1108,Southbound Arbutus St @ W King Edward Ave,BUS ZN
+49.267411,50679,-123.056736,686,Southbound Nanaimo St @ E 3rd Ave,BUS ZN
+49.227337,51822,-123.054776,1836,Southbound Elliott St @ E 47 Ave,BUS ZN
+49.247687,51881,-123.231681,1895,Northbound Wesbrook Mall @ Triumf Centre,BUS ZN
+49.255191,51882,-123.238457,1896,Westbound W 16 Ave @ Wesbrook Mall,BUS ZN
+49.206713,52117,-123.140464,2137,Northbound Granville St @ W 71 Ave,BUS ZN
+49.265937,61254,-123.116053,11258,Olympic Village Station @ Bay 3,BUS ZN
+49.209383,61338,-123.116116,11252,Marine Drive Station @ Bay 2,BUS ZN
+49.209087,61337,-123.116823,11251,Marine Drive Station @ Bay 1,BUS ZN
+49.263296,59431,-123.128317,12789,Eastbound W Broadway @ Spruce St,BUS ZN
+49.248095,60495,-123.153504,12788,Southbound Arbutus St @ 4200 Block,BUS ZN
+49.229631,60547,-123.155866,12787,Southbound West Blvd @ W 46th Ave,BUS ZN
+49.254367,51139,-123.085052,9147,Eastbound Kingsway @ St. Catherines St,BUS ZN
+49.234687,50374,-123.181639,378,Eastbound W 41 Ave @ Collingwood St,BUS ZN
+49.245869,50838,-123.090107,845,Northbound Fraser St @ E 28 Ave,BUS ZN
+49.245928,50368,-123.185332,372,Southbound Dunbar St @ W 29 Ave,BUS ZN
+49.240627,50835,-123.09022,842,Northbound Fraser St @ E 33 Ave,BUS ZN
+49.245072,51717,-123.033981,1731,Southbound Rupert St @ E 28 Ave,BUS ZN
+49.2398,51721,-123.030473,1735,Southbound Joyce St @ Wellington Ave,BUS ZN
+49.238592,51722,-123.032425,1736,Joyce Station @ Unloading Only,BUS ZN
+49.249695,51582,-123.14792,1594,Westbound W King Edward Ave @ Pine Cres,BUS ZN
+49.251741,51584,-123.153726,1596,Westbound W King Edward Ave @ Arbutus St,BUS ZN
+49.249651,51581,-123.145097,1593,Westbound W King Edward Ave @ Marguerite St,BUS ZN
+49.24956,51580,-123.139586,1592,Westbound W King Edward Ave @ Granville St,BUS ZN
+49.249723,51586,-123.159848,1598,Westbound W King Edward Ave @ Valley Dr,BUS ZN
+49.254781,59128,-123.021521,11615,Westbound Canada Way @ Smith Ave,BUS ZN
+49.27755,50011,-123.126971,11,Eastbound Davie St @ Howe St,BUS ZN
+49.260758,50481,-123.114831,485,Northbound Cambie St @ W 12 Ave,BUS ZN
+49.257158,50479,-123.114908,483,Northbound Cambie St @ W 16 Ave,BUS ZN
+49.272929,50014,-123.125546,14,Eastbound Pacific Blvd @ Homer St,BUS ZN
+49.286252,60568,-123.113075,12807,Waterfront Station @ Bay 1,BUS ZN
+49.285242,50978,-123.113584,11441,Westbound W Hastings St @ Granville St,BUS ZN
+49.278605,51091,-123.043931,1100,Northbound Renfrew St @ E Georgia St,BUS ZN
+49.280484,51092,-123.043939,1101,Northbound Renfrew St @ E Pender St,BUS ZN
+49.261812,50895,-123.043749,902,Eastbound E Broadway @ Renfrew St,BUS ZN
+49.261917,50893,-123.049151,900,Eastbound E Broadway @ Slocan St,BUS ZN
+49.261906,50894,-123.046541,901,Eastbound E Broadway @ Kaslo St,BUS ZN
+49.261781,50899,-123.033192,906,Eastbound E Broadway @ Rupert St,BUS ZN
+49.263759,50900,-123.027828,907,Eastbound Lougheed Hwy @ Skeena St,BUS ZN
+49.261793,50897,-123.039755,904,Eastbound E Broadway @ Nootka St,BUS ZN
+49.261818,50898,-123.037407,905,Eastbound E Broadway @ Lillooet St,BUS ZN
+49.213461,58133,-123.140233,9551,Northbound Granville St @ W 64 Ave,BUS ZN
+49.280236,60348,-123.114837,12596,Eastbound W Georgia St @ Homer St,BUS ZN
+49.236626,51784,-123.023676,1798,Southbound Boundary Rd @ Burke St,BUS ZN
+49.258529,51682,-123.033603,1696,Northbound Rupert St @ Grandview Hwy,BUS ZN
+49.262245,51683,-123.033587,1697,Northbound Rupert St @ E Broadway,BUS ZN
+49.255039,51680,-123.033652,1694,Northbound Rupert St @ E 17 Ave,BUS ZN
+49.25681,51681,-123.033644,1695,Northbound Rupert St @ Worthington Dr,BUS ZN
+49.250951,51678,-123.033666,1692,Northbound Rupert St @ E 22 Ave,BUS ZN
+49.253435,51679,-123.033663,1693,Northbound Rupert St @ Seaforth Dr,BUS ZN
+49.246536,51676,-123.033689,1690,Northbound Rupert St @ E 27 Ave,BUS ZN
+49.248137,51677,-123.033674,1691,Northbound Rupert St @ E 25 Ave,BUS ZN
+49.264088,51684,-123.033609,1698,Northbound Rupert St @ E 7th Ave,BUS ZN
+49.265981,51685,-123.033605,1699,Northbound Rupert St @ E 5th Ave,BUS ZN
+49.277437,50025,-123.126514,25,Westbound Davie St @ Granville St,BUS ZN
+49.278073,50026,-123.127493,26,Westbound Davie St @ Howe St,BUS ZN
+49.280772,50022,-123.102196,22,Northbound Columbia St @ E Pender St,BUS ZN
+49.274467,61365,-123.122124,11274,Yaletown-Roundhouse Station @ Platform 2,ZN 1
+49.274508,61366,-123.122015,11275,Yaletown-Roundhouse Station @ Platform 1,ZN 1
+49.266616,61367,-123.115218,11276,Olympic Village Station @ Platform 2,ZN 1
+49.266557,61368,-123.115527,11277,Olympic Village Station @ Platform 1,ZN 1
+49.282462,61363,-123.118283,11272,Vancouver City Centre Station @ Platform 2,ZN 1
+49.282352,61364,-123.118143,11273,Vancouver City Centre Station @ Platform 1,ZN 1
+49.262684,61369,-123.114856,11278,Broadway-City Hall Station @ Platform 2,ZN 1
+49.262725,61370,-123.114753,11279,Broadway-City Hall Station @ Platform 1,ZN 1
+49.227032,52041,-123.140335,2058,Westbound W 49 Ave @ Granville St,BUS ZN
+49.288414,58706,-123.022039,9121,Westbound McGill St @ N Esmond Ave,BUS ZN
+49.264061,60728,-123.170799,10655,Eastbound W Broadway @ Bayswater St,BUS ZN
+49.264155,60726,-123.17742,10651,Eastbound W Broadway @ Blenheim St,BUS ZN
+49.264095,60727,-123.173572,10652,Eastbound W Broadway St @ Balaclava St,BUS ZN
+49.268604,50594,-123.200584,600,Westbound W 4th Ave @ NW Marine Dr,BUS ZN
+49.275321,50182,-123.099748,182,Northbound Main St @ National Ave,BUS ZN
+49.270803,50180,-123.100432,180,Northbound Main St @ Industrial Ave,BUS ZN
+49.273395,50181,-123.099831,181,Main Street-Science World Station @ Bay 2,BUS ZN
+49.281733,50186,-123.105366,186,Westbound W Hastings St @ Carrall St,BUS ZN
+49.278968,50184,-123.099607,184,Northbound Main St @ E Georgia St,BUS ZN
+49.281426,53391,-123.099363,185,Westbound E Hastings St @ Main St,BUS ZN
+49.283085,50188,-123.110279,188,Westbound W Hastings St @ Hamilton St,BUS ZN
+49.283796,50189,-123.11242,189,Southbound Richards St @ W Hastings St,BUS ZN
+49.213531,50862,-123.140485,869,Southbound Granville St @ W 63 Ave,BUS ZN
+49.215526,50861,-123.140408,868,Southbound Granville St @ W 61 Ave,BUS ZN
+49.232098,50854,-123.139799,861,Southbound Granville St @ W 43 Ave,BUS ZN
+49.221997,52007,-123.032422,2024,Southbound Tyne St @ E 52 Ave,BUS ZN
+49.224305,52006,-123.032353,2023,Southbound Tyne St @ E 49 Ave,BUS ZN
+49.224818,52011,-123.041573,2028,Westbound E 49 Ave @ Kerr St,BUS ZN
+49.224808,52012,-123.045365,2029,Westbound E 49 Ave @ Killarney St,BUS ZN
+49.230318,51306,-123.077253,1317,Southbound Knight St @ E 43 Ave,BUS ZN
+49.232305,51305,-123.077224,1316,Southbound Knight St @ E 41 Ave,BUS ZN
+49.234472,51304,-123.077104,1315,Southbound Knight St @ E 39 Ave,BUS ZN
+49.236514,51303,-123.07705,1314,Southbound Knight St @ E 37 Ave,BUS ZN
+49.238186,51302,-123.076911,1313,Southbound Knight St @ E 35 Ave,BUS ZN
+49.23988,51301,-123.07656,1312,Southbound Knight St @ E 33 Ave,BUS ZN
+49.242149,51300,-123.076486,1311,Southbound Knight St @ E 31 Ave,BUS ZN
+49.244204,51299,-123.076425,1310,Southbound Knight St @ E 29 Ave,BUS ZN
+49.227344,51308,-123.077362,1319,Southbound Knight St @ E 47 Ave,BUS ZN
+49.228692,51307,-123.077321,1318,Southbound Knight St @ E 45 Ave,BUS ZN
+49.277584,50220,-123.125372,11429,Northbound Granville St @ Davie St,BUS ZN
+49.263936,61453,-123.154352,11422,Westbound W Broadway @ Arbutus St,BUS ZN
+49.276786,50535,-123.126905,11427,Southbound Granville St @ Davie St,BUS ZN
+49.276487,58593,-123.127092,11426,Northbound Granville St @ Drake St,BUS ZN
+49.281215,50956,-123.028984,965,Westbound E Hastings St @ Skeena St,BUS ZN
+49.281267,50957,-123.032823,966,Westbound E Hastings St @ Cassiar St,BUS ZN
+49.281219,50958,-123.036936,967,Westbound E Hastings St @ Windermere St,BUS ZN
+49.281041,50952,-123.038301,960,Eastbound E Hastings St @ Lillooet St,BUS ZN
+49.281027,50953,-123.035464,961,Eastbound E Hastings St @ Windermere St,BUS ZN
+49.281014,50954,-123.029969,962,Eastbound E Hastings St @ Cassiar St,BUS ZN
+49.281385,50955,-123.026363,963,Kootenay Loop @ Bay 5,BUS ZN
+49.281229,50959,-123.044631,968,Westbound E Hastings St @ Renfrew St,BUS ZN
+49.281226,50960,-123.047423,969,Westbound E Hastings St @ Kaslo St,BUS ZN
+49.237698,50655,-123.065288,662,Northbound Victoria Dr @ E 36 Ave,BUS ZN
+49.278704,51232,-123.070346,1241,Northbound Commercial Dr @ E Georgia St,BUS ZN
+49.285009,50634,-123.13847,640,Eastbound Davie St @ Cardero St,BUS ZN
+49.28144,50637,-123.132973,643,Eastbound Davie St @ Bute St,BUS ZN
+49.248521,51522,-123.085285,1534,Eastbound E King Edward Ave @ St. Catherines St,BUS ZN
+49.248609,51520,-123.093688,1532,Eastbound E King Edward Ave @ St. George St,BUS ZN
+49.279008,59924,-123.102218,10466,Southbound Quebec St @ Keefer St,BUS ZN
+49.274212,59918,-123.114446,10467,Eastbound Pacific Blvd @ Marinaside Cres,BUS ZN
+49.27421,59916,-123.117633,10465,Eastbound Pacific Blvd @ Boathouse Mews,BUS ZN
+49.232934,50642,-123.098854,648,Eastbound E 41 Ave @ Sophia St,BUS ZN
+49.274036,50016,-123.120842,10468,Yaletown-Roundhouse Station @ Bay 4,BUS ZN
+49.227171,51952,-123.160812,1969,Eastbound W 49 Ave @ Balsam St,BUS ZN
+49.230767,51606,-123.043216,1618,Southbound Rupert St @ E 43 Ave,BUS ZN
+49.228961,51607,-123.043214,1619,Southbound Rupert St @ E 45 Ave,BUS ZN
+49.284219,50635,-123.13726,641,Eastbound Davie St @ Nicola St,BUS ZN
+49.263232,58402,-123.069903,8913,Southbound Commercial Dr @ N Grandview Hwy,BUS ZN
+49.26342,58491,-123.069582,8916,Northbound Commercial Dr @ N Grandview Hwy,BUS ZN
+49.262267,59715,-123.241873,1613,Northbound Wesbrook Mall @ Thunderbird Blvd,BUS ZN
+49.23008,51946,-123.179685,1963,Eastbound SW Marine Dr @ Blenheim St,BUS ZN
+49.223331,51665,-123.041021,1678,Northbound Kerr St @ E 51 Ave,BUS ZN
+49.22509,51666,-123.040907,1679,Northbound Kerr St @ E 49 Ave,BUS ZN
+49.215575,51662,-123.041111,1674,Westbound Rosemont Dr @ Kerr St,BUS ZN
+49.217555,51663,-123.041311,1675,Northbound Kerr St @ E 58 Ave,BUS ZN
+49.219585,58284,-123.041215,1676,Northbound Kerr St @ E 54 Ave,BUS ZN
+49.214103,51658,-123.029741,1670,Northbound Champlain Cres @ Langford Ave,BUS ZN
+49.215603,51659,-123.031944,1671,Westbound Maquinna Dr @ Stikine Place,BUS ZN
+49.216141,51660,-123.035466,1672,Westbound Rosemont Dr @ Butler St,BUS ZN
+49.215611,51661,-123.037361,1673,Westbound Rosemont Dr @ 3200 Block,BUS ZN
+49.282579,50636,-123.13477,642,Eastbound Davie St @ Jervis St,BUS ZN
+49.280147,50638,-123.13096,644,Eastbound Davie St @ Thurlow St,BUS ZN
+49.234593,50640,-123.18575,646,Dunbar Loop @ Bay 2,BUS ZN
+49.247382,50305,-123.185094,308,Northbound Dunbar St @ W 28 Ave,BUS ZN
+49.234836,50297,-123.182546,300,Westbound W 41 Ave @ Collingwood St,BUS ZN
+49.235129,50298,-123.185234,301,Dunbar Loop @ Bay 6,BUS ZN
+49.236747,50299,-123.185216,302,Northbound Dunbar St @ W 39 Ave,BUS ZN
+49.238112,50300,-123.185183,303,Northbound Dunbar St @ W 38 Ave,BUS ZN
+49.239851,50301,-123.185157,304,Northbound Dunbar St @ W 36 Ave,BUS ZN
+49.241702,50302,-123.185172,305,Northbound Dunbar St @ W 34 Ave,BUS ZN
+49.244597,50303,-123.185135,306,Northbound Dunbar St @ W 31 Ave,BUS ZN
+49.245532,50304,-123.185125,307,Northbound Dunbar St @ W 30 Ave,BUS ZN
+49.252766,50417,-123.115379,11211,Southbound Cambie St @ W 20 Ave,BUS ZN
+49.245537,61252,-123.11525,11216,Northbound Cambie St @ W 29 Ave,BUS ZN
+49.23287,50643,-123.094138,649,Eastbound E 41 Ave @ St. George St,BUS ZN
+49.238723,59664,-123.031266,10921,Joyce Station @ Bay 7,BUS ZN
+49.265476,59803,-123.079447,10926,VCC-Clark Station @ Bay 1,BUS ZN
+49.28127,58652,-123.062205,9104,Westbound E Hastings St @ Lakewood Dr,BUS ZN
+49.297003,51477,-123.136104,9105,Westbound Stanley Park Dr @ Pipeline Rd,BUS ZN
+49.211133,58647,-123.092844,9103,Westbound SE Marine Dr @ Poplar St,BUS ZN
+49.282221,50187,-123.108043,3429,Westbound W Hastings St @ Abbott St,BUS ZN
+49.28144,50185,-123.1003,3428,Westbound E Hastings St @ Main St,BUS ZN
+49.224949,51985,-123.058733,2002,Eastbound E 49 Ave @ Nanaimo St,BUS ZN
+49.225106,51983,-123.065263,2000,Eastbound E 49 Ave @ Victoria Dr,BUS ZN
+49.225035,51984,-123.061875,2001,Eastbound E 49 Ave @ Gladstone St,BUS ZN
+49.224673,51989,-123.045214,2006,Eastbound E 49 Ave @ Killarney St,BUS ZN
+49.223484,51991,-123.032195,2008,Northbound Tyne St @ E 50 Ave,BUS ZN
+49.222096,51992,-123.025794,2009,Eastbound E 49 Ave @ Frontenac St,BUS ZN
+49.234831,51894,-123.190048,1908,Westbound W 41 Ave @ Olympic St,BUS ZN
+49.242748,51674,-123.035635,11182,Northbound Rupert St @ Wellington Ave,BUS ZN
+49.240302,51672,-123.030526,11183,Westbound Wellington Ave @ Joyce St,BUS ZN
+49.241059,51720,-123.032729,11180,Eastbound Wellington Ave @ McHardy St,BUS ZN
+49.241397,51673,-123.033186,11181,Westbound Wellington Ave @ McHardy St,BUS ZN
+49.242237,51719,-123.035603,11184,Eastbound Wellington Ave @ Rupert St,BUS ZN
+49.251833,51078,-123.044204,1087,Northbound Renfrew St @ E 21 Ave,BUS ZN
+49.250252,51077,-123.043622,1086,Northbound Boyd Diversion @ E 22 Ave,BUS ZN
+49.249584,51076,-123.042078,1085,Northbound Boyd Diversion @ Nootka St,BUS ZN
+49.247362,51075,-123.041531,1084,Northbound Nootka St @ E 26 Ave,BUS ZN
+49.243327,51074,-123.043266,1083,Northbound Earles St @ Kings Ave,BUS ZN
+49.241376,51073,-123.045131,1082,Northbound Earles St @ Euclid Ave,BUS ZN
+49.23999,51072,-123.046457,1081,Northbound Earles St @ Horley St,BUS ZN
+49.238656,51071,-123.051416,1080,Eastbound Kingsway @ Wales St,BUS ZN
+49.255753,51080,-123.044185,1089,Northbound Renfrew St @ E 16 Ave,BUS ZN
+49.254646,51079,-123.044228,1088,Northbound Renfrew St @ E 17 Ave,BUS ZN
+49.287774,50445,-123.044683,449,Westbound Eton St @ N Renfrew St,BUS ZN
+49.216763,51328,-123.076922,1339,Northbound Knight St @ E 59 Ave,BUS ZN
+49.214995,51327,-123.076944,1338,Northbound Knight St @ E 61 Ave,BUS ZN
+49.213213,51326,-123.076965,1337,Northbound Knight St @ E 63 Ave,BUS ZN
+49.206873,51325,-123.077182,1336,Northbound Knight St @ Mitchell Rd,BUS ZN
+49.206054,51319,-123.077678,1330,Southbound Knight St @ Mitchell Rd,BUS ZN
+49.284688,50031,-123.120503,31,Burrard Station @ Bay 7,BUS ZN
+49.283593,50030,-123.12214,30,Northbound Burrard St @ Robson St,BUS ZN
+49.283765,50036,-123.109649,36,Eastbound W Cordova St @ Homer St,BUS ZN
+49.242872,58955,-123.090196,844,Northbound Fraser St @ E 31 Ave,BUS ZN
+49.248973,50840,-123.089998,847,Northbound Fraser St @ E King Edward Ave,BUS ZN
+49.251282,50841,-123.089924,848,Northbound Fraser St @ E 22 Ave,BUS ZN
+49.2631,54826,-123.138458,11403,Northbound Granville St @ W 10 Ave,BUS ZN
+49.279581,59923,-123.106439,11401,Westbound Keefer Place @ Taylor St,BUS ZN
+49.280904,50940,-123.08086,948,Eastbound E Hastings St @ Glen Dr,BUS ZN
+49.281195,50941,-123.076457,949,Eastbound E Hastings St @ Clark Dr,BUS ZN
+49.281005,50938,-123.086654,946,Eastbound E Hastings St @ Hawks Ave,BUS ZN
+49.280957,50939,-123.084231,947,Eastbound E Hastings St @ Campbell Ave,BUS ZN
+49.281112,50936,-123.092955,944,Eastbound E Hastings St @ Jackson Ave,BUS ZN
+49.281081,50937,-123.090971,945,Eastbound E Hastings St @ Princess Ave,BUS ZN
+49.281225,50934,-123.099034,942,Eastbound E Hastings St @ Main St,BUS ZN
+49.281207,50935,-123.096763,943,Eastbound E Hastings St @ Gore Ave,BUS ZN
+49.281983,50932,-123.10758,940,Eastbound W Hastings St @ Abbott St,BUS ZN
+49.280019,59513,-123.114489,10114,Eastbound W Georgia St @ Hamilton St,BUS ZN
+49.226166,51646,-123.032301,1658,Southbound Tyne St @ E 47 Ave,BUS ZN
+49.22453,51647,-123.03149,1659,Eastbound E 49 Ave @ Tyne St,BUS ZN
+49.236266,51640,-123.033907,1652,Southbound Joyce St @ Euclid Ave,BUS ZN
+49.235265,51641,-123.034898,1653,Southbound Joyce St @ Cherry St,BUS ZN
+49.236629,51638,-123.033326,1650,Northbound Joyce St @ Euclid Ave,BUS ZN
+49.229218,51644,-123.036047,1656,Eastbound E 45 Ave @ Doman St,BUS ZN
+49.228174,51645,-123.032177,1657,Southbound Tyne St @ E 46 Ave,BUS ZN
+49.232718,51642,-123.037497,1654,Southbound Joyce St @ E 41 Ave,BUS ZN
+49.282981,50407,-123.111441,411,Northbound Homer St @ W Pender St,BUS ZN
+49.268177,50580,-123.150761,586,Westbound W 4th Ave @ Maple St,BUS ZN
+49.268039,50578,-123.141569,584,Westbound W 4th Ave @ Fir St,BUS ZN
+49.268106,50579,-123.146085,585,Westbound W 4th Ave @ Burrard St,BUS ZN
+49.263905,58023,-123.209694,582,Westbound W 10 Ave @ Sasamat St,BUS ZN
+49.263966,50577,-123.212506,583,Westbound W 10 Ave @ Tolmie St,BUS ZN
+49.263828,50575,-123.203438,580,Westbound W 10 Ave @ Discovery St,BUS ZN
+49.263863,50576,-123.206461,581,Westbound W 10 Ave @ Trimble St,BUS ZN
+49.26833,50583,-123.160246,589,Westbound W 4th Ave @ Balsam St,BUS ZN
+49.236321,51723,-123.027853,1737,Eastbound Vanness Ave @ Melbourne St,BUS ZN
+49.262801,52101,-123.10042,2120,Eastbound E Broadway @ Main St,BUS ZN
+49.263995,50319,-123.167357,322,Eastbound W Broadway @ Macdonald St,BUS ZN
+49.263906,50320,-123.164293,323,Eastbound W Broadway @ Trafalgar St,BUS ZN
+49.264225,60725,-123.181429,320,Eastbound W Broadway @ Collingwood St,BUS ZN
+49.263766,50323,-123.154253,326,Eastbound W Broadway @ Arbutus St,BUS ZN
+49.263809,50322,-123.157195,325,Eastbound W Broadway @ Vine St,BUS ZN
+49.263611,50325,-123.145163,328,Eastbound W Broadway @ Burrard St,BUS ZN
+49.263525,50871,-123.140516,329,Eastbound W Broadway @ Fir St,BUS ZN
+49.251211,51583,-123.151677,1595,Westbound W King Edward Ave @ Maple Cres,BUS ZN
+49.283216,60528,-123.141983,12769,Eastbound Beach Ave @ Cardero St,BUS ZN
+49.268423,60533,-123.214932,12762,Northbound Blanca St @ W 5th Ave,BUS ZN
+49.284744,60527,-123.142826,12767,Eastbound Beach Ave @ Bidwell St,BUS ZN
+49.249452,51578,-123.132497,1590,Westbound W King Edward Ave @ Selkirk St,BUS ZN
+49.263769,50557,-123.143781,9522,Westbound W Broadway @ Pine St,BUS ZN
+49.259981,50360,-123.184374,364,Southbound Dunbar Diversion @ W 14 Ave,BUS ZN
+49.20366,54824,-123.135845,4876,Marpole Loop @ Bay 4,BUS ZN
+49.267404,50218,-123.138259,4879,Northbound Granville St @ W 5th Ave,BUS ZN
+49.261267,50359,-123.186069,363,Southbound Alma St @ W 12 Ave,BUS ZN
+49.230206,52051,-123.179318,2068,Westbound SW Marine Dr @ Blenheim St,BUS ZN
+49.22134,59843,-123.101649,10617,Northbound Main St @ 54 Ave,BUS ZN
+49.227195,59102,-123.152702,2061,Westbound W 49 Ave @ Maple St,BUS ZN
+49.227329,52047,-123.163563,2064,Westbound W 49 Ave @ Larch St,BUS ZN
+49.227377,52048,-123.167912,2065,Westbound W 49 Ave @ Macdonald St,BUS ZN
+49.248336,60314,-123.056509,12556,Nanaimo Station @ Bay 1,BUS ZN
+49.263505,60494,-123.139857,12721,Eastbound W Broadway @ Granville St,BUS ZN
+49.255554,51347,-123.075773,1358,Northbound Knight St @ E 17 Ave,BUS ZN
+49.263576,50465,-123.131742,469,Westbound W Broadway @ Alder St,BUS ZN
+49.26354,50464,-123.129369,468,Westbound W Broadway @ Spruce St,BUS ZN
+49.245776,51342,-123.076103,1353,Northbound Knight St @ E 28 Ave,BUS ZN
+49.244049,51341,-123.076163,1352,Northbound Knight St @ E 30 Ave,BUS ZN
+49.24199,51340,-123.076223,1351,Northbound Knight St @ E 32 Ave,BUS ZN
+49.240543,51339,-123.076257,1350,Northbound Knight St @ E 33 Ave,BUS ZN
+49.253818,51346,-123.075837,1357,Northbound Knight St @ E 19 Ave,BUS ZN
+49.252354,51345,-123.075894,1356,Northbound Knight St @ E 20 Ave,BUS ZN
+49.249685,51344,-123.075903,1355,Northbound Knight St @ Kingsway,BUS ZN
+49.248848,51343,-123.075932,1354,Northbound Knight St @ E King Edward Ave,BUS ZN
+49.266106,58510,-123.100973,9067,Southbound Main St @ E 5th Ave,BUS ZN
+49.285898,58202,-123.112474,9069,Waterfront Station @ Bay 2,BUS ZN
+49.283898,50052,-123.136507,52,Westbound Davie St @ Broughton St,BUS ZN
+49.234547,50286,-123.148146,289,Westbound W 41 Ave @ Angus Dr,BUS ZN
+49.234499,50285,-123.145101,288,Westbound W 41 Ave @ Marguerite St,BUS ZN
+49.263657,50278,-123.202595,281,Eastbound W 10 Ave @ Discovery St,BUS ZN
+49.263689,50277,-123.205581,280,Eastbound W 10 Ave @ Trimble St,BUS ZN
+49.263564,50280,-123.196532,283,Eastbound W 10 Ave @ Camosun St,BUS ZN
+49.263605,50279,-123.199436,282,Eastbound W 10 Ave @ Courtenay St,BUS ZN
+49.263472,50282,-123.190678,285,Eastbound W 10 Ave @ Wallace St,BUS ZN
+49.263526,50281,-123.193422,284,Eastbound W 10 Ave @ Crown St,BUS ZN
+49.234426,50284,-123.140514,287,Westbound W 41 Ave @ Granville St,BUS ZN
+49.263434,50283,-123.187456,286,Eastbound W 10 Ave @ Highbury St,BUS ZN
+49.232771,50702,-123.06615,709,Westbound E 41 Ave @ Victoria Dr,BUS ZN
+49.22573,51969,-123.107863,1986,Eastbound W 49 Ave @ Manitoba St,BUS ZN
+49.225636,51970,-123.103335,1987,Eastbound E 49 Ave @ Quebec St,BUS ZN
+49.212376,51620,-123.029816,1632,Southbound Champlain Cres @ Marquette Cres,BUS ZN
+49.211972,51622,-123.025326,1634,Northbound Matheson Cres @ Limewood Place,BUS ZN
+49.21425,51623,-123.025462,1635,Northbound Matheson Cres @ Raintree Court,BUS ZN
+49.215154,51624,-123.025453,1636,Northbound Matheson Cres @ Rumble Ave,BUS ZN
+49.21648,51625,-123.025012,1637,Northbound Matheson Cres @ Borham Cres,BUS ZN
+49.217418,51626,-123.024627,1638,Eastbound Arbor Ave @ Matheson Cres,BUS ZN
+49.217909,51627,-123.023539,1639,Northbound Boundary Rd @ Arbor Ave,BUS ZN
+49.225593,51971,-123.101045,1988,Eastbound E 49 Ave @ Main St,BUS ZN
+49.225514,51972,-123.097041,1989,Eastbound E 49 Ave @ Prince Edward St,BUS ZN
+49.239661,50699,-123.065469,706,Southbound Victoria Dr @ E 33 Ave,BUS ZN
+49.264113,50563,-123.165212,568,Westbound W Broadway @ Trafalgar St,BUS ZN
+49.264174,50564,-123.168896,569,Westbound W Broadway @ Macdonald St,BUS ZN
+49.237254,50700,-123.065531,707,Southbound Victoria Dr @ E 36 Ave,BUS ZN
+49.235947,50555,-123.139659,560,Southbound Granville St @ S Connaught Dr,BUS ZN
+49.235048,50556,-123.139751,561,Southbound Granville St @ W 40 Ave,BUS ZN
+49.263829,50558,-123.146302,563,Westbound W Broadway @ Burrard St,BUS ZN
+49.263962,50561,-123.155724,566,Westbound W Broadway @ Yew St,BUS ZN
+49.264051,50562,-123.160487,567,Westbound W Broadway @ Balsam St,BUS ZN
+49.233084,51179,-123.03794,1188,Westbound E 41 Ave @ School Ave,BUS ZN
+49.233031,51180,-123.040741,1189,Westbound E 41 Ave @ Kerr St,BUS ZN
+49.234462,51177,-123.036193,1186,Westbound Kingsway @ Joyce St,BUS ZN
+49.233186,51176,-123.033761,1185,Westbound Kingsway @ Wessex St,BUS ZN
+49.232527,51171,-123.022197,1180,Westbound Kingsway @ Boundary Rd,BUS ZN
+49.232402,51172,-123.024096,1181,Westbound Kingsway @ Boundary Rd,BUS ZN
+49.279449,50048,-123.129617,48,Westbound Davie St @ Burrard St,BUS ZN
+49.280756,50049,-123.131638,49,Westbound Davie St @ Thurlow St,BUS ZN
+49.282068,50046,-123.12488,46,Southbound Burrard St @ Barclay St,BUS ZN
+49.280981,50047,-123.126516,47,Southbound Burrard St @ Nelson St,BUS ZN
+49.284178,50044,-123.121677,44,Southbound Burrard St @ W Georgia St,BUS ZN
+49.283087,50045,-123.123336,45,Southbound Burrard St @ Robson St,BUS ZN
+49.285579,50040,-123.112029,40,Waterfront Station @ Bay 3,BUS ZN
+49.237306,50342,-123.128102,346,Southbound Oak St @ W 37 Ave,BUS ZN
+49.260863,60409,-123.147849,12704,Eastbound W 12th Ave @ Cypress St,BUS ZN
+49.257415,61095,-123.137767,10967,Eastbound Marpole Ave @ McRae Ave,BUS ZN
+49.25714,61126,-123.139365,10966,Westbound W 16 Ave @ Granville St,BUS ZN
+49.255309,61044,-123.235823,10961,Northbound Wesbrook Mall @ W 16 Ave,BUS ZN
+49.255122,61042,-123.237649,10960,Eastbound W 16 Ave @ Wesbrook Mall,BUS ZN
+49.257785,61088,-123.184606,10969,Eastbound W 16 Ave @ Dunbar St,BUS ZN
+49.263349,58501,-123.116526,11088,Broadway-City Hall Station @ Bay 4,BUS ZN
+49.253539,59129,-123.019687,11619,Northbound Smith Ave @ Linwood St,BUS ZN
+49.260466,61900,-123.252885,11948,Eastbound Agronomy Rd @ West Mall,BUS ZN
+49.277837,60197,-123.131265,12494,Southbound Burrard St @ Harwood St,BUS ZN
+49.266843,50403,-123.137905,407,Westbound W 5th Ave @ Granville St,BUS ZN
+49.276842,51359,-123.077921,1370,Westbound Venables St @ Clark Dr,BUS ZN
+49.27661,51362,-123.087839,1373,Westbound Prior St @ Hawks Ave,BUS ZN
+49.26793,50400,-123.145082,404,Eastbound W 4th Ave @ Burrard St,BUS ZN
+49.276725,51364,-123.094157,1375,Westbound Prior St @ Jackson Ave,BUS ZN
+49.278838,51366,-123.097008,1377,Northbound Gore Ave @ E Georgia St,BUS ZN
+49.268147,50396,-123.159497,400,Eastbound W 4th Ave @ Balsam St,BUS ZN
+49.268064,51368,-123.168411,1379,Southbound Macdonald St @ W 4th Ave,BUS ZN
+49.280427,51367,-123.097706,1378,Westbound E Pender St @ Gore Ave,BUS ZN
+49.286035,50405,-123.12037,409,Burrard Station @ Bay 2,BUS ZN
+49.257986,51490,-123.197494,1502,Eastbound W 16 Ave @ Camosun St,BUS ZN
+49.257917,51491,-123.193063,1503,Eastbound W 16 Ave @ Crown St,BUS ZN
+49.258107,51488,-123.205776,1500,Eastbound W 16 Ave @ Trimble St,BUS ZN
+49.232781,61503,-123.090946,12134,Eastbound E 41 Ave @ Fraser St,BUS ZN
+49.249892,51495,-123.178128,1507,Eastbound W King Edward Ave @ Blenheim St,BUS ZN
+49.285048,59831,-123.116344,10400,Southbound Howe St @ W Pender St,BUS ZN
+49.235131,59838,-123.101698,10404,Southbound Main St @ E 39 Ave,BUS ZN
+49.226886,51960,-123.139329,1977,Eastbound W 49 Ave @ Granville St,BUS ZN
+49.22692,51959,-123.141217,1976,Eastbound W 49 Ave @ Churchill St,BUS ZN
+49.227063,59103,-123.151905,1973,Eastbound W 49 Ave @ Maple St,BUS ZN
+49.227085,51955,-123.153974,1972,Eastbound W 49 Ave @ East Blvd,BUS ZN
+49.258254,51594,-123.197604,1606,Westbound W 16 Ave @ Camosun St,BUS ZN
+49.227223,51951,-123.164688,1968,Eastbound W 49 Ave @ Marine Cres,BUS ZN
+49.244186,51603,-123.045328,1615,29th Avenue Station @ Bay 2,BUS ZN
+49.277999,61073,-123.115404,11119,Southbound Cambie St @ Robson St,BUS ZN
+49.266837,50537,-123.139046,542,Westbound W Cloverleaf @ Granville St,BUS ZN
+49.261424,50542,-123.138768,547,Southbound Granville St @ W 11 Ave,BUS ZN
+49.26511,50539,-123.138634,544,Southbound Granville St @ W 7th Ave,BUS ZN
+49.263732,50540,-123.140158,545,Westbound W Broadway @ Granville St,BUS ZN
+49.259524,50543,-123.138834,548,Southbound Granville St @ W 13 Ave,BUS ZN
+49.257667,50544,-123.138899,549,Southbound Granville St @ W 15 Ave,BUS ZN
+49.253446,50364,-123.18526,368,Southbound Dunbar St @ W 21 Ave,BUS ZN
+49.282442,60492,-123.104634,12720,Eastbound W Cordova St @ Carrall St,BUS ZN
+49.263904,50321,-123.16196,10980,Eastbound W Broadway @ Larch St,BUS ZN
+49.210486,61554,-123.065448,11587,Eastbound Harrison Dr @ Victoria Dr,BUS ZN
+49.277149,50673,-123.056711,680,Southbound Nanaimo St @ Adanac St,BUS ZN
+49.262213,52102,-123.068963,11588,Commercial-Broadway Station @ Bay 1,BUS ZN
+49.262426,52094,-123.069432,11589,Commercial-Broadway Station @ Bay 4,BUS ZN
+49.280989,54473,-123.115989,4523,Eastbound W Georgia St @ Richards St,BUS ZN
+49.282472,50094,-123.11137,11638,Westbound W Pender St @ Hamilton St,BUS ZN
+49.28074,58235,-123.107725,11636,Southbound Abbott St @ W Pender St,BUS ZN
+49.233207,50156,-123.102082,11632,Westbound E 41 Ave @ Main St,BUS ZN
+49.263328,50902,-123.028889,909,Westbound Lougheed Hwy @ Skeena St,BUS ZN
+49.281365,58043,-123.025918,8140,Kootenay Loop @ Bay 4,BUS ZN
+49.265467,50901,-123.024843,908,Lougheed Hwy @ Boundary Loop,BUS ZN
+49.268043,51225,-123.06953,8637,Northbound Commercial Dr @ E 3rd Ave,BUS ZN
+49.291212,58254,-123.131834,8634,Eastbound W Georgia St @ Bidwell St,BUS ZN
+49.293655,58722,-123.135601,9487,Eastbound W Georgia St @ Gilford St,BUS ZN
+49.261778,50058,-123.168164,58,Northbound Macdonald St @ W 12 Ave,BUS ZN
+49.258079,50056,-123.168299,56,Northbound Macdonald St @ W 16 Ave,BUS ZN
+49.28231,52964,-123.02331,2995,Northbound Boundary Rd @ Albert St,BUS ZN
+49.28546,50053,-123.138909,53,Westbound Davie St @ Cardero St,BUS ZN
+49.285924,52966,-123.023238,2997,Northbound N Boundary Rd @ Oxford St,BUS ZN
+49.257583,50055,-123.17185,55,Eastbound W 16 Ave @ Carnarvon St,BUS ZN
+49.257636,50054,-123.175459,54,Eastbound W 16 Ave @ Trutch St,BUS ZN
+49.283006,50051,-123.135121,51,Westbound Davie St @ Jervis St,BUS ZN
+49.282009,50050,-123.133574,50,Westbound Davie St @ Bute St,BUS ZN
+49.284094,52965,-123.023268,2996,Northbound Boundary Rd @ Triumph St,BUS ZN
+49.257427,61091,-123.16452,11038,Eastbound W 16 Ave @ Trafalgar St,BUS ZN
+49.257689,61089,-123.178434,11039,Eastbound W 16 Ave @ Blenheim St,BUS ZN
+49.282203,50425,-123.098943,429,Eastbound E Cordova St @ Main St,BUS ZN
+49.237007,50424,-123.11629,428,Southbound Cambie St @ W 37 Ave,BUS ZN
+49.254674,50416,-123.115282,420,Southbound Cambie St @ W 18 Ave,BUS ZN
+49.262598,50848,-123.093535,855,Westbound E Broadway @ St. George St,BUS ZN
+49.262835,50849,-123.096513,856,Westbound E Broadway @ Prince Edward St,BUS ZN
+49.262926,50850,-123.098697,857,Westbound E Broadway @ Scotia St,BUS ZN
+49.23344,50136,-123.116867,11353,Oakridge-41st Ave Station @ Bay 2,BUS ZN
+49.262826,61027,-123.11464,11352,Broadway-City Hall Station @ Bay 2,BUS ZN
+49.233099,50981,-123.116479,11350,Oakridge-41st Ave Station @ Bay 1,BUS ZN
+49.233712,61281,-123.117599,11354,Oakridge-41st Ave Station  @ Bay 4,BUS ZN
+49.243685,61990,-123.062323,12110,Eastbound Kingsway @ Gladstone St,BUS ZN
+49.245403,59536,-123.101378,12115,Southbound Main St @ E 28 Ave,BUS ZN
+49.207414,51948,-123.123941,12116,Westbound SW Marine Dr @ Heather St,BUS ZN
+49.236726,51786,-123.028401,1800,Westbound Vanness Ave @ Melbourne St,BUS ZN
+49.208441,51795,-123.03581,1809,Westbound SE Marine Dr @ Fieldstone Ave,BUS ZN
+49.208224,51794,-123.031482,1808,Westbound SE Marine Dr @ Matheson Cres,BUS ZN
+49.250536,51535,-123.030547,1547,Eastbound E 22 Ave @ Cassiar St,BUS ZN
+49.257295,51483,-123.237949,1493,Southbound Wesbrook Mall @ Hampton Place,BUS ZN
+49.258259,51486,-123.214903,1498,Eastbound W 16 Ave @ Blanca St,BUS ZN
+49.25819,51487,-123.21185,1499,Eastbound W 16 Ave @ Tolmie St,BUS ZN
+49.248634,50419,-123.115722,423,King Edward Station @ Bay 4,BUS ZN
+49.250985,50418,-123.115447,422,Southbound Cambie St @ W 22 Ave,BUS ZN
+49.24075,50422,-123.118651,426,Southbound Cambie St @ W 33 Ave,BUS ZN
+49.280329,50520,-123.100047,524,Eastbound E Pender St @ Main St,BUS ZN
+49.283223,50516,-123.098134,520,Westbound Powell St @ Gore Ave,BUS ZN
+49.269918,51226,-123.069518,1235,Northbound Commercial Dr @ E 1st Ave,BUS ZN
+49.271608,51227,-123.069481,1236,Northbound Commercial Dr @ Grant St,BUS ZN
+49.273323,51228,-123.06943,1237,Northbound Commercial Dr @ Charles St,BUS ZN
+49.262699,58327,-123.069636,1231,Commercial-Broadway Station @ Bay 3,BUS ZN
+49.275134,51229,-123.069418,1238,Northbound Commercial Dr @ Napier St,BUS ZN
+49.228712,51947,-123.175122,1964,Eastbound SW Marine Dr @ Balaclava St,BUS ZN
+49.279294,58051,-123.105515,8289,Eastbound Keefer Place @ Taylor St,BUS ZN
+49.285674,58030,-123.043632,9359,Bus Stop @ Pne Coliseum Loop,BUS ZN
+49.286502,57893,-123.110998,12138,Waterfront Station @ West Coast Express,WCE1A
+49.232611,51944,-123.18547,1961,Southbound Dunbar St @ W 43 Ave,BUS ZN
+49.231131,51945,-123.185505,1962,Southbound Dunbar St @ SW Marine Dr,BUS ZN
+49.211201,52206,-123.08071,2228,Westbound SE Marine Dr @ Inverness St,BUS ZN
+49.211217,52207,-123.083635,2229,Westbound SE Marine Dr @ Ross St,BUS ZN
+49.211151,52204,-123.072699,2226,Westbound SE Marine Dr @ Argyle St,BUS ZN
+49.21122,52205,-123.076755,2227,Westbound SE Marine Dr @ Knight St,BUS ZN
+49.207979,52202,-123.026647,2224,Westbound SE Marine Dr @ City Edge Place,BUS ZN
+49.208399,52201,-123.017358,2222,Westbound Marine Dr @ Greenall Ave,BUS ZN
+49.286458,50001,-123.140424,1,Westbound Davie St @ Bidwell St,BUS ZN
+49.269638,52065,-123.140065,2082,Eastbound W 2nd Ave @ Fir St,BUS ZN
+49.269468,58661,-123.138366,2083,Eastbound W 2nd Ave @ Anderson St,BUS ZN
+49.268248,52087,-123.140709,2081,Northbound Fir St @ W 4th Ave,BUS ZN
+49.26632,52069,-123.128703,2086,Eastbound Lameys Mill Rd @ Sitka Square,BUS ZN
+49.267431,52067,-123.135141,2084,Eastbound Lameys Mill Rd @ Fountain Way Court,BUS ZN
+49.266544,52068,-123.131643,2085,Eastbound Lameys Mill Rd @ Alder Crossing,BUS ZN
+49.215036,51254,-123.066092,1264,Southbound Victoria Dr @ Newport Ave,BUS ZN
+49.20811,50865,-123.140711,9135,Southbound Granville St @ W 70 Ave,BUS ZN
+49.22204,50997,-123.116425,1006,Northbound Cambie St @ W 54 Ave,BUS ZN
+49.217289,50995,-123.116608,1004,Northbound Cambie St @ W 59 Ave,BUS ZN
+49.257005,61121,-123.11568,11019,Westbound W 16 Ave @ Cambie St,BUS ZN
+49.256969,61096,-123.127706,11014,Eastbound W 16 Ave @ Oak St,BUS ZN
+49.240047,61112,-123.064935,11015,Westbound E 33 Ave @ Victoria Dr,BUS ZN
+49.257525,61090,-123.167913,11016,Eastbound W 16 Ave @ Macdonald St,BUS ZN
+49.240241,61104,-123.089815,11010,Eastbound E 33 Ave @ Fraser St,BUS ZN
+49.240276,61114,-123.076877,11011,Westbound E 33 Ave @ Knight St,BUS ZN
+49.257204,61093,-123.15198,11013,Eastbound W 16 Ave @ East Blvd,BUS ZN
+49.250063,58160,-123.019709,8612,Northbound Smith Ave @ Sunset St,BUS ZN
+49.236949,51725,-123.022912,11333,Eastbound Burke St @ Boundary Rd,BUS ZN
+49.27402,50085,-123.121945,11337,Yaletown-Roundhouse Station @ Bay 3,BUS ZN
+49.263101,50920,-123.105291,928,Westbound W Broadway @ Ontario St,BUS ZN
+49.289693,50628,-123.132542,11485,Westbound Robson St @ Cardero St,BUS ZN
+49.288152,50627,-123.130152,11484,Westbound Robson St @ Broughton St,BUS ZN
+49.286249,50626,-123.127216,11483,Westbound Robson St @ Bute St,BUS ZN
+49.283556,50624,-123.123086,11481,Westbound Robson St @ Burrard St,BUS ZN
+49.285774,50614,-123.126771,11480,Eastbound Robson St @ Bute St,BUS ZN
+49.263212,50921,-123.109868,929,Westbound W Broadway @ Columbia St,BUS ZN
+49.28616,53312,-123.118293,12681,Burrard Station @ Bay 6,BUS ZN
+49.287432,54447,-123.125567,4497,Westbound W Georgia St @ Bute St,BUS ZN
+49.28232,58504,-123.117661,4495,Westbound W Georgia St @ Granville St,BUS ZN
+49.280921,54444,-123.115491,4494,Westbound W Georgia St @ Homer St,BUS ZN
+49.235129,51815,-123.055396,1829,Northbound Clarendon St @ E 39 Ave,BUS ZN
+49.23319,51814,-123.055335,1828,Northbound Clarendon St @ E 41 Ave,BUS ZN
+49.228739,51811,-123.054556,1825,Northbound Elliott St @ E 46 Ave,BUS ZN
+49.225178,51810,-123.054616,1824,Northbound Elliott St @ E 49 Ave,BUS ZN
+49.231191,51813,-123.055124,1827,Northbound Clarendon St @ E 43 Ave,BUS ZN
+49.227113,51812,-123.054592,1826,Northbound Elliott St @ Waverley Ave,BUS ZN
+49.218226,51807,-123.054997,1821,Eastbound Ashburn St @ Elliott St,BUS ZN
+49.217274,51806,-123.055257,1820,Northbound Muirfield Dr @ Lynbrook Dr,BUS ZN
+49.222238,51809,-123.054709,1823,Northbound Elliott St @ E 52 Ave,BUS ZN
+49.220497,51808,-123.0548,1822,Northbound Elliott St @ E 54 Ave,BUS ZN
+49.2063,52120,-123.134764,2140,Southbound Hudson St @ W 72 Ave,BUS ZN
+49.280394,50021,-123.103799,21,Eastbound E Pender St @ Carrall St,BUS ZN
+49.264458,50060,-123.168174,60,Northbound Macdonald St @ W Broadway,BUS ZN
+49.266074,50061,-123.168302,61,Northbound Macdonald St @ W 7th Ave,BUS ZN
+49.268707,50063,-123.168204,63,Northbound Macdonald St @ W 4th Ave,BUS ZN
+49.270381,50064,-123.168148,64,Northbound Macdonald St @ W 2nd Ave,BUS ZN
+49.272507,50069,-123.154568,69,Eastbound Cornwall Ave @ Yew St,BUS ZN
+49.2812,50504,-123.087667,508,Westbound E Hastings St @ Hawks Ave,BUS ZN
+49.281282,50505,-123.092019,509,Westbound E Hastings St @ Princess Ave,BUS ZN
+49.281111,50502,-123.081789,506,Westbound E Hastings St @ Glen Dr,BUS ZN
+49.281155,50503,-123.085249,507,Westbound E Hastings St @ Campbell Ave,BUS ZN
+49.281378,50500,-123.074606,504,Westbound E Hastings St @ McLean Dr,BUS ZN
+49.281445,50501,-123.077888,505,Westbound E Hastings St @ Clark Dr,BUS ZN
+49.281362,50499,-123.071174,503,Westbound E Hastings St @ Commercial Dr,BUS ZN
+49.2848,50496,-123.065973,500,Westbound Powell St @ Victoria Dr,BUS ZN
+49.212765,51203,-123.065964,1212,Northbound Victoria Dr @ Fraserview Dr,BUS ZN
+49.214832,51204,-123.065913,1213,Northbound Victoria Dr @ E 61 Ave,BUS ZN
+49.210673,51202,-123.065781,1211,Westbound Harrison Dr @ Victoria Dr,BUS ZN
+49.220662,51207,-123.065738,1216,Northbound Victoria Dr @ E 54 Ave,BUS ZN
+49.29124,50629,-123.135926,635,Southbound Denman St @ Robson St,BUS ZN
+49.289924,50630,-123.137908,636,Southbound Denman St @ Barclay St,BUS ZN
+49.288522,50631,-123.140021,637,Southbound Denman St @ Comox St,BUS ZN
+49.287773,50632,-123.141166,638,Southbound Denman St @ Pendrell St,BUS ZN
+49.286705,50633,-123.141124,639,Eastbound Davie St @ Denman St,BUS ZN
+49.225458,51209,-123.065603,1218,Northbound Victoria Dr @ E 49 Ave,BUS ZN
+49.262579,50919,-123.087643,927,Westbound E Broadway @ Prince Albert St,BUS ZN
+49.238127,61609,-123.031478,11674,Joyce Station @ Bay 5,BUS ZN
+49.275952,60102,-123.118424,12329,Southbound Cambie St @ Nelson St,BUS ZN
+49.217412,50746,-123.129005,753,Northbound Oak St @ W 59 Ave,BUS ZN
+49.214711,50745,-123.129909,752,Northbound Oak St @ Park Dr,BUS ZN
+49.211074,50743,-123.130033,750,Northbound Oak St @ W 67 Ave,BUS ZN
+49.221798,50748,-123.128353,755,Northbound Oak St @ W 54 Ave,BUS ZN
+49.219518,50747,-123.128433,754,Northbound Oak St @ W 57 Ave,BUS ZN
+49.229544,50752,-123.128098,759,Northbound Oak St @ W 46 Ave,BUS ZN
+49.226867,50751,-123.128159,758,Northbound Oak St @ W 49 Ave,BUS ZN
+49.224765,51016,-123.15354,1025,Northbound West Blvd @ W 51 Ave,BUS ZN
+49.21358,51011,-123.148376,1020,Northbound Angus Dr @ W 64 Ave,BUS ZN
+49.219817,51014,-123.150612,1023,Northbound West Blvd @ W 57 Ave,BUS ZN
+49.217447,51013,-123.14921,1022,Northbound West Blvd @ W 60 Ave,BUS ZN
+49.248283,57970,-123.055904,8045,Nanaimo Station @ Platform 2,ZN 1
+49.274278,61215,-123.121876,11311,Yaletown-Roundhouse Station @ Bay 2,BUS ZN
+49.274863,50023,-123.122521,11310,Yaletown-Roundhouse Station @ Bay 1,BUS ZN
+49.24887,51551,-123.020199,1563,Westbound Kincaid St @ Smith Ave,BUS ZN
+49.248883,51552,-123.023167,1564,Westbound Kincaid St @ Boundary Rd,BUS ZN
+49.250709,51553,-123.024281,1565,Westbound E 22 Ave @ Boundary Rd,BUS ZN
+49.235076,51724,-123.023292,1738,Northbound Boundary Rd @ Vanness Ave,BUS ZN
+49.250678,51555,-123.034851,1567,Westbound E 22 Ave @ Rupert St,BUS ZN
+49.233019,60400,-123.091581,12668,Westbound E 41 Ave @ Fraser St,BUS ZN
+49.233624,60403,-123.036583,12666,Southbound Joyce St @ Kingsway,BUS ZN
+49.253243,50477,-123.115102,10809,Northbound Cambie St @ W 20 Ave,BUS ZN
+49.238762,50423,-123.116678,10804,Southbound Cambie St @ W 35 Ave,BUS ZN
+49.241409,50471,-123.11818,10805,Northbound Cambie St @ W 33 Ave,BUS ZN
+49.251472,50476,-123.115164,10806,Northbound Cambie St @ W 22 Ave,BUS ZN
+49.253194,60681,-123.07613,10807,Southbound Knight St @ E 19 Ave,BUS ZN
+49.242949,50421,-123.118428,10802,Southbound Cambie St @ W 31 Ave,BUS ZN
+49.237495,50469,-123.1158,10803,Northbound Cambie St @ W 37 Ave,BUS ZN
+49.207019,51835,-123.056143,1849,Eastbound SE Marine Dr @ Elliott St,BUS ZN
+49.249462,51504,-123.148494,1516,Eastbound W King Edward Ave @ Cypress St,BUS ZN
+49.215481,51829,-123.055616,1843,Southbound Muirfield Dr @ Hoylake Ave,BUS ZN
+49.217307,51828,-123.055499,1842,Southbound Muirfield Dr @ Ashburn St,BUS ZN
+49.218817,51827,-123.055039,1841,Southbound Elliott St @ E 56 Ave,BUS ZN
+49.208087,51833,-123.061681,1847,Eastbound SE Marine Dr @ Gladstone St,BUS ZN
+49.209318,51832,-123.065395,1846,Eastbound SE Marine Dr @ Victoria Dr,BUS ZN
+49.212549,51831,-123.05788,1845,Southbound Muirfield Dr @ Scarboro Ave,BUS ZN
+49.214167,51830,-123.056564,1844,Southbound Muirfield Dr @ Bobolink Ave,BUS ZN
+49.207927,52144,-123.025837,2164,Eastbound SE Marine Dr @ City Edge Place,BUS ZN
+49.208273,52146,-123.017485,2166,Eastbound Marine Dr @ Greenall Ave,BUS ZN
+49.234836,51895,-123.19284,1909,Westbound W 41 Ave @ Holland St,BUS ZN
+49.234831,51893,-123.185966,1907,Dunbar Loop @ Bay 5,BUS ZN
+49.234685,51888,-123.194154,1902,Eastbound W 41 Ave @ Crown St,BUS ZN
+49.268267,60574,-123.155606,12815,Westbound W 4th Ave @ Yew St,BUS ZN
+49.268084,60572,-123.154618,12813,Eastbound W 4th Ave @ Yew St,BUS ZN
+49.253089,51269,-123.167687,1279,Northbound Macdonald St @ W 22 Ave,BUS ZN
+49.225497,52025,-123.087115,2042,Westbound E 49 Ave @ St. Catherines St,BUS ZN
+49.287084,50607,-123.141411,613,Westbound Davie St @ Denman St,BUS ZN
+49.267024,50604,-123.239311,610,Westbound University Blvd @ Acadia Rd,BUS ZN
+49.245547,51263,-123.17011,1273,Northbound Mackenzie St @ W 30 Ave,BUS ZN
+49.290911,50610,-123.136163,616,Northbound Denman St @ Haro St,BUS ZN
+49.249571,51265,-123.1717,1275,Northbound Quesnel Dr @ W King Edward Ave,BUS ZN
+49.248517,51266,-123.167771,1276,Northbound Macdonald St @ W King Edward Ave,BUS ZN
+49.249455,51267,-123.167732,1277,Northbound Macdonald St @ Oliver Cres,BUS ZN
+49.264,51479,-123.243748,1491,Southbound Wesbrook Mall @ Agronomy Rd,BUS ZN
+49.258318,51485,-123.221642,1497,Eastbound W 16 Ave @ Pacific Spirit Park,BUS ZN
+49.248838,58136,-123.139224,9124,Southbound Granville St @ W King Edward Ave,BUS ZN
+49.284954,58705,-123.121726,9128,Westbound W Georgia St @ Burrard St,BUS ZN
+49.28214,54445,-123.117372,9129,Westbound W Georgia St @ Seymour St,BUS ZN
+49.220551,61645,-123.054963,11698,Southbound Elliott St @ E 54 Ave,BUS ZN
+49.245108,61099,-123.114568,11695,Eastbound E 29 Ave @ Cambie St,BUS ZN
+49.267674,60358,-123.247621,12600,UBC Exchange @ Unloading Only,BUS ZN
+49.238002,51061,-123.048391,1070,Northbound Earles St @ Kingsway,BUS ZN
+49.282359,60269,-123.124019,12603,Northbound Burrard St @ Smithe St,BUS ZN
+49.276918,60116,-123.125976,12348,Eastbound Davie St @ Granville St,BUS ZN
+49.262263,58499,-123.076191,9051,Eastbound E Broadway @ Clark Dr,BUS ZN
+49.263437,58502,-123.12286,9054,Westbound W Broadway @ Willow St,BUS ZN
+49.289356,54448,-123.128526,9056,Westbound W Georgia St @ Broughton St,BUS ZN
+49.227422,50767,-123.139703,774,Northbound Granville St @ W 49 Ave,BUS ZN
+49.232803,50770,-123.139507,777,Northbound Granville St @ W 43 Ave,BUS ZN
+49.229985,50769,-123.139609,776,Northbound Granville St @ W 46 Ave,BUS ZN
+49.221123,50764,-123.139943,771,Northbound Granville St @ W 55 Ave,BUS ZN
+49.219694,50763,-123.14,770,Northbound Granville St @ W 57 Ave,BUS ZN
+49.222949,50765,-123.139886,772,Northbound Granville St @ W 53 Ave,BUS ZN
+49.262719,50772,-123.098055,779,Eastbound E Broadway @ Kingsway,BUS ZN
+49.263824,50771,-123.100514,778,Eastbound Kingsway @ Main St,BUS ZN
+49.284791,50077,-123.115231,77,Eastbound W Pender St @ Granville St,BUS ZN
+49.286121,50076,-123.117245,76,Eastbound W Pender St @ Burrard St,BUS ZN
+49.278885,50075,-123.129252,75,Northbound Burrard St @ Davie St,BUS ZN
+49.278793,50074,-123.128901,74,Eastbound Davie St @ Burrard St,BUS ZN
+49.277226,50073,-123.131783,73,Northbound Burrard St @ Pacific St,BUS ZN
+49.272368,50072,-123.14734,72,Eastbound Cornwall Ave @ Cypress St,BUS ZN
+49.272471,50070,-123.152226,70,Eastbound Cornwall Ave @ Arbutus St,BUS ZN
+49.283753,50078,-123.113589,78,Eastbound W Pender St @ Seymour St,BUS ZN
+49.257604,58723,-123.152846,1042,Northbound Arbutus St @ W 16 Ave,BUS ZN
+49.277967,51038,-123.044227,1047,Southbound Renfrew St @ E Georgia St,BUS ZN
+49.273888,51040,-123.044287,1049,Southbound Renfrew St @ William St,BUS ZN
+49.23862,50834,-123.090274,841,Northbound Fraser St @ E 35 Ave,BUS ZN
+49.240204,61113,-123.071802,11050,Westbound E 33 Ave @ Fleming St,BUS ZN
+49.239712,61109,-123.058302,11051,Eastbound E 33 Ave @ Nanaimo St,BUS ZN
+49.240064,61107,-123.070849,11052,Eastbound E 33 Ave @ Argyle St,BUS ZN
+49.271904,51934,-123.203022,11053,Westbound NW Marine Dr @ Discovery St,BUS ZN
+49.271953,51910,-123.203426,11054,Eastbound NW Marine Dr @ Discovery St,BUS ZN
+49.274502,51937,-123.209135,11055,Westbound NW Marine Dr @ Sasamat St,BUS ZN
+49.268799,51912,-123.200827,11056,Eastbound NW Marine Dr @ Locarno Cres,BUS ZN
+49.240485,61117,-123.097295,11057,Westbound E 33 Ave @ Prince Edward St,BUS ZN
+49.240328,61115,-123.085243,11058,Westbound E 33 Ave @ Windsor St,BUS ZN
+49.257121,61094,-123.146366,11059,Eastbound W 16 Ave @ Burrard St,BUS ZN
+49.257833,51492,-123.187544,1504,Eastbound W 16 Ave @ Highbury St,BUS ZN
+49.233799,50853,-123.139775,860,Southbound Granville St @ W 41 Ave,BUS ZN
+49.226415,50856,-123.139991,863,Southbound Granville St @ W 49 Ave,BUS ZN
+49.221382,50858,-123.140195,865,Southbound Granville St @ W 54 Ave,BUS ZN
+49.223822,50857,-123.140097,864,Southbound Granville St @ W 52 Ave,BUS ZN
+49.217067,50860,-123.140361,867,Southbound Granville St @ W 59 Ave,BUS ZN
+49.218967,50859,-123.140294,866,Southbound Granville St @ W 57 Ave,BUS ZN
+49.236772,50833,-123.090324,840,Northbound Fraser St @ E 37 Ave,BUS ZN
+49.26817,61985,-123.111966,12504,Westbound W 2nd Ave @ Crowe St,BUS ZN
+49.232545,51605,-123.043201,1617,Southbound Rupert St @ E 41 Ave,BUS ZN
+49.219328,50996,-123.116528,10863,Northbound Cambie St @ W 57 Ave,BUS ZN
+49.215412,50994,-123.116683,10861,Northbound Cambie St @ W 61 Ave,BUS ZN
+49.264762,58606,-123.243949,1614,Northbound Wesbrook Mall @ 2100 Block,BUS ZN
+49.27941,50532,-123.12295,12722,Southbound Granville St @ Nelson St,BUS ZN
+49.258662,51598,-123.222569,1610,Westbound W 16 Ave @ Pacific Spirit Park,BUS ZN
+49.273368,59925,-123.101534,10480,Northbound Quebec St @ Terminal Ave,BUS ZN
+49.275246,59927,-123.101804,10482,Northbound Quebec St @ National Ave,BUS ZN
+49.274846,59928,-123.099334,10486,Eastbound National Ave @ Main St,BUS ZN
+49.279267,51133,-123.102946,10487,Westbound Keefer St @ Columbia St,BUS ZN
+49.262351,50883,-123.084744,890,Eastbound E Broadway @ St. Catherines St,BUS ZN
+49.262322,50884,-123.080869,891,Eastbound E Broadway @ Glen Dr,BUS ZN
+49.262269,50885,-123.076797,892,Eastbound E Broadway @ Clark Dr,BUS ZN
+49.262258,50886,-123.073194,893,Eastbound E Broadway @ Woodland Dr,BUS ZN
+49.262171,50888,-123.065398,895,Eastbound E Broadway @ Victoria Dr,BUS ZN
+49.262171,50889,-123.061609,896,Eastbound E Broadway @ Lakewood Dr,BUS ZN
+49.26213,50890,-123.057623,897,Eastbound E Broadway @ Garden Dr,BUS ZN
+49.261889,50891,-123.055558,898,Eastbound E Broadway @ Nanaimo St,BUS ZN
+49.261916,50892,-123.051333,899,Eastbound E Broadway @ Penticton St,BUS ZN
+49.253862,51774,-123.019847,1788,Southbound Smith Ave @ Laurel St,BUS ZN
+49.25269,51775,-123.019844,1789,Southbound Smith Ave @ Avondale St,BUS ZN
+49.263322,51768,-123.023842,1782,Southbound Boundary Rd @ Henning Dr,BUS ZN
+49.259136,51769,-123.023869,1783,Southbound Boundary Rd @ Regent St,BUS ZN
+49.257666,51771,-123.023879,1785,Southbound Boundary Rd @ Grandview Hwy,BUS ZN
+49.280782,50671,-123.056725,678,Southbound Nanaimo St @ E Hastings St,BUS ZN
+49.264644,50667,-123.185714,674,Northbound Alma St @ W Broadway,BUS ZN
+49.266385,50668,-123.185659,675,Northbound Alma St @ W 7th Ave,BUS ZN
+49.284388,50669,-123.05668,676,Southbound Nanaimo St @ Dundas St,BUS ZN
+49.241686,50663,-123.052298,670,Northbound Slocan St @ Ward St,BUS ZN
+49.243511,50664,-123.050495,671,Northbound Slocan St @ Euclid Ave,BUS ZN
+49.250756,50665,-123.050472,672,Westbound E 22 Ave @ Slocan St,BUS ZN
+49.226693,51246,-123.065819,1256,Southbound Victoria Dr @ Waverley Ave,BUS ZN
+49.248866,51513,-123.114707,1525,King Edward Station @ Bay 3,BUS ZN
+49.232253,51244,-123.065682,1254,Southbound Victoria Dr @ E 41 Ave,BUS ZN
+49.230264,51245,-123.065727,1255,Southbound Victoria Dr @ E 43 Ave,BUS ZN
+49.266576,51242,-123.069808,1252,Southbound Commercial Dr @ E 4th Ave,BUS ZN
+49.264806,51243,-123.069842,1253,Southbound Commercial Dr @ E 6th Ave,BUS ZN
+49.270207,51240,-123.069755,1250,Southbound Commercial Dr @ Graveley St,BUS ZN
+49.268438,51241,-123.069776,1251,Southbound Commercial Dr @ E 2nd Ave,BUS ZN
+49.224857,51248,-123.065873,1258,Southbound Victoria Dr @ E 49 Ave,BUS ZN
+49.223127,51249,-123.065922,1259,Southbound Victoria Dr @ E 51 Ave,BUS ZN
+49.277432,59919,-123.107546,11502,Northbound Pat Quinn Way @ Pacific Blvd,BUS ZN
+49.288694,50973,-123.127919,982,Eastbound W Georgia St @ Broughton St,BUS ZN
+49.286717,50974,-123.124885,983,Eastbound W Georgia St @ Bute St,BUS ZN
+49.247318,50971,-123.065204,980,Southbound Victoria Dr @ E 26 Ave,BUS ZN
+49.274962,59396,-123.132056,10046,Westbound Beach Ave @ Howe St,BUS ZN
+49.282317,61293,-123.118291,11523,Northbound Granville St @ W Georgia St,BUS ZN
+49.227269,51950,-123.168448,1967,Eastbound W 49 Ave @ McCleery St,BUS ZN
+49.269368,61954,-123.106978,12367,Westbound W 2nd Ave @ Manitoba St,BUS ZN
+49.267304,60164,-123.247155,12363,UBC Exchange @ Bay 6,BUS ZN
+49.26715,60163,-123.247589,12362,UBC Exchange @ Bay 5,BUS ZN
+49.26704,60162,-123.247902,12361,UBC Exchange @ Bay 4,BUS ZN
+49.267177,60160,-123.24863,12360,UBC Exchange @ Bay 3,BUS ZN
+49.233046,50712,-123.094859,719,Westbound E 41 Ave @ St. George St,BUS ZN
+49.233019,50711,-123.091171,718,Westbound E 41 Ave @ Fraser St,BUS ZN
+49.232994,50710,-123.089838,717,Westbound E 41 Ave @ Chester St,BUS ZN
+49.232938,50709,-123.087318,716,Westbound E 41 Ave @ St. Catherines St,BUS ZN
+49.23291,50708,-123.085282,715,Westbound E 41 Ave @ Windsor St,BUS ZN
+49.232846,50707,-123.080303,714,Westbound E 41 Ave @ Inverness St,BUS ZN
+49.232845,50706,-123.077938,713,Westbound E 41 Ave @ Knight St,BUS ZN
+49.232762,59094,-123.07324,711,Westbound E 41 Ave @ Fleming St,BUS ZN
+49.232719,50703,-123.069244,710,Westbound E 41 Ave @ Commercial St,BUS ZN
+49.239532,51060,-123.047123,1069,Southbound Earles St @ Horley St,BUS ZN
+49.240939,51059,-123.045765,1068,Southbound Earles St @ Euclid Ave,BUS ZN
+49.250326,51052,-123.044011,1061,Southbound Boyd Diversion @ E 22 Ave,BUS ZN
+49.252041,51051,-123.044456,1060,Southbound Renfrew St @ E 20 Ave,BUS ZN
+49.245935,51054,-123.041725,1063,Southbound Nootka St @ E 27 Ave,BUS ZN
+49.247621,51053,-123.041717,1062,Southbound Nootka St @ E 25 Ave,BUS ZN
+49.244134,51056,-123.044757,1065,29th Avenue Station @ Bay 3,BUS ZN
+49.244625,51055,-123.042759,1064,Westbound E 29 Ave @ Nootka St,BUS ZN
+49.242853,51058,-123.043935,1067,Southbound Earles St @ Vanness Ave,BUS ZN
+49.244188,51057,-123.042637,1066,Southbound Earles St @ E 29 Ave,BUS ZN
+49.249918,51493,-123.184491,1505,Eastbound W King Edward Ave @ Dunbar St,BUS ZN
+49.260922,60408,-123.152113,12703,Eastbound W 12th Ave @ Arbutus St,BUS ZN
+49.215458,51618,-123.031682,1630,Eastbound Maquinna Dr @ Stikine Place,BUS ZN
+49.260992,60410,-123.148612,12705,Westbound W 12th Ave @ Cypress St,BUS ZN
+49.227122,52043,-123.147056,2060,Westbound W 49 Ave @ Wiltshire St,BUS ZN
+49.258778,51600,-123.238774,10755,Northbound Wesbrook Mall @ 2900 Block,BUS ZN
+49.21096,51621,-123.026965,1633,Northbound Matheson Cres @ Champlain Cres,BUS ZN
+49.227224,52045,-123.155682,2062,Westbound W 49 Ave @ West Blvd,BUS ZN
+49.26668,60391,-123.090557,12622,Eastbound Great Northern Way @ Carolina St,BUS ZN
+49.234836,60394,-123.186649,12626,Dunbar Loop @ Bay 4,BUS ZN
+49.234694,60393,-123.184268,12625,Dunbar Loop @ Bay 7,BUS ZN
+49.260482,60413,-123.12604,12708,Eastbound W 12 Ave @ Oak St,BUS ZN
+49.228416,52050,-123.17401,2067,Westbound SW Marine Dr @ Carnarvon St,BUS ZN
+49.265602,52103,-123.022312,2123,Eastbound Lougheed Hwy @ Boundary Rd,BUS ZN
+49.209974,52203,-123.066581,2225,Westbound SE Marine Dr @ Victoria Dr,BUS ZN
+49.234673,50132,-123.169829,132,Eastbound W 41 Ave @ Mackenzie St,BUS ZN
+49.238254,50130,-123.170377,130,Southbound Mackenzie St @ W 37 Ave,BUS ZN
+49.233687,50134,-123.123477,134,Eastbound W 41 Ave @ Willow St,BUS ZN
+49.233142,50139,-123.107725,139,Eastbound W 41 Ave @ Manitoba St,BUS ZN
+49.281799,50080,-123.110618,80,Eastbound W Pender St @ Hamilton St,BUS ZN
+49.280808,50081,-123.111146,81,Southbound Cambie St @ Dunsmuir St,BUS ZN
+49.26298,60822,-123.068426,8754,Commercial-Broadway Station @ Platform 1,ZN 1
+49.260815,60818,-123.032869,8752,Rupert Station @ Platform 1,ZN 1
+49.258942,60820,-123.045374,8753,Renfrew Station @ Platform 1,ZN 1
+49.23257,50650,-123.072487,656,Eastbound E 41 Ave @ Fleming St,BUS ZN
+49.232543,50651,-123.069616,657,Eastbound E 41 Ave @ Bruce St,BUS ZN
+49.23261,50648,-123.077944,654,Eastbound E 41 Ave @ Knight St,BUS ZN
+49.232721,50646,-123.08434,652,Eastbound E 41 Ave @ Windsor St,BUS ZN
+49.232677,50647,-123.080668,653,Eastbound E 41 Ave @ Sherbrooke St,BUS ZN
+49.232769,50644,-123.090022,650,Eastbound E 41 Ave @ Fraser St,BUS ZN
+49.232764,50645,-123.087361,651,Eastbound E 41 Ave @ Prince Albert St,BUS ZN
+49.249874,51497,-123.172537,1509,Eastbound W King Edward Ave @ Quesnel Dr,BUS ZN
+49.233152,50652,-123.065403,659,Northbound Victoria Dr @ E 41 Ave,BUS ZN
+49.28266,60980,-123.117951,11524,Southbound Granville St @ W Georgia St,BUS ZN
+49.283461,60993,-123.116549,11525,Northbound Granville St @ Dunsmuir St,BUS ZN
+49.284039,50526,-123.115939,11526,Southbound Granville St @ W Pender St,BUS ZN
+49.285553,50034,-123.11335,11527,Northbound Granville St @ W Hastings St,BUS ZN
+49.215947,50822,-123.090881,11521,Northbound Fraser St @ E 60 Ave,BUS ZN
+49.28172,61292,-123.119373,11522,Southbound Granville St @ Robson St,BUS ZN
+49.280462,61518,-123.100263,11529,Westbound E Pender St @ Main St,BUS ZN
+49.226174,51966,-123.120295,10638,Eastbound W 49 Ave @ Tisdall St,BUS ZN
+49.271208,51286,-123.077466,1297,Southbound Clark Dr @ Grant St,BUS ZN
+49.221502,50986,-123.116906,995,Southbound Cambie St @ W 54 Ave,BUS ZN
+49.225846,50985,-123.116731,994,Langara-49th Station @ Bay 4,BUS ZN
+49.216483,50988,-123.117102,997,Southbound Cambie St @ W 59 Ave,BUS ZN
+49.218787,50987,-123.117011,996,Southbound Cambie St @ W 57 Ave,BUS ZN
+49.229514,50983,-123.116588,992,Southbound Cambie St @ W 45 Ave,BUS ZN
+49.235445,58302,-123.065593,9094,Southbound Victoria Dr @ E 38 Ave,BUS ZN
+49.244934,58312,-123.041719,9097,Northbound Nootka St @ E 29 Ave,BUS ZN
+49.2892,60423,-123.132046,12641,Eastbound Robson St @ Cardero St,BUS ZN
+49.284777,54446,-123.121449,4496,Westbound W Georgia St @ Burrard St,BUS ZN
+49.281469,52905,-123.104795,2936,Eastbound W Hastings St @ Carrall St,BUS ZN
+49.243373,51729,-123.01973,1743,Northbound Smith Ave @ Moscrop St,BUS ZN
+49.26049,58129,-123.033896,11095,Rupert Station @ Bay 2,BUS ZN
+49.258988,50480,-123.114893,11097,Northbound Cambie St @ W 14 Ave,BUS ZN
+49.248502,51715,-123.033956,11092,Southbound Rupert St @ E 24 Ave,BUS ZN
+49.246798,51716,-123.033962,11093,Southbound Rupert St @ E 26 Ave,BUS ZN
+49.208502,52127,-123.120741,11098,Eastbound SW Marine Dr @ W 70 Ave,BUS ZN
+49.243313,61120,-123.109291,11099,Westbound Midlothian Ave @ Clancy Loranger Way,BUS ZN
+49.210911,52141,-123.071659,2161,Eastbound SE Marine Dr @ Argyle St,BUS ZN
+49.269899,50724,-123.05646,731,Northbound Nanaimo St @ E 1st Ave,BUS ZN
+49.266968,50723,-123.056457,730,Northbound Nanaimo St @ E 4th Ave,BUS ZN
+49.273616,50726,-123.056442,733,Northbound Nanaimo St @ Charles St,BUS ZN
+49.210925,52140,-123.075122,2160,Eastbound SE Marine Dr @ Knight St,BUS ZN
+49.277801,50728,-123.056428,735,Northbound Nanaimo St @ Adanac St,BUS ZN
+49.281242,50730,-123.057254,737,Westbound E Hastings St @ Nanaimo St,BUS ZN
+49.28126,50731,-123.060231,738,Westbound E Hastings St @ Templeton Dr,BUS ZN
+49.212198,52131,-123.109277,2151,Eastbound SW Marine Dr @ Manitoba St,BUS ZN
+49.207971,52143,-123.030512,2163,Eastbound SE Marine Dr @ Matheson Cres,BUS ZN
+49.209995,52142,-123.067396,2162,Eastbound SE Marine Dr @ Beatrice St,BUS ZN
+49.221556,51990,-123.032245,2007,Northbound Tyne St @ E 53 Ave,BUS ZN
+49.263217,60575,-123.186038,12816,Southbound Alma St @ W 10 Ave,BUS ZN
+49.237996,58249,-123.032261,8563,Joyce Station @ Bay 6,BUS ZN
+49.248874,59133,-123.01717,12810,Westbound Kincaid St @ Ingleton Ave,BUS ZN
+49.268359,60571,-123.173351,12812,Eastbound W 4th Ave @ Balaclava St,BUS ZN
+49.26601,60553,-123.130869,12819,Eastbound W 6th Ave @ Alder St,BUS ZN
+49.268312,60554,-123.099412,12818,Eastbound E 2nd Ave @ Lorne St,BUS ZN
+49.265331,58087,-123.069596,8569,Northbound Commercial Dr @ E 6th Ave,BUS ZN
+49.261616,60307,-123.115153,12548,Broadway-City Hall Station @ Bay 3,BUS ZN
+49.234833,51604,-123.04321,1616,Southbound Rupert St @ School Ave,BUS ZN
+49.250701,51554,-123.028964,1566,Westbound E 22 Ave @ Anzio Dr,BUS ZN
+49.257839,50115,-123.170777,115,Westbound W 16 Ave @ Mackenzie St,BUS ZN
+49.257816,50114,-123.168896,114,Westbound W 16 Ave @ Macdonald St,BUS ZN
+49.257904,50116,-123.17458,116,Westbound W 16 Ave @ Balaclava St,BUS ZN
+49.261885,50111,-123.16835,111,Southbound Macdonald St @ W 11 Ave,BUS ZN
+49.264268,50110,-123.168373,110,Southbound Macdonald St @ W Broadway,BUS ZN
+49.257315,50113,-123.168496,113,Southbound Macdonald St @ W 16 Ave,BUS ZN
+49.260226,50112,-123.168421,112,Southbound Macdonald St @ W 13 Ave,BUS ZN
+49.253375,50119,-123.16787,119,Southbound Macdonald St @ W 21 Ave,BUS ZN
+49.284667,60567,-123.121679,12805,Eastbound W Georgia St @ Burrard St,BUS ZN
+49.28481,50408,-123.112535,10553,Northbound Seymour St @ W Hastings St,BUS ZN
+49.244611,59489,-123.233387,10559,Eastbound SW Marine Dr @ Wesbrook Mall,BUS ZN
+49.240435,61150,-123.101853,11500,Eastbound E 33 Ave @ Main St,BUS ZN
+49.197842,58214,-123.072392,8823,Eastbound Vulcan Way @ Viking Way,BUS ZN
+49.198222,58228,-123.069313,8824,Southbound No. 6 Rd @ Vulcan Way,BUS ZN
+49.24545,51730,-123.019724,1744,Northbound Smith Ave @ Fir St,BUS ZN
+49.249639,51732,-123.017354,1746,Northbound Ingleton Ave @ Sunset St,BUS ZN
+49.25222,51733,-123.019698,1747,Northbound Smith Ave @ Avondale St,BUS ZN
+49.287499,58704,-123.125666,9131,Westbound W Georgia St @ Bute St,BUS ZN
+49.263073,58135,-123.138707,9136,Southbound Granville St @ W Broadway,BUS ZN
+49.243917,51718,-123.034741,11179,Southbound Rupert St @ Price St,BUS ZN
+49.250669,51556,-123.036911,1568,Westbound E 22 Ave @ Windermere St,BUS ZN
+49.268967,51287,-123.077555,1298,Southbound Clark Dr @ E 1st Ave,BUS ZN
+49.267558,51288,-123.077527,1299,Southbound Clark Dr @ E 3rd Ave,BUS ZN
+49.276442,51281,-123.084506,1292,Eastbound Prior St @ Campbell Ave,BUS ZN
+49.276727,51282,-123.080955,1293,Eastbound Venables St @ Glen Dr,BUS ZN
+49.276551,51279,-123.091207,1290,Eastbound Prior St @ Princess Ave,BUS ZN
+49.276481,51280,-123.087659,1291,Eastbound Prior St @ Hawks Ave,BUS ZN
+49.27378,51285,-123.07742,1296,Southbound Clark Dr @ William St,BUS ZN
+49.276697,51283,-123.07825,1294,Eastbound Venables St @ Vernon Dr,BUS ZN
+49.275523,51284,-123.077375,1295,Southbound Clark Dr @ Parker St,BUS ZN

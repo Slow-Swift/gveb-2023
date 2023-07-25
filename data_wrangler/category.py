@@ -1,8 +1,11 @@
 from typing import Any
 
 from .dataset import Dataset
+from .conversion_functions import Row
 
 class Category:
+    """Represents a Neo4j node category
+    """
     
     def __init__(self, name: str, data: Dataset, property_names: list[str | tuple[str, str]]):
         """ Create a new node category
@@ -10,19 +13,21 @@ class Category:
         Args:
             name (str): The name of the category to use in Neo4j
             data (Dataset): The data used for the nodes
-            property_matcher (list[str | tuple[str, str]]): The fieldnames to use as the properties for the nodes
-            primary_key (str, optional): The fieldname that is unique for each entry. Defaults to 'id'
+            property_names (list[str | tuple[str, str]]): The fieldnames to use as the properties for the nodes. 
+                Fieldnames can be renamed by using a tuple where the first item is the new name and the second is the old name.
         """
         
         self.name = name
         self.data = data
         self.property_names = property_names
         
-    def get_nodes_properties(self) -> list[dict[str, Any]]:
+    def get_nodes_properties(self) -> list[Row]:
         """ Get a list of rows of properties from rows of data
+        
+        Extract the properties from each of the rows in the dataset
 
         Returns:
-            list[dict[str, Any]]: The properties for each node
+            list[Row]: The properties for each node
         """
         
         # Each property key can either be a string or it can be a tuple of two strings in which case the first string is used as the 
