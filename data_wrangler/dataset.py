@@ -79,15 +79,35 @@ class Dataset:
             for row in self:
                 row[name] = 0
     
-    def drop(self, property_name):
+    def drop(self, property_name: str):
+        """Remove a property from the dataset
+
+        Args:
+            property_name (str): The propery to remove
+        """
         for row in self:
             del row[property_name]
     
-    def get_single_row(self):
+    def get_single_row(self) -> Row | None:
+        """Get the first row in the dataset
+
+        Returns:
+            Row | None: The first row. None if there are no rows.
+        """
         if len(self) == 0: return None
         return next(iter(self))
     
     def get_rows(self, row_count):
+        """Get the first [row_count] rows from the dataset
+        
+        If [row_count] is greater than the number of rows then all the rows in the dataset are returned.
+
+        Args:
+            row_count (int): The number of rows to get
+
+        Returns:
+            iterator: An iterator over the rows
+        """
         return islice(self, row_count)
     
     def rename(self, original_name: str, new_name: str):
