@@ -1,3 +1,5 @@
+### Connects the various data layers together and uses those connections to do some more filtering
+
 import sys
 sys.path.append('../') # This should probably be changed to a more sofisticated system at some point. i.e. install the package
 
@@ -8,8 +10,8 @@ from data_wrangler.conversion_functions import split_latitude, split_longitude
 
 # NOTE: The reason I am using Dataset instead of Panda Dataframes is because I would have to work out how to match two Dataframes based on locations
 
-INPUT_FOLDER = '../temp'
-OUTPUT_FOLDER = '../cleaned_data'
+INPUT_FOLDER = '../data/pre_processed_data'
+OUTPUT_FOLDER = '../data/cleaned_data'
 
 CRIME = f'{INPUT_FOLDER}/crimes.csv'
 JUNCTIONS = f'{INPUT_FOLDER}/junctions.csv'
@@ -19,11 +21,6 @@ TRANSIT = f'{INPUT_FOLDER}/transit.csv'
 RAPID_TRANSIT = f'{INPUT_FOLDER}/rapid_transit.csv'
 SCHOOLS = f'{INPUT_FOLDER}/schools.csv'
 BUSINESSES = f'{INPUT_FOLDER}/businesses.csv'
-
-ZONE_NUMBER = 10
-ZONE_LETTER = 'U'
-
-# TODO: Remove stores more than 200 meters from a junction
 
 print("Loading Data")
 crime = Dataset.load_file(CRIME)
@@ -53,7 +50,7 @@ junctions.convert_properties({
     'latitude': float,
     'longitude': float
 })
-junctions.add_property_default('neighbors', [])
+junctions.add_property('neighbors', value=[])
 
 ## Cleanup Segments ##
 print()

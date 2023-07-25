@@ -15,16 +15,18 @@ from data_wrangler.conversion_functions import split_latitude, split_longitude
 ZONE_NUMBER = 10
 ZONE_LETTER = 'U'
 
-JUNCTION_FILE = '../original_data/junctions.csv'
-SEGMENT_FILE = '../original_data/streetsegments.csv'
-TRANSIT_FILE = '../original_data/transitstops.csv'
-RAPID_TRANSIT_FILE = '../original_data/rapid-transit-stations.csv'
-COMMERCIAL_FILE = '../original_data/storefronts-inventory.csv'
-SCHOOL_FILE = '../original_data/schools.csv'
-CRIME_2022 = '../original_data/crime_2022.csv'
-CRIME_2021 = '../original_data/crime_2021.csv'
+INPUT_FOLDER = '../data/original_data'
+OUTPUT_FOLDER = '../data/pre_processed_data'
 
-OUTPUT_FOLDER = '../temp'
+JUNCTION_FILE = f'{INPUT_FOLDER}/junctions.csv'
+SEGMENT_FILE = f'{INPUT_FOLDER}/streetsegments.csv'
+TRANSIT_FILE = f'{INPUT_FOLDER}/transitstops.csv'
+RAPID_TRANSIT_FILE = f'{INPUT_FOLDER}/rapid-transit-stations.csv'
+COMMERCIAL_FILE = f'{INPUT_FOLDER}/storefronts-inventory.csv'
+SCHOOL_FILE = f'{INPUT_FOLDER}/schools.csv'
+CRIME_2022 = f'{INPUT_FOLDER}/crime_2022.csv'
+CRIME_2021 = f'{INPUT_FOLDER}/crime_2021.csv'
+
 
 if not os.path.exists(OUTPUT_FOLDER):
     os.makedirs(OUTPUT_FOLDER)

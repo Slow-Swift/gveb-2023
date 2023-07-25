@@ -71,7 +71,7 @@ class Dataset:
         # TODO: Make sure name is not already a property
         if "value" in kwargs:  
             for row in self:
-                row[name] = kwargs["value"]
+                row[name] = copy(kwargs["value"])
         elif "func" in kwargs:
             for row in self:
                 row[name] = kwargs["func"](row)

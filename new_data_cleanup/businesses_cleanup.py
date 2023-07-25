@@ -1,6 +1,9 @@
+### Processes the business dataset and reduces it from 700,000 records to less than 6000
+### Filters for only valid licences within vancouver related to retail
+
 import pandas as pd
 
-FILENAME = '../original_data/business-licences.csv'
+FILENAME = '../data/original_data/business-licences.csv'
 
 print("Loading Data")
 licences = pd.read_csv(FILENAME, delimiter=';')
