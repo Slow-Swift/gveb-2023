@@ -147,7 +147,7 @@ class Dataset:
             self._rows = new_rows
             self.convert_properties({})
             
-    @deprecated("Use convert_property for each property instead")
+    @deprecated(reason="Use convert_property for each property instead", version="0.0.1")
     def convert_properties(self, conversions: dict[str, ConversionFunction]):
         for row in self:
             for field_name in conversions:
@@ -355,14 +355,13 @@ class Dataset:
         mapping fieldnames to either a function on one parameter, a tuple containing a function on one parameter and a fieldname, or a RowFunction.
         The result of the function is stored in the data using the first fieldname.
         
-        Example:
-        ```
-        {
-            "id": int,
-            "name": (str, "Name"),
-            "indexName": RowFunction(lambda row, i: str(i) + str(row["Name"]))
-        }
-        ```
+        Example::
+        
+            {
+                "id": int,
+                "name": (str, "Name"),
+                "indexName": RowFunction(lambda row, i: str(i) + str(row["Name"]))
+            }
         
         The value matched to "id" in the input is passed to int and stored in "id" in the output.
         The value matched to "Name" in the input is passed to str and stored in "name" in the output.
@@ -402,9 +401,7 @@ class Dataset:
                 # Read each row
                 for i, row in enumerate(rows):
                     # Apply the conversion to the row to get a result
-                    result = { 
-                        key: conversions[key](row, i) for key in conversions
-                    }
+                    result = { key: conversions[key](row, i) for key in conversions }
                     
                     if primary_key not in result:
                         result[primary_key] = i + primary_key_start
