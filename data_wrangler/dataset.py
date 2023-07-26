@@ -16,6 +16,8 @@ from .conversion_functions import RowFunction
 from .conversion_functions import ConversionMap
 from .conversion_functions import ConversionFunction
 
+from deprecated.sphinx import deprecated
+
 
 class Dataset:
     
@@ -68,7 +70,9 @@ class Dataset:
             func (Callable[[Row], Any]): The function to generate values. Is given the row
         """
         
-        # TODO: Make sure name is not already a property
+        if name in self.get_column_names():
+            raise Exception(f"Cannot add property {name} because it already exists in the dataset.")
+            
         if "value" in kwargs:  
             for row in self:
                 row[name] = copy(kwargs["value"])
@@ -111,6 +115,10 @@ class Dataset:
         return islice(self, row_count)
     
     def rename(self, original_name: str, new_name: str):
+        if new_name != original_name and new_name in self.get_column_names():
+            raise Exception(f"Cannot rename property {original_name} to {new_name} because {new_name} already exists in the dataset")
+        
+        # TODO: Make sure this is right
         if original_name == self.primary_key:
             self.primary_key = new_name
         
@@ -119,16 +127,27 @@ class Dataset:
             del row[original_name]
             
     def convert_property(self, field_name: str, conversion: ConversionFunction):
+        """Apply a conversion function to a property
+        
+        Useful to change the type of a property
+        eg: dataset.convert_property('some_property', int) to convert the type of 'some_property' to int
+
+        Args:
+            field_name (str): The name of the property to convert
+            conversion (ConversionFunction): The function to apply
+        """
         for row in self:
             row[field_name] = conversion(row[field_name])
             
         if field_name == self.primary_key:
-            new_rows = {}
-            for key in self._rows:
-                new_rows[conversion(key)] = self._rows[key]
-            self._rows = new_rows
-                
+            new_rows = { row[self.primary_key]: row for row in self._rows.values() }
             
+            if len(new_rows) != len(self._rows):
+                raise Exception("Conversion resulted in non unique primary key")
+            self._rows = new_rows
+            self.convert_properties({})
+            
+    @deprecated(reason="Use convert_property for each property instead", version="0.0.1")
     def convert_properties(self, conversions: dict[str, ConversionFunction]):
         for row in self:
             for field_name in conversions:
@@ -136,29 +155,17 @@ class Dataset:
                 
         if self.primary_key in conversions:
             self._rows = { row[self.primary_key]: row for row in self._rows.values() }
-    
-    def for_each(self, func: Callable[[Row], None]):
-        """ Run a function on every row in the data
-        
-        Used for setting more advanced fields that cannot be set in the initial loading
-
-        Args:
-            func (Callable[[Row], None]): The function to run on every row  
-        """
-        for row in self:
-            func(row)
             
     def match_closest(self, other_data: Dataset, distance_func: Callable[[Row, Row], float], on_match: Callable[[Row, Row, float], None], distance_limit: float=float('inf')):
         """ Pair all the nodes in one data set to the closest node in another dataset
         
         !WARNING: Creates a cross product between the two data sets. May run slowly for large datasets.
-        
-        Distance is the manhattan distance
 
         Args:
-            other_data (Dataset): The set of nodes used for finding the closest node
+            other_data (Dataset): The set of nodes to match this dataset to
             distance_func (Callable[[Row, Row], float]): The function to use for calculating distance between two rows
             on_match (Callable[[Row, Row, float], None]): The function to run when a row is matched with its closest row
+            distance_limit (float): The maximum distance beyond which a match should not be made
         """
         
         # Match for each node in this dataset
@@ -185,19 +192,21 @@ class Dataset:
         print(f"\r    Matched {len(self)} nodes. 100% {' ' * 10}")
         
     def match_closest_p_norm(
-        self, other_data: Dataset, match_keys: list[str | tuple[str, str]], on_match: Callable[[Row, Row, float], None], p_norm:float=2
+        self, other_data: Dataset, match_keys: list[str | tuple[str, str]], on_match: Callable[[Row, Row, float], None], p_norm: float=2, distance_limit: float=float('inf')
     ):
         """ Pair all the nodes in one data set to the closest node in another dataset
         
-        !WARNING: Creates a cross product between the two data sets. May run slowly for large datasets.
+        match_keys is used to select the properties used for finding the distance. The dimension used is the number of match_keys.
+        eg: If there is one match key then one dimensional distance is used. If there are four, then four dimensional distance is used.
         
-        Distance is the manhattan distance
+        !WARNING: Creates a cross product between the two data sets. May run slowly for large datasets.
 
         Args:
             other_data (Dataset): The set of nodes used for finding the closest node
-            match_keys (list[str | tuple(str, str)]): The fieldnames to use for distance. eg: ["latitude", "longitude"] or [("latitude", "LATITUDE"), ("longitude", "LONGITUDE")]
+            match_keys (list[str | tuple(str, str)]): The fieldnames to use for distance. eg: ["latitude", "longitude"]
             on_match (Callable[[Row, Row, float], None]): The function to run when a row is matched with its closest row
             p_norm (float, optional): The p_norm function to use for calculating distance. Defaults to 2 (Euclidean distance)
+            distance_limit (float): The maximum distance beyond which a match should not be made
         """
         def distance(row_1: Row, row_2: Row) -> float:
             distance = 0
@@ -220,6 +229,7 @@ class Dataset:
             other_data (Dataset): The data to match to
             match_field (str): The name of the field in which to store the primary key of the other row of the match
             dst_field (str): The name of the field in which to store the distance of the match
+            distance_limit (float): The maximum distance beyond which a match should not be made
         """
         
         if count_field:
@@ -244,68 +254,56 @@ class Dataset:
             return haversine(p1, p2, unit=Unit.METERS)
         
         self.match_closest(other_data, distance, on_match, distance_limit=distance_limit)
-    
-    def match_lat_lng_approx(self, other_data: Dataset, match_field: str, dst_field:str, count_field: str = '', distance_limit=float('inf')):
-        """ Pair all the rows in this dataset with the aprroximated closes row in [other_data] based on latitude and longitude.
         
-        The haversine formula is used to calculate distance in meters from latitude and longitude
-        The approximation should be close for points that are near to each other. 
-        sin(x) is approximated with x 
+    def get_column_names(self):
+        """Get the names of the columns in the dataset
+        
+        The primary key is always the virst value
 
-        Args:
-            other_data (Dataset): The data to match to
-            match_field (str): The name of the field in which to store the primary key of the other row of the match
-            dst_field (str): The name of the field in which to store the distance of the match
+        Returns:
+            list[str]: The column names
         """
-        
-        if count_field:
-            for row in other_data:
-                row[count_field] = 0
-                
-        for row in self:
-            row[match_field] = 0
-            row[dst_field] = 0
-        
-        def on_match(row_1, row_2, dst):
-            row_1[match_field] = row_2[other_data.primary_key]
-            row_1[dst_field] = dst
-            
-            if count_field:
-                row_2[count_field] = row_2[count_field] + 1
-            
-        def distance(row_1: Row, row_2: Row):
-            p1 = (row_1['latitude'], row_1['longitude'])
-            p2 = (row_2['latitude'], row_2['longitude'])
-            
-            return haversine(p1, p2, unit=Unit.METERS)
-        
-        self.match_closest(other_data, distance, on_match, distance_limit=distance_limit)
-        
-    def get_fieldnames(self):
         if len(self) == 0: return []
-        fieldnames =  [key for key in self.get_single_row()]  # type: ignore  # We know it's not none because we checked in the first line
+        fieldnames =  [key for key in self.get_single_row()]  # type: ignore  # We know it's not None because we checked in the first line
+        
+        # Make sure the primary key is the first one in the list
         if fieldnames[0] != self.primary_key:
             fieldnames.remove(self.primary_key)
             fieldnames.insert(0, self.primary_key)
         return fieldnames
     
     def merge(self, other: Dataset):
-        empty = len(self) == 0 or len(other) == 0
-        if not empty:
-            if self.primary_key != other.primary_key: return
-            if self.get_fieldnames() != other.get_fieldnames(): return
+        """Merge two datasets
+        
+        The two datasets must have the same columns and primary key
+
+        Args:
+            other (Dataset): The dataset to merge into this one
+        """
+        
+        if self.primary_key != other.primary_key:
+            raise Exception("Cannot merge datasets with different primary keys")
+        if self.get_column_names() != other.get_column_names():
+            raise Exception("Cannot merge datasets with different columns")
             
         self._rows.update(other._rows)
         
     def filter(self, filter: Callable[[Row], bool]):
+        """Filter rows from the dataset
+        
+        The filter function is run for each of the rows. If it returns False the row is removed from the dataset.
+
+        Args:
+            filter (Callable[[Row], bool]): The filter function
+        """
         toDelete = []
         for row in self:
             if not filter(row):
                 toDelete.append(row)
-        for row in toDelete:
+        for row in toDelete: 
             del self._rows[row[self.primary_key]]
         
-    def write_to_file(self, filename: str, delimiter: str = ',', fieldnames=None, write_header = True):
+    def write_to_file(self, filename: str, delimiter: str = ',', columnnames=None, write_header = True):
         """ Write the dataset to a csv file
 
         Args:
@@ -318,11 +316,11 @@ class Dataset:
             print("No data to write!")
             return
         
-        if fieldnames == None:
-            fieldnames = self.get_fieldnames()
+        if columnnames == None:
+            columnnames = self.get_column_names()
         
         with open(filename, 'w', newline='', encoding='utf-8-sig') as out_file:
-            writer = csv.DictWriter(out_file, fieldnames=fieldnames, quoting=csv.QUOTE_MINIMAL)
+            writer = csv.DictWriter(out_file, fieldnames=columnnames, delimiter=delimiter, quoting=csv.QUOTE_MINIMAL)
             
             if write_header:
                 writer.writeheader()
@@ -351,18 +349,19 @@ class Dataset:
     def load_file(filename: str, conversion_map: ConversionMap | None = None, primary_key='id', delimiter: str =',', fieldnames: Sequence[str] | None=None, has_header=True, primary_key_start=0):
         """Load data from a csv file
         
+        WARNING: conversion_map is deprecated. Don't use conversion_map instead use conver_property() and rename_property()
+        
         [conversion_map] is used to manipulate the read data in order to turn it into more useful formats and types. A ConversionMap is a dictionary
         mapping fieldnames to either a function on one parameter, a tuple containing a function on one parameter and a fieldname, or a RowFunction.
         The result of the function is stored in the data using the first fieldname.
         
-        Example:
-        ```
-        {
-            "id": int,
-            "name": (str, "Name"),
-            "indexName": RowFunction(lambda row, i: str(i) + str(row["Name"]))
-        }
-        ```
+        Example::
+        
+            {
+                "id": int,
+                "name": (str, "Name"),
+                "indexName": RowFunction(lambda row, i: str(i) + str(row["Name"]))
+            }
         
         The value matched to "id" in the input is passed to int and stored in "id" in the output.
         The value matched to "Name" in the input is passed to str and stored in "name" in the output.
@@ -402,9 +401,7 @@ class Dataset:
                 # Read each row
                 for i, row in enumerate(rows):
                     # Apply the conversion to the row to get a result
-                    result = { 
-                        key: conversions[key](row, i) for key in conversions
-                    }
+                    result = { key: conversions[key](row, i) for key in conversions }
                     
                     if primary_key not in result:
                         result[primary_key] = i + primary_key_start

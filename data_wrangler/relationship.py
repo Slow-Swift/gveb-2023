@@ -25,6 +25,13 @@ class Relationship:
         self.remove_duplicates = remove_duplicates
         
     def get_links(self) -> list[tuple[Any, Any, Row]]:
+        """Get the links between the dataset
+        
+        Each link is a tuple (id of category1, id of category2, Row of relationship properties)
+
+        Returns:
+            list[tuple[Any, Any, Row]]: The links
+        """
         from_data = self.category_1.data
         to_data = self.category_2.data
         
