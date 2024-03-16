@@ -16,7 +16,6 @@ JUNCTION_FILE = f'{INPUT_FOLDER}/junctions.csv'
 CRIME_SIGMA = 132
 STANDARD_DEVIATION = 400
 
-
 junctions = Dataset.load_file(JUNCTION_FILE)
 junctions.convert_properties({
     'id': int,
