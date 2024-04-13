@@ -69,10 +69,15 @@ class GraphWriter:
         for batch in range(0, len(links), batch_size):
             sub_link_values = links[batch:batch + batch_size]
             # print(sub_link_values[0])
-            self._session.run(
-                query, # type: ignore
-                data = sub_link_values
-            )
+            
+            try:
+                self._session.run(
+                    query, # type: ignore
+                    data = sub_link_values
+                )
+            except:
+                print("Could not run write relation.")
+                exit(-1)
             
             # Update the progress information
             print(f"\rWriting {relationship.name} {((batch + len(sub_link_values)) / len(links)):.0%}" + (" " * 10), end='')

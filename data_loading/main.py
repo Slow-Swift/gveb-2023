@@ -32,6 +32,8 @@ COMMERCIAL_FILE = f'{INPUT_FOLDER}/stores.csv'
 SCHOOL_FILE = f'{INPUT_FOLDER}/schools.csv'
 BUSINESSES_FILE = f'{INPUT_FOLDER}/businesses.csv'
 TREES_FILE = f'../data/original_data/street-trees.csv'
+GRAFFITI_FILE = f'{INPUT_FOLDER}/graffiti.csv'
+OBSERVATIONS_FILE = f'{INPUT_FOLDER}/observations.csv'
 
 ZONE_NUMBER = 10
 ZONE_LETTER = 'U'
@@ -86,7 +88,8 @@ def load_db_info(filepath):
                     user = value
                 case "NEO4J_PASSWORD":
                     password = value
-                    
+                
+    print(uri)    
     if not (uri and user and password): return None
     return (uri, user, password)
 
@@ -128,6 +131,7 @@ def load_junctions():
             'rapid_transit_reach': float,
             'schools_reach': float,
             'retail_reach': float,
+            'elevation': float
         }
     )
     
@@ -152,6 +156,7 @@ def load_junctions():
             'rapid_transit_reach',
             'schools_reach',
             'retail_reach',
+            'elevation'
         ]
     )
     
@@ -389,6 +394,78 @@ def load_trees():
         ]
     )
     return trees_data, trees
+    
+def load_graffiti():
+    print("Loading Graffiti")
+    
+    graffiti_data = Dataset.load_file(
+        GRAFFITI_FILE,
+        {
+            'id': int,
+            'area': str,
+            'latitude': float,
+            'longitude': float,
+            'junction_id': int,
+            'junction_dst': float
+        }
+    )
+    
+    graffiti = Category(
+        "Graffiti",
+        graffiti_data,
+        [
+            'id',
+            'area',
+            'latitude',
+            'longitude'
+        ]
+    )
+    print("Loaded Graffiti")
+    
+    return graffiti_data, graffiti
+
+def load_observations():
+    print("Loading Observations")
+    
+    observation_data = Dataset.load_file(
+        OBSERVATIONS_FILE,
+        {
+            'id': int,
+            'patrol_id': str,
+            'datetime': str,
+            'title': str,
+            'description': str,
+            'crime_likelihood': int,
+            'crime_type': int,
+            'crime_type_description': str,
+            'latitude': float,
+            'longitude': float,
+            'junction_id': int,
+            'junction_dst': float
+        }
+    )
+    
+    observations = Category(
+        "Observation",
+        observation_data,
+        [
+            'id',
+            'patrol_id',
+            'datetime',
+            'title',
+            'description',
+            'crime_likelihood',
+            'crime_type',
+            'crime_type_description',
+            'latitude',
+            'longitude'
+        ]
+    )
+    
+    print("Loaded Observations")
+    
+    return observation_data, observations
+>>>>>>> a639093edc6b82752cd146b677ede17e50d874cc
 
 def load_businesses():
     print("Loading Businesses")
@@ -436,7 +513,7 @@ def load_businesses():
     
     return businesses_data, businesses
 
-def create_relationships(junctions, segments, transit, crimes, stores, rtransit, schools, businesses):
+def create_relationships(junctions, segments, transit, crimes, stores, rtransit, schools, businesses, graffiti, observations):
     def junction_prop_matcher(j1, j2):
         segment_id = j1['street_ids'][j1['neighbor_ids'].index(j2['id'])]
         segment = segments[segment_id]
@@ -505,6 +582,16 @@ def create_relationships(junctions, segments, transit, crimes, stores, rtransit,
         prop_matcher=first_set_prop_match([('business_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
     )
     
+    nearest_graffiti_jn = Relationship(
+        "NEAREST_GRAFFITI_JN", graffiti, junctions, 'junction_id',
+        prop_matcher=first_set_prop_match([('graffiti_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
+    )
+    
+    nearest_observation_jn = Relationship(
+        "NEAREST_OBSERVATION_JN", observations, junctions, 'junction_id',
+        prop_matcher=first_set_prop_match([('observation_id', 'id'), 'junction_id', ('distance', 'junction_dst')])
+    )
+    
     relationships = [
         connects_to,
         nearest_transit_jn,
@@ -512,7 +599,9 @@ def create_relationships(junctions, segments, transit, crimes, stores, rtransit,
         nearest_store_jn,
         nearest_station_jn,
         nearest_school_jn,
-        nearest_business_jn
+        nearest_business_jn,
+        nearest_graffiti_jn,
+        nearest_observation_jn
     ]
     
     return relationships
@@ -532,6 +621,8 @@ def load_data(session):
     schools_data, schools = load_schools()
     businesses_data, businesses = load_businesses()
     trees_data, trees = load_trees()
+    graffiti_data, graffiti = load_graffiti()
+    observation_data, observations = load_observations()
     
     categories = [
         junctions,
@@ -542,10 +633,12 @@ def load_data(session):
         schools,
         businesses,
         trees
+        graffiti,
+        observations
     ]
     
     relationships = create_relationships(
-        junctions, segment_data, transit, crimes, stores, rtransit, schools, businesses
+        junctions, segment_data, transit, crimes, stores, rtransit, schools, businesses, graffiti, observations
     )
     
     print("Writing Data")

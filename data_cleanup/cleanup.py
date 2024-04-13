@@ -21,6 +21,8 @@ TRANSIT = f'{INPUT_FOLDER}/transit.csv'
 RAPID_TRANSIT = f'{INPUT_FOLDER}/rapid_transit.csv'
 SCHOOLS = f'{INPUT_FOLDER}/schools.csv'
 BUSINESSES = f'{INPUT_FOLDER}/businesses.csv'
+GRAFFITI = f'{INPUT_FOLDER}/graffiti.csv'
+OBSERVATIONS = f'{INPUT_FOLDER}/observations.csv'
 
 print("Loading Data")
 crime = Dataset.load_file(CRIME)
@@ -196,6 +198,8 @@ for business in businesses:
     if not business['retail']: continue
     junctions[business['junction_id']]['retail_count'] += 1
     junctions[business['junction_id']]['employees'] += business['employees_count']
+    
+
 
 ## Write Data ##
 

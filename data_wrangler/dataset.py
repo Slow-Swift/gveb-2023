@@ -220,7 +220,7 @@ class Dataset:
         
         self.match_closest(other_data, distance, on_match)
         
-    def match_lat_lng(self, other_data: Dataset, match_field: str, dst_field:str, count_field: str = '', distance_limit=float('inf')):
+    def match_lat_lng(self, other_data: Dataset, match_field: str, dst_field:str, count_field: str = '', distance_limit=float('inf'), count_attrib='', reset_count=True):
         """ Pair all the rows in this dataset with the closest row in [other_data] based on latitude and longitude.
         
         The haversine formula is used to calculate distance in meters from latitude and longitude
@@ -234,7 +234,10 @@ class Dataset:
         
         if count_field:
             for row in other_data:
-                row[count_field] = row.get(count_field, 0)
+                if not reset_count:
+                    row[count_field] = row.get(count_field, 0)
+                else:
+                    row[count_field] = 0
                 
         for row in self:
             row[match_field] = 0
@@ -244,9 +247,22 @@ class Dataset:
             row_1[match_field] = row_2[other_data.primary_key]
             row_1[dst_field] = dst
             
-            if count_field:
-                row_2[count_field] = row_2[count_field] + 1
+            increment = 1
+            if count_attrib:
+                increment = row_1[count_attrib]
             
+            if count_field:
+                row_2[count_field] = row_2[count_field] + increment
+            
+        def distance(row_1: Row, row_2: Row):
+            p1 = (row_1['latitude'], row_1['longitude'])
+            p2 = (row_2['latitude'], row_2['longitude'])
+            
+            return haversine(p1, p2, unit=Unit.METERS)
+        
+        self.match_closest(other_data, distance, on_match, distance_limit=distance_limit)
+        
+    def match_lat_lng_custom(self, other_data: Dataset, on_match, distance_limit=float('inf')):
         def distance(row_1: Row, row_2: Row):
             p1 = (row_1['latitude'], row_1['longitude'])
             p2 = (row_2['latitude'], row_2['longitude'])
@@ -389,14 +405,17 @@ class Dataset:
             
             # Read each row of the file
             rows = csv.DictReader(input_file, quoting=csv.QUOTE_MINIMAL, delimiter=delimiter, fieldnames=fieldnames)
-            
             # Read the header if necessary
             if(fieldnames != None and has_header):
                 next(rows)
             
             if conversion_map != None:
                 # Make all conversions using IndexedConversionMap
-                conversions = Dataset._fix_conversion(conversion_map)
+                conversions, required_fieldnames = Dataset._fix_conversion(conversion_map)
+                
+                for req_name in required_fieldnames:
+                    if req_name not in rows.fieldnames:
+                        print(f"{req_name} is not a valid fieldname. The availiable fieldnames are {rows.fieldnames}")
                 
                 # Read each row
                 for i, row in enumerate(rows):
@@ -418,7 +437,7 @@ class Dataset:
             return Dataset(data, primary_key)
         
     @staticmethod
-    def _fix_conversion(conversions: ConversionMap) -> dict[str, Callable[[Row, int], Any]]:
+    def _fix_conversion(conversions: ConversionMap) -> tuple[dict[str, Callable[[Row, int], Any]], list[str]]:
         """Modify a ConversionMap to only used IndexedConversionFunctions   
 
         Args:
@@ -429,11 +448,13 @@ class Dataset:
         """
         
         result = {}
+        required_fieldnames = []
         for key in conversions:
             # The conversion is (function, key_in)
             if type(conversions[key]) == tuple:
                 func = conversions[key][0]                                                  # type: ignore
                 fieldname = conversions[key][1]                                             # type: ignore
+                required_fieldnames.append(fieldname)
                 
                 # Have to use instantly called lambda expression wrapper to avoid late binding
                 result[key] = (lambda func, fn: 
@@ -444,8 +465,9 @@ class Dataset:
                 result[key] = (lambda rowf: rowf.f)(conversions[key])                       # type: ignore
             # The conversion is function
             else:
+                required_fieldnames.append(key)
                 # Have to use instantly called lambda expression wrapper to avoid late binding
                 result[key] = (lambda key: 
                     lambda row, index: conversions[key](row[key])                           # type: ignore
                 )(key)    
-        return result
+        return result, required_fieldnames

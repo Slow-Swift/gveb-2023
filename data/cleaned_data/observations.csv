@@ -1,0 +1,316 @@
+﻿id,patrol_id,datetime,title,description,crime_likelihood,crime_type,crime_type_description,latitude,longitude,junction_id,junction_dst
+440,Patrol object (143),2021-08-01 03:40:28.557303+00:00,Commercial Drive Saturday evening,"Commercial Drive on a busy Sat.evening
+Busy streets, 
+Garbage,litter
+Grafiti
+Public drinking
+Restaurant drinking",4,2,,49.2665435,-123.0701605,4569,38.12890792954279
+439,Patrol object (143),2021-08-01 03:20:31.217977+00:00,East 7th & Commercial,"Residential St, by laneway and Commercial
+Cars with items left inside - possible theft from auto opportunity
+Barbwire fence on ministry building,
+People from condo cheering
+Litter
+Outside seating for business",4,3,,49.2642109,-123.0689437,4564,55.91945989431333
+438,Patrol object (143),2021-08-01 02:58:47.846203+00:00,Commercial and McSpadden,"Grafiti on wall and sidewalk, very drunk person",4,2,,49.2664055,-123.0694966,4569,12.545564775490746
+437,Patrol object (143),2021-08-01 02:46:45.456400+00:00,Gravely Street,"Graffiti on garage, minor amounts of litter",4,2,,49.2704445,-123.0669754,4662,49.348496402447914
+436,Patrol object (143),2021-08-01 02:41:46.412550+00:00,Front of liquor store,"Public drinking in several groups, large amount of debris on ground. Physical confrontation between two individuals. graffiti on wall",5,2,,49.2708431,-123.0697048,4576,38.66747855752098
+435,Patrol object (141),2021-07-30 18:30:51.341348+00:00,GWCPC,In the cpc,2,2,,49.2672036,-123.0698233,4572,17.763994472504148
+434,Patrol object (141),2021-07-30 18:30:51.156443+00:00,GWCPC,In the cpc,2,2,,49.2672036,-123.0698233,4572,17.763994472504148
+433,Patrol object (141),2021-07-30 18:22:49.481703+00:00,"Garbage, constuction","Lots of garbage on the ground, gravel dirt",2,2,,49.2664457,-123.0722696,4402,104.6464384012521
+432,Patrol object (141),2021-07-30 18:18:55.307718+00:00,Grafiti,"Grafiti on bins, and on walls, smells of urine",2,2,,49.2661676,-123.0702077,4568,44.121908480010774
+431,Patrol object (141),2021-07-30 18:14:32.774745+00:00,Grafiti on garbage bins,"Grafiti on walls, garbage bin, bike lane hazard",2,2,,49.2639823,-123.0701774,4564,39.52915015612099
+430,Patrol object (141),2021-07-30 18:09:39.210600+00:00,"Shady Area, grafiti on pole","Shady Area, grafiti on pole",1,2,,49.2633692,-123.06816,4619,30.49332236326111
+429,Patrol object (141),2021-07-30 18:04:17.714229+00:00,Quiet Neighborhood,Nothing,1,2,,49.2647744,-123.0659924,4734,32.34880135616228
+428,Patrol object (141),2021-07-30 17:53:18.035314+00:00,Construction,"New house being build, traffic",1,5,Traffic- speeding,49.2698709,-123.065876,4743,35.70846514814075
+427,Patrol object (141),2021-07-30 17:49:12.253265+00:00,Victoria Park,"Garbage on ground, homeless person picking up cans, kids playing on playground, grafiti on sign",2,2,,49.2719458,-123.0657136,4749,17.49148191186522
+426,Patrol object (141),2021-07-30 17:38:41.943776+00:00,Grafiti in Alley,"Lots of grafiti on garbage bins and wooden poles and buildings, overflowing garbage",3,1,,49.2743386,-123.0688512,4582,66.86202881122578
+425,Patrol object (141),2021-07-30 17:34:15.153543+00:00,Stickers on Poles,"Construction, people eating food, lots of traffic",3,2,,49.2763506,-123.0694181,4585,32.81825195024096
+424,Patrol object (141),2021-07-30 17:29:44.870582+00:00,Grafiti on Trash Bins,"Grafiti on Trash Bins, garbage on ground, old male yelling",3,2,,49.2750227,-123.0701411,4583,49.511227348426296
+423,Patrol object (141),2021-07-30 17:25:29.496234+00:00,Garbage and Homeless People,"Grandview park, lots of homeless people, garbage and clothes on ground and benches, grafiti on ground",4,2,,49.2734641,-123.0701955,4580,67.19383821750837
+422,Patrol object (141),2021-07-30 17:20:23.845856+00:00,Dirty walls,"Walls are dirty, people sitting outside",1,2,,49.2714575,-123.0698011,4578,17.35449431596965
+421,Patrol object (141),2021-07-30 17:14:55.444257+00:00,Grafiti,"Lot of people, traffic, grafiti on walls",3,2,,49.2689138,-123.0698139,4574,28.29674233988202
+420,Patrol object (140),2021-07-30 00:54:53.786080+00:00,GWCPC,"Busy street, graffiti, homeless population",5,4,,49.267196,-123.0696064,4572,12.4397507269479
+419,Patrol object (140),2021-07-30 00:47:05.145150+00:00,2051 East 4th,Open doors and windows,3,3,,49.2669911,-123.0625008,4932,45.97535462070164
+418,Patrol object (140),2021-07-30 00:43:51.694987+00:00,East 4th and Templeton,"Construction, run down property, car on grass",4,3,,49.2669108,-123.0598736,4997,22.084440045042314
+417,Patrol object (140),2021-07-30 00:34:10.843552+00:00,Grant and Garden,"Graffiti, construction",2,3,,49.2710856,-123.0580132,5108,12.74963782647947
+416,Patrol object (140),2021-07-30 00:29:45.001592+00:00,Charles and Garden,"Construction, graffiti, large school",4,2,,49.2727422,-123.0581006,5112,25.528481723308474
+415,Patrol object (140),2021-07-30 00:19:52.234114+00:00,Templeton and Kitchener,"Grafiti, construction, overgrown grass, fenced off playgrounds",4,2,,49.2721296,-123.0602876,5010,30.189048239486663
+414,Patrol object (140),2021-07-29 23:59:02.621608+00:00,Gravely and Semlin,"Graffiti, open doors, damages vehicle",2,3,,49.2703473,-123.0635903,4839,18.58002617668008
+413,Patrol object (140),2021-07-29 23:46:41.586014+00:00,Gravely and Templeton,"Construction, Graffiti, damaged vehicle",3,2,,49.270395,-123.0602275,5007,22.54724059566286
+412,Patrol object (140),2021-07-29 23:42:06.628755+00:00,2303 Gravely,"Traffic, construction",2,1,,49.2703114,-123.0576047,5106,29.777419858313372
+411,Patrol object (140),2021-07-29 23:32:14.140212+00:00,Garden Park,"Graffiti, litter, construction, open doors",3,3,,49.2686849,-123.0590575,5002,65.64848495114248
+410,Patrol object (140),2021-07-29 23:28:15.058940+00:00,East second Lakewood Drive,"Vandalism, open windows",1,3,,49.2686564,-123.0616162,4934,20.026086693249155
+409,Patrol object (140),2021-07-29 23:24:28.055838+00:00,1949 East Second,Construction,1,1,,49.2687753,-123.0645839,4837,57.14113312190253
+408,Patrol object (140),2021-07-29 23:15:07.014620+00:00,McSpadden Park,"Graffiti, broken fence, deteriorating infrastructure",5,2,,49.2671346,-123.06662,4736,66.9958041180208
+407,Patrol object (139),2021-07-28 23:02:05.216014+00:00,1139 Davie,"Many parked cars on the street, theft of and from auto can occur",3,1,,49.2812049,-123.1322864,1946,99.68852327144145
+406,Patrol object (139),2021-07-28 22:58:27.414306+00:00,St Paul's,Alot people around.,3,5,"Public use of substances, dumping, encampments",49.2800972,-123.1279759,2189,29.3487720331211
+405,Patrol object (139),2021-07-28 22:54:23.659725+00:00,Smithe and Burrard,Busy intersection,1,1,,49.2827875,-123.1249536,2316,73.85197113241338
+404,Patrol object (139),2021-07-28 22:50:52.269975+00:00,Burrard and west georgia,Bussy intersection crime is unlikely. Most likely would be theft from auto.,1,1,,49.2843043,-123.1216135,2432,34.96220146079818
+403,Patrol object (139),2021-07-28 22:50:49.253744+00:00,Burrard and west georgia,Bussy intersection crime is unlikely. Most likely would be theft from auto.,1,1,,49.2843043,-123.1216135,2432,34.96220146079818
+402,Patrol object (139),2021-07-28 22:50:49.215661+00:00,Burrard and west georgia,Bussy intersection crime is unlikely. Most likely would be theft from auto.,1,1,,49.2843043,-123.1216135,2432,34.96220146079818
+401,Patrol object (139),2021-07-28 22:50:49.198128+00:00,Burrard and west georgia,Bussy intersection crime is unlikely. Most likely would be theft from auto.,1,1,,49.2843043,-123.1216135,2432,34.96220146079818
+400,Patrol object (139),2021-07-28 22:46:47.872421+00:00,505 Burrard,"Alot of traffic on Burrard, most likely crime would be theft from and of auto.",1,1,,49.2860287,-123.1182894,2588,70.6340554211905
+399,Patrol object (139),2021-07-28 22:42:48.558595+00:00,1055 West Hastings Street,"Many cars parked out on the street, large amount of traffic most likely crime WOD be theft of and from auto at night.",2,1,,49.2890511,-123.1172882,2575,71.60093737354043
+398,Patrol object (139),2021-07-28 22:38:47.603166+00:00,Hastings and bute,Thefts and break ins can occur at night,1,1,,49.2889097,-123.1228293,2380,14.260009973468371
+397,Patrol object (139),2021-07-28 22:33:18.528041+00:00,Harbour side park,"Alot of traffic, but at night theft from and of auto can occur",2,1,,49.2892676,-123.1259833,2275,44.11808271001563
+396,Patrol object (139),2021-07-28 22:19:55.515128+00:00,Mariana Square park,Can be secluded at night so assault or theft of auto and from auto can occur at night.,2,1,,49.2921819,-123.1315902,2058,72.26342363950768
+395,Patrol object (139),2021-07-28 22:15:17.689611+00:00,Bayshore marina,Can be secluded at night. Assault and theft or robbery could happen,3,4,,49.2930649,-123.1286269,2145,133.92765554361426
+394,Patrol object (139),2021-07-28 22:10:42.832872+00:00,Cardero's,"Many parked cars, most likely crime would be theft from auto or theft of auto.",3,1,,49.2914205,-123.1279845,2200,54.2632390926007
+393,Patrol object (139),2021-07-28 22:07:08.031358+00:00,Coal harbour seawall walkway,Unlikely for crime in the day but at night assaults or theft can occur due to less people being around,3,4,,49.2910152,-123.1237524,2354,105.54528156635656
+392,Patrol object (139),2021-07-28 21:55:46.368913+00:00,West Hastings and Burrard,Most likely would be theft from auto due to cars parked out on the street,2,1,,49.287028,-123.117272,2617,21.564158346243044
+391,Patrol object (139),2021-07-28 21:50:24.859988+00:00,"Burrard station, public use of substance",Crimes such as use of substances theft or assault at night can occur in and around the station,3,5,Using of restricted substances,49.2853855,-123.1203035,2508,35.09574386374351
+390,Patrol object (139),2021-07-28 21:44:41.142568+00:00,755 Burrard,"Unlikely for crime, too much traffic. Most likely would be theft from auto due to cars parked on the street",1,1,,49.2840601,-123.1216819,2432,7.519254051893132
+389,Patrol object (139),2021-07-28 21:40:29.579608+00:00,Burrard and Barclay,"Alot of Traffic and pedestrians even at night. Crime unlikely. If it does occur, would be theft from auto or possible assault at night",1,1,,49.282077,-123.1245325,2316,20.449735989464372
+388,Patrol object (139),2021-07-28 21:36:23.945534+00:00,Burrard and davie,"Community garden, crime unlikely. Theft and possible assault may occur.",1,1,,49.2792552,-123.1292227,2113,20.519427625309685
+387,Patrol object (139),2021-07-28 21:25:38.626167+00:00,Davie and Thurlow,"Crime unlikely, however assaults and thefts and break-ins can happen at night",2,1,,49.2803547,-123.1308023,2037,27.633278016332945
+386,Patrol object (136),2021-07-28 19:35:16.364052+00:00,Nothing,Nothing,3,3,,49.2832622,-123.1324469,1980,87.67490777689464
+385,Patrol object (136),2021-07-28 19:26:15.556953+00:00,Nothing,Nothing,1,3,,49.285959,-123.1354116,1858,12.421685305970781
+384,Patrol object (136),2021-07-28 19:07:21.519383+00:00,Nothing,Nothing,2,3,,49.2902017,-123.1334235,1925,41.461736296654365
+383,Patrol object (136),2021-07-28 18:58:56.472553+00:00,Nothing,Nothing,2,3,,49.2877278,-123.1299573,2095,20.348088918320247
+382,Patrol object (136),2021-07-28 18:50:40.606444+00:00,Nothing,Nothing,2,3,,49.2849601,-123.1252733,2297,52.838697381450686
+381,Patrol object (136),2021-07-28 18:41:36.674236+00:00,Nothing,Nothing,2,3,,49.2849712,-123.1254317,2297,61.697856388368606
+380,Patrol object (136),2021-07-28 18:32:34.436971+00:00,Nothing,Nothing,2,3,,49.2852942,-123.1279009,2169,9.176570377793958
+379,Patrol object (136),2021-07-28 18:22:46.555920+00:00,Nothing,Nothing,2,2,,49.2822656,-123.128527,2170,45.80067621337121
+378,Patrol object (136),2021-07-28 18:13:36.793236+00:00,Drug use on the street,Drug use on the street - St Pauls,4,2,,49.2794129,-123.128911,2113,41.92472596945421
+377,Patrol object (136),2021-07-28 18:09:58.181633+00:00,Person suffering from homelessness on the corner,A,2,2,,49.2803419,-123.1309354,2037,18.30863917293135
+376,Patrol object (135),2021-07-27 22:41:30.937746+00:00,Underground parking for residential area,Insecure premise,3,5,Break and enters,49.2836802,-123.1352008,1864,78.85087822224514
+375,Patrol object (135),2021-07-27 22:37:21.016167+00:00,Old apartment buildings,Low and insecure premises,5,5,"Break and enters, theff",49.2849689,-123.1360647,1816,32.151158028569036
+374,Patrol object (135),2021-07-27 22:35:08.838519+00:00,Quiet street,Quiet and dark area,4,5,Theft from auto,49.2853617,-123.1367682,1816,35.02877873472265
+373,Patrol object (135),2021-07-27 22:27:27.478129+00:00,Paid parking and insecure stores,Store with lax security and outdoor paid parking,4,1,,49.287923,-123.1405737,1632,11.850443771479256
+372,Patrol object (135),2021-07-27 22:22:35.891623+00:00,Intersection and store front,Busy intersection,4,5,Traffic violations,49.2893675,-123.138415,1721,13.864176571619097
+371,Patrol object (135),2021-07-27 22:03:44.292136+00:00,Robson Public Market,Many stores inside and outside with displays. No PC or security guard presence.,4,1,,49.2894606,-123.1324818,1981,15.34177065040047
+370,Patrol object (135),2021-07-27 21:58:54.039625+00:00,Intersection,"Run red lights, car accidents, illegal manuveurs, and speeding.",4,5,Traffic violations,49.2877682,-123.1299378,2095,15.704855774114161
+369,Patrol object (135),2021-07-27 21:52:58.512895+00:00,Patios and outdoor seating,Many people sitting on the patio and outdoor seating,4,2,,49.2864297,-123.127351,2217,55.486836319737286
+368,Patrol object (135),2021-07-27 21:47:53.203193+00:00,Many stores and parked cars,Little to no PC or security guard presence around stores or the streets.,4,1,,49.2851714,-123.1252992,2297,73.31948769234727
+367,Patrol object (135),2021-07-27 21:42:16.288767+00:00,Robson Stores and many parked cars,Many displays and parked cars.,4,3,,49.2833651,-123.1229835,2379,16.109582527253924
+366,Patrol object (135),2021-07-27 21:36:39.958407+00:00,Scotiabank Theatre Parking Lot,Many cars parked on the street and inside the Theatre parking lot.,2,1,,49.2815455,-123.125582,2265,49.71976869299486
+365,Patrol object (135),2021-07-27 21:26:17.015039+00:00,Outdoor patios,Patios in front of restaurants,3,1,,49.2801123,-123.1308968,2037,36.08794747890465
+364,Patrol object (135),2021-07-27 21:21:52.152254+00:00,Grocery store,Several produces displayed outside,5,1,,49.2811126,-123.1328103,1946,83.45511349988844
+363,Patrol object (133),2021-07-26 22:54:39.507964+00:00,Jervis and davie,"Alot of traffic around, most likely would be thefts from auto or maybe break ins.",1,1,,49.2829589,-123.1348269,1880,19.248168976899187
+362,Patrol object (133),2021-07-26 22:49:53.243098+00:00,Broughton and comox,"Sidestreets with vehicles parked by the curb, theft from autos can occur as well as robbery or break ins but the latter two are less likely.",3,1,,49.2850201,-123.1342844,1915,11.841662787364323
+361,Patrol object (133),2021-07-26 22:45:02.062492+00:00,Barclay and broughton,Secluded with parked vehicles on the sides theft from auto is likely at night or vandalism and mischief. Assault and break ins can happen but not very likely.,4,1,,49.2868463,-123.1318891,2002,39.95765061940245
+360,Patrol object (133),2021-07-26 22:40:37.298864+00:00,733 Alberni,"Off the main road, cars parked around. Theft from auto can occur.",3,1,,49.2883322,-123.1291548,2139,38.13000893179104
+359,Patrol object (133),2021-07-26 22:36:50.267291+00:00,1362 West pender,Many shops and stores around as well as parked vehicles so break ins and thefts from autos can occur.,3,1,,49.2895528,-123.1268256,2204,41.07035528323321
+358,Patrol object (133),2021-07-26 22:32:55.082111+00:00,1166 West pender,"Pedestrians and traffic around, crime unlikely but thefts from vehicles or break ins could occur however the buildings do have security personnel so it reduces the likelihood.",1,1,,49.2882821,-123.1225911,2370,56.75753975651232
+357,Patrol object (133),2021-07-26 22:27:32.807696+00:00,1050 West pender,"There are cars are pedestrians around but the small plaza does have secluded spaces where assault, theft or robberies can happen at night. There are a few stores so break ins are also possible.",2,3,,49.2872012,-123.1195606,2483,69.62122859493654
+356,Patrol object (133),2021-07-26 22:22:54.286825+00:00,Pender and hornby,"Intersection, crime is unlikely with traffic and pedestrians around. Could be traffic violations at the lights and potentially break-ins at night into the Scotiabank.",1,3,,49.2858722,-123.1169698,2624,13.95740454361948
+355,Patrol object (133),2021-07-26 22:04:39.163750+00:00,Seawall sea plane landing.,"Nice views and area, many pedestrians, crime very unlikely to occur. At worst, theft or maybe assault but too many eyes around in the day. At night theft and vandalism or the sea planes and assault can happen",3,4,,49.2880628,-123.1186087,2536,49.403492428457014
+354,Patrol object (133),2021-07-26 21:58:44.788020+00:00,Coal harbour sea wall walk,"Nice place, crime is very unlikely in daytime but at night it can be secluded. Worst case would be theft of belongings. At night, there could be assault and robbery.",4,4,,49.2910738,-123.1227148,2354,141.48096817201258
+353,Patrol object (133),2021-07-26 21:53:57.324924+00:00,Cafe villaggio,"By caderos's and cafe villaggio. Nice area, alot of people around, crime very unlikely in daytime. Theft and mischief could occur. At night these crimes are more likely, including assault on the street or break in of the stores.",3,1,,49.2912934,-123.1278071,2200,35.305629991962476
+352,Patrol object (133),2021-07-26 21:48:41.170927+00:00,1650 Bayshore drive,A nice area but more secluded with less vehicle or pedestrian traffic. Theft from vehicles or mischief like graffiti and vandalism can occur.,4,1,,49.2919181,-123.1308874,2058,35.271086623969076
+351,Patrol object (133),2021-07-26 21:42:31.507420+00:00,Robson and Denman,Many pedestrians and vehicles. Traffic laws such as speeding and running the red light can happen or worst case scenario a pedestrian being hit at night,2,5,,49.2914209,-123.1355073,1853,8.49510372296129
+350,Patrol object (133),2021-07-26 21:34:52.588726+00:00,Graffiti at West end community centre,"Many pedestrians walking around, unlikely for crime to happen. Most likely would be theft from vehicles or graffiti.",2,1,,49.2902617,-123.1367828,1767,59.40447664322667
+349,Patrol object (133),2021-07-26 21:27:32.582042+00:00,Corner of Denman and davie,Alot of traffic and pedestrians unlikely for crime to occur. Vandalism or theft from vehicle may occur.,1,1,,49.2875905,-123.14134,1608,3.3075582238982464
+348,Patrol object (131),2021-07-26 19:21:11.059555+00:00,Pendr,Nothing,2,1,,49.2812224,-123.1298111,2084,27.225583888549245
+347,Patrol object (131),2021-07-26 18:45:47.212240+00:00,Nothing,Nothing,3,3,,49.2840919,-123.1239563,2297,83.25719861693109
+346,Patrol object (131),2021-07-26 18:36:55.571575+00:00,Nothing,Nothing,3,3,,49.2864165,-123.1251516,2268,62.98377639006592
+345,Patrol object (131),2021-07-26 18:27:58.619147+00:00,Nothing,Nothing,2,3,,49.2861797,-123.1298467,2101,23.29147863675625
+344,Patrol object (131),2021-07-26 18:18:55.104047+00:00,Illegal dumping,Illegal dumping and graffity,3,3,,49.2835442,-123.1283976,2221,113.6068309000859
+343,Patrol object (131),2021-07-26 18:07:31.684584+00:00,Nothing,Nothing,2,3,,49.2832774,-123.131265,2035,10.853146321200368
+342,Patrol object (130),2021-07-24 21:50:32.427614+00:00,Bridge,"Vehicle camping, grafiti",4,2,,49.2696574,-123.0792053,4163,28.234384640564524
+341,Patrol object (130),2021-07-24 21:45:33.336776+00:00,Near Clark drive,"Grafiti,barb wire,litter",5,2,,49.2688436,-123.076708,4223,48.201003111369545
+340,Patrol object (130),2021-07-24 21:40:37.908612+00:00,Senors residences,"Litter, medical masks",2,2,,49.2677652,-123.0742986,4405,57.39264105108811
+339,Patrol object (129),2021-07-24 19:13:36.654699+00:00,Person slouched over in alleyway with needles,"We checked to make sure he was breathing, and he was. Appeared to sleeping in a sitting sitting position. Will circle back in a bit on the way back.",2,5,drug use,49.279871405,-123.134604692,1847,83.7818326324312
+338,Patrol object (129),2021-07-24 18:22:55.559365+00:00,Nothing to report,Quiet lane,2,1,,49.2831364,-123.1364571,1822,62.24498576845548
+337,Patrol object (129),2021-07-24 18:17:11.466495+00:00,Nothing to report,N/a,1,5,Nothing,49.283490471,-123.130814731,2035,44.79571980804286
+336,Patrol object (128),2021-07-24 02:35:16.102977+00:00,1961 Commercial Drive,"Next to Mural, Near Bars, Graffiti, Busy street",5,2,,49.267288,-123.06974,4572,23.057573380710398
+335,Patrol object (128),2021-07-24 02:15:30.726954+00:00,1600 Block McLean Drive,"Graffiti, Easily accessible Balcony, construction, connecting to busy road,",2,2,,49.2703903,-123.0754234,4321,17.35255133143493
+334,Patrol object (128),2021-07-24 02:10:15.348693+00:00,Clarke Dr & 1st Avenue,"Graffiti, High congestion, Litter",5,5,All of the Above,49.2697809,-123.0773295,4225,12.768199832557393
+333,Patrol object (128),2021-07-24 02:03:37.654679+00:00,McLain & 1st Avenue,"Garbage Laying Around, A lot of Graffiti, Overgrown Lots,",4,3,,49.2690539,-123.0753522,4319,35.65869876630508
+332,Patrol object (128),2021-07-24 01:58:22.951176+00:00,E 3rd & Woodland Dr,"Graffiti, Close to Senior Residence, Open Gates, Garbage Laying Around",4,3,,49.2681756,-123.0735835,4405,40.35958869191744
+331,Patrol object (128),2021-07-24 01:17:03.684697+00:00,1551 E 4th Avenue,"Housing Projects, Overgrown Lots, Open Gates, Open Windows, Lumber Waste",3,3,,49.2669457,-123.0724292,4404,79.86397550040218
+330,Patrol object (126),2021-07-23 20:49:06.438322+00:00,Front of 2012 Commercial Dr.,"Leaved some empty bags in commercial Dr., Graphite on hydrant tap of 2012 commercial Dr. unit",4,2,,49.2670694,-123.0694674,4572,13.67545483295501
+329,Patrol object (126),2021-07-23 20:42:20.104151+00:00,"E7, Commercial Dr.","Home less camping, garbage on the ground,",4,2,,49.2642706,-123.0695967,4564,14.269911453449797
+328,Patrol object (126),2021-07-23 20:35:23.528954+00:00,Grandview and Broadway,"Garbage on sidewalk. Graffiti on electricity stirs
+and garbage bin.",3,2,,49.2626288,-123.0667491,4724,73.83083131824506
+327,Patrol object (126),2021-07-23 20:28:17.931629+00:00,"Victoria, E7th. Ave","Gravel on the Victoria street, graffiti on signs.",5,3,,49.2640782,-123.0659655,4729,11.105335091217825
+326,Patrol object (126),2021-07-23 20:22:13.210357+00:00,E7th Ave.  2037,"Garbage on the sidewalk. 
+Old van with broken windshield.  Plate no. 838 HTT",4,2,,49.2642723,-123.0631005,4832,61.05508182433077
+325,Patrol object (126),2021-07-23 20:11:04.201313+00:00,"E7, front of 2155 townhouse","Garbage in walkway,",4,5,Block watch needed,49.2641498,-123.0607506,4929,89.10676251873535
+324,Patrol object (126),2021-07-23 20:04:51.536861+00:00,"E7, Nanaimo,","Car disposed headlight , isfault damage,",3,2,,49.2642011,-123.0572619,5193,51.44191418156036
+323,Patrol object (126),2021-07-23 19:56:18.258796+00:00,"E5, Nanaimo","Graffiti on Hydrant tap, garbage on the street, Graffiti on bus stop shelter",2,2,,49.2658203,-123.0568389,5196,19.897930512384608
+322,Patrol object (126),2021-07-23 19:33:41.938537+00:00,Park,"McSpadden Park
+Camping gear, man asleep with open alcohol
+Garbage
+Graffiti",4,1,,49.2655677,-123.0675349,4671,21.33214986275944
+321,Patrol object (125),2021-07-23 18:54:09.567352+00:00,"Grafiti, construction",On the floor,1,2,,49.2670235,-123.0722722,4404,92.02887069654818
+320,Patrol object (125),2021-07-23 18:49:55.926527+00:00,Grafiti,On posts,1,2,,49.2696249,-123.0729718,4408,36.57507219006041
+319,Patrol object (125),2021-07-23 18:45:51.307404+00:00,Grafiti,On the floor and posts,1,2,,49.2716151,-123.0733265,4411,21.571643625838888
+318,Patrol object (125),2021-07-23 18:41:49.220491+00:00,Dog,"Dog off leash, Graffiti on fire extinguisher",1,2,,49.274289,-123.0732545,4414,37.375391008190455
+317,Patrol object (125),2021-07-23 18:37:37.822698+00:00,Graffiti,Graffiti on the wall,1,2,,49.2758058,-123.0717668,4498,99.60783867728075
+316,Patrol object (125),2021-07-23 18:33:32.068812+00:00,"Traffic, graffiti","Heavy traffic, graffiti on the floor",3,1,,49.2754106,-123.0695236,4584,37.399879539751886
+315,Patrol object (125),2021-07-23 18:29:16.025942+00:00,Graffiti,Graffiti on the posts,1,2,,49.2738428,-123.0710182,4491,34.92583253107572
+314,Patrol object (125),2021-07-23 18:09:08.093704+00:00,Grafiti,Grafiti on floor and walls and traffic,1,1,,49.269695,-123.0697601,4575,15.834689436054225
+313,Patrol object (124),2021-07-23 04:02:29.632868+00:00,Sidewalk,"Graffiti
+Garbage
+Dog waste
+Old Christmas lm light s hanging from tree",4,2,,49.2675591,-123.0698128,4573,28.26266722074369
+312,Patrol object (124),2021-07-23 03:40:04.579090+00:00,Naked walk,"People walking with open alcohol
+Litter
+Naked transgender person crossing the intersection",4,4,,49.2696568,-123.0699587,4575,26.510871795702936
+311,Patrol object (124),2021-07-23 03:32:51.996361+00:00,Cocktails,"People drinking in public on the sidewalk
+Graffiti
+Loud music
+Litter",4,1,,49.2710838,-123.0695895,4577,22.43706757285531
+310,Patrol object (124),2021-07-23 03:32:51.883979+00:00,Cocktails,"People drinking in public on the sidewalk
+Graffiti
+Loud music
+Litter",4,1,,49.2710838,-123.0695895,4577,22.43706757285531
+309,Patrol object (124),2021-07-23 03:32:51.881786+00:00,Cocktails,"People drinking in public on the sidewalk
+Graffiti
+Loud music
+Litter",4,1,,49.2710838,-123.0695895,4577,22.43706757285531
+308,Patrol object (124),2021-07-23 03:32:51.862123+00:00,Cocktails,"People drinking in public on the sidewalk
+Graffiti
+Loud music
+Litter",4,1,,49.2710838,-123.0695895,4577,22.43706757285531
+307,Patrol object (124),2021-07-23 03:32:51.859461+00:00,Cocktails,"People drinking in public on the sidewalk
+Graffiti
+Loud music
+Litter",4,1,,49.2710838,-123.0695895,4577,22.43706757285531
+306,Patrol object (124),2021-07-23 03:27:12.152949+00:00,Grandview Park,"Bbq on table, lady passed out with beer in hand.
+. Large group drinking in park",4,2,,49.2728886,-123.0696916,4580,19.307701011251094
+305,Patrol object (124),2021-07-23 03:15:32.527530+00:00,Litter,discarded car parts,4,5,Abandoned bumper from car and graffiti,49.2715893,-123.0714343,4485,19.502287789079457
+304,Patrol object (124),2021-07-23 03:06:12.329954+00:00,Crowded sidewalk,Cofee shop large group of people blocking sidewalk not allowing disabled people through. Broken planters along sidewalk broken,2,2,,49.2691145,-123.0697672,4574,48.11845816836917
+303,Patrol object (122),2021-07-22 23:44:57.250265+00:00,1238 Davie,Burglars may break into businesses and cars. Homeless people may sleep in front of businesses.,2,5,Mental health,49.2820498,-123.1337365,1946,41.56662310037417
+302,Patrol object (122),2021-07-22 23:41:23.018171+00:00,Jepson young lane 1200,Potential for car break ins and property break ins.,4,1,,49.2828764,-123.1318688,1980,53.13315852718668
+301,Patrol object (122),2021-07-22 23:21:21.555260+00:00,Ted northe lane 1200,Someone may break into houses or cars,4,1,,49.2843259,-123.1297952,2082,55.34703421618406
+300,Patrol object (122),2021-07-22 23:18:05.963959+00:00,Ted North lane 1300 block,Chance of car car break in.,4,1,,49.2856283,-123.1317585,2053,79.49832676682722
+299,Patrol object (122),2021-07-22 23:14:31.171288+00:00,Ted North ln 1400,There is a chance that someone will break into cars,4,1,,49.2868796,-123.1337732,1911,51.19954813283485
+298,Patrol object (122),2021-07-22 23:10:46.930550+00:00,1540 Haro,Someone may break into a car or a ground suite,4,1,,49.2882947,-123.132766,1990,57.41035129289893
+297,Patrol object (122),2021-07-22 23:07:29.267948+00:00,800 Bidwell,Someone could break into a ground floor apartment. Someone could break into the parked cars,4,1,,49.2896,-123.1347549,1884,20.097781268419894
+296,Patrol object (122),2021-07-22 23:04:06.705162+00:00,Haro and Denman (800 block),Someone could break into True Confections (a dessert restaurant).,3,1,,49.2908698,-123.1363878,1812,13.219980328904494
+295,Patrol object (122),2021-07-22 22:54:25.574893+00:00,Intersection of Broughton and haro,800 block of Broughton and Haro. A few houses have bushes around them. Burglars or criminals can easily hide behind these bushes. It is important to introduce CPTED principles here.,5,1,,49.287044,-123.1315975,2041,48.47041169695571
+294,Patrol object (122),2021-07-22 22:49:10.524744+00:00,Intersection of Nelson and Broughton,"Residential area, small chance of general mischief in what could be previewed as a low crime area. Cars are parked outside of houses in the area which could lead to general mischief.",3,2,,49.2858876,-123.1330229,1956,11.670267905873137
+293,Patrol object (122),2021-07-22 22:41:38.056086+00:00,See-em-ia,"Construction going on, potential to steal tools. Highest risk is theft",4,1,,49.2837353,-123.135312,1822,71.21139868531341
+292,Patrol object (119),2021-07-22 01:10:58.958571+00:00,NA,NA,3,3,,49.2672085,-123.0699084,4572,22.803448123039423
+291,Patrol object (121),2021-07-21 19:15:01.472564+00:00,Nothing,Nothing,2,3,,49.2790259,-123.1332732,1949,6.563315859185102
+290,Patrol object (121),2021-07-21 19:08:40.272235+00:00,Nothing,Nothing,1,1,,49.2805403,-123.1354714,1847,18.893391419463924
+289,Patrol object (121),2021-07-21 18:58:47.844323+00:00,Nothing,Nothing,2,3,,49.2832867,-123.1411158,1575,56.33640496859893
+288,Patrol object (121),2021-07-21 18:49:08.196846+00:00,Nothing,Nothing,1,3,,49.2805759,-123.1389574,1732,51.200553849482695
+287,Patrol object (121),2021-07-21 18:29:10.130210+00:00,Nothing,Nothing,2,3,,49.2771857,-123.1337013,1978,100.79869749799371
+286,Patrol object (121),2021-07-21 18:18:18.370464+00:00,Needles,Used needles on the ground,4,3,,49.2795682,-123.1329285,1982,50.97209984342399
+285,Patrol object (120),2021-07-20 20:03:25.848968+00:00,Southwest of Grandview park,Garbage littered around,1,2,,49.273607,-123.0713872,4491,38.67500049819888
+284,Patrol object (120),2021-07-20 19:59:00.730935+00:00,Commercial and kitchener,"Laneway to back alley, graffiti",3,4,,49.272179,-123.070312,4579,54.8796857876508
+283,Patrol object (120),2021-07-20 19:53:10.794647+00:00,Woodland Dr and East first avenue,"Graffiti on night posts, graffiti on signs, knocked down construction sign",3,5,"Auto accident, busy intersection",49.2698053,-123.0733368,4408,22.350124823234303
+282,Patrol object (120),2021-07-20 19:32:26.190100+00:00,South end of victoria park,"Graffiti on street signs, graffiti on book exchange box, some garbage",1,2,,49.2713541,-123.0679442,4663,23.975009588363857
+281,Patrol object (120),2021-07-20 19:09:16.545922+00:00,Britannia community centre,"Graffiti on street signs, stop sign in bad condition peeling off",2,5,Loitering or trespassing,49.2747434,-123.0697639,4583,20.869754923589372
+280,Patrol object (120),2021-07-20 18:56:51.668615+00:00,Home Hardware parking,"Laneway and busy parking lot
+Graffiti on signs,
+Litter",2,2,,49.2705078,-123.0702403,4576,47.1694784151746
+279,Patrol object (115),2021-07-16 18:18:14.553607+00:00,"Victoria park, dirty park,","Family playing on park, the park is dirty",2,2,,49.271539,-123.0658371,4748,32.66461459580164
+278,Patrol object (115),2021-07-16 18:13:49.645023+00:00,Building supplies left outside,Building supplies left outside,1,1,,49.2732374,-123.0658094,4751,27.513614378425224
+277,Patrol object (115),2021-07-16 18:07:30.470969+00:00,"Quiet neighborhood, graffiti","Busy Intersection, graffiti on power box",1,2,,49.2754386,-123.0660036,4758,41.949646982331046
+276,Patrol object (115),2021-07-16 18:03:04.255407+00:00,"Dog droppings,",Lots of dog droppings on the ground,1,2,,49.2777355,-123.0658799,4761,30.615609237949066
+275,Patrol object (115),2021-07-16 17:58:37.160214+00:00,"Masks on ground, underground parking lot","Bad car parking, lots of garbage and masks on the grohnd",2,1,,49.279404,-123.066741,4765,83.90063189012805
+274,Patrol object (115),2021-07-16 17:54:50.635881+00:00,"Garbage, broken fire hydrant","Lots of garbage on the ground, broken rusted fire hydrant, quiet neighborhood,",2,2,,49.2794488,-123.0690098,4633,53.15651826941615
+273,Patrol object (115),2021-07-16 17:33:32.331546+00:00,"Graffiti, garbage, parking lot","Lots of Graffiti on the wall, garbage on ground, people drinking beer",2,2,,49.2765613,-123.0708683,4520,30.87056867661598
+272,Patrol object (115),2021-07-16 17:14:20.668758+00:00,Traffic and graffiti,"Busy intersection, graffiti on poles",2,2,,49.2695934,-123.0698531,4575,17.913932326808897
+271,Patrol object (116),2021-07-15 01:45:23.088802+00:00,East of McSpadden Park,"Graffiti, homeless population, shaded dark areas along fence.",4,4,,49.2655952,-123.0660069,4733,41.259346831419876
+270,Patrol object (116),2021-07-15 01:24:51.413511+00:00,1220 Salsbury Drive,"Graffiti, damaged property on home.",2,3,,49.2735686,-123.0675,4666,40.22558884856436
+269,Patrol object (116),2021-07-15 01:14:08.232402+00:00,1742 kitchener,Graffiti,2,3,,49.2719674,-123.0685982,4579,72.03661399012061
+268,Patrol object (116),2021-07-15 01:02:59.609697+00:00,In front of BC Liquor store,"Graffiti, homeless population gathering and asking for money, poorly maintained buildings.",4,1,,49.2708329,-123.0694624,4576,37.78415824001417
+267,Patrol object (116),2021-07-15 00:58:24.078273+00:00,Salsbury and Graveley,"Graffiti, metal bars on homes, overgrown lots.",2,3,,49.2703802,-123.0668293,4662,60.87087177652853
+266,Patrol object (116),2021-07-15 00:47:31.408142+00:00,Alley behind Sol y limon,"Graffiti, garbage, overgrown lots, homeless population.",4,2,,49.2685963,-123.0687506,4574,64.11958871948212
+265,Patrol object (116),2021-07-15 00:42:26.503523+00:00,Alley behind fire hall.,"Open doors, steel doors, graffiti.",4,1,,49.2683292,-123.0666512,4741,74.59592627226232
+264,Patrol object (116),2021-07-15 00:32:10.802710+00:00,McSpadden Park,"Graffiti, litter, homeless, broken fence.",4,4,,49.2670683,-123.0666309,4736,64.58326209304245
+263,Patrol object (116),2021-07-15 00:20:08.954628+00:00,GWCPC,Graffiti,3,2,,49.2672252,-123.0698217,4572,19.493302785527483
+262,Patrol object (116),2021-07-15 00:10:06.289214+00:00,City Avenue Market,"Graffiti, closed business, barbed wire. Just",4,1,,49.2641954,-123.0697619,4564,4.893289487483046
+261,Patrol object (111),2021-07-13 01:11:46.532219+00:00,McSpadden Park,"Park setting:  people gathering in Park, smoking in parks.",3,3,,49.2654719,-123.0659008,4734,48.41980818820165
+260,Patrol object (111),2021-07-13 01:04:27.206408+00:00,Neighbours chatting on the street,"Group of neighbours talking on 4th Ave East, open jeep with items inside",4,1,,49.2669899,-123.0676355,4672,66.40464167762151
+259,Patrol object (109),2021-07-12 22:30:00.563532+00:00,GWCPC,Friendly and welcoming environment,2,2,,49.2671875,-123.0698298,4572,16.874731964485235
+258,Patrol object (109),2021-07-12 22:19:15.148389+00:00,Community garden,"Something that will kill you graffiti, 2 x 2l Growers coolers,random beer cans,pipe,used condoms",5,2,,49.2660573,-123.0752594,4316,49.7739892762122
+257,Patrol object (109),2021-07-12 22:10:53.939021+00:00,Woodland School,Little bit of litter and graffiti,2,2,,49.2653342,-123.0735497,4400,25.840590692457695
+256,Patrol object (109),2021-07-12 21:51:27.105228+00:00,Bowling alley,"Behind Bowling Alley ""knives"" graffiti on. Bowling Alley, lots of Graffiti in laneway that has been covered,litter and debris in laneway, construction going obstructing view, an affitional run down home with unkept yard",4,2,,49.2654522,-123.070315,4567,57.70427304096645
+255,Patrol object (107),2021-07-09 16:18:16.742422+00:00,Test 4,Good distance from last,1,1,,49.2748244,-123.0582629,5119,27.49553005228465
+254,Patrol object (107),2021-07-09 16:13:33.124508+00:00,Test 3,4 blocks a bit far,1,3,,49.2748483,-123.0606022,5014,56.418032132696915
+253,Patrol object (107),2021-07-09 16:03:18.060318+00:00,Test 2,2 blocks _ good distance from the last one,2,4,,49.2774385,-123.0612934,4948,32.35261345524113
+252,Patrol object (107),2021-07-09 15:58:25.199519+00:00,Test 1,5 blocks from start point _ too far,1,5,No crime,49.2779099,-123.0590791,5017,70.16456394604873
+251,Patrol object (102),2021-07-07 23:40:51.806010+00:00,One way street,Drivers driving in opposite direction of one way st,5,5,Car crash,49.2834226,-123.1338166,1922,9.261496313369076
+250,Patrol object (102),2021-07-07 23:37:43.643351+00:00,Nelson park,Nelson park - alcohol and drugs use,4,1,,49.2833092,-123.1314401,2035,21.269902947581038
+249,Patrol object (102),2021-07-07 23:34:24.992182+00:00,Nothing,Nothing,2,3,,49.2846677,-123.1336225,1915,61.50822037299209
+248,Patrol object (102),2021-07-07 23:31:24.039925+00:00,Cars speeding,Cars speeding in back ln See em is between Jervis and Broughton,5,5,"Cars speeding, heavy traffic in back ln",49.2840895,-123.1356848,1864,46.98548702752889
+247,Patrol object (102),2021-07-07 23:15:25.739380+00:00,Nothing,Nothing,1,3,,49.2839273,-123.1391365,1723,48.20679887704624
+246,Patrol object (102),2021-07-07 23:06:41.207867+00:00,Nothing,Nothing,2,2,,49.2880455,-123.1410875,1632,27.87237880282596
+245,Patrol object (103),2021-07-07 22:58:19.801671+00:00,3 more minutes,10 blocks,1,3,,49.2762963,-123.0567935,5219,40.87652729483429
+244,Patrol object (102),2021-07-07 22:56:13.018890+00:00,Nothing,Nothing,2,1,,49.2914347,-123.1438861,1550,133.59784537002398
+243,Patrol object (103),2021-07-07 22:53:52.348277+00:00,6 blocks 3 minute,Test case,1,1,,49.2733167,-123.0598257,5011,39.65592704666294
+242,Patrol object (102),2021-07-07 22:52:38.859392+00:00,Nothing,Nothing,3,3,,49.2903557,-123.1415014,1612,78.07736088107937
+241,Patrol object (102),2021-07-07 22:41:37.250096+00:00,Graffity,Graffity,2,3,,49.2866153,-123.1354723,1810,76.30379656678093
+240,Patrol object (102),2021-07-07 22:32:40.438674+00:00,Nothing,Nothing,3,3,,49.288463,-123.131607,2040,44.000002941228175
+239,Patrol object (102),2021-07-07 22:25:42.638147+00:00,Nothing,Nothing,3,3,,49.2866288,-123.129285,2101,41.833060761704566
+238,Patrol object (102),2021-07-07 22:21:39.879266+00:00,Graffity,Graffity,3,3,,49.2850557,-123.1284997,2169,43.41732955315419
+237,Patrol object (102),2021-07-07 22:18:28.454465+00:00,Nothing,Nothing,1,3,,49.2835421,-123.1265643,2221,47.00806554605183
+236,Patrol object (102),2021-07-07 22:15:23.262147+00:00,Graffity,Graffity,4,3,,49.2823718,-123.1285614,2170,43.08913510549542
+235,Patrol object (102),2021-07-07 22:10:40.768549+00:00,Drug use on the street - St Paul's Hosp,Drug use on the street - St Paul's Hosp,4,4,,49.2799917,-123.1277886,2189,21.694508616970545
+234,Patrol object (101),2021-07-07 21:40:15.049957+00:00,Observation 2,Drove here from the last observation _ not realistic,4,2,,49.2807891,-123.072603,4442,52.05896665688838
+233,Patrol object (101),2021-07-07 21:13:46.120771+00:00,Observation test,First observation,1,1,,49.2706387,-123.0700135,4576,34.19445025878607
+232,Patrol object (100),2021-07-06 18:21:06.500281+00:00,Dirty cars,Open windows,1,3,,49.2669819,-123.0717361,4479,91.90301255373372
+231,Patrol object (100),2021-07-06 18:17:31.693786+00:00,Graffiti,Graffiti on poles and litter on the ground,1,1,,49.2678733,-123.073475,4405,6.928007774864169
+230,Patrol object (100),2021-07-06 18:13:22.580640+00:00,Graffiti,Graffiti on poles,1,3,,49.2702029,-123.073468,4409,36.52995561322204
+229,Patrol object (100),2021-07-06 18:10:11.057596+00:00,Graffiti,"Graffiti on poles, quiet neighborhood",1,3,,49.2720188,-123.073522,4412,17.078858689798018
+228,Patrol object (100),2021-07-06 18:10:08.767861+00:00,Graffiti,"Graffiti on poles, quiet neighborhood",1,3,,49.2720188,-123.073522,4412,17.078858689798018
+227,Patrol object (100),2021-07-06 18:01:27.876849+00:00,Parking lot,Garbage,1,2,,49.2758091,-123.0714877,4498,96.00901484303965
+226,Patrol object (100),2021-07-06 17:58:03.466404+00:00,Graffiti,"Graffiti on the wall, people drinking coffee",1,2,,49.2750709,-123.0695849,4583,26.028870025104013
+225,Patrol object (100),2021-07-06 17:54:21.705314+00:00,homeless people,"Lots of homeless people, smoking cigarettes and marijuana. Alcohol use. Graffiti and garbage on the ground",4,2,,49.2724882,-123.0696587,4579,40.47110342495571
+224,Patrol object (100),2021-07-06 17:47:01.036799+00:00,Ambulance traffic and graffiti,Graffiti on the ground and poles and ambulance checking up on the store. Lots of traffic in intersection,2,5,Traffic related crime,49.2694037,-123.0697185,4575,22.678038489685182
+223,Patrol object (99),2021-07-05 19:44:33.684529+00:00,Burrard cornerstone,Retail store,5,1,,49.2783415,-123.1304603,2077,16.991739376119614
+222,Patrol object (99),2021-07-05 19:27:06.080041+00:00,Businesses,"Davie & Burrard. Many retail and grocery stores, as well as restaurants.",4,1,,49.2797605,-123.130218,2037,98.01191277349407
+221,Patrol object (99),2021-07-05 19:20:05.961576+00:00,St Paul Hospital,Patients with mental health issues and homeless people camping around the hospital,5,5,Shooting up drugs,49.2802833,-123.1276183,2189,17.609870703495965
+220,Patrol object (99),2021-07-05 19:14:23.049180+00:00,IGA front,grocery store  with no security,4,1,,49.2822501,-123.1244587,2316,5.366187321624146
+219,Patrol object (99),2021-07-05 19:03:33.729737+00:00,Open garbage bin,At Robson and Burrard. Looks like someone broke it open and tried to get stuff from the bin,5,2,,49.2832402,-123.1228727,2379,7.985289710684135
+218,Patrol object (99),2021-07-05 18:59:07.031248+00:00,Cars,Robson & Thurlow,4,5,Theft from auto,49.2843965,-123.1244178,2297,35.78684466937125
+217,Patrol object (99),2021-07-05 18:54:15.964617+00:00,Sidewalk,Robson and Bute intersection.,4,2,,49.286266,-123.1269663,2217,29.67387367934028
+216,Patrol object (99),2021-07-05 18:49:21.773074+00:00,Outdoor patio,Restaurant outdoor patios,3,1,,49.2875326,-123.1294281,2095,54.642063452210564
+215,Patrol object (99),2021-07-05 18:44:39.868181+00:00,Restaurants,Many restaurants on Robson & Cardero. Restaurants have decent security,2,1,,49.2894239,-123.1322552,1981,1.9347392476936125
+214,Patrol object (99),2021-07-05 18:38:38.693038+00:00,Cars,Many parked cars along Denman & Robson.,4,5,Theft from auto,49.2910285,-123.1348899,1853,62.3839778614163
+213,Patrol object (99),2021-07-05 18:32:26.365754+00:00,Intersection,"Denman & Barclay. School zone, speed limit 30km/h",4,5,Speeding,49.2901101,-123.1376614,1767,9.99243050784631
+212,Patrol object (99),2021-07-05 18:27:17.715240+00:00,Nothing prominent,At Denman mall. Everything is well kept and clean.,1,1,,49.2887923,-123.1390043,1673,50.47440464768039
+211,Patrol object (99),2021-07-05 18:22:59.525188+00:00,Restaurant,Outdoor patio from Falafel restaurant (Denman & Pendrell),3,1,,49.2877046,-123.1410742,1608,22.970828608167814
+210,Patrol object (99),2021-07-05 18:16:30.741461+00:00,Litter,Minor littering occured in front of Safeway (Cadero & Davie).,5,1,,49.2857643,-123.1388718,1718,63.4870106666806
+209,Patrol object (96),2021-07-03 22:52:12.290510+00:00,Nothing,Nothing,3,1,,49.2865578,-123.1409443,1657,63.78562866716158
+208,Patrol object (96),2021-07-03 22:43:58.891376+00:00,Nothing,Nothing,1,4,,49.2849224,-123.1367777,1816,37.09016374878006
+207,Patrol object (96),2021-07-03 22:40:45.864013+00:00,Nothing,Nothing,2,3,,49.2861801,-123.1347254,1911,53.11536912801914
+206,Patrol object (96),2021-07-03 22:37:35.394284+00:00,Nothing,Nothing,2,3,,49.2861302,-123.1323801,2002,48.02362800727842
+205,Patrol object (96),2021-07-03 22:33:34.570526+00:00,Nothing,Nothing,1,3,,49.2845628,-123.1292992,2119,15.494609831662881
+204,Patrol object (96),2021-07-03 22:30:31.951390+00:00,Graffity,Graffity on the pole and wall,3,3,,49.2860881,-123.1308783,2053,55.402919100698455
+203,Patrol object (96),2021-07-03 22:27:00.628668+00:00,Nothing,Nothing,2,3,,49.2863985,-123.1329219,2002,64.98618087029402
+202,Patrol object (96),2021-07-03 22:23:51.742449+00:00,Nothing,Nothing,1,2,,49.2878581,-123.1347175,1902,29.8448249380176
+201,Patrol object (96),2021-07-03 22:07:29.390868+00:00,Nothing,Nothing,2,3,,49.2906835,-123.144893,1519,126.97633132993145
+200,Patrol object (96),2021-07-03 22:03:45.024806+00:00,Nothing,Nothing,1,1,,49.2889247,-123.1422311,1566,7.288077601118917
+199,Patrol object (96),2021-07-03 22:00:26.883704+00:00,Nothing,Nothing,1,1,,49.2871852,-123.1428069,1562,47.470634548399914
+198,Patrol object (96),2021-07-03 21:57:21.906609+00:00,Nothing,Nothing,1,2,,49.2858132,-123.1427106,1555,56.43756604669932
+197,Patrol object (96),2021-07-03 21:54:11.909294+00:00,Nothing,Nothing,1,2,,49.2845271,-123.1417533,1563,54.406039141532915
+196,Patrol object (96),2021-07-03 21:50:51.158000+00:00,Illegal dumping,"Illegal dumping - furniture, matress",3,2,,49.2835399,-123.1394283,1676,56.717479135610276
+195,Patrol object (96),2021-07-03 21:46:55.601206+00:00,Graffity,Graffity in the back alley,3,3,,49.2819849,-123.1369505,1787,66.78255811769183
+194,Patrol object (96),2021-07-03 21:43:15.068919+00:00,Nothing,Nothing,1,5,N/A,49.2806478,-123.1350115,1847,45.366958658044595
+193,Patrol object (96),2021-07-03 21:39:37.404053+00:00,Hostel,City accommodation for people experiencing homelessness,4,1,,49.279937,-123.1326262,1982,40.175643037002516
+192,Patrol object (96),2021-07-03 21:28:56.150963+00:00,Nothing,Nothing,1,5,N/A,49.2811859,-123.1340544,1901,28.44190616750364
+191,Patrol object (95),2021-07-03 18:27:49.390420+00:00,Graffiti on painted walls,"Graffiti on murals and wooden pole, shaded dark area",3,2,,49.2755024,-123.0744464,4351,33.52535939925817
+190,Patrol object (95),2021-07-03 18:17:56.410085+00:00,Graffiti on school wall,"Graffiti states ""fuck the vpd""",3,2,,49.2740184,-123.0733831,4414,5.872801521528322
+189,Patrol object (95),2021-07-03 18:07:54.040845+00:00,"Tents, drinking alcohol park","Group of indigenous people sitting in the middle of the park smoking and drinking, lots of garbage and clothes on the ground",4,2,,49.2738376,-123.0698402,4582,24.62699592875177
+188,Patrol object (95),2021-07-03 17:56:17.699122+00:00,Graffiti on poles,"Graffiti on poles in a quiet neighborhood, smells very bad",2,2,,49.2721404,-123.0679011,4664,20.229761835107613
+187,Patrol object (95),2021-07-03 17:50:42.036166+00:00,Two males smoking on bench,"Victoria park, families on playground, two males smoking on bench, graffiti on sign",2,3,,49.2715884,-123.065982,4748,41.85062246631429
+186,Patrol object (95),2021-07-03 17:44:31.901455+00:00,Graffiti on poles,"Intersection, speeding cars",2,5,Car related crime,49.2694468,-123.065995,4743,22.656428284794753
+185,Patrol object (95),2021-07-03 17:23:45.813975+00:00,Middle of Park,"Graffiti on wooden poles and benches, lots of families, children on playgrounds",1,2,,49.2664568,-123.0671116,4672,23.05427180420721
+184,Patrol object (94),2021-07-02 22:13:49.563554+00:00,Alcohol,People drinking alcohol in front of Liquor store,4,4,,49.2822237,-123.133019,1946,54.91884050071346
+183,Patrol object (94),2021-07-02 22:09:40.102487+00:00,Nothing to report,Nothing to report,2,4,,49.2832284,-123.1311623,2035,6.264447101742564
+182,Patrol object (94),2021-07-02 22:00:42.620928+00:00,Nothing to report,Nothing suspicious to report,1,2,,49.2854368,-123.1336615,1915,52.890173655276854
+181,Patrol object (94),2021-07-02 21:53:27.778653+00:00,Graffity,Graffity on the electrical box,3,1,,49.2876317,-123.1384526,1739,25.85207269980899
+180,Patrol object (94),2021-07-02 21:40:51.368993+00:00,6,Couple graffiti,1,2,,49.2885557,-123.1365158,1791,44.43515540509792
+179,Patrol object (94),2021-07-02 21:36:19.141902+00:00,5,All great,1,2,,49.2875959,-123.1349191,1848,49.57655732656423
+178,Patrol object (94),2021-07-02 21:32:35.313074+00:00,4,"Not much, just one graffiti",1,2,,49.2864458,-123.1329313,2002,64.95464936747261
+177,Patrol object (94),2021-07-02 21:18:30.344997+00:00,3,Nothing,1,1,,49.2841767,-123.1285079,2119,62.61072172354067
+176,Patrol object (94),2021-07-02 21:08:55.452157+00:00,2,Looks ok,1,2,,49.2864122,-123.1311421,2002,65.8415336413123
+175,Patrol object (94),2021-07-02 20:49:32.384950+00:00,1,Couple graffitis,3,2,,49.2801062,-123.1338726,1901,114.38566576502447
+174,Patrol object (93),2021-07-02 19:20:31.767982+00:00,"Traffic, Graffiti, Cannabis Dispensary","Pedestrians crossing street in traffic, road rage, hot day leads to aggression,",1,5,Traffic related crime/jay walking,49.2706501,-123.0697562,4576,20.26869674846958
+166,Patrol object (87),2021-06-29 21:44:02.755466+00:00,Cornerstore,Abandoned furniture and graffiti on all four corners of intersection,5,5,Michief,49.2677294,-123.0695984,4573,7.0632654716922545
+165,Patrol object (87),2021-06-29 21:29:08.284852+00:00,Sidewalk,Sidewalk road side patio along sidewalk,1,5,Litter,49.2655517,-123.0697762,4567,24.747038363305627
+132,Patrol object (54),2021-06-29 02:38:04.661302+00:00,Graffiti,"Graffiti located on wall, dumpster, restaurant
+Trash on ground
+Alcohol being served on busy patio",2,2,,49.2678065,-123.0698718,4573,16.967216635542652
+131,Patrol object (54),2021-06-29 02:32:37.172534+00:00,Graffiti,"Large graffiti tags in 2 garage doors
+Box of wine bottle
+ damaged garage door
+Street debris",3,2,,49.2683457,-123.0672941,4741,116.92307457524839
+130,Patrol object (54),2021-06-29 02:26:45.802458+00:00,Group of 4 guys sitting in oark,4guys All wearing dark clothes in the park,2,1,,49.2664661,-123.0660176,4736,45.41694072778187
