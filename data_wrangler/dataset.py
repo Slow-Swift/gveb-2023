@@ -16,7 +16,7 @@ from .conversion_functions import RowFunction
 from .conversion_functions import ConversionMap
 from .conversion_functions import ConversionFunction
 
-from deprecated.sphinx import deprecated
+# from deprecated.sphinx import deprecated
 
 
 class Dataset:
@@ -147,7 +147,7 @@ class Dataset:
             self._rows = new_rows
             self.convert_properties({})
             
-    @deprecated(reason="Use convert_property for each property instead", version="0.0.1")
+    # @deprecated(reason="Use convert_property for each property instead", version="0.0.1")
     def convert_properties(self, conversions: dict[str, ConversionFunction]):
         for row in self:
             for field_name in conversions:
@@ -319,7 +319,7 @@ class Dataset:
         if columnnames == None:
             columnnames = self.get_column_names()
         
-        with open(filename, 'w', newline='', encoding='utf-8-sig') as out_file:
+        with open(filename, 'w+', newline='', encoding='utf-8-sig') as out_file:
             writer = csv.DictWriter(out_file, fieldnames=columnnames, delimiter=delimiter, quoting=csv.QUOTE_MINIMAL)
             
             if write_header:

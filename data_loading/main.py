@@ -15,6 +15,8 @@ from ast import literal_eval
 from data_wrangler.conversion_functions import convert_if_not_null
 from data_wrangler.relationship_property_matchers import first_set_prop_match
 from data_wrangler.relationship_property_matchers import match_props
+from data_wrangler.conversion_functions import split_latitude, split_longitude
+
 
 # Change this to point to the directory of your database information
 DATABASE_INFO_FILEPATH = r"../../dbinfo.txt"
@@ -29,6 +31,7 @@ RAPID_TRANSIT_FILE = f'{INPUT_FOLDER}/rapid_transit.csv'
 COMMERCIAL_FILE = f'{INPUT_FOLDER}/stores.csv'
 SCHOOL_FILE = f'{INPUT_FOLDER}/schools.csv'
 BUSINESSES_FILE = f'{INPUT_FOLDER}/businesses.csv'
+TREES_FILE = f'../data/original_data/street-trees.csv'
 
 ZONE_NUMBER = 10
 ZONE_LETTER = 'U'
@@ -362,6 +365,31 @@ def load_schools():
     
     return schools_data, schools
 
+def load_trees():
+    print("Loading Businesses")
+    
+    trees_data = Dataset.load_file(
+        TREES_FILE,
+        {
+            'id': (int, "TREE_ID"),
+            'civic_number': (int, "CIVIC_NUMBER"),
+            'latitude': (lambda s : split_latitude(s) if len(s.strip()) > 0 else 0, 'geo_point_2d'),
+            'longitude': (lambda s : split_longitude(s) if len(s.strip()) > 0 else 0, 'geo_point_2d'),
+        },
+        delimiter=';'
+    )
+    
+    trees = Category(
+        "Tree",
+        trees_data,
+        [
+            'id',
+            'latitude',
+            'longitude'
+        ]
+    )
+    return trees_data, trees
+
 def load_businesses():
     print("Loading Businesses")
     
@@ -503,6 +531,7 @@ def load_data(session):
     rtransit_data, rtransit = load_rapid_transit()
     schools_data, schools = load_schools()
     businesses_data, businesses = load_businesses()
+    trees_data, trees = load_trees()
     
     categories = [
         junctions,
@@ -511,7 +540,8 @@ def load_data(session):
         stores,
         rtransit,
         schools,
-        businesses
+        businesses,
+        trees
     ]
     
     relationships = create_relationships(
